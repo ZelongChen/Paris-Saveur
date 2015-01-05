@@ -9,10 +9,12 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-    	<StackPanel HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="400" Background="#FFE80606"/>
 
-    	<Pivot Title="" Margin="0,49,0,-1">
-    		<PivotItem Header="" Margin="0,0,0,-1" Background="White">
+        <Pivot Title="" Margin="0,0,0,-1">
+            <PivotItem Margin="0" Background="White">
+                <PivotItem.Header>
+                    <TextBlock Text="HomePage" FontSize="20"></TextBlock>
+                </PivotItem.Header>
     			<Grid HorizontalAlignment="Left" Width="396" Margin="0,0,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2.5*"></RowDefinition>
@@ -92,7 +94,10 @@
                     </Grid>
                 </Grid>
     		</PivotItem>
-    		<PivotItem Header="" Margin="0,-39,0,-1.167" Background="#FFD4CC1B">
+    		<PivotItem Margin="0" Background="#FFD4CC1B">
+                <PivotItem.Header>
+                    <TextBlock Text="Me" FontSize="20"></TextBlock>
+                </PivotItem.Header>
     			<Grid/>
     		</PivotItem>
     	</Pivot>

@@ -93,6 +93,9 @@
       <DependentUpon>RecommendedPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Restaurant.cs" />
+    <Compile Include="RestaurantDetailPage.xaml.cs">
+      <DependentUpon>RestaurantDetailPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -118,6 +121,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="RecommendedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RestaurantDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

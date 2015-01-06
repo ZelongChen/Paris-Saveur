@@ -32,7 +32,7 @@ namespace Paris_Saveur
         public List<String> tag_list { get; set; }
         public LatestRating latest_rating { get; set; }
 
-        public void ConvertToChinese()
+        public void ConvertRestaurantStyleToChinese()
         {
             if (this.style.Equals("Shandong_Anhui"))
             {

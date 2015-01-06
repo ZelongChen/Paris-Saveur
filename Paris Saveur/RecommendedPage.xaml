@@ -22,7 +22,8 @@
                   Grid.Column="0"
                   ItemsSource="{Binding}"
                   ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
-                  HorizontalContentAlignment="Stretch">
+                  HorizontalContentAlignment="Stretch"
+                  SelectionChanged="recommendedRestaurantList_SelectionChanged">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>

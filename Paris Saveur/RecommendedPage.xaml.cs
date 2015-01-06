@@ -45,7 +45,7 @@ namespace Paris_Saveur
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             foreach (Restaurant restaurant in list.restaurant_list)
             {
-                restaurant.ConvertToChinese();
+                restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
             }
@@ -55,6 +55,12 @@ namespace Paris_Saveur
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
             DownloadRecommendedRestaurant();
+        }
+
+        private void recommendedRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Restaurant restaurant = e.AddedItems[0] as Restaurant;
+            Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
         }
     }
 }

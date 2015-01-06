@@ -39,3 +39,8 @@ C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\Paris Saveur.csproj.GenerateResource.Cache
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RestaurantDetailPage.g.i.cs
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RestaurantDetailPage.g.cs
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\RestaurantDetailPage.xbf
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RestaurantDetailPage.xaml
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RestaurantDetailPage.xbf

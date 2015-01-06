@@ -17,12 +17,13 @@
         </Grid.ColumnDefinitions>
 
         <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch"/>
-        <ListView x:Name="recommendedRestaurantList" 
+        <ListView x:ConnectionId='1' x:Name="recommendedRestaurantList" 
                   Grid.Row="0" 
                   Grid.Column="0"
                   ItemsSource="{Binding}"
                   ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
-                  HorizontalContentAlignment="Stretch">
+                  HorizontalContentAlignment="Stretch"
+                                                                               >
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
@@ -34,7 +35,7 @@
     
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
-            <AppBarButton x:ConnectionId='1' Label="刷新" Icon="Refresh"                           />
+            <AppBarButton x:ConnectionId='2' Label="刷新" Icon="Refresh"                           />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

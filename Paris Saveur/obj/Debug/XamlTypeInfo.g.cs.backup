@@ -124,17 +124,19 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
+            _typeNameTable = new string[5];
             _typeNameTable[0] = "Paris_Saveur.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Paris_Saveur.RecommendedPage";
+            _typeNameTable[4] = "Paris_Saveur.RestaurantDetailPage";
 
-            _typeTable = new global::System.Type[4];
+            _typeTable = new global::System.Type[5];
             _typeTable[0] = typeof(global::Paris_Saveur.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Paris_Saveur.RecommendedPage);
+            _typeTable[4] = typeof(global::Paris_Saveur.RestaurantDetailPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -171,6 +173,7 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
 
         private object Activate_0_MainPage() { return new global::Paris_Saveur.MainPage(); }
         private object Activate_3_RecommendedPage() { return new global::Paris_Saveur.RecommendedPage(); }
+        private object Activate_4_RestaurantDetailPage() { return new global::Paris_Saveur.RestaurantDetailPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -200,6 +203,13 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
             case 3:   //  Paris_Saveur.RecommendedPage
                 userType = new global::Paris_Saveur.Paris_Saveur_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_RecommendedPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Paris_Saveur.RestaurantDetailPage
+                userType = new global::Paris_Saveur.Paris_Saveur_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_RestaurantDetailPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

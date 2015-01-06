@@ -25,9 +25,13 @@ namespace Paris_Saveur
             this.InitializeComponent();
         }
 
-        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            DownloadRecommendedRestaurant();          
+        }
 
+        private async void DownloadRecommendedRestaurant()
+        {
             LoadingBar.IsEnabled = true;
             LoadingBar.Visibility = Visibility.Visible;
 
@@ -46,7 +50,11 @@ namespace Paris_Saveur
                 restaurant.ShowPrice();
             }
             this.recommendedRestaurantList.ItemsSource = list.restaurant_list;
-            
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            DownloadRecommendedRestaurant();
         }
     }
 }

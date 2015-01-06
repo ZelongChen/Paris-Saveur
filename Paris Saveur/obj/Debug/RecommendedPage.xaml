@@ -31,5 +31,11 @@
         </ListView>
 
     </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
+            <AppBarButton x:ConnectionId='1' Label="刷新" Icon="Refresh"                           />
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
 

@@ -7,19 +7,19 @@
     <Application.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="RestaurantListViewItemTemplate">
-                <Grid>
+                <Grid Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image x:Name="restaurantThumbnail" Grid.Column="0"></Image>
+                    <Image x:Name="restaurantThumbnail" Grid.Column="0" Source="Assets/star.png"></Image>
                     <StackPanel x:Name="restaurantSimpleInfoStack" Grid.Column="1" Orientation="Vertical">
-                        <TextBlock x:Name="restaurantSimpleInfoTitle" Text="{Binding}" FontWeight="Bold"></TextBlock>
-                        <TextBlock x:Name="restaurantSimpleInfoType" Text="{Binding}"></TextBlock>
-                        <TextBlock x:Name="restaurantSimpleInfoReview" Text="{Binding}"></TextBlock>
+                        <TextBlock x:Name="restaurantSimpleInfoTitle" Foreground="Black" Text="{Binding name}" FontWeight="Bold"></TextBlock>
+                        <TextBlock x:Name="restaurantSimpleInfoType" Foreground="Black" Text="{Binding style}"></TextBlock>
+                        <TextBlock x:Name="restaurantSimpleInfoReview" Foreground="Black" Text="{Binding rating_score}"></TextBlock>
                     </StackPanel>
-                    <TextBlock x:Name="restaurantSimpleInfoPrice" Text="{Binding}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock x:Name="restaurantSimpleInfoPrice" Foreground="Black" Text="{Binding consumption_per_capita}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
                 </Grid>
             </DataTemplate>
         </ResourceDictionary>

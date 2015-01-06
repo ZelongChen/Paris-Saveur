@@ -31,4 +31,10 @@
         </ListView>
 
     </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
+            <AppBarButton Label="刷新" Icon="Refresh" Click="AppBarButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

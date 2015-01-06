@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="Paris_Saveur.RecommendedPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Paris_Saveur"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ListView x:Name="recommendedRestaurantList" 
+                  Grid.Row="0" 
+                  Grid.Column="0"
+                  ItemsSource="{Binding}"
+                  ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"/>
+
+    </Grid>
+</Page>

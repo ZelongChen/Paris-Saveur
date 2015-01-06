@@ -3,5 +3,25 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Paris_Saveur">
-
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="RestaurantListViewItemTemplate">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="restaurantThumbnail" Grid.Column="0"></Image>
+                    <StackPanel x:Name="restaurantSimpleInfoStack" Grid.Column="1" Orientation="Vertical">
+                        <TextBlock x:Name="restaurantSimpleInfoTitle" Text="{Binding}" FontWeight="Bold"></TextBlock>
+                        <TextBlock x:Name="restaurantSimpleInfoType" Text="{Binding}"></TextBlock>
+                        <TextBlock x:Name="restaurantSimpleInfoReview" Text="{Binding}"></TextBlock>
+                    </StackPanel>
+                    <TextBlock x:Name="restaurantSimpleInfoPrice" Text="{Binding}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

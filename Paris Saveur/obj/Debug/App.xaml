@@ -19,7 +19,7 @@
                         <TextBlock x:Name="restaurantSimpleInfoType" Foreground="Black" Text="{Binding style}"></TextBlock>
                         <TextBlock x:Name="restaurantSimpleInfoReview" Foreground="Black" Text="{Binding rating_score}"></TextBlock>
                     </StackPanel>
-                    <TextBlock x:Name="restaurantSimpleInfoPrice" Foreground="Black" Text="{Binding consumption_per_capita}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right"></TextBlock>
+                    <TextBlock x:Name="restaurantSimpleInfoPrice" Foreground="Black" Text="{Binding consumption_per_capita}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
                 </Grid>
             </DataTemplate>
         </ResourceDictionary>

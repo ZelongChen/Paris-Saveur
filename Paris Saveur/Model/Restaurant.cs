@@ -26,11 +26,49 @@ namespace Paris_Saveur
         public bool is_locked { get; set; }
         public string url_path { get; set; }
         public int rating_num { get; set; }
-        public double rating_score { get; set; }
+        public string rating_score { get; set; }
         public int consumption_num { get; set; }
-        public double consumption_per_capita { get; set; }
-        //public List<String> dish_list { get; set; }
+        public string consumption_per_capita { get; set; }
         public List<String> tag_list { get; set; }
         public LatestRating latest_rating { get; set; }
+
+        public void ConvertToChinese()
+        {
+            if (this.style.Equals("Shandong_Anhui"))
+            {
+                this.style = "鲁菜 徽菜";
+            }
+            else if (this.style.Equals("Sichuan_Hunan"))
+            {
+                this.style = "川菜 湘菜";
+            }
+            else if (this.style.Equals("Japanese_Korean"))
+            {
+                this.style = "日餐 韩餐";
+            }
+            else if (this.style.Equals("Northern_Chinese"))
+            {
+                this.style = "北方菜系";
+            }
+            else if (this.style.Equals("Cantonese_Fujian"))
+            {
+                this.style = "粤菜 闽菜";
+            }
+            else
+            {
+                this.style = "未归类";
+            }
+
+        }
+
+        public void ShowReviewScoreAndNumber()
+        {
+            this.rating_score = this.rating_score + " (" + rating_num + "个点评)";
+        }
+
+        public void ShowPrice()
+        {
+            this.consumption_per_capita = "人均" + this.consumption_per_capita + "€";
+        }
     }
 }

@@ -15,7 +15,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// “空白页”项模板在 http://go.microsoft.com/fwlink/?LinkID=390556 上有介绍
 
 namespace Paris_Saveur
 {
@@ -40,6 +39,12 @@ namespace Paris_Saveur
             LoadingBar.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            foreach (Restaurant restaurant in list.restaurant_list)
+            {
+                restaurant.ConvertToChinese();
+                restaurant.ShowReviewScoreAndNumber();
+                restaurant.ShowPrice();
+            }
             this.recommendedRestaurantList.ItemsSource = list.restaurant_list;
             
         }

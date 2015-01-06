@@ -30,3 +30,12 @@ C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\ProjectArchitectures.txt
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\RecommendedPage.xbf
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RecommendedPage.g.i.cs
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RecommendedPage.g.cs
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RecommendedPage.xaml
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RecommendedPage.xbf
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\Paris Saveur.csprojResolveAssemblyReference.cache
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\Paris Saveur.csproj.GenerateResource.Cache

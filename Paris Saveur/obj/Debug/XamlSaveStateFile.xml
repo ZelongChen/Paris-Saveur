@@ -1,5 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\zelong\documents\code\windows phone\paris saveur\paris saveur\obj\debug\intermediatexaml\paris saveur.exe" HashGuid="23916873-0b2c-2f71-3327-7d94eaa7fb3c" />
+    <LocalAssembly PathName="c:\users\zelong\documents\code\windows phone\paris saveur\paris saveur\obj\debug\intermediatexaml\paris saveur.exe" HashGuid="a22fb477-a4ae-cf2c-fe23-071e169da5d2" />
+    <ReferenceAssembly PathName="c:\users\zelong\documents\code\windows phone\paris saveur\packages\newtonsoft.json.6.0.7\lib\portable-net40+sl5+wp80+win8+wpa81\newtonsoft.json.dll" HashGuid="d0c321bd-bfc3-83af-d7a2-da028a11b529" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

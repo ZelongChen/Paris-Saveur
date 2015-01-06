@@ -46,6 +46,8 @@ namespace Paris_Saveur
             this.restaurantMetro.Text = restaurant.public_transit;
             this.restaurantTime.Text = restaurant.opening_hours;
             this.restaurantCommentNumber.Text = "" + restaurant.rating_num + "个点评";
+            this.restaurantPhoneNumber1.Text = restaurant.phone_number_1;
+            this.restaurantPhoneNumber2.Text = restaurant.phone_number_2;
             if (restaurant.latest_rating != null)
             {
                 this.userName.Text = restaurant.latest_rating.user.username;

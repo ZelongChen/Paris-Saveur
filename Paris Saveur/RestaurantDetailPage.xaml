@@ -109,6 +109,16 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
+
+            <AppBarButton Label="呼叫" Icon="Phone">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="呼叫"/>
+                        <MenuFlyoutItem x:Name="restaurantPhoneNumber1"/>
+                        <MenuFlyoutItem x:Name="restaurantPhoneNumber2"/>
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
             <AppBarButton Label="分享" Icon="ReShare">
                 <AppBarButton.Flyout>
                     <MenuFlyout>

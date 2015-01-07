@@ -1,6 +1,7 @@
 ﻿using Paris_Saveur.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -28,17 +29,20 @@ namespace Paris_Saveur
 
         int restaurantPk;
         int currentPage = 1;
+        CommentList comments = new CommentList();
+        List<LatestRating> ratings = new List<LatestRating>();
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             restaurantPk = (int) e.Parameter;
-            DownloadRestaurantCommentsAtPage(currentPage);
+            DownloadRestaurantCommentsAtPage(currentPage++);
         }
 
         private async void DownloadRestaurantCommentsAtPage(int page)
         {
             LoadingBar.IsEnabled = true;
             LoadingBar.Visibility = Visibility.Visible;
+            loadMoreButoon.Visibility = Visibility.Collapsed;
 
             var client = new HttpClient();
             string url = "http://www.vivelevendredi.com/restaurants/json/rating-list/" + restaurantPk + "/?page=" + page;
@@ -47,6 +51,11 @@ namespace Paris_Saveur
 
             LoadingBar.IsEnabled = false;
             LoadingBar.Visibility = Visibility.Collapsed;
+            loadMoreButoon.Visibility = Visibility.Visible;
+            if (response.StatusCode.Equals(System.Net.HttpStatusCode.NotFound))
+            {
+                return;
+            }
 
             RestaurantComment restaurantComment = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantComment>(result);
             foreach (LatestRating comment in restaurantComment.rating_list)
@@ -54,19 +63,15 @@ namespace Paris_Saveur
                 comment.convertDateToChinese();
                 comment.username = comment.user.username;
             }
-
-            this.restaurantCommentList.ItemsSource = restaurantComment.rating_list;
+            ratings.AddRange(restaurantComment.rating_list);
+            comments.Comments = ratings;
+            this.restaurantCommentList.ItemsSource = comments.Comments;
             
         }
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void loadmoreButton_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
+            DownloadRestaurantCommentsAtPage(currentPage++);
         }
     }
 }

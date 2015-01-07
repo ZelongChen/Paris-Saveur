@@ -9,6 +9,7 @@
     <RootPropertyPathName Name="rate_date" />
     <RootPropertyPathName Name="score" />
     <RootPropertyPathName Name="username" />
+    <RootPropertyPathName Name="Comments" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -95,13 +96,13 @@
       <RootProperty Name="IsIndeterminate" />
       <RootProperty Name="Height" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="ItemContainerStyle" />
-      <RootProperty Name="Items" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
@@ -125,9 +126,18 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Paris_Saveur.RecommendedPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListBoxItem">
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Background" />
-      <RootProperty Name="Height" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Background" />
+      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Paris_Saveur.RestaurantCommentPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyout">

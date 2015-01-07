@@ -18,7 +18,7 @@
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"></ColumnDefinition>
-                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image x:Name="userThumbnail" Source="Assets/star.png" Grid.Column="0"></Image>
@@ -33,26 +33,26 @@
         </DataTemplate>
     </UserControl.Resources>
 
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <ListView x:Name="restaurantCommentList" 
-                  Grid.Row="0" 
-                  Grid.Column="0" 
-                  ItemsSource="{Binding}"
-                  ItemTemplate="{Binding Source={StaticResource restaurantCommentListItemTemplate}}">
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
-                </Style>
-            </ListView.ItemContainerStyle>
-            <ListBoxItem Background="Red" Height="50"></ListBoxItem>
-        </ListView>
-        <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch"/>
-    </Grid>
+    <ScrollViewer Background="White">
+		<StackPanel Orientation="Vertical">
+			<ListView x:Name="restaurantCommentList" 
+				ItemsSource="{Binding Comments}"
+				ItemTemplate="{Binding Source={StaticResource restaurantCommentListItemTemplate}}">
+				<ListView.ItemContainerStyle>
+					<Style TargetType="ListViewItem">
+						<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+					</Style>
+				</ListView.ItemContainerStyle>
+			</ListView>
+			<Button x:ConnectionId='1' x:Name="loadMoreButoon"
+				    Background="White"
+                    HorizontalContentAlignment="Stretch"
+                    Content="加载更多"
+                    Foreground="Black"
+                    HorizontalAlignment="Center"
+				                                 VerticalAlignment="Bottom"/>
+			<ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,-2,0,638"/>
+		</StackPanel>
+	</ScrollViewer>
 </Page>
 

@@ -10,6 +10,7 @@ namespace Paris_Saveur.Model
     {
         public int pk { get; set; }
         public User user { get; set; }
+        public string username { get; set; }
         public int score { get; set; }
         public int consumption { get; set; }
         public string comment { get; set; }

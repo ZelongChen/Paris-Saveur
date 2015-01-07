@@ -8,7 +8,7 @@
     <RootPropertyPathName Name="comment" />
     <RootPropertyPathName Name="rate_date" />
     <RootPropertyPathName Name="score" />
-    <RootPropertyPathName Name="reply" />
+    <RootPropertyPathName Name="username" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">

@@ -52,7 +52,7 @@ namespace Paris_Saveur
             foreach (LatestRating comment in restaurantComment.rating_list)
             {
                 comment.convertDateToChinese();
-                comment.reply = comment.user.username;
+                comment.username = comment.user.username;
             }
 
             this.restaurantCommentList.ItemsSource = restaurantComment.rating_list;

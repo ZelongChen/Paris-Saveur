@@ -50,6 +50,7 @@
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
                 </Style>
             </ListView.ItemContainerStyle>
+            <ListBoxItem Background="Red" Height="50"></ListBoxItem>
         </ListView>
         <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch"/>
     </Grid>

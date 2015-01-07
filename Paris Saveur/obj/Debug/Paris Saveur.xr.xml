@@ -101,6 +101,7 @@
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="ItemContainerStyle" />
+      <RootProperty Name="Items" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
@@ -124,6 +125,10 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Paris_Saveur.RecommendedPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListBoxItem">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Height" />
+    </RootType>
     <RootType FullName="Paris_Saveur.RestaurantCommentPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyout">
       <RootProperty Name="Items" />

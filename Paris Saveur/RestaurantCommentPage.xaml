@@ -35,7 +35,8 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -51,6 +52,12 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
+        <Button x:Name="loadMoreButoon"
+                Grid.Row="1"
+                Grid.Column="0"
+                Background="Red"
+                Click="loadMoreButton_Click">
+        </Button>
         <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch"/>
     </Grid>
 </Page>

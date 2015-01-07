@@ -58,5 +58,15 @@ namespace Paris_Saveur
             this.restaurantCommentList.ItemsSource = restaurantComment.rating_list;
             
         }
+
+        private void loadMoreButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void loadmoreButton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
     }
 }

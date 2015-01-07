@@ -24,9 +24,10 @@ namespace Paris_Saveur
             this.InitializeComponent();
         }
 
+        Restaurant restaurant;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Restaurant restaurant = e.Parameter as Restaurant;
+            restaurant = e.Parameter as Restaurant;
             this.restaurantName.Text = restaurant.name;
             restaurant.ConvertRestaurantStyleToChinese();
             restaurant.ShowReviewScoreAndNumber();
@@ -56,6 +57,11 @@ namespace Paris_Saveur
                 this.userCommentScore.Text = "" + restaurant.latest_rating.score;
             }
 
+        }
+
+        private void Comment_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(RestaurantCommentPage), restaurant.pk);
         }
     }
 }

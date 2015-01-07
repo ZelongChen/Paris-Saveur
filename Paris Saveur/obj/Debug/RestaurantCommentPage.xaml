@@ -54,3 +54,4 @@
         <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch"/>
     </Grid>
 </Page>
+

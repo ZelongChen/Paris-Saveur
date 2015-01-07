@@ -86,6 +86,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\LatestRating.cs" />
+    <Compile Include="Model\RestaurantComment.cs" />
     <Compile Include="Model\RestaurantList.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +94,9 @@
       <DependentUpon>RecommendedPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Restaurant.cs" />
+    <Compile Include="RestaurantCommentPage.xaml.cs">
+      <DependentUpon>RestaurantCommentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RestaurantDetailPage.xaml.cs">
       <DependentUpon>RestaurantDetailPage.xaml</DependentUpon>
     </Compile>
@@ -121,6 +125,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="RecommendedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RestaurantCommentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

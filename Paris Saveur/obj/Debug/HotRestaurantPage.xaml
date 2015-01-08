@@ -30,7 +30,19 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
+            <AppBarButton Label="排序" Icon="Phone">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem x:ConnectionId='2' Text="热门程度"                               />
+                        <MenuFlyoutItem x:ConnectionId='3' Text="综合评分"                                />
+                        <MenuFlyoutItem x:ConnectionId='4' Text="点评数量"                              />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
 

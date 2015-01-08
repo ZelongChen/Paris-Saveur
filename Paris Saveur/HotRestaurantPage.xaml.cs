@@ -26,18 +26,21 @@ namespace Paris_Saveur
             this.InitializeComponent();
         }
 
+        int currentPage = 1;
+        string sortBy = "popularity";
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DownloadRecommendedRestaurant();
+            DownloadRecommendedRestaurant(sortBy, currentPage);
         }
 
-        private async void DownloadRecommendedRestaurant()
+        private async void DownloadRecommendedRestaurant(string sortby, int page)
         {
             LoadingBar.IsEnabled = true;
             LoadingBar.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
-            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list/?order=-popularity&page=1");
+            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list/?order=-" + sortBy +"&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
             LoadingBar.IsEnabled = false;
@@ -53,15 +56,28 @@ namespace Paris_Saveur
             this.hotRestaurantList.ItemsSource = list.restaurant_list;
         }
 
-        private void AppBarButton_Click(object sender, RoutedEventArgs e)
-        {
-            DownloadRecommendedRestaurant();
-        }
-
         private void hotRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Restaurant restaurant = e.AddedItems[0] as Restaurant;
             Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
+        }
+
+        private void SortByPopularity_Click(object sender, RoutedEventArgs e)
+        {
+            sortBy = "popularity";
+            DownloadRecommendedRestaurant(sortBy, currentPage);
+        }
+
+        private void SortByRatingScore_Click(object sender, RoutedEventArgs e)
+        {
+            sortBy = "rating_score";
+            DownloadRecommendedRestaurant(sortBy, currentPage);
+        }
+
+        private void SortByRatingNum_Click(object sender, RoutedEventArgs e)
+        {
+            sortBy = "rating_num";
+            DownloadRecommendedRestaurant(sortBy, currentPage);
         }
     }
 }

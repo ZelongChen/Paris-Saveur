@@ -38,7 +38,7 @@
                             </Grid.ColumnDefinitions>
                             <Image x:Name="recommendedImage" Grid.Column="0" Margin="10,10,0,0" Source="Assets/star.png"></Image>
                             <Border Background="LightGray" Grid.Column="1" Margin="0,10,0,0">
-                                <TextBlock x:ConnectionId='1' x:Name="recommendedText" Text="Recommended"                                 Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                                <TextBlock x:ConnectionId='2' x:Name="recommendedText" Text="Recommended"                                 Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
                             </Border>
                         </Grid>
                         <Grid x:Name="nearbyGrid" Grid.Row="0" Grid.Column="1" Background="White">
@@ -58,7 +58,7 @@
                             </Grid.ColumnDefinitions>
                             <Image x:Name="hotImage" Grid.Column="0" Margin="10,10,0,0" Source="Assets/star.png"></Image>
                             <Border Background="LightGray" Grid.Column="1" Margin="0,10,0,0">
-                                <TextBlock x:Name="hotText" Text="Recommended" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                                <TextBlock x:ConnectionId='1' x:Name="hotText" Text="Recommended"                         Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
                             </Border>
                         </Grid>
                         <Grid x:Name="sortbyGrid" Grid.Row="1" Grid.Column="1" Background="White">

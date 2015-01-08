@@ -58,7 +58,7 @@
                             </Grid.ColumnDefinitions>
                             <Image x:Name="hotImage" Grid.Column="0" Margin="10,10,0,0" Source="Assets/star.png"></Image>
                             <Border Background="LightGray" Grid.Column="1" Margin="0,10,0,0">
-                                <TextBlock x:Name="hotText" Text="Recommended" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                                <TextBlock x:Name="hotText" Text="Recommended" Tapped="hotText_Tapped" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
                             </Border>
                         </Grid>
                         <Grid x:Name="sortbyGrid" Grid.Row="1" Grid.Column="1" Background="White">

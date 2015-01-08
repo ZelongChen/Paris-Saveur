@@ -79,5 +79,10 @@ namespace Paris_Saveur
             sortBy = "rating_num";
             DownloadRecommendedRestaurant(sortBy, currentPage);
         }
+
+        private void loadMoreButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -62,5 +62,10 @@ namespace Paris_Saveur
             Restaurant restaurant = e.AddedItems[0] as Restaurant;
             Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
         }
+
+        private void loadMoreButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

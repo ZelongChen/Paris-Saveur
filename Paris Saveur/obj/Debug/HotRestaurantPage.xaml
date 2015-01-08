@@ -8,37 +8,39 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
-        <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch"/>
-        <ListView x:ConnectionId='1' x:Name="hotRestaurantList" 
+    <ScrollViewer Background="White">
+        <StackPanel Orientation="Vertical">
+            <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,300,0,0"/>
+            <ListView x:ConnectionId='1' x:Name="hotRestaurantList" 
                   Grid.Row="0" 
                   Grid.Column="0"
                   ItemsSource="{Binding}"
                   ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
                   HorizontalContentAlignment="Stretch"
                                                                        >
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
-                </Style>
-            </ListView.ItemContainerStyle>
-        </ListView>
-    </Grid>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+            <Button x:ConnectionId='2' x:Name="loadMoreButoon"
+				    Background="White"
+                    HorizontalContentAlignment="Stretch"
+                    Content="加载更多"
+                    Foreground="Black"
+                    HorizontalAlignment="Center"
+				                                 VerticalAlignment="Bottom"/>
+        </StackPanel>
+    </ScrollViewer>
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
-            <AppBarButton Label="排序" Icon="Phone">
+            <AppBarButton Label="排序" Icon="Sort">
                 <AppBarButton.Flyout>
                     <MenuFlyout>
-                        <MenuFlyoutItem x:ConnectionId='2' Text="热门程度"                               />
-                        <MenuFlyoutItem x:ConnectionId='3' Text="综合评分"                                />
-                        <MenuFlyoutItem x:ConnectionId='4' Text="点评数量"                              />
+                        <MenuFlyoutItem x:ConnectionId='3' Text="热门程度"                               />
+                        <MenuFlyoutItem x:ConnectionId='4' Text="综合评分"                                />
+                        <MenuFlyoutItem x:ConnectionId='5' Text="点评数量"                              />
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>

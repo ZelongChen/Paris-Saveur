@@ -38,7 +38,7 @@
                             </Grid.ColumnDefinitions>
                             <Image x:Name="recommendedImage" Grid.Column="0" Margin="10,10,0,0" Source="Assets/star.png"></Image>
                             <Border Background="LightGray" Grid.Column="1" Margin="0,10,0,0">
-                                <TextBlock x:ConnectionId='2' x:Name="recommendedText" Text="Recommended"                                 Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                                <TextBlock x:ConnectionId='2' x:Name="recommendedText" Text="随便看看"                                 Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
                             </Border>
                         </Grid>
                         <Grid x:Name="nearbyGrid" Grid.Row="0" Grid.Column="1" Background="White">
@@ -48,7 +48,7 @@
                             </Grid.ColumnDefinitions>
                             <Image x:Name="nearbyImage" Grid.Column="0" Margin="10,10,0,0" Source="Assets/star.png"></Image>
                             <Border Background="LightGray" Grid.Column="1" Margin="0,10,10,0">
-                                <TextBlock x:Name="nearbyText" Text="Recommended" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                                <TextBlock x:Name="nearbyText" Text="附近餐馆" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
                             </Border>
                         </Grid>
                         <Grid x:Name="hotGrid" Grid.Row="1" Grid.Column="0" Background="White">
@@ -58,7 +58,7 @@
                             </Grid.ColumnDefinitions>
                             <Image x:Name="hotImage" Grid.Column="0" Margin="10,10,0,0" Source="Assets/star.png"></Image>
                             <Border Background="LightGray" Grid.Column="1" Margin="0,10,0,0">
-                                <TextBlock x:ConnectionId='1' x:Name="hotText" Text="Recommended"                         Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                                <TextBlock x:ConnectionId='1' x:Name="hotText" Text="热门餐馆"                         Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
                             </Border>
                         </Grid>
                         <Grid x:Name="sortbyGrid" Grid.Row="1" Grid.Column="1" Background="White">
@@ -68,7 +68,7 @@
                             </Grid.ColumnDefinitions>
                             <Image x:Name="sortbyImage" Grid.Column="0" Margin="10,10,0,0" Source="Assets/star.png"></Image>
                             <Border Background="LightGray" Grid.Column="1" Margin="0,10,10,0">
-                                <TextBlock x:Name="sortbyText" Text="Recommended" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                                <TextBlock x:Name="sortbyText" Text="菜系分类" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
                             </Border>
                         </Grid>
                         <Grid x:Name="hottagGrid" Grid.Row="2" Grid.Column="0" Background="White">
@@ -78,7 +78,7 @@
                             </Grid.ColumnDefinitions>
                             <Image x:Name="hottagImage" Grid.Column="0" Margin="10,10,0,10" Source="Assets/star.png"></Image>
                             <Border Background="LightGray" Grid.Column="1" Margin="0,10,0,10">
-                                <TextBlock x:Name="hottagText" Text="Recommended" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                                <TextBlock x:Name="hottagText" Text="热门标签" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
                             </Border>
                         </Grid>
                         <Grid x:Name="metroGrid" Grid.Row="2" Grid.Column="2" Background="White">
@@ -88,7 +88,7 @@
                             </Grid.ColumnDefinitions>
                             <Image x:Name="metroImage" Grid.Column="0" Margin="10,10,0,10" Source="Assets/star.png"></Image>
                             <Border Background="LightGray" Grid.Column="1" Margin="0,10,10,10">
-                                <TextBlock x:Name="metroText" Text="Recommended" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                                <TextBlock x:Name="metroText" Text="地铁周边" Foreground="Black" FontSize="21.333" VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
                             </Border>
                         </Grid>
                     </Grid>

@@ -35,6 +35,7 @@
 
     <ScrollViewer Background="White">
 		<StackPanel Orientation="Vertical">
+            <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,300,0,0"/>
 			<ListView x:Name="restaurantCommentList" 
 				ItemsSource="{Binding Comments}"
 				ItemTemplate="{Binding Source={StaticResource restaurantCommentListItemTemplate}}">
@@ -44,15 +45,14 @@
 					</Style>
 				</ListView.ItemContainerStyle>
 			</ListView>
-			<Button x:ConnectionId='1' x:Name="loadMoreButoon"
+            <Button x:ConnectionId='1' x:Name="loadMoreButoon"
 				    Background="White"
                     HorizontalContentAlignment="Stretch"
                     Content="加载更多"
                     Foreground="Black"
                     HorizontalAlignment="Center"
 				                                 VerticalAlignment="Bottom"/>
-			<ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,-2,0,638"/>
-		</StackPanel>
+        </StackPanel>
 	</ScrollViewer>
 </Page>
 

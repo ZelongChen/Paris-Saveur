@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Paris_Saveur.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Devices.Geolocation;
 using Windows.Foundation;
@@ -24,12 +26,14 @@ namespace Paris_Saveur
         {
             this.InitializeComponent();
         }
-        
-        Geolocator geolocator;
+
+        Geoposition geoposition;
+        int currentPage = 1;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
+            FindCurrentLocation();
+            DownloadNearByRestaurant(geoposition, currentPage);
         }
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
@@ -39,12 +43,35 @@ namespace Paris_Saveur
 
         private void nearbyRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Restaurant restaurant = e.AddedItems[0] as Restaurant;
+            Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
         }
 
-        private async void LocateMe_Click(object sender, RoutedEventArgs e)
+        private async void DownloadNearByRestaurant(Geoposition currentPosition, int page)
         {
-            geolocator = new Geolocator();
+            LoadingBar.IsEnabled = true;
+            LoadingBar.Visibility = Visibility.Visible;
+
+            var client = new HttpClient();
+            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-location/?geo_lat=" + currentPosition.Coordinate.Latitude + "&geo_lon=" + currentPosition.Coordinate.Longitude + "&criterion=geopoint&order=-popularity&page=" + currentPage);
+            var result = await response.Content.ReadAsStringAsync();
+
+            LoadingBar.IsEnabled = false;
+            LoadingBar.Visibility = Visibility.Collapsed;
+
+            RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            foreach (Restaurant restaurant in list.restaurant_list)
+            {
+                restaurant.ConvertRestaurantStyleToChinese();
+                restaurant.ShowReviewScoreAndNumber();
+                restaurant.ShowPrice();
+            }
+            this.nearbyRestaurantList.ItemsSource = list.restaurant_list;
+        }
+
+        private async void FindCurrentLocation()
+        {
+            Geolocator geolocator = new Geolocator();
             geolocator.DesiredAccuracyInMeters = 50;
             if (geolocator.LocationStatus == PositionStatus.Disabled)
             {
@@ -55,15 +82,9 @@ namespace Paris_Saveur
                 try
                 {
                     // Getting Current Location  
-                    Geoposition geoposition = await geolocator.GetGeopositionAsync(
+                    geoposition = await geolocator.GetGeopositionAsync(
                         maximumAge: TimeSpan.FromMinutes(5),
                         timeout: TimeSpan.FromSeconds(10));
-
-                    var location = new Geopoint(new BasicGeoposition()
-                    {
-                        Latitude = geoposition.Coordinate.Latitude,
-                        Longitude = geoposition.Coordinate.Longitude
-                    });
 
                 }
                 catch (UnauthorizedAccessException)

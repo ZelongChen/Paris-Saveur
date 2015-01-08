@@ -71,26 +71,10 @@
       <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
-      <RootProperty Name="Title" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Items" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.PivotItem">
-      <RootProperty Name="Margin" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Background" />
-      <RootProperty Name="Header" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
-      <RootProperty Name="Height" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Border">
-      <RootProperty Name="Background" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Child" />
-    </RootType>
-    <RootType FullName="Paris_Saveur.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
       <RootProperty Name="Visibility" />
       <RootProperty Name="IsEnabled" />
@@ -105,6 +89,15 @@
       <RootProperty Name="HorizontalContentAlignment" />
       <RootProperty Name="ItemContainerStyle" />
       <RootEvent Name="SelectionChanged" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Background" />
+      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
@@ -126,27 +119,36 @@
       <RootProperty Name="Flyout" />
       <RootEvent Name="Click" />
     </RootType>
-    <RootType FullName="Paris_Saveur.RecommendedPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Background" />
-      <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Background" />
-      <RootProperty Name="HorizontalContentAlignment" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootEvent Name="Click" />
-    </RootType>
-    <RootType FullName="Paris_Saveur.RestaurantCommentPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyout">
       <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.MenuFlyoutItem">
       <RootProperty Name="Text" />
+      <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="Paris_Saveur.HotRestaurantPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
+      <RootProperty Name="Title" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Items" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.PivotItem">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Header" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Child" />
+    </RootType>
+    <RootType FullName="Paris_Saveur.MainPage" />
+    <RootType FullName="Paris_Saveur.RecommendedPage" />
+    <RootType FullName="Paris_Saveur.RestaurantCommentPage" />
     <RootType FullName="Paris_Saveur.RestaurantDetailPage" />
   </Roots.RootTypes>
 </Roots>

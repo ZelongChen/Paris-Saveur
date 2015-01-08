@@ -39,5 +39,10 @@ namespace Paris_Saveur
         {
             Frame.Navigate(typeof(RecommendedPage));
         }
+
+        private void hotText_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(HotRestaurantPage));
+        }
     }
 }

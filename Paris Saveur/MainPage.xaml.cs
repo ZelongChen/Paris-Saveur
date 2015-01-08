@@ -44,5 +44,25 @@ namespace Paris_Saveur
         {
             Frame.Navigate(typeof(HotRestaurantPage));
         }
+
+        private void nearbyText_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(NearByRestaurant));
+        }
+
+        private void sortbyText_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
+
+        private void hottagText_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
+
+        private void metroText_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
     }
 }

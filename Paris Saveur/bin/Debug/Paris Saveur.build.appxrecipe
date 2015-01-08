@@ -58,6 +58,9 @@
     <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\NearByRestaurant.xbf">
+      <PackagePath>NearByRestaurant.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\RecommendedPage.xbf">
       <PackagePath>RecommendedPage.xbf</PackagePath>
     </AppxPackagedFile>

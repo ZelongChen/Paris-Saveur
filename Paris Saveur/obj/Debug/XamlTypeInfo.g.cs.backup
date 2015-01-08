@@ -124,23 +124,25 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[7];
+            _typeNameTable = new string[8];
             _typeNameTable[0] = "Paris_Saveur.HotRestaurantPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Paris_Saveur.MainPage";
-            _typeNameTable[4] = "Paris_Saveur.RecommendedPage";
-            _typeNameTable[5] = "Paris_Saveur.RestaurantCommentPage";
-            _typeNameTable[6] = "Paris_Saveur.RestaurantDetailPage";
+            _typeNameTable[4] = "Paris_Saveur.NearByRestaurant";
+            _typeNameTable[5] = "Paris_Saveur.RecommendedPage";
+            _typeNameTable[6] = "Paris_Saveur.RestaurantCommentPage";
+            _typeNameTable[7] = "Paris_Saveur.RestaurantDetailPage";
 
-            _typeTable = new global::System.Type[7];
+            _typeTable = new global::System.Type[8];
             _typeTable[0] = typeof(global::Paris_Saveur.HotRestaurantPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Paris_Saveur.MainPage);
-            _typeTable[4] = typeof(global::Paris_Saveur.RecommendedPage);
-            _typeTable[5] = typeof(global::Paris_Saveur.RestaurantCommentPage);
-            _typeTable[6] = typeof(global::Paris_Saveur.RestaurantDetailPage);
+            _typeTable[4] = typeof(global::Paris_Saveur.NearByRestaurant);
+            _typeTable[5] = typeof(global::Paris_Saveur.RecommendedPage);
+            _typeTable[6] = typeof(global::Paris_Saveur.RestaurantCommentPage);
+            _typeTable[7] = typeof(global::Paris_Saveur.RestaurantDetailPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -177,9 +179,10 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
 
         private object Activate_0_HotRestaurantPage() { return new global::Paris_Saveur.HotRestaurantPage(); }
         private object Activate_3_MainPage() { return new global::Paris_Saveur.MainPage(); }
-        private object Activate_4_RecommendedPage() { return new global::Paris_Saveur.RecommendedPage(); }
-        private object Activate_5_RestaurantCommentPage() { return new global::Paris_Saveur.RestaurantCommentPage(); }
-        private object Activate_6_RestaurantDetailPage() { return new global::Paris_Saveur.RestaurantDetailPage(); }
+        private object Activate_4_NearByRestaurant() { return new global::Paris_Saveur.NearByRestaurant(); }
+        private object Activate_5_RecommendedPage() { return new global::Paris_Saveur.RecommendedPage(); }
+        private object Activate_6_RestaurantCommentPage() { return new global::Paris_Saveur.RestaurantCommentPage(); }
+        private object Activate_7_RestaurantDetailPage() { return new global::Paris_Saveur.RestaurantDetailPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -213,23 +216,30 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 4:   //  Paris_Saveur.RecommendedPage
+            case 4:   //  Paris_Saveur.NearByRestaurant
                 userType = new global::Paris_Saveur.Paris_Saveur_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_RecommendedPage;
+                userType.Activator = Activate_4_NearByRestaurant;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  Paris_Saveur.RestaurantCommentPage
+            case 5:   //  Paris_Saveur.RecommendedPage
                 userType = new global::Paris_Saveur.Paris_Saveur_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_RestaurantCommentPage;
+                userType.Activator = Activate_5_RecommendedPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  Paris_Saveur.RestaurantDetailPage
+            case 6:   //  Paris_Saveur.RestaurantCommentPage
                 userType = new global::Paris_Saveur.Paris_Saveur_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_RestaurantDetailPage;
+                userType.Activator = Activate_6_RestaurantCommentPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  Paris_Saveur.RestaurantDetailPage
+                userType = new global::Paris_Saveur.Paris_Saveur_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_7_RestaurantDetailPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

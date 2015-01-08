@@ -33,7 +33,7 @@ namespace Paris_Saveur
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             FindCurrentLocation();
-            DownloadNearByRestaurant(geoposition, currentPage);
+            
         }
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
@@ -45,6 +45,16 @@ namespace Paris_Saveur
         {
             Restaurant restaurant = e.AddedItems[0] as Restaurant;
             Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
+        }
+
+        private void OpenMap_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            FindCurrentLocation();
         }
 
         private async void DownloadNearByRestaurant(Geoposition currentPosition, int page)
@@ -84,7 +94,9 @@ namespace Paris_Saveur
                     // Getting Current Location  
                     geoposition = await geolocator.GetGeopositionAsync(
                         maximumAge: TimeSpan.FromMinutes(5),
-                        timeout: TimeSpan.FromSeconds(10));
+                        timeout: TimeSpan.FromSeconds(10)); 
+
+                    DownloadNearByRestaurant(geoposition, currentPage);
 
                 }
                 catch (UnauthorizedAccessException)
@@ -100,5 +112,6 @@ namespace Paris_Saveur
             var dialog = new MessageDialog(message.ToString());
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () => await dialog.ShowAsync());
         }
+
     }
 }

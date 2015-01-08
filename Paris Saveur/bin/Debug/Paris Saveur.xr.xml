@@ -147,6 +147,7 @@
       <RootProperty Name="Child" />
     </RootType>
     <RootType FullName="Paris_Saveur.MainPage" />
+    <RootType FullName="Paris_Saveur.NearByRestaurant" />
     <RootType FullName="Paris_Saveur.RecommendedPage" />
     <RootType FullName="Paris_Saveur.RestaurantCommentPage" />
     <RootType FullName="Paris_Saveur.RestaurantDetailPage" />

@@ -54,3 +54,8 @@ C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\HotRestaurantPage.xaml
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\HotRestaurantPage.xbf
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\HotRestaurantPage.xbf
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\NearByRestaurant.xbf
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\NearByRestaurant.g.i.cs
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\NearByRestaurant.g.cs
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\NearByRestaurant.xaml
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\NearByRestaurant.xbf

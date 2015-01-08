@@ -62,7 +62,7 @@
             <Image Source="Assets/star.png"></Image>
             <TextBlock x:Name="restaurantTime" Foreground="Black" VerticalAlignment="Center"></TextBlock>
         </StackPanel>
-        <Grid Grid.Row="5">
+        <Grid Grid.Row="5" Tapped="Comment_Tapped">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1.5*"></RowDefinition>

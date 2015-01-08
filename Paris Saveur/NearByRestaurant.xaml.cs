@@ -33,7 +33,6 @@ namespace Paris_Saveur
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             FindCurrentLocation();
-            
         }
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
@@ -55,6 +54,7 @@ namespace Paris_Saveur
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
             FindCurrentLocation();
+
         }
 
         private async void DownloadNearByRestaurant(Geoposition currentPosition, int page)
@@ -63,7 +63,8 @@ namespace Paris_Saveur
             LoadingBar.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
-            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-location/?geo_lat=" + currentPosition.Coordinate.Latitude + "&geo_lon=" + currentPosition.Coordinate.Longitude + "&criterion=geopoint&order=-popularity&page=" + currentPage);
+            string url = "http://www.vivelevendredi.com/restaurants/json/list-by-location/?geo_lat=" + currentPosition.Coordinate.Latitude + "&geo_lon=" + currentPosition.Coordinate.Longitude + "&criterion=geopoint&order=-popularity&page=" + currentPage;
+            var response = await client.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
 
             LoadingBar.IsEnabled = false;
@@ -94,10 +95,8 @@ namespace Paris_Saveur
                     // Getting Current Location  
                     geoposition = await geolocator.GetGeopositionAsync(
                         maximumAge: TimeSpan.FromMinutes(5),
-                        timeout: TimeSpan.FromSeconds(10)); 
-
+                        timeout: TimeSpan.FromSeconds(10));
                     DownloadNearByRestaurant(geoposition, currentPage);
-
                 }
                 catch (UnauthorizedAccessException)
                 {

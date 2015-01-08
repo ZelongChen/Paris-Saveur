@@ -23,7 +23,7 @@
                     </Grid.ColumnDefinitions>
                     <Image x:Name="userThumbnail" Source="Assets/star.png" Grid.Column="0"></Image>
                     <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,15,0,0">
-                        <TextBlock x:Name="userName" Text="{Binding username}"  Foreground="Black"></TextBlock>
+                        <TextBlock x:Name="userName" Text="{Binding user.username}"  Foreground="Black"></TextBlock>
                         <TextBlock x:Name="userCommentScore" Text="{Binding score}" Foreground="Black"></TextBlock>
                     </StackPanel>
                     <TextBlock x:Name="userCommentDate" Text="{Binding rate_date}" HorizontalAlignment="Right" Foreground="Black" Grid.Column="2" Margin="0,15,20,0"></TextBlock>

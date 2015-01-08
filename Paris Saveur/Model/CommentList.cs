@@ -25,7 +25,7 @@ namespace Paris_Saveur.Model
         {
             if (PropertyChanged != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs("Comments"));
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }   
     }

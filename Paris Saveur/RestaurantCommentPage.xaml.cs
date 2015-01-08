@@ -64,8 +64,9 @@ namespace Paris_Saveur
                 comment.username = comment.user.username;
             }
             ratings.AddRange(restaurantComment.rating_list);
-            comments.Comments = ratings;
-            this.restaurantCommentList.ItemsSource = comments.Comments;
+            comments.Comments.AddRange(restaurantComment.rating_list);
+            //this.restaurantCommentList.ItemsSource = comments.Comments;
+            this.DataContext = comments;
             
         }
 

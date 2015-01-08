@@ -8,6 +8,7 @@
     <RootPropertyPathName Name="comment" />
     <RootPropertyPathName Name="rate_date" />
     <RootPropertyPathName Name="score" />
+    <RootPropertyPathName Name="user" />
     <RootPropertyPathName Name="username" />
     <RootPropertyPathName Name="Comments" />
   </Roots.PropertyPathNames>

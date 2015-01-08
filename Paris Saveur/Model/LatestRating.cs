@@ -19,7 +19,6 @@ namespace Paris_Saveur.Model
         public int num_agreed { get; set; }
         public int num_disagreed { get; set; }
         public int popularity { get; set; }
-        public string reply { get; set; }
 
         public void convertDateToChinese()
         {

@@ -10,6 +10,7 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -20,15 +21,19 @@
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListViewItem x:ConnectionId='1' x:Name="sichuan_hunan" Content="川菜 湘菜" Grid.Row="0" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                              ></ListViewItem>
-        <ListViewItem x:ConnectionId='2' x:Name="shandong_anhui" Content="鲁菜 徽菜" Grid.Row="1" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                               ></ListViewItem>
-        <ListViewItem x:ConnectionId='3' x:Name="jiangshu_zhejiang" Content="苏菜 浙菜" Grid.Row="2" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                                  ></ListViewItem>
-        <ListViewItem x:ConnectionId='4' x:Name="guangdong_fujian" Content="粤菜 闽菜" Grid.Row="3" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                                 ></ListViewItem>
-        <ListViewItem x:ConnectionId='5' x:Name="yunnan" Content="云南菜" Grid.Row="4" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                       ></ListViewItem>
-        <ListViewItem x:ConnectionId='6' x:Name="beifang" Content="北方菜系" Grid.Row="5" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                        ></ListViewItem>
-        <ListViewItem x:ConnectionId='7' x:Name="japan_korea" Content="日餐 韩餐" Grid.Row="6" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                            ></ListViewItem>
-        <ListViewItem x:ConnectionId='8' x:Name="southest_asia" Content="东南西菜" Grid.Row="7" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                              ></ListViewItem>
-        <ListViewItem x:ConnectionId='9' x:Name="unclassified" Content="未归类" Grid.Row="8" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                             ></ListViewItem>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+            <Image Source="Assets/star.png"></Image>
+            <TextBlock Text="菜系分类" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
+        </StackPanel>
+        <ListViewItem x:ConnectionId='1' x:Name="sichuan_hunan" Content="川菜 湘菜" Grid.Row="1" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                              ></ListViewItem>
+        <ListViewItem x:ConnectionId='2' x:Name="shandong_anhui" Content="鲁菜 徽菜" Grid.Row="2" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                               ></ListViewItem>
+        <ListViewItem x:ConnectionId='3' x:Name="jiangshu_zhejiang" Content="苏菜 浙菜" Grid.Row="3" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                                  ></ListViewItem>
+        <ListViewItem x:ConnectionId='4' x:Name="guangdong_fujian" Content="粤菜 闽菜" Grid.Row="4" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                                 ></ListViewItem>
+        <ListViewItem x:ConnectionId='5' x:Name="yunnan" Content="云南菜" Grid.Row="5" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                       ></ListViewItem>
+        <ListViewItem x:ConnectionId='6' x:Name="beifang" Content="北方菜系" Grid.Row="6" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                        ></ListViewItem>
+        <ListViewItem x:ConnectionId='7' x:Name="japan_korea" Content="日餐 韩餐" Grid.Row="7" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                            ></ListViewItem>
+        <ListViewItem x:ConnectionId='8' x:Name="southest_asia" Content="东南亚菜" Grid.Row="8" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                              ></ListViewItem>
+        <ListViewItem x:ConnectionId='9' x:Name="unclassified" Content="未归类" Grid.Row="9" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0"                             ></ListViewItem>
     </Grid>
 </Page>
 

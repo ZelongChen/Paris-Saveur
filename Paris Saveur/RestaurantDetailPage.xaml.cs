@@ -28,6 +28,7 @@ namespace Paris_Saveur
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             restaurant = e.Parameter as Restaurant;
+            this.PageTitle.Text = restaurant.name;
             this.restaurantName.Text = restaurant.name;
             restaurant.ConvertRestaurantStyleToChinese();
             restaurant.ShowReviewScoreAndNumber();

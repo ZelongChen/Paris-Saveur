@@ -8,16 +8,23 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-
-        <Pivot Title="" Margin="0,0,0,-1">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+            <Image Source="Assets/star.png"></Image>
+            <TextBlock Text="巴黎寻味" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
+        </StackPanel>
+        <Pivot Title="" Grid.Row="1">
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock Text="首页" FontSize="20"></TextBlock>
+                    <TextBlock Text="首页" FontSize="20" Foreground="Black" Padding="50,0,0,0"></TextBlock>
                 </PivotItem.Header>
     			<Grid HorizontalAlignment="Left" Width="396" Margin="0,0,0,0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="2.5*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
                     </Grid.RowDefinitions>
     				<Image Grid.Row="0" Margin="0,0,0,0"/>
@@ -96,7 +103,7 @@
     		</PivotItem>
     		<PivotItem Margin="0" Background="#FFD4CC1B">
                 <PivotItem.Header>
-                    <TextBlock Text="关于" FontSize="20"></TextBlock>
+                    <TextBlock Text="关于" FontSize="20" Foreground="Black" Padding="50,0,0,0"></TextBlock>
                 </PivotItem.Header>
     			<Grid/>
     		</PivotItem>

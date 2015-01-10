@@ -10,6 +10,7 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -18,7 +19,11 @@
             <RowDefinition Height="4*"></RowDefinition>
             <RowDefinition Height="6*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+            <Image Source="Assets/star.png"></Image>
+            <TextBlock x:Name="PageTitle" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="2*"></RowDefinition>
@@ -47,22 +52,22 @@
         <TextBlock x:Name="restaurantDescription" 
                        HorizontalAlignment="Stretch" 
                        TextWrapping="Wrap"
-                       Grid.Row="1" 
+                       Grid.Row="2" 
                        Foreground="Black"
                        Padding="10"></TextBlock>
-        <StackPanel Orientation="Horizontal" Grid.Row="2">
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
             <Image Source="Assets/star.png"></Image>
             <TextBlock x:Name="restaurantAddress" Foreground="Black" VerticalAlignment="Center"></TextBlock>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="3">
+        <StackPanel Orientation="Horizontal" Grid.Row="4">
             <Image Source="Assets/star.png"></Image>
             <TextBlock x:Name="restaurantMetro" Foreground="Black" VerticalAlignment="Center"></TextBlock>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="4">
+        <StackPanel Orientation="Horizontal" Grid.Row="5">
             <Image Source="Assets/star.png"></Image>
             <TextBlock x:Name="restaurantTime" Foreground="Black" VerticalAlignment="Center"></TextBlock>
         </StackPanel>
-        <Grid Grid.Row="5" Tapped="Comment_Tapped">
+        <Grid Grid.Row="6" Tapped="Comment_Tapped">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1.5*"></RowDefinition>
@@ -87,7 +92,7 @@
             </Grid>
             <TextBlock x:Name="userComment" Grid.Row="2" Foreground="Black" TextWrapping="Wrap" Padding="10"></TextBlock>
         </Grid>
-        <Grid Grid.Row="6" Height="50" VerticalAlignment="Bottom">
+        <Grid Grid.Row="7" Height="50" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>

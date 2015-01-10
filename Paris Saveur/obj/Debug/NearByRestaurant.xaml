@@ -8,31 +8,41 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <ScrollViewer Background="White">
-        <StackPanel Orientation="Vertical">
-            <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,300,0,0"/>
-            <ListView x:ConnectionId='1' x:Name="nearbyRestaurantList" 
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+            <Image Source="Assets/star.png"></Image>
+            <TextBlock Text="附近餐馆" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Background="White">
+            <StackPanel Orientation="Vertical">
+                <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,300,0,0"/>
+                <ListView x:ConnectionId='1' x:Name="nearbyRestaurantList" 
                   Grid.Row="0" 
                   Grid.Column="0"
                   ItemsSource="{Binding}"
                   ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
                   HorizontalContentAlignment="Stretch"
                                                                           >
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
-                    </Style>
-                </ListView.ItemContainerStyle>
-            </ListView>
-            <Button x:ConnectionId='2' x:Name="loadMoreButoon"
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+                <Button x:ConnectionId='2' x:Name="loadMoreButoon"
 				    Background="White"
                     HorizontalContentAlignment="Stretch"
                     Content="加载更多"
                     Foreground="Black"
                     HorizontalAlignment="Center"
 				                                 VerticalAlignment="Bottom"/>
-        </StackPanel>
-    </ScrollViewer>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
             <AppBarButton x:ConnectionId='3' Label="地图" Icon="Map"                      ></AppBarButton>

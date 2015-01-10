@@ -32,7 +32,7 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            FindCurrentLocation();
+            FindCurrentLocationAnRestaurantsNearby();
         }
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
@@ -53,7 +53,7 @@ namespace Paris_Saveur
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
-            FindCurrentLocation();
+            FindCurrentLocationAnRestaurantsNearby();
 
         }
 
@@ -80,7 +80,7 @@ namespace Paris_Saveur
             this.nearbyRestaurantList.ItemsSource = list.restaurant_list;
         }
 
-        private async void FindCurrentLocation()
+        private async void FindCurrentLocationAnRestaurantsNearby()
         {
             Geolocator geolocator = new Geolocator();
             geolocator.DesiredAccuracyInMeters = 50;

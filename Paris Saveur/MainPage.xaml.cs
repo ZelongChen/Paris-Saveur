@@ -52,7 +52,7 @@ namespace Paris_Saveur
 
         private void sortbyText_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(RestaurantSortByStylePage));
         }
 
         private void hottagText_Tapped(object sender, TappedRoutedEventArgs e)

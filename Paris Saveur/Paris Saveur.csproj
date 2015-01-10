@@ -107,6 +107,9 @@
     <Compile Include="RestaurantDetailPage.xaml.cs">
       <DependentUpon>RestaurantDetailPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RestaurantSortByStylePage.xaml.cs">
+      <DependentUpon>RestaurantSortByStylePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -148,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RestaurantDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RestaurantSortByStylePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

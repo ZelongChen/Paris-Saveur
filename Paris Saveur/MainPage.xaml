@@ -38,7 +38,7 @@
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                             <ColumnDefinition Width="1*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Grid x:Name="recommendedGrid" Grid.Row="0" Grid.Column="0" Background="White">
+                        <Grid x:Name="recommendedGrid" Grid.Row="0" Grid.Column="0" Background="White" Tapped="recommendedText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
@@ -47,13 +47,12 @@
                             <TextBlock x:Name="recommendedText" 
                                        Grid.Row="1"
                                        Text="随便看看" 
-                                       Tapped="recommendedText_Tapped" 
                                        Foreground="Black" 
                                        FontSize="21.333" 
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"></TextBlock>
                         </Grid>
-                        <Grid x:Name="nearbyGrid" Grid.Row="0" Grid.Column="1" Background="White">
+                        <Grid x:Name="nearbyGrid" Grid.Row="0" Grid.Column="1" Background="White" Tapped="nearbyText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
@@ -61,14 +60,13 @@
                             <Image x:Name="nearbyImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
                             <TextBlock x:Name="nearbyText" 
                                        Grid.Row="1"
-                                       Text="附近餐馆" 
-                                       Tapped="nearbyText_Tapped" 
+                                       Text="附近餐馆"  
                                        Foreground="Black" 
                                        FontSize="21.333" 
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Center"></TextBlock>
                         </Grid>
-                        <Grid x:Name="hotGrid" Grid.Row="1" Grid.Column="0" Background="White">
+                        <Grid x:Name="hotGrid" Grid.Row="1" Grid.Column="0" Background="White" Tapped="hotText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
@@ -76,15 +74,14 @@
                             <Image x:Name="hotImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
                             <TextBlock x:Name="hotText"
                                        Grid.Row="1"
-                                       Text="热门餐馆" 
-                                       Tapped="hotText_Tapped" 
+                                       Text="热门餐馆"  
                                        Foreground="Black" 
                                        FontSize="21.333" 
                                        VerticalAlignment="Center" 
                                        HorizontalAlignment="Center">
                             </TextBlock>
                         </Grid>
-                        <Grid x:Name="sortbyGrid" Grid.Row="1" Grid.Column="1" Background="White">
+                        <Grid x:Name="sortbyGrid" Grid.Row="1" Grid.Column="1" Background="White" Tapped="sortbyText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
@@ -92,14 +89,13 @@
                             <Image x:Name="sortbyImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
                             <TextBlock x:Name="sortbyText" 
                                        Grid.Row="1"
-                                       Text="菜系分类" 
-                                       Tapped="sortbyText_Tapped" 
+                                       Text="菜系分类"  
                                        Foreground="Black" 
                                        FontSize="21.333" 
                                        VerticalAlignment="Center" 
                                        HorizontalAlignment="Center"></TextBlock>
                         </Grid>
-                        <Grid x:Name="hottagGrid" Grid.Row="2" Grid.Column="0" Background="White">
+                        <Grid x:Name="hottagGrid" Grid.Row="2" Grid.Column="0" Background="White" Tapped="hottagText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
@@ -107,14 +103,13 @@
                             <Image x:Name="hottagImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
                             <TextBlock x:Name="hottagText" 
                                        Grid.Row="1"
-                                       Text="热门标签" 
-                                       Tapped="hottagText_Tapped" 
+                                       Text="热门标签"  
                                        Foreground="Black" 
                                        FontSize="21.333" 
                                        VerticalAlignment="Center" 
                                        HorizontalAlignment="Center"></TextBlock>
                         </Grid>
-                        <Grid x:Name="metroGrid" Grid.Row="2" Grid.Column="2" Background="White">
+                        <Grid x:Name="metroGrid" Grid.Row="2" Grid.Column="2" Background="White" Tapped="metroText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
@@ -122,8 +117,7 @@
                             <Image x:Name="metroImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
                             <TextBlock x:Name="metroText" 
                                        Grid.Row="1"
-                                       Text="地铁周边" 
-                                       Tapped="metroText_Tapped" 
+                                       Text="地铁周边"  
                                        Foreground="Black" 
                                        FontSize="21.333" 
                                        VerticalAlignment="Center" 
@@ -132,11 +126,14 @@
                     </Grid>
                 </Grid>
     		</PivotItem>
-    		<PivotItem Margin="0" Background="#FFD4CC1B">
+    		<PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
                     <TextBlock Text="关于" FontSize="20" Foreground="Black" Padding="50,0,0,0"></TextBlock>
                 </PivotItem.Header>
-    			<Grid/>
+                <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+                    <Image Source="Assets/app_logo_wide_1.png" Margin="0,20,0,0" ></Image>
+                    <TextBlock x:Name="AppVersion" Text="version 0.2" HorizontalAlignment="Center" Foreground="Black"></TextBlock>
+                </StackPanel>
     		</PivotItem>
     	</Pivot>
 

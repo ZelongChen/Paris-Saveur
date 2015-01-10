@@ -14,6 +14,7 @@
                        Text="{Binding tagToString}"
                        VerticalAlignment="Center"
                        Padding="10,0,0,0"
+                       FontSize="20"
                        Foreground="Black">
             </TextBlock>
         </DataTemplate>

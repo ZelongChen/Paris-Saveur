@@ -22,6 +22,9 @@
     <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\packages\Newtonsoft.Json.6.0.7\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\Assets\app_logo_wide.png">
+      <PackagePath>Assets\app_logo_wide.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\Assets\logo_small .png">
       <PackagePath>Assets\logo_small .png</PackagePath>
     </AppxPackagedFile>

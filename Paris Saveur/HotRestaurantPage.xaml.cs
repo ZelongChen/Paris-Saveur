@@ -28,10 +28,41 @@ namespace Paris_Saveur
 
         int currentPage = 1;
         string sortBy = "popularity";
+        string restaurantStyle;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DownloadRecommendedRestaurant(sortBy, currentPage);
+            restaurantStyle = e.Parameter as string;
+            if (restaurantStyle == null)
+            {
+                DownloadRecommendedRestaurant(sortBy, currentPage);
+            }
+            else
+            {
+                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
+            }
+        }
+
+        private async void DownloadRestaurantWithStyle(string style, string sortby, int page)
+        {
+            LoadingBar.IsEnabled = true;
+            LoadingBar.Visibility = Visibility.Visible;
+
+            var client = new HttpClient();
+            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-style/" + restaurantStyle + "/?order=-" + sortBy + "&page=" + page);
+            var result = await response.Content.ReadAsStringAsync();
+
+            LoadingBar.IsEnabled = false;
+            LoadingBar.Visibility = Visibility.Collapsed;
+
+            RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            foreach (Restaurant restaurant in list.restaurant_list)
+            {
+                restaurant.ConvertRestaurantStyleToChinese();
+                restaurant.ShowReviewScoreAndNumber();
+                restaurant.ShowPrice();
+            }
+            this.hotRestaurantList.ItemsSource = list.restaurant_list;
         }
 
         private async void DownloadRecommendedRestaurant(string sortby, int page)
@@ -65,19 +96,41 @@ namespace Paris_Saveur
         private void SortByPopularity_Click(object sender, RoutedEventArgs e)
         {
             sortBy = "popularity";
-            DownloadRecommendedRestaurant(sortBy, currentPage);
+            if (restaurantStyle == null)
+            {
+                DownloadRecommendedRestaurant(sortBy, currentPage);
+            }
+            else
+            {
+                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
+            }
+            
         }
 
         private void SortByRatingScore_Click(object sender, RoutedEventArgs e)
         {
             sortBy = "rating_score";
-            DownloadRecommendedRestaurant(sortBy, currentPage);
+            if (restaurantStyle == null)
+            {
+                DownloadRecommendedRestaurant(sortBy, currentPage);
+            }
+            else
+            {
+                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
+            }
         }
 
         private void SortByRatingNum_Click(object sender, RoutedEventArgs e)
         {
             sortBy = "rating_num";
-            DownloadRecommendedRestaurant(sortBy, currentPage);
+            if (restaurantStyle == null)
+            {
+                DownloadRecommendedRestaurant(sortBy, currentPage);
+            }
+            else
+            {
+                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
+            }
         }
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)

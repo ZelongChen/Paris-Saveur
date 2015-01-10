@@ -100,7 +100,13 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="VerticalContentAlignment" />
+      <RootProperty Name="Padding" />
+      <RootEvent Name="Tapped" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="HorizontalContentAlignment" />
     </RootType>
@@ -151,5 +157,6 @@
     <RootType FullName="Paris_Saveur.RecommendedPage" />
     <RootType FullName="Paris_Saveur.RestaurantCommentPage" />
     <RootType FullName="Paris_Saveur.RestaurantDetailPage" />
+    <RootType FullName="Paris_Saveur.RestaurantSortByStylePage" />
   </Roots.RootTypes>
 </Roots>

@@ -124,7 +124,7 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[8];
+            _typeNameTable = new string[9];
             _typeNameTable[0] = "Paris_Saveur.HotRestaurantPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -133,8 +133,9 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
             _typeNameTable[5] = "Paris_Saveur.RecommendedPage";
             _typeNameTable[6] = "Paris_Saveur.RestaurantCommentPage";
             _typeNameTable[7] = "Paris_Saveur.RestaurantDetailPage";
+            _typeNameTable[8] = "Paris_Saveur.RestaurantSortByStylePage";
 
-            _typeTable = new global::System.Type[8];
+            _typeTable = new global::System.Type[9];
             _typeTable[0] = typeof(global::Paris_Saveur.HotRestaurantPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -143,6 +144,7 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
             _typeTable[5] = typeof(global::Paris_Saveur.RecommendedPage);
             _typeTable[6] = typeof(global::Paris_Saveur.RestaurantCommentPage);
             _typeTable[7] = typeof(global::Paris_Saveur.RestaurantDetailPage);
+            _typeTable[8] = typeof(global::Paris_Saveur.RestaurantSortByStylePage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -183,6 +185,7 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
         private object Activate_5_RecommendedPage() { return new global::Paris_Saveur.RecommendedPage(); }
         private object Activate_6_RestaurantCommentPage() { return new global::Paris_Saveur.RestaurantCommentPage(); }
         private object Activate_7_RestaurantDetailPage() { return new global::Paris_Saveur.RestaurantDetailPage(); }
+        private object Activate_8_RestaurantSortByStylePage() { return new global::Paris_Saveur.RestaurantSortByStylePage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -240,6 +243,13 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
             case 7:   //  Paris_Saveur.RestaurantDetailPage
                 userType = new global::Paris_Saveur.Paris_Saveur_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_7_RestaurantDetailPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 8:   //  Paris_Saveur.RestaurantSortByStylePage
+                userType = new global::Paris_Saveur.Paris_Saveur_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_RestaurantSortByStylePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -577,7 +587,6 @@ namespace Paris_Saveur.Paris_Saveur_XamlTypeInfo
         }
     }
 }
-
 
 
 

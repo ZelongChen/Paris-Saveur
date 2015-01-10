@@ -70,6 +70,9 @@
     <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\RestaurantDetailPage.xbf">
       <PackagePath>RestaurantDetailPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\RestaurantSortByStylePage.xbf">
+      <PackagePath>RestaurantSortByStylePage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\Paris Saveur.xr.xml">
       <PackagePath>Paris Saveur.xr.xml</PackagePath>
     </AppxPackagedFile>

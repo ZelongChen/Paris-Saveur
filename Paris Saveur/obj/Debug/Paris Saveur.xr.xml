@@ -5,6 +5,7 @@
     <RootPropertyPathName Name="rating_score" />
     <RootPropertyPathName Name="style" />
     <RootPropertyPathName Name="name" />
+    <RootPropertyPathName Name="tagToString" />
     <RootPropertyPathName Name="comment" />
     <RootPropertyPathName Name="rate_date" />
     <RootPropertyPathName Name="score" />
@@ -24,10 +25,10 @@
       <RootProperty Name="Background" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Children" />
+      <RootProperty Name="RowDefinitions" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="Tapped" />
@@ -56,8 +57,8 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="FontWeight" />
-      <RootProperty Name="FontSize" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="FontSize" />
       <RootProperty Name="TextWrapping" />
       <RootEvent Name="Tapped" />
     </RootType>
@@ -133,6 +134,10 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Paris_Saveur.HotRestaurantPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Paris_Saveur.HotTagPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
       <RootProperty Name="Title" />
       <RootProperty Name="Margin" />
@@ -143,9 +148,6 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Header" />
       <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
-      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="Background" />

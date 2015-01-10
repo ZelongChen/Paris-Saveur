@@ -29,18 +29,49 @@ namespace Paris_Saveur
         int currentPage = 1;
         string sortBy = "popularity";
         string restaurantStyle;
+        Tag tag;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            restaurantStyle = e.Parameter as string;
-            if (restaurantStyle == null)
+            var parameterReceived = e.Parameter;
+            if (parameterReceived == null)
             {
                 DownloadRecommendedRestaurant(sortBy, currentPage);
             }
+            else if (parameterReceived is string)
+            {
+                restaurantStyle = parameterReceived as string;
+                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
+            } 
             else
             {
-                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
+                tag = new Tag();
+                tag = parameterReceived as Tag;
+                DownloadRestaurantWithTag(tag.name, sortBy, currentPage);
+
             }
+        }
+
+        private async void DownloadRestaurantWithTag(string tag, string sortby, int page)
+        {
+            LoadingBar.IsEnabled = true;
+            LoadingBar.Visibility = Visibility.Visible;
+
+            var client = new HttpClient();
+            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-tag/?tag_name=" + tag + "&order=-" + sortBy + "&page=" + page);
+            var result = await response.Content.ReadAsStringAsync();
+
+            LoadingBar.IsEnabled = false;
+            LoadingBar.Visibility = Visibility.Collapsed;
+
+            RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            foreach (Restaurant restaurant in list.restaurant_list)
+            {
+                restaurant.ConvertRestaurantStyleToChinese();
+                restaurant.ShowReviewScoreAndNumber();
+                restaurant.ShowPrice();
+            }
+            this.hotRestaurantList.ItemsSource = list.restaurant_list;
         }
 
         private async void DownloadRestaurantWithStyle(string style, string sortby, int page)
@@ -93,44 +124,40 @@ namespace Paris_Saveur
             Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
         }
 
-        private void SortByPopularity_Click(object sender, RoutedEventArgs e)
+        private void RefreshPage(string sortBy, int page)
         {
-            sortBy = "popularity";
-            if (restaurantStyle == null)
+            if (restaurantStyle == null && tag == null)
             {
                 DownloadRecommendedRestaurant(sortBy, currentPage);
+            }
+            else if (restaurantStyle == null && tag != null)
+            {
+                DownloadRestaurantWithTag(tag.name, sortBy, page);
             }
             else
             {
                 DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
             }
+        }
+
+        private void SortByPopularity_Click(object sender, RoutedEventArgs e)
+        {
+            sortBy = "popularity";
+            RefreshPage(sortBy, currentPage);
+
             
         }
 
         private void SortByRatingScore_Click(object sender, RoutedEventArgs e)
         {
             sortBy = "rating_score";
-            if (restaurantStyle == null)
-            {
-                DownloadRecommendedRestaurant(sortBy, currentPage);
-            }
-            else
-            {
-                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
-            }
+            RefreshPage(sortBy, currentPage);
         }
 
         private void SortByRatingNum_Click(object sender, RoutedEventArgs e)
         {
             sortBy = "rating_num";
-            if (restaurantStyle == null)
-            {
-                DownloadRecommendedRestaurant(sortBy, currentPage);
-            }
-            else
-            {
-                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
-            }
+            RefreshPage(sortBy, currentPage);
         }
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)

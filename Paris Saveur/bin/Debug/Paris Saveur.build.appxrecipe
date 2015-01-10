@@ -55,6 +55,9 @@
     <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\HotRestaurantPage.xbf">
       <PackagePath>HotRestaurantPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\HotTagPage.xbf">
+      <PackagePath>HotTagPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>

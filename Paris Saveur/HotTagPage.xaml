@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="Paris_Saveur.HotTagPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Paris_Saveur"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <UserControl.Resources>
+        <DataTemplate x:Name="HotTagListItemTemplate">
+            <TextBlock x:Name="tag_text" 
+                       Text="{Binding tagToString}"
+                       VerticalAlignment="Center"
+                       Padding="10,0,0,0"
+                       Foreground="Black">
+            </TextBlock>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ProgressBar x:Name="LoadingBar" Grid.Row="0" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,300,0,0"/>
+        <ListView x:Name="tag_list"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  ItemsSource="{Binding}"
+                  ItemTemplate="{StaticResource HotTagListItemTemplate}"
+                  SelectionChanged="tag_list_SelectionChanged">
+        </ListView>
+    </Grid>
+</Page>

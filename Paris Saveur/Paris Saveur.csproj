@@ -85,6 +85,9 @@
     <Compile Include="HotRestaurantPage.xaml.cs">
       <DependentUpon>HotRestaurantPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HotTagPage.xaml.cs">
+      <DependentUpon>HotTagPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,8 @@
     <Compile Include="Model\LatestRating.cs" />
     <Compile Include="Model\RestaurantComment.cs" />
     <Compile Include="Model\RestaurantList.cs" />
+    <Compile Include="Model\Tag.cs" />
+    <Compile Include="Model\TagList.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="NearByRestaurant.xaml.cs">
       <DependentUpon>NearByRestaurant.xaml</DependentUpon>
@@ -131,6 +136,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="HotRestaurantPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HotTagPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

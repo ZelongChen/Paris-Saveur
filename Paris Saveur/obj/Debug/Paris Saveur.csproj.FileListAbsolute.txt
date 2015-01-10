@@ -64,3 +64,8 @@ C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RestaurantSortByStylePage.g.cs
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RestaurantSortByStylePage.xaml
 C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\RestaurantSortByStylePage.xbf
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\Debug\HotTagPage.xbf
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\HotTagPage.g.i.cs
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\HotTagPage.g.cs
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\HotTagPage.xaml
+C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\obj\Debug\HotTagPage.xbf

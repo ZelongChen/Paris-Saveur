@@ -57,7 +57,7 @@ namespace Paris_Saveur
 
         private void hottagText_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(HotTagPage));
         }
 
         private void metroText_Tapped(object sender, TappedRoutedEventArgs e)

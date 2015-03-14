@@ -64,10 +64,13 @@ namespace Paris_Saveur
                 comment.username = comment.user.username;
             }
             ratings.AddRange(restaurantComment.rating_list);
-            comments.Comments.AddRange(restaurantComment.rating_list);
-            //this.restaurantCommentList.ItemsSource = comments.Comments;
-            this.DataContext = comments;
-            
+
+            foreach (LatestRating comment in restaurantComment.rating_list)
+            {
+                comments.Comments.Add(comment);
+            }
+            restaurantCommentList.DataContext = comments;
+
         }
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)

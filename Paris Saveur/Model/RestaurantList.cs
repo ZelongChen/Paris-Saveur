@@ -9,6 +9,15 @@ namespace Paris_Saveur.Model
 {
     class RestaurantList
     {
-        public ObservableCollection<Restaurant> restaurant_list { get; set; }
+        private ObservableCollection<Restaurant> restaurant_list = new ObservableCollection<Restaurant>();
+        public ObservableCollection<Restaurant> Restaurant_list
+        {
+            get { return restaurant_list; }
+            set
+            {
+                restaurant_list = value;
+            }
+        }
+        
     }
 }

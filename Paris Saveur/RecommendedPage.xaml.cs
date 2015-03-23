@@ -27,34 +27,38 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DownloadRecommendedRestaurant();          
+            DownloadRecommendedRestaurantAtPage(currentPage++);          
         }
 
-        private async void DownloadRecommendedRestaurant()
+        private int currentPage = 1;
+        private RestaurantList restaurantList = new RestaurantList();
+
+        private async void DownloadRecommendedRestaurantAtPage(int page)
         {
             LoadingBar.IsEnabled = true;
             LoadingBar.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
-            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/recommended/?order=-popularity&page=1");
+            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/recommended/?order=-popularity&page=" + this.currentPage);
             var result = await response.Content.ReadAsStringAsync();
 
             LoadingBar.IsEnabled = false;
             LoadingBar.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
-            foreach (Restaurant restaurant in list.restaurant_list)
+            foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
+                restaurantList.Restaurant_list.Add(restaurant);
             }
-            this.recommendedRestaurantList.ItemsSource = list.restaurant_list;
+            this.recommendedRestaurantList.DataContext = restaurantList;
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            DownloadRecommendedRestaurant();
+            DownloadRecommendedRestaurantAtPage(currentPage++);
         }
 
         private void recommendedRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -65,7 +69,7 @@ namespace Paris_Saveur
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            DownloadRecommendedRestaurantAtPage(currentPage++);
         }
     }
 }

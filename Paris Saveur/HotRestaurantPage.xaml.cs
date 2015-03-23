@@ -71,7 +71,7 @@ namespace Paris_Saveur
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
             }
-            this.hotRestaurantList.ItemsSource = list.restaurant_list;
+            this.hotRestaurantList.DataContext = list;
         }
 
         private async void DownloadRestaurantWithStyle(string style, string sortby, int page)
@@ -93,7 +93,7 @@ namespace Paris_Saveur
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
             }
-            this.hotRestaurantList.ItemsSource = list.restaurant_list;
+            this.hotRestaurantList.DataContext = list;
         }
 
         private async void DownloadRecommendedRestaurant(string sortby, int page)
@@ -115,7 +115,7 @@ namespace Paris_Saveur
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
             }
-            this.hotRestaurantList.ItemsSource = list.restaurant_list;
+            this.hotRestaurantList.DataContext = list;
         }
 
         private void hotRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -162,7 +162,7 @@ namespace Paris_Saveur
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-
+            DownloadRecommendedRestaurant(sortBy, currentPage++);
         }
     }
 }

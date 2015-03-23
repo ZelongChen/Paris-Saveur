@@ -65,7 +65,7 @@ namespace Paris_Saveur
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

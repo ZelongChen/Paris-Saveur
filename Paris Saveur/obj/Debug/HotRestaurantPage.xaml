@@ -23,7 +23,7 @@
                 <ListView x:ConnectionId='1' x:Name="hotRestaurantList" 
                   Grid.Row="0" 
                   Grid.Column="0"
-                  ItemsSource="{Binding}"
+                  ItemsSource="{Binding restaurant_list}"
                   ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
                   HorizontalContentAlignment="Stretch"
                                                                        >

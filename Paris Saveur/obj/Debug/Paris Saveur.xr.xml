@@ -5,6 +5,7 @@
     <RootPropertyPathName Name="rating_score" />
     <RootPropertyPathName Name="style" />
     <RootPropertyPathName Name="name" />
+    <RootPropertyPathName Name="restaurant_list" />
     <RootPropertyPathName Name="tagToString" />
     <RootPropertyPathName Name="comment" />
     <RootPropertyPathName Name="rate_date" />

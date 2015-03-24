@@ -29,25 +29,26 @@ namespace Paris_Saveur
         int currentPage = 1;
         string sortBy = "popularity";
         string restaurantStyle;
-        Tag tag;
+        Tag restaurantTag;
+        RestaurantList restaurantList = new RestaurantList();
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             var parameterReceived = e.Parameter;
             if (parameterReceived == null)
             {
-                DownloadRecommendedRestaurant(sortBy, currentPage);
+                DownloadRecommendedRestaurant(sortBy, currentPage++);
             }
             else if (parameterReceived is string)
             {
                 restaurantStyle = parameterReceived as string;
-                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
+                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage++);
             } 
             else
             {
-                tag = new Tag();
-                tag = parameterReceived as Tag;
-                DownloadRestaurantWithTag(tag.name, sortBy, currentPage);
+                restaurantTag = new Tag();
+                restaurantTag = parameterReceived as Tag;
+                DownloadRestaurantWithTag(restaurantTag.name, sortBy, currentPage++);
 
             }
         }
@@ -65,13 +66,14 @@ namespace Paris_Saveur
             LoadingBar.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
-            foreach (Restaurant restaurant in list.restaurant_list)
+            foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
+                restaurantList.Restaurant_list.Add(restaurant);
             }
-            this.hotRestaurantList.ItemsSource = list.restaurant_list;
+            this.hotRestaurantList.DataContext = restaurantList;
         }
 
         private async void DownloadRestaurantWithStyle(string style, string sortby, int page)
@@ -87,13 +89,14 @@ namespace Paris_Saveur
             LoadingBar.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
-            foreach (Restaurant restaurant in list.restaurant_list)
+            foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
+                restaurantList.Restaurant_list.Add(restaurant);
             }
-            this.hotRestaurantList.ItemsSource = list.restaurant_list;
+            this.hotRestaurantList.DataContext = restaurantList;
         }
 
         private async void DownloadRecommendedRestaurant(string sortby, int page)
@@ -109,13 +112,14 @@ namespace Paris_Saveur
             LoadingBar.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
-            foreach (Restaurant restaurant in list.restaurant_list)
+            foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
+                restaurantList.Restaurant_list.Add(restaurant);
             }
-            this.hotRestaurantList.ItemsSource = list.restaurant_list;
+            this.hotRestaurantList.DataContext = restaurantList;
         }
 
         private void hotRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -126,43 +130,49 @@ namespace Paris_Saveur
 
         private void RefreshPage(string sortBy, int page)
         {
-            if (restaurantStyle == null && tag == null)
+            if (restaurantStyle == null && restaurantTag == null)
             {
-                DownloadRecommendedRestaurant(sortBy, currentPage);
+                DownloadRecommendedRestaurant(sortBy, page);
             }
-            else if (restaurantStyle == null && tag != null)
+            else if (restaurantStyle == null && restaurantTag != null)
             {
-                DownloadRestaurantWithTag(tag.name, sortBy, page);
+                DownloadRestaurantWithTag(restaurantTag.name, sortBy, page);
             }
             else
             {
-                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage);
+                DownloadRestaurantWithStyle(restaurantStyle, sortBy, page);
             }
         }
 
         private void SortByPopularity_Click(object sender, RoutedEventArgs e)
         {
+            currentPage = 1;
             sortBy = "popularity";
-            RefreshPage(sortBy, currentPage);
+            restaurantList = new RestaurantList();
+            RefreshPage(sortBy, currentPage++);
 
             
         }
 
         private void SortByRatingScore_Click(object sender, RoutedEventArgs e)
         {
+            currentPage = 1;
             sortBy = "rating_score";
-            RefreshPage(sortBy, currentPage);
+            restaurantList = new RestaurantList();
+            RefreshPage(sortBy, currentPage++);
         }
 
         private void SortByRatingNum_Click(object sender, RoutedEventArgs e)
         {
+            currentPage = 1;
             sortBy = "rating_num";
-            RefreshPage(sortBy, currentPage);
+            restaurantList = new RestaurantList();
+            RefreshPage(sortBy, currentPage++);
         }
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-
+            RefreshPage(sortBy, currentPage++);
         }
     }
 }

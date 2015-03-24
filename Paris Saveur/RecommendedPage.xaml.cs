@@ -43,13 +43,13 @@ namespace Paris_Saveur
             LoadingBar.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
-            foreach (Restaurant restaurant in list.restaurant_list)
+            foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
             }
-            this.recommendedRestaurantList.ItemsSource = list.restaurant_list;
+            this.recommendedRestaurantList.DataContext = list;
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
@@ -61,11 +61,6 @@ namespace Paris_Saveur
         {
             Restaurant restaurant = e.AddedItems[0] as Restaurant;
             Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
-        }
-
-        private void loadMoreButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

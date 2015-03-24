@@ -71,13 +71,13 @@ namespace Paris_Saveur
             LoadingBar.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
-            foreach (Restaurant restaurant in list.restaurant_list)
+            foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
             }
-            this.nearbyRestaurantList.ItemsSource = list.restaurant_list;
+            this.nearbyRestaurantList.ItemsSource = list.Restaurant_list;
         }
 
         private async void FindCurrentLocationAnRestaurantsNearby()

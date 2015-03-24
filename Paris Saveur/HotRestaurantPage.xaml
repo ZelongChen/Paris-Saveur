@@ -23,7 +23,7 @@
                 <ListView x:Name="hotRestaurantList" 
                   Grid.Row="0" 
                   Grid.Column="0"
-                  ItemsSource="{Binding}"
+                  ItemsSource="{Binding Restaurant_list}"
                   ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
                   HorizontalContentAlignment="Stretch"
                   SelectionChanged="hotRestaurantList_SelectionChanged">

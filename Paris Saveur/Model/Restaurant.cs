@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Paris_Saveur
 {
@@ -31,6 +32,7 @@ namespace Paris_Saveur
         public string consumption_per_capita { get; set; }
         public List<String> tag_list { get; set; }
         public LatestRating latest_rating { get; set; }
+        public BitmapImage thumbnailBitmap { get; set; }
 
         public void ConvertRestaurantStyleToChinese()
         {

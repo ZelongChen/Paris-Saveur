@@ -27,19 +27,16 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DownloadRecommendedRestaurantAtPage(currentPage++);          
+            DownloadRecommendedRestaurant();          
         }
 
-        private int currentPage = 1;
-        private RestaurantList restaurantList = new RestaurantList();
-
-        private async void DownloadRecommendedRestaurantAtPage(int page)
+        private async void DownloadRecommendedRestaurant()
         {
             LoadingBar.IsEnabled = true;
             LoadingBar.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
-            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/recommended/?order=-popularity&page=" + this.currentPage);
+            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/recommended/?order=-popularity&page=1");
             var result = await response.Content.ReadAsStringAsync();
 
             LoadingBar.IsEnabled = false;
@@ -51,25 +48,19 @@ namespace Paris_Saveur
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
-                restaurantList.Restaurant_list.Add(restaurant);
             }
-            this.recommendedRestaurantList.DataContext = restaurantList;
+            this.recommendedRestaurantList.DataContext = list;
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            DownloadRecommendedRestaurantAtPage(currentPage++);
+            DownloadRecommendedRestaurant();
         }
 
         private void recommendedRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Restaurant restaurant = e.AddedItems[0] as Restaurant;
             Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
-        }
-
-        private void loadMoreButton_Click(object sender, RoutedEventArgs e)
-        {
-            DownloadRecommendedRestaurantAtPage(currentPage++);
         }
     }
 }

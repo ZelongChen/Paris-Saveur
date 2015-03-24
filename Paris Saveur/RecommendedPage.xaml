@@ -33,18 +33,11 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
-                <Button x:Name="loadMoreButoon"
-				    Background="White"
-                    HorizontalContentAlignment="Stretch"
-                    Content="加载更多"
-                    Foreground="Black"
-                    HorizontalAlignment="Center"
-				    Click="loadMoreButton_Click" VerticalAlignment="Bottom"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
+        <CommandBar ClosedDisplayMode="Minimal" Opacity="0.5">
             <AppBarButton Label="刷新" Icon="Refresh" Click="AppBarButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>

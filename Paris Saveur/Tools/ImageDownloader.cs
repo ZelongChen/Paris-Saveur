@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Paris_Saveur.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -38,6 +39,29 @@ namespace Paris_Saveur.Tools
             BitmapImage b = new BitmapImage();
             b.SetSource(randomAccessStream);
             restaurant.thumbnailBitmap = b;
+        }
+
+        public static async Task DownloadImageIntoImage(User user)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response;
+            if (user.avatar_url.Contains("http://www.gravatar.com"))
+            {
+                response = await client.GetAsync(user.avatar_url);
+
+            }
+            else
+            {
+                response = await client.GetAsync("http://www.vivelevendredi.com" + user.avatar_url);
+            }
+            byte[] img = await response.Content.ReadAsByteArrayAsync();
+            InMemoryRandomAccessStream randomAccessStream = new InMemoryRandomAccessStream();
+            DataWriter writer = new DataWriter(randomAccessStream.GetOutputStreamAt(0));
+            writer.WriteBytes(img);
+            await writer.StoreAsync();
+            BitmapImage b = new BitmapImage();
+            b.SetSource(randomAccessStream);
+            user.AvatarThumbnailBitmap = b;
         }
     }
 }

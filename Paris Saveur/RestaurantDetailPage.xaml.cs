@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Paris_Saveur.Tools;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,6 +31,7 @@ namespace Paris_Saveur
             restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = restaurant.name;
             this.restaurantName.Text = restaurant.name;
+            this.restaurantThumbnail.Source = restaurant.thumbnailBitmap;
             restaurant.ConvertRestaurantStyleToChinese();
             restaurant.ShowReviewScoreAndNumber();
             restaurant.ShowPrice();
@@ -56,6 +58,7 @@ namespace Paris_Saveur
                 this.userCommentDate.Text = restaurant.latest_rating.rate_date.Substring(0, 4) + "年" + restaurant.latest_rating.rate_date.Substring(5, 2) + "月" + restaurant.latest_rating.rate_date.Substring(8, 2) + "日";
                 this.userComment.Text = restaurant.latest_rating.comment;
                 this.userCommentScore.Text = "" + restaurant.latest_rating.score;
+                ImageDownloader.DownloadImageIntoImage(this.userThumbnail, restaurant.latest_rating.user.avatar_url);
             }
 
         }

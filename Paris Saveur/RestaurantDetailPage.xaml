@@ -36,7 +36,7 @@
                        HorizontalAlignment="Center">
             </TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
-                <Image x:Name="restaurantThumbnail" Source="Assets/star.png"></Image>
+                <Image x:Name="restaurantThumbnail" Source="{Binding thumbnailBitmap}" Margin="5,5,5,5"></Image>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"></RowDefinition>
@@ -83,7 +83,7 @@
                     <ColumnDefinition Width="5*"></ColumnDefinition>
                     <ColumnDefinition Width="2*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Image x:Name="userThumbnail" Source="Assets/star.png" Grid.Column="0"></Image>
+                <Image x:Name="userThumbnail" Source="Assets/star.png" Grid.Column="0" Margin="5,5,5,5"></Image>
                 <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,15,0,0">
                     <TextBlock x:Name="userName" Foreground="Black"></TextBlock>
                     <TextBlock x:Name="userCommentScore" Foreground="Black"></TextBlock>

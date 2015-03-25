@@ -52,7 +52,6 @@ namespace Paris_Saveur
                 restaurant.ShowPrice();
                 Task downloadThumbnail = ImageDownloader.DownloadImageIntoImage(restaurant);
                 await downloadThumbnail;
-                //this.recommendedRestaurantList.DataContext = list;
             }
             this.recommendedRestaurantList.DataContext = list;
         }

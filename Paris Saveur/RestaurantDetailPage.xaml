@@ -36,7 +36,7 @@
                        HorizontalAlignment="Center">
             </TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
-                <Image x:Name="restaurantThumbnail" Source="{Binding thumbnailBitmap}" Margin="5,5,5,5"></Image>
+                <Image x:Name="restaurantThumbnail" Source="{Binding ThumbnailBitmap}" Margin="5,5,5,5"></Image>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"></RowDefinition>

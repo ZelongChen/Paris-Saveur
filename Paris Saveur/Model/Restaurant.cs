@@ -1,6 +1,7 @@
 ﻿using Paris_Saveur.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,10 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace Paris_Saveur
 {
-    class Restaurant
+    class Restaurant : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int pk { get; set; }
         public string name { get; set; }
         public string description { get; set; }
@@ -32,7 +35,24 @@ namespace Paris_Saveur
         public string consumption_per_capita { get; set; }
         public List<String> tag_list { get; set; }
         public LatestRating latest_rating { get; set; }
-        public BitmapImage thumbnailBitmap { get; set; }
+        private BitmapImage thumbnailBitmap;
+        public BitmapImage ThumbnailBitmap 
+        {
+            get { return thumbnailBitmap; }
+            set
+            {
+                thumbnailBitmap = value;
+                NotifyPropertyChanged("ThumbnailBitmap");
+            }
+        }
+
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
         public void ConvertRestaurantStyleToChinese()
         {

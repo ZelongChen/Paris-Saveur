@@ -38,7 +38,7 @@ namespace Paris_Saveur.Tools
             await writer.StoreAsync();
             BitmapImage b = new BitmapImage();
             b.SetSource(randomAccessStream);
-            restaurant.thumbnailBitmap = b;
+            restaurant.ThumbnailBitmap = b;
         }
 
         public static async Task DownloadImageIntoImage(User user)

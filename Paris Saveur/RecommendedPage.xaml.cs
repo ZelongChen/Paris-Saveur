@@ -50,8 +50,7 @@ namespace Paris_Saveur
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
-                Task downloadThumbnail = ImageDownloader.DownloadImageIntoImage(restaurant);
-                await downloadThumbnail;
+                ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.recommendedRestaurantList.DataContext = list;
         }

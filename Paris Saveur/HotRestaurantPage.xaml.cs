@@ -74,8 +74,7 @@ namespace Paris_Saveur
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 restaurantList.Restaurant_list.Add(restaurant);
-                Task downloadThumbnail = ImageDownloader.DownloadImageIntoImage(restaurant);
-                await downloadThumbnail;
+                ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
         }
@@ -99,8 +98,7 @@ namespace Paris_Saveur
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 restaurantList.Restaurant_list.Add(restaurant);
-                Task downloadThumbnail = ImageDownloader.DownloadImageIntoImage(restaurant);
-                await downloadThumbnail;
+                ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
         }
@@ -124,8 +122,7 @@ namespace Paris_Saveur
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 restaurantList.Restaurant_list.Add(restaurant);
-                Task downloadThumbnail = ImageDownloader.DownloadImageIntoImage(restaurant);
-                await downloadThumbnail;
+                ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
         }

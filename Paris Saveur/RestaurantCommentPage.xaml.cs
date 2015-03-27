@@ -70,8 +70,7 @@ namespace Paris_Saveur
             foreach (LatestRating comment in restaurantComment.rating_list)
             {
                 comments.Comments.Add(comment);
-                Task downloadThumbnail = ImageDownloader.DownloadImageIntoImage(comment.user);
-                await downloadThumbnail;
+                ImageDownloader.DownloadImageIntoImage(comment.user);
             }
             restaurantCommentList.DataContext = comments;
 

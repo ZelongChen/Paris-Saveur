@@ -27,10 +27,19 @@ namespace Paris_Saveur.Tools
             image.Source = b;
         }
 
-        public static async Task DownloadImageIntoImage(Restaurant restaurant)
+        public static async void DownloadImageIntoImage(Restaurant restaurant)
         {
+
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("http://www.vivelevendredi.com" + restaurant.thumbnail);
+            HttpResponseMessage response;
+            if (restaurant.thumbnail != null)
+            {
+                response = await client.GetAsync("http://www.vivelevendredi.com" + restaurant.thumbnail);
+            }
+            else
+            {
+                response = await client.GetAsync("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq0_GVec7-h1ZH-4aXsjttA-GQN_jcMHaGRtmfQfledIyh4NUlaw");
+            }
             byte[] img = await response.Content.ReadAsByteArrayAsync();
             InMemoryRandomAccessStream randomAccessStream = new InMemoryRandomAccessStream();
             DataWriter writer = new DataWriter(randomAccessStream.GetOutputStreamAt(0));
@@ -39,9 +48,10 @@ namespace Paris_Saveur.Tools
             BitmapImage b = new BitmapImage();
             b.SetSource(randomAccessStream);
             restaurant.ThumbnailBitmap = b;
+
         }
 
-        public static async Task DownloadImageIntoImage(User user)
+        public static async void DownloadImageIntoImage(User user)
         {
             HttpClient client = new HttpClient();
             HttpResponseMessage response;

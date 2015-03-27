@@ -13,7 +13,7 @@
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image x:Name="restaurantThumbnail" Grid.Column="0" Source="Assets/star.png"></Image>
+                    <Image x:Name="restaurantThumbnail" Grid.Column="0" Source="{Binding ThumbnailBitmap}" Margin="5,5,5,5"></Image>
                     <StackPanel x:Name="restaurantSimpleInfoStack" Grid.Column="1" Orientation="Vertical">
                         <TextBlock x:Name="restaurantSimpleInfoTitle" Foreground="Black" Text="{Binding name}" FontWeight="Bold"></TextBlock>
                         <TextBlock x:Name="restaurantSimpleInfoType" Foreground="Black" Text="{Binding style}"></TextBlock>

@@ -1,15 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Paris_Saveur.Model
 {
-    class LatestRating
+    class LatestRating : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int pk { get; set; }
-        public User user { get; set; }
+        private User _user;
+        public User user 
+        {
+            get { return _user; }
+            set 
+            {
+                _user = value;
+                NotifyPropertyChanged("user");
+            }
+        }
         public string username { get; set; }
         public int score { get; set; }
         public int consumption { get; set; }
@@ -23,6 +35,14 @@ namespace Paris_Saveur.Model
         public void convertDateToChinese()
         {
             rate_date = rate_date.Substring(0, 4) + "年" + rate_date.Substring(5, 2) + "月" + rate_date.Substring(8, 2) + "日";
+        }
+
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

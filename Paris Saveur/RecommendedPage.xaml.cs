@@ -1,10 +1,12 @@
 ﻿using Paris_Saveur.Model;
+using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -48,6 +50,7 @@ namespace Paris_Saveur
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
+                ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.recommendedRestaurantList.DataContext = list;
         }

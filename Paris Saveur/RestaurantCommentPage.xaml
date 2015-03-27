@@ -21,7 +21,7 @@
                         <ColumnDefinition Width="4*"></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image x:Name="userThumbnail" Source="Assets/star.png" Grid.Column="0"></Image>
+                    <Image x:Name="userThumbnail" Source="{Binding user.AvatarThumbnailBitmap}" Grid.Column="0" Margin="5,5,5,5"></Image>
                     <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,15,0,0">
                         <TextBlock x:Name="userName" Text="{Binding user.username}"  Foreground="Black"></TextBlock>
                         <TextBlock x:Name="userCommentScore" Text="{Binding score}" Foreground="Black"></TextBlock>

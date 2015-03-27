@@ -115,6 +115,7 @@
     <Compile Include="RestaurantSortByStylePage.xaml.cs">
       <DependentUpon>RestaurantSortByStylePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\ImageDownloader.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

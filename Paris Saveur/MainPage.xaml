@@ -43,7 +43,7 @@
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image x:Name="recommendedImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
+                            <Image x:Name="recommendedImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/recommend.png"></Image>
                             <TextBlock x:Name="recommendedText" 
                                        Grid.Row="1"
                                        Text="随便看看" 
@@ -57,7 +57,7 @@
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image x:Name="nearbyImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
+                            <Image x:Name="nearbyImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/location.png"></Image>
                             <TextBlock x:Name="nearbyText" 
                                        Grid.Row="1"
                                        Text="附近餐馆"  
@@ -71,7 +71,7 @@
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image x:Name="hotImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
+                            <Image x:Name="hotImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/hot.png"></Image>
                             <TextBlock x:Name="hotText"
                                        Grid.Row="1"
                                        Text="热门餐馆"  
@@ -86,7 +86,7 @@
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image x:Name="sortbyImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
+                            <Image x:Name="sortbyImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/style.png"></Image>
                             <TextBlock x:Name="sortbyText" 
                                        Grid.Row="1"
                                        Text="菜系分类"  
@@ -100,7 +100,7 @@
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image x:Name="hottagImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
+                            <Image x:Name="hottagImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/tag.png"></Image>
                             <TextBlock x:Name="hottagText" 
                                        Grid.Row="1"
                                        Text="热门标签"  
@@ -114,7 +114,7 @@
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
                             </Grid.RowDefinitions>
-                            <Image x:Name="metroImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/star.png"></Image>
+                            <Image x:Name="metroImage" Grid.Row="0" HorizontalAlignment="Center" Source="Assets/metro.png"></Image>
                             <TextBlock x:Name="metroText" 
                                        Grid.Row="1"
                                        Text="地铁周边"  

@@ -24,9 +24,18 @@ namespace Paris_Saveur
         public RestaurantDetailPage()
         {
             this.InitializeComponent();
+            SocialNetworks = new List<string>
+            {
+                "Facebook",
+                "Twitter",
+                "微博",
+                "微信",
+                "人人网"
+            };
         }
 
         Restaurant restaurant;
+        private List<String> SocialNetworks { get; set; }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             restaurant = e.Parameter as Restaurant;
@@ -48,7 +57,7 @@ namespace Paris_Saveur
             this.restaurantTime.Text = restaurant.opening_hours;
             this.restaurantPhoneNumber1.Text = restaurant.phone_number_1;
             this.restaurantPhoneNumber2.Text = restaurant.phone_number_2;
-
+            this.sharePage.ItemsSource = SocialNetworks;
         }
 
         private void SetupRestaurantReview(Restaurant restaurant)

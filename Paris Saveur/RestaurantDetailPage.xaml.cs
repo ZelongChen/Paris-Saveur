@@ -181,7 +181,10 @@ namespace Paris_Saveur
         {
             if (this.RestaurantDetailPivot.SelectedIndex == 1)
             {
-                DownloadRestaurantCommentsAtPage(1);
+                if (comments.Comments.Count == 0)
+                {
+                    DownloadRestaurantCommentsAtPage(1);
+                }
             }
             else
             {
@@ -191,7 +194,6 @@ namespace Paris_Saveur
 
         int currentPage = 1;
         CommentList comments = new CommentList();
-        List<LatestRating> ratings = new List<LatestRating>();
 
         private async void DownloadRestaurantCommentsAtPage(int page)
         {
@@ -217,12 +219,19 @@ namespace Paris_Saveur
             {
                 loadMoreButoon.Visibility = Visibility.Collapsed;
             }
+            if (restaurantComment.rating_list.Count == 0 && currentPage == 1)
+            {
+                this.NoCommentText.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.NoCommentText.Visibility = Visibility.Collapsed;
+            }
             foreach (LatestRating comment in restaurantComment.rating_list)
             {
                 comment.convertDateToChinese();
                 comment.username = comment.user.username;
             }
-            ratings.AddRange(restaurantComment.rating_list);
 
             foreach (LatestRating comment in restaurantComment.rating_list)
             {
@@ -233,7 +242,7 @@ namespace Paris_Saveur
         }
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-            DownloadRestaurantCommentsAtPage(currentPage++);
+            DownloadRestaurantCommentsAtPage(++currentPage);
         }
     }
 }

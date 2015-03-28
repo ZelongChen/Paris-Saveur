@@ -130,6 +130,13 @@
                                 </Style>
                             </ListView.ItemContainerStyle>
                         </ListView>
+                        <TextBlock x:Name="NoCommentText"
+                                   Text="暂无评论"
+                                   Foreground="Gray"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Visibility="Collapsed"
+                                   FontSize="22"/>
                         <ProgressRing x:Name="LoadingRing"
                               IsActive="True"
                               Visibility="Collapsed"

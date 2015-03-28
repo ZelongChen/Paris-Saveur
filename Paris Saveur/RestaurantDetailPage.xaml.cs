@@ -53,7 +53,7 @@ namespace Paris_Saveur
 
         }
 
-        private void Comment_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Comment_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(RestaurantCommentPage), restaurant.pk);
         }

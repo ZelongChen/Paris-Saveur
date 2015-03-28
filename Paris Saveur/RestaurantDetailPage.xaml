@@ -101,6 +101,8 @@
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
+            <AppBarButton Label="评论" Icon="Comment" Click="Comment_Click">
+            </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

@@ -70,6 +70,10 @@ namespace Paris_Saveur
             LoadingRing.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            if (list.Restaurant_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
@@ -96,6 +100,10 @@ namespace Paris_Saveur
             LoadingRing.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            if (list.Restaurant_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
@@ -122,6 +130,10 @@ namespace Paris_Saveur
             LoadingRing.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            if (list.Restaurant_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();

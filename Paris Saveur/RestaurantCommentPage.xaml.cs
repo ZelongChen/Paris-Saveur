@@ -60,6 +60,10 @@ namespace Paris_Saveur
             }
 
             RestaurantComment restaurantComment = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantComment>(result);
+            if (restaurantComment.rating_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
             foreach (LatestRating comment in restaurantComment.rating_list)
             {
                 comment.convertDateToChinese();

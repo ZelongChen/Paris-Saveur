@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -80,6 +81,8 @@ namespace Paris_Saveur
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 restaurantList.Restaurant_list.Add(restaurant);
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+                restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
@@ -110,6 +113,8 @@ namespace Paris_Saveur
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 restaurantList.Restaurant_list.Add(restaurant);
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+                restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
@@ -140,6 +145,8 @@ namespace Paris_Saveur
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 restaurantList.Restaurant_list.Add(restaurant);
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+                restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;

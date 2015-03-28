@@ -85,5 +85,15 @@ namespace Paris_Saveur
         {
             await Launcher.LaunchUriAsync(new Uri("http://www.newsavour.com/restaurants/"));
         }
+
+        async private void Launch_Weibo_Click(object sender, RoutedEventArgs e)
+        {
+            await Launcher.LaunchUriAsync(new Uri("http://www.weibo.com/vivelevendredi"));
+        }
+
+        async private void Follow_Weibo_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            await Launcher.LaunchUriAsync(new Uri("http://www.weibo.com/vivelevendredi"));
+        }
     }
 }

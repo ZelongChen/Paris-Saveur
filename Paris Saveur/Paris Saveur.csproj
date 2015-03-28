@@ -151,6 +151,7 @@
     <Content Include="Assets\mainpage_tag.png" />
     <Content Include="Assets\homepage.png" />
     <Content Include="Assets\star_empty.png" />
+    <Content Include="Assets\weibo.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
   </ItemGroup>
   <ItemGroup>

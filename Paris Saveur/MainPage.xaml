@@ -160,6 +160,19 @@
                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                     <Image Source="Assets/app_logo_wide_1.png" Margin="0,20,0,0" Width="240" ></Image>
                     <TextBlock x:Name="AppVersion" Text="version 0.2" HorizontalAlignment="Center" Foreground="Black"></TextBlock>
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="0,20,0,0"
+                                Background="#FFE05C52"
+                                Tapped="Follow_Weibo_Tapped">
+                        <Image Source="Assets/weibo.png" Margin="10"></Image>
+                        <TextBlock Text="关注我们的新浪微博"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Margin="0,0,10,0"
+                                   Foreground="White" ></TextBlock>
+                    </StackPanel>
+
                 </StackPanel>
     		</PivotItem>
     	</Pivot>
@@ -167,7 +180,7 @@
 
     <Page.BottomAppBar>
         <CommandBar x:Name="MainPageAppBar" ClosedDisplayMode="Compact" Opacity="0.5">
-            <AppBarButton Label="您的反馈" Icon="Page">
+            <AppBarButton Label="您的反馈" Icon="Page" Click="Launch_Weibo_Click">
             </AppBarButton>
             <AppBarButton Label="我们的网站" Icon="Globe" Click="Launch_Web_Click">
             </AppBarButton>

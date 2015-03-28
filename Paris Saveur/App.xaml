@@ -17,7 +17,7 @@
                     <StackPanel x:Name="restaurantSimpleInfoStack" Grid.Column="1" Orientation="Vertical">
                         <TextBlock x:Name="restaurantSimpleInfoTitle" Foreground="Black" Text="{Binding name}" FontWeight="Bold"></TextBlock>
                         <TextBlock x:Name="restaurantSimpleInfoType" Foreground="Black" Text="{Binding style}"></TextBlock>
-                        <TextBlock x:Name="restaurantSimpleInfoReview" Foreground="Black" Text="{Binding rating_score}"></TextBlock>
+                        <TextBlock x:Name="restaurantSimpleInfoReview" Foreground="Black" Text="{Binding RatingScoreAndReviewNum}"></TextBlock>
                     </StackPanel>
                     <TextBlock x:Name="restaurantSimpleInfoPrice" Foreground="Black" Text="{Binding consumption_per_capita}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
                 </Grid>

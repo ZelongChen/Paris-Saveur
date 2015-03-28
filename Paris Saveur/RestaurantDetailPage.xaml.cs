@@ -31,9 +31,6 @@ namespace Paris_Saveur
             restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = restaurant.name;
             this.restaurantThumbnail.Source = restaurant.ThumbnailBitmap;
-            restaurant.ConvertRestaurantStyleToChinese();
-            restaurant.ShowReviewScoreAndNumber();
-            restaurant.ShowPrice();
             this.restaurantStyle.Text = restaurant.style;
             this.restaurantPrice.Text = restaurant.consumption_per_capita;
             this.restaurantReview.Text = restaurant.rating_score;

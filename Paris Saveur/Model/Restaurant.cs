@@ -31,6 +31,7 @@ namespace Paris_Saveur
         public string url_path { get; set; }
         public int rating_num { get; set; }
         public string rating_score { get; set; }
+        public string RatingScoreAndReviewNum { get; set; }
         public int consumption_num { get; set; }
         public string consumption_per_capita { get; set; }
         public List<String> tag_list { get; set; }
@@ -85,7 +86,8 @@ namespace Paris_Saveur
 
         public void ShowReviewScoreAndNumber()
         {
-            this.rating_score = this.rating_score + " (" + rating_num + "个点评)";
+            this.RatingScoreAndReviewNum = this.rating_score + " (" + rating_num + "个点评)";
+
         }
 
         public void ShowPrice()

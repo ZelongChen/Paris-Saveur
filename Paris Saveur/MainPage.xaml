@@ -48,7 +48,7 @@
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    Margin="0,5,0,0"
-                                   Source="Assets/recommend.png"></Image>
+                                   Source="Assets/mainpage_recommend.png"></Image>
                             <TextBlock x:Name="recommendedText" 
                                        Grid.Row="1"
                                        Text="随便看看" 
@@ -66,7 +66,7 @@
                                    Grid.Row="0" 
                                    HorizontalAlignment="Center" 
                                    Margin="0,5,0,0"
-                                   Source="Assets/location.png"></Image>
+                                   Source="Assets/mainpage_location.png"></Image>
                             <TextBlock x:Name="nearbyText" 
                                        Grid.Row="1"
                                        Text="附近餐馆"  
@@ -84,7 +84,7 @@
                                    Grid.Row="0" 
                                    HorizontalAlignment="Center" 
                                    Margin="0,5,0,0"
-                                   Source="Assets/hot.png"></Image>
+                                   Source="Assets/mainpage_hot.png"></Image>
                             <TextBlock x:Name="hotText"
                                        Grid.Row="1"
                                        Text="热门餐馆"  
@@ -103,7 +103,7 @@
                                    Grid.Row="0" 
                                    HorizontalAlignment="Center" 
                                    Margin="0,5,0,0"
-                                   Source="Assets/style.png"></Image>
+                                   Source="Assets/mainpage_style.png"></Image>
                             <TextBlock x:Name="sortbyText" 
                                        Grid.Row="1"
                                        Text="菜系分类"  
@@ -121,7 +121,7 @@
                                    Grid.Row="0" 
                                    HorizontalAlignment="Center" 
                                    Margin="0,5,0,0"
-                                   Source="Assets/tag.png"></Image>
+                                   Source="Assets/mainpage_tag.png"></Image>
                             <TextBlock x:Name="hottagText" 
                                        Grid.Row="1"
                                        Text="热门标签"  
@@ -139,7 +139,7 @@
                                    Grid.Row="0" 
                                    HorizontalAlignment="Center" 
                                    Margin="0,5,0,0"
-                                   Source="Assets/metro.png"></Image>
+                                   Source="Assets/mainpage_metro.png"></Image>
                             <TextBlock x:Name="metroText" 
                                        Grid.Row="1"
                                        Text="地铁周边"  

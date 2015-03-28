@@ -63,7 +63,7 @@ namespace Paris_Saveur
             LoadingBar.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
-            string url = "http://www.vivelevendredi.com/restaurants/json/list-by-location/?geo_lat=" + currentPosition.Coordinate.Latitude + "&geo_lon=" + currentPosition.Coordinate.Longitude + "&criterion=geopoint&order=-popularity&page=" + currentPage;
+            string url = "http://www.vivelevendredi.com/restaurants/json/list-by-location/?geo_lat=" + currentPosition.Coordinate.Point.Position.Latitude + "&geo_lon=" + currentPosition.Coordinate.Point.Position.Longitude + "&criterion=geopoint&order=-popularity&page=" + currentPage;
             var response = await client.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
 

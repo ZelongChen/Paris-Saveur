@@ -8,75 +8,147 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <UserControl.Resources>
+        <DataTemplate x:Name="restaurantCommentListItemTemplate1">
+            <Grid Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="userThumbnail" Source="{Binding user.AvatarThumbnailBitmap}" Grid.Column="0" Margin="5,5,5,5"></Image>
+                    <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,15,0,0">
+                        <TextBlock x:Name="userName" Text="{Binding user.username}"  Foreground="Black"></TextBlock>
+                        <TextBlock x:Name="userCommentScore" Text="{Binding score}" Foreground="Black"></TextBlock>
+                    </StackPanel>
+                    <TextBlock x:Name="userCommentDate" Text="{Binding rate_date}" HorizontalAlignment="Right" Foreground="Black" Grid.Column="2" Margin="0,15,20,0"></TextBlock>
+                </Grid>
+                <TextBlock x:Name="userComment" Text="{Binding comment}" Grid.Row="1" Foreground="Black" TextWrapping="Wrap" Padding="10"></TextBlock>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="6*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
             <Image Source="Assets/logo_white.png"></Image>
             <TextBlock x:Name="PageTitle" Foreground="White" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
         </StackPanel>
-        <Grid Grid.Row="1">
-            <Image x:Name="restaurantThumbnail"
-                   Stretch="Fill"></Image>
-        </Grid>
-        <TextBlock x:Name="restaurantDescription" 
+        <Pivot x:Name="RestaurantDetailPivot"
+               Grid.Row="1"
+               SelectionChanged="Pivot_SelectionChanged">
+            <PivotItem Margin="0" Background="White">
+                <PivotItem.Header>
+                    <TextBlock Text="餐厅信息" FontSize="20" Foreground="Black" Padding="20,0,0,0"></TextBlock>
+                </PivotItem.Header>
+                <Grid Background="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="6*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Image x:Name="restaurantThumbnail" Stretch="Fill"></Image>
+                    </Grid>
+                    <TextBlock x:Name="restaurantDescription" 
                        HorizontalAlignment="Stretch" 
                        TextWrapping="Wrap"
-                       Grid.Row="2" 
+                       Grid.Row="1" 
                        Foreground="Black"
                        Padding="10"></TextBlock>
-        <StackPanel Orientation="Horizontal" Grid.Row="3">
-            <Image Source="Assets/restaurant_detail_style.png" Margin="5"></Image>
-            <TextBlock x:Name="restaurantStyle" 
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <Image Source="Assets/restaurant_detail_style.png" Margin="5"></Image>
+                        <TextBlock x:Name="restaurantStyle" 
                        Foreground="Black" 
                        VerticalAlignment="Center"
                        Margin="10,0,0,0"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="4">
-            <Image Source="Assets/restaurant_detail_price.png" Margin="5"></Image>
-            <TextBlock x:Name="restaurantPrice" 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3">
+                        <Image Source="Assets/restaurant_detail_price.png" Margin="5"></Image>
+                        <TextBlock x:Name="restaurantPrice" 
                        Foreground="Black" 
                        VerticalAlignment="Center"
                        Margin="10,0,0,0"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="5">
-            <Image Source="Assets/restaurant_detail_review.png" Margin="5"></Image>
-            <Image x:Name="star1" Source="Assets/star_half.png" Margin="10"></Image>
-            <Image x:Name="star2" Source="Assets/star_half.png" Margin="10"></Image>
-            <Image x:Name="star3" Source="Assets/star_half.png" Margin="10"></Image>
-            <Image x:Name="star4" Source="Assets/star_half.png" Margin="10"></Image>
-            <Image x:Name="star5" Source="Assets/star_half.png" Margin="10"></Image>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="6">
-            <Image Source="Assets/restaurant_detail_location.png" Margin="5"></Image>
-            <TextBlock x:Name="restaurantAddress" 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="4">
+                        <Image Source="Assets/restaurant_detail_review.png" Margin="5"></Image>
+                        <Image x:Name="star1" Source="Assets/star_half.png" Margin="10"></Image>
+                        <Image x:Name="star2" Source="Assets/star_half.png" Margin="10"></Image>
+                        <Image x:Name="star3" Source="Assets/star_half.png" Margin="10"></Image>
+                        <Image x:Name="star4" Source="Assets/star_half.png" Margin="10"></Image>
+                        <Image x:Name="star5" Source="Assets/star_half.png" Margin="10"></Image>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="5">
+                        <Image Source="Assets/restaurant_detail_location.png" Margin="5"></Image>
+                        <TextBlock x:Name="restaurantAddress" 
                        Foreground="Black" 
                        VerticalAlignment="Center"
                        Margin="10,0,0,0"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="7">
-            <Image Source="Assets/restaurant_detail_metro.png" Margin="5"></Image>
-            <TextBlock x:Name="restaurantMetro" 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="6">
+                        <Image Source="Assets/restaurant_detail_metro.png" Margin="5"></Image>
+                        <TextBlock x:Name="restaurantMetro" 
                        Foreground="Black" 
                        VerticalAlignment="Center"
                        Margin="10,0,0,0"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="8">
-            <Image Source="Assets/restaurant_detail_clock.png" Margin="5"></Image>
-            <TextBlock x:Name="restaurantTime" 
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="7">
+                        <Image Source="Assets/restaurant_detail_clock.png" Margin="5"></Image>
+                        <TextBlock x:Name="restaurantTime" 
                        Foreground="Black" 
                        VerticalAlignment="Center"
                        Margin="10,0,0,0"></TextBlock>
-        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem Margin="0" Background="White">
+                <PivotItem.Header>
+                    <TextBlock x:Name="CommentPivotItemHeader" Text="评论" FontSize="20" Foreground="Black" Padding="20,0,0,0"></TextBlock>
+                </PivotItem.Header>
+                <ScrollViewer  Background="White">
+                    <Grid>
+                        <ListView x:Name="restaurantCommentList" 
+                          Margin="0,0,0,40"
+				          ItemsSource="{Binding Comments}"
+				          ItemTemplate="{Binding Source={StaticResource restaurantCommentListItemTemplate1}}">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                        </ListView>
+                        <ProgressRing x:Name="LoadingRing"
+                              IsActive="True"
+                              Visibility="Collapsed"
+                              Background="Transparent"
+                              Foreground="#FFE05C52"
+                              Margin="0,0,0,250"
+                              VerticalAlignment="Bottom"></ProgressRing>
+                        <Button x:Name="loadMoreButoon"
+                        Height="40"
+				        Background="White"
+                        HorizontalContentAlignment="Stretch"
+                        Content="加载更多"
+                        Foreground="Black"
+                        HorizontalAlignment="Center"
+				        Click="loadMoreButton_Click" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
     </Grid>
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Minimal" Opacity="0.5">
@@ -94,8 +166,6 @@
                     <ListPickerFlyout x:Name="sharePage" ItemsSource="{Binding SocialNetworks}">
                     </ListPickerFlyout>
                 </AppBarButton.Flyout>
-            </AppBarButton>
-            <AppBarButton Label="评论" Icon="Comment" Click="Comment_Click">
             </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>

@@ -1,8 +1,10 @@
-﻿using Paris_Saveur.Tools;
+﻿using Paris_Saveur.Model;
+using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -40,6 +42,12 @@ namespace Paris_Saveur
         {
             restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = restaurant.name;
+            this.CommentPivotItemHeader.Text = "评论" + " (" + restaurant.rating_num + ")";
+            SetupRestaurantDetail(restaurant);
+        }
+
+        private void SetupRestaurantDetail(Restaurant restaurant)
+        {
             this.restaurantThumbnail.Source = restaurant.ThumbnailBitmap;
             this.restaurantStyle.Text = restaurant.style;
             this.restaurantPrice.Text = restaurant.consumption_per_capita;
@@ -65,7 +73,7 @@ namespace Paris_Saveur
             {
                 this.restaurantPhoneNumber2.Visibility = Visibility.Collapsed;
             }
-            
+
             this.sharePage.ItemsSource = SocialNetworks;
         }
 
@@ -169,9 +177,63 @@ namespace Paris_Saveur
             }
         }
 
-        private void Comment_Click(object sender, RoutedEventArgs e)
+        private void Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Frame.Navigate(typeof(RestaurantCommentPage), restaurant.pk);
+            if (this.RestaurantDetailPivot.SelectedIndex == 1)
+            {
+                DownloadRestaurantCommentsAtPage(1);
+            }
+            else
+            {
+                SetupRestaurantDetail(restaurant);
+            }
+        }
+
+        int currentPage = 1;
+        CommentList comments = new CommentList();
+        List<LatestRating> ratings = new List<LatestRating>();
+
+        private async void DownloadRestaurantCommentsAtPage(int page)
+        {
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
+            loadMoreButoon.Visibility = Visibility.Collapsed;
+
+            var client = new HttpClient();
+            string url = "http://www.vivelevendredi.com/restaurants/json/rating-list/" + restaurant.pk + "/?page=" + page;
+            var response = await client.GetAsync(url);
+            var result = await response.Content.ReadAsStringAsync();
+
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
+            loadMoreButoon.Visibility = Visibility.Visible;
+            if (response.StatusCode.Equals(System.Net.HttpStatusCode.NotFound))
+            {
+                return;
+            }
+
+            RestaurantComment restaurantComment = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantComment>(result);
+            if (restaurantComment.rating_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
+            foreach (LatestRating comment in restaurantComment.rating_list)
+            {
+                comment.convertDateToChinese();
+                comment.username = comment.user.username;
+            }
+            ratings.AddRange(restaurantComment.rating_list);
+
+            foreach (LatestRating comment in restaurantComment.rating_list)
+            {
+                comments.Comments.Add(comment);
+                ImageDownloader.DownloadImageIntoImage(comment.user);
+            }
+            restaurantCommentList.DataContext = comments;
+        }
+        private void loadMoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            DownloadRestaurantCommentsAtPage(currentPage++);
         }
     }
 }

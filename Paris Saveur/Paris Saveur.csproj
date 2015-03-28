@@ -124,6 +124,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\app_logo_wide_1.png" />
+    <Content Include="Assets\logo.png" />
+    <Content Include="Assets\logo_white.png" />
     <Content Include="Assets\star_full.png" />
     <Content Include="Assets\star_half.png" />
     <Content Include="Assets\restaurant_detail_price.png" />

@@ -21,7 +21,7 @@
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
-            <Image Source="Assets/star.png"></Image>
+            <Image Source="Assets/logo_white.png"></Image>
             <TextBlock x:Name="PageTitle" Foreground="White" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
         </StackPanel>
         <Grid Grid.Row="1">

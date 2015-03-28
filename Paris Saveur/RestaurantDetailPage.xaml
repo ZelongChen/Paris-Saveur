@@ -79,7 +79,7 @@
         </StackPanel>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
+        <CommandBar ClosedDisplayMode="Minimal" Opacity="0.5">
 
             <AppBarButton Label="呼叫" Icon="Phone">
                 <AppBarButton.Flyout>

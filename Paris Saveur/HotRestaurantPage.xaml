@@ -45,7 +45,7 @@
     </Grid>
     
     <Page.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
+        <CommandBar ClosedDisplayMode="Minimal" Opacity="0.5">
             <AppBarButton Label="排序" Icon="Sort">
                 <AppBarButton.Flyout>
                     <MenuFlyout>

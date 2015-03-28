@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -33,7 +34,7 @@ namespace Paris_Saveur
             this.restaurantThumbnail.Source = restaurant.ThumbnailBitmap;
             this.restaurantStyle.Text = restaurant.style;
             this.restaurantPrice.Text = restaurant.consumption_per_capita;
-            this.restaurantReview.Text = restaurant.rating_score;
+            SetupRestaurantReview(restaurant);
             if (restaurant.description != "")
             {
                 this.restaurantDescription.Text = restaurant.description;
@@ -48,6 +49,106 @@ namespace Paris_Saveur
             this.restaurantPhoneNumber1.Text = restaurant.phone_number_1;
             this.restaurantPhoneNumber2.Text = restaurant.phone_number_2;
 
+        }
+
+        private void SetupRestaurantReview(Restaurant restaurant)
+        {
+            BitmapImage halfStar = new BitmapImage();
+            halfStar.UriSource = new Uri(this.star1.BaseUri, "Assets/star_half.png");
+            BitmapImage emptyStar = new BitmapImage();
+            emptyStar.UriSource = new Uri(this.star1.BaseUri, "Assets/star_empty.png");
+            BitmapImage star = new BitmapImage();
+            star.UriSource = new Uri(this.star1.BaseUri, "Assets/star_full.png");
+            double ratingScore = Double.Parse(restaurant.rating_score);
+            
+            if (ratingScore == 0)
+            {
+                this.star1.Source = emptyStar;
+                this.star2.Source = emptyStar;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore > 0 && ratingScore <1)
+            {
+                this.star1.Source = halfStar;
+                this.star2.Source = emptyStar;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore == 1)
+            {
+                this.star1.Source = star;
+                this.star2.Source = emptyStar;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore >1 && ratingScore < 2)
+            {
+                this.star1.Source = star;
+                this.star2.Source = halfStar;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore == 2)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore > 2 && ratingScore < 3)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = halfStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore == 3)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore > 3 && ratingScore < 4)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = halfStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore == 4)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = star;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore > 4 && ratingScore < 5)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = star;
+                this.star5.Source = halfStar;
+            }
+            if (ratingScore == 5)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = star;
+                this.star5.Source = star;
+            }
         }
 
         private void Comment_Click(object sender, RoutedEventArgs e)

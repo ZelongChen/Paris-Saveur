@@ -50,10 +50,11 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="5">
             <Image Source="Assets/restaurant_detail_review.png" Margin="5"></Image>
-            <TextBlock x:Name="restaurantReview" 
-                       Foreground="Black" 
-                       VerticalAlignment="Center"
-                       Margin="10,0,0,0"></TextBlock>
+            <Image x:Name="star1" Source="Assets/star_half.png" Margin="10"></Image>
+            <Image x:Name="star2" Source="Assets/star_half.png" Margin="10"></Image>
+            <Image x:Name="star3" Source="Assets/star_half.png" Margin="10"></Image>
+            <Image x:Name="star4" Source="Assets/star_half.png" Margin="10"></Image>
+            <Image x:Name="star5" Source="Assets/star_half.png" Margin="10"></Image>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="6">
             <Image Source="Assets/restaurant_detail_location.png" Margin="5"></Image>

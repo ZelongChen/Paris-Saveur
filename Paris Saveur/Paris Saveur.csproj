@@ -124,6 +124,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\app_logo_wide_1.png" />
+    <Content Include="Assets\star_full.png" />
+    <Content Include="Assets\star_half.png" />
     <Content Include="Assets\restaurant_detail_price.png" />
     <Content Include="Assets\restaurant_detail_clock.png" />
     <Content Include="Assets\restaurant_detail_location.png" />
@@ -145,6 +147,7 @@
     <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\mainpage_tag.png" />
     <Content Include="Assets\homepage.png" />
+    <Content Include="Assets\star_empty.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
   </ItemGroup>
   <ItemGroup>

@@ -56,7 +56,16 @@ namespace Paris_Saveur
             this.restaurantMetro.Text = restaurant.public_transit;
             this.restaurantTime.Text = restaurant.opening_hours;
             this.restaurantPhoneNumber1.Text = restaurant.phone_number_1;
-            this.restaurantPhoneNumber2.Text = restaurant.phone_number_2;
+            if (restaurant.phone_number_2 != "")
+            {
+                this.restaurantPhoneNumber2.Text = restaurant.phone_number_2;
+                this.restaurantPhoneNumber2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.restaurantPhoneNumber2.Visibility = Visibility.Collapsed;
+            }
+            
             this.sharePage.ItemsSource = SocialNetworks;
         }
 

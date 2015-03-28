@@ -11,7 +11,7 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -19,16 +19,14 @@
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="3.5*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
             <Image Source="Assets/star.png"></Image>
             <TextBlock x:Name="PageTitle" Foreground="White" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
         </StackPanel>
         <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"></RowDefinition>
-            </Grid.RowDefinitions>
+            <Image x:Name="restaurantThumbnail"
+                   Stretch="Fill"></Image>
         </Grid>
         <TextBlock x:Name="restaurantDescription" 
                        HorizontalAlignment="Stretch" 
@@ -37,21 +35,21 @@
                        Foreground="Black"
                        Padding="10"></TextBlock>
         <StackPanel Orientation="Horizontal" Grid.Row="3">
-            <Image Source="Assets/restaurant_detail_location.png" Margin="5"></Image>
+            <Image Source="Assets/restaurant_detail_style.png" Margin="5"></Image>
             <TextBlock x:Name="restaurantStyle" 
                        Foreground="Black" 
                        VerticalAlignment="Center"
                        Margin="10,0,0,0"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4">
-            <Image Source="Assets/restaurant_detail_metro.png" Margin="5"></Image>
+            <Image Source="Assets/restaurant_detail_price.png" Margin="5"></Image>
             <TextBlock x:Name="restaurantPrice" 
                        Foreground="Black" 
                        VerticalAlignment="Center"
                        Margin="10,0,0,0"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="5">
-            <Image Source="Assets/restaurant_detail_clock.png" Margin="5"></Image>
+            <Image Source="Assets/restaurant_detail_review.png" Margin="5"></Image>
             <TextBlock x:Name="restaurantReview" 
                        Foreground="Black" 
                        VerticalAlignment="Center"
@@ -78,34 +76,6 @@
                        VerticalAlignment="Center"
                        Margin="10,0,0,0"></TextBlock>
         </StackPanel>
-        <Grid Grid.Row="6" Tapped="Comment_Tapped">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1.5*"></RowDefinition>
-                <RowDefinition Height="2*"></RowDefinition>
-                <RowDefinition Height="1.5*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Grid.Row="0">
-                <Image Source="Assets/restaurant_detail_comment.png" Margin="5" VerticalAlignment="Top"></Image>
-                <TextBlock x:Name="restaurantCommentNumber" 
-                           Foreground="Black" 
-                           VerticalAlignment="Center"
-                           Margin="10,0,0,0"></TextBlock>
-            </StackPanel>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="5*"></ColumnDefinition>
-                    <ColumnDefinition Width="2*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Image x:Name="userThumbnail" Source="Assets/star.png" Grid.Column="0" Margin="5,5,5,5"></Image>
-                <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,15,0,0">
-                    <TextBlock x:Name="userName" Foreground="Black"></TextBlock>
-                    <TextBlock x:Name="userCommentScore" Foreground="Black" Margin="10,0,0,0"></TextBlock>
-                </StackPanel>
-                <TextBlock x:Name="userCommentDate" HorizontalAlignment="Right" Foreground="Black" Grid.Column="2" Margin="0,15,20,0"></TextBlock>
-            </Grid>
-            <TextBlock x:Name="userComment" Grid.Row="2" Foreground="Black" TextWrapping="Wrap" Padding="10"></TextBlock>
-        </Grid>
     </Grid>
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">

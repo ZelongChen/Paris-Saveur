@@ -48,17 +48,8 @@ namespace Paris_Saveur
             this.restaurantAddress.Text = restaurant.address;
             this.restaurantMetro.Text = restaurant.public_transit;
             this.restaurantTime.Text = restaurant.opening_hours;
-            this.restaurantCommentNumber.Text = "" + restaurant.rating_num + "个点评";
             this.restaurantPhoneNumber1.Text = restaurant.phone_number_1;
             this.restaurantPhoneNumber2.Text = restaurant.phone_number_2;
-            if (restaurant.latest_rating != null)
-            {
-                this.userName.Text = restaurant.latest_rating.user.username;
-                this.userCommentDate.Text = restaurant.latest_rating.rate_date.Substring(0, 4) + "年" + restaurant.latest_rating.rate_date.Substring(5, 2) + "月" + restaurant.latest_rating.rate_date.Substring(8, 2) + "日";
-                this.userComment.Text = restaurant.latest_rating.comment;
-                this.userCommentScore.Text = "" + restaurant.latest_rating.score;
-                ImageDownloader.DownloadImageIntoImage(this.userThumbnail, restaurant.latest_rating.user.avatar_url);
-            }
 
         }
 

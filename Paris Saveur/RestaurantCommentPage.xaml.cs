@@ -42,8 +42,8 @@ namespace Paris_Saveur
 
         private async void DownloadRestaurantCommentsAtPage(int page)
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
             loadMoreButoon.Visibility = Visibility.Collapsed;
 
             var client = new HttpClient();
@@ -51,8 +51,8 @@ namespace Paris_Saveur
             var response = await client.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
 
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
             loadMoreButoon.Visibility = Visibility.Visible;
             if (response.StatusCode.Equals(System.Net.HttpStatusCode.NotFound))
             {

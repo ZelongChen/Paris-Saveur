@@ -34,15 +34,16 @@ namespace Paris_Saveur
 
         private async void DownloadRecommendedRestaurant()
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
+            
 
             var client = new HttpClient();
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/recommended/?order=-popularity&page=1");
             var result = await response.Content.ReadAsStringAsync();
 
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             foreach (Restaurant restaurant in list.Restaurant_list)

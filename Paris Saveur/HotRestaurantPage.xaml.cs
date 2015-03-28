@@ -57,15 +57,17 @@ namespace Paris_Saveur
 
         private async void DownloadRestaurantWithTag(string tag, string sortby, int page)
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            loadMoreButoon.Visibility = Visibility.Collapsed;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-tag/?tag_name=" + tag + "&order=-" + sortBy + "&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
+            loadMoreButoon.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             foreach (Restaurant restaurant in list.Restaurant_list)
@@ -81,15 +83,17 @@ namespace Paris_Saveur
 
         private async void DownloadRestaurantWithStyle(string style, string sortby, int page)
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            loadMoreButoon.Visibility = Visibility.Collapsed;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-style/" + restaurantStyle + "/?order=-" + sortBy + "&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
+            loadMoreButoon.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             foreach (Restaurant restaurant in list.Restaurant_list)
@@ -105,15 +109,17 @@ namespace Paris_Saveur
 
         private async void DownloadRecommendedRestaurant(string sortby, int page)
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            loadMoreButoon.Visibility = Visibility.Collapsed;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list/?order=-" + sortBy +"&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
+            loadMoreButoon.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             foreach (Restaurant restaurant in list.Restaurant_list)

@@ -43,25 +43,33 @@
             <TextBlock Text="点评" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
         </StackPanel>
         <ScrollViewer Grid.Row="1" Background="White">
-            <StackPanel Orientation="Vertical">
-                <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,300,0,0"/>
+            <Grid>
                 <ListView x:Name="restaurantCommentList" 
-				ItemsSource="{Binding Comments}"
-				ItemTemplate="{Binding Source={StaticResource restaurantCommentListItemTemplate}}">
+                          Margin="0,0,0,40"
+				          ItemsSource="{Binding Comments}"
+				          ItemTemplate="{Binding Source={StaticResource restaurantCommentListItemTemplate}}">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
+                <ProgressRing x:Name="LoadingRing"
+                              IsActive="True"
+                              Visibility="Collapsed"
+                              Background="Transparent"
+                              Foreground="#FFE05C52"
+                              Margin="0,0,0,250"
+                              VerticalAlignment="Bottom"></ProgressRing>
                 <Button x:Name="loadMoreButoon"
-				    Background="White"
-                    HorizontalContentAlignment="Stretch"
-                    Content="加载更多"
-                    Foreground="Black"
-                    HorizontalAlignment="Center"
-				    Click="loadMoreButton_Click" VerticalAlignment="Bottom"/>
-            </StackPanel>
+                        Height="40"
+				        Background="White"
+                        HorizontalContentAlignment="Stretch"
+                        Content="加载更多"
+                        Foreground="Black"
+                        HorizontalAlignment="Center"
+				        Click="loadMoreButton_Click" VerticalAlignment="Bottom"/>
+            </Grid>
         </ScrollViewer>
     </Grid>
 </Page>

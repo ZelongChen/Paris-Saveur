@@ -159,7 +159,6 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Minimal" Opacity="0.5">
-
             <AppBarButton Label="呼叫" Icon="Phone">
                 <AppBarButton.Flyout>
                     <MenuFlyout>

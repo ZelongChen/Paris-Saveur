@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage.Streams;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -66,6 +67,23 @@ namespace Paris_Saveur
         private void metroText_Tapped(object sender, TappedRoutedEventArgs e)
         {
 
+        }
+
+        private void Mainpage_Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.MainPagePivot.SelectedIndex == 0)
+            {
+                this.MainPageAppBar.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                this.MainPageAppBar.Visibility = Visibility.Visible;
+            }
+        }
+
+        async void Launch_Web_Click(object sender, RoutedEventArgs e)
+        {
+            await Launcher.LaunchUriAsync(new Uri("http://www.newsavour.com/restaurants/"));
         }
     }
 }

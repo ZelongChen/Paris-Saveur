@@ -22,7 +22,7 @@
                SelectionChanged="Mainpage_Pivot_SelectionChanged">
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock Text="首页" FontSize="20" Foreground="Black" Padding="50,0,0,0"></TextBlock>
+                    <TextBlock x:Name="PivotItem0_Title" Text="首页" FontSize="20" Foreground="Black" Padding="50,0,0,0"></TextBlock>
                 </PivotItem.Header>
     			<Grid HorizontalAlignment="Left" Width="396" Margin="0,0,0,0">
                     <Grid.RowDefinitions>
@@ -155,7 +155,7 @@
     		</PivotItem>
     		<PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock Text="关于" FontSize="20" Foreground="Black" Padding="50,0,0,0"></TextBlock>
+                    <TextBlock x:Name="PivotItem1_Title" Text="关于" FontSize="20" Foreground="Black" Padding="50,0,0,0" ></TextBlock>
                 </PivotItem.Header>
                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                     <Image Source="Assets/app_logo_wide_1.png" Margin="0,20,0,0" Width="240" ></Image>

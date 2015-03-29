@@ -9,6 +9,8 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage.Streams;
 using Windows.System;
+using Windows.UI;
+using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -74,10 +76,22 @@ namespace Paris_Saveur
             if (this.MainPagePivot.SelectedIndex == 0)
             {
                 this.MainPageAppBar.Visibility = Visibility.Collapsed;
+                this.PivotItem0_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.PivotItem0_Title.FontWeight = FontWeights.Bold;
+                this.PivotItem0_Title.FontSize = 22;
+                this.PivotItem1_Title.Foreground = new SolidColorBrush(Colors.Black);
+                this.PivotItem1_Title.FontWeight = FontWeights.Normal;
+                this.PivotItem1_Title.FontSize = 20;
             }
             else
             {
                 this.MainPageAppBar.Visibility = Visibility.Visible;
+                this.PivotItem0_Title.Foreground = new SolidColorBrush(Colors.Black);
+                this.PivotItem0_Title.FontWeight = FontWeights.Normal;
+                this.PivotItem0_Title.FontSize = 20;
+                this.PivotItem1_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.PivotItem1_Title.FontWeight = FontWeights.Bold;
+                this.PivotItem1_Title.FontSize = 22;
             }
         }
 

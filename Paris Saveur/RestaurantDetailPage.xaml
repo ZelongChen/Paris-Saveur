@@ -47,7 +47,7 @@
                SelectionChanged="Pivot_SelectionChanged">
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock Text="餐厅信息" FontSize="20" Foreground="Black" Padding="20,0,0,0"></TextBlock>
+                    <TextBlock x:Name="DetailPivotItemHeader" Text="餐厅信息" FontSize="20" Foreground="Black" Padding="20,0,0,0"></TextBlock>
                 </PivotItem.Header>
                 <Grid Background="White">
                     <Grid.RowDefinitions>
@@ -116,7 +116,7 @@
             </PivotItem>
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock x:Name="CommentPivotItemHeader" Text="评论" FontSize="20" Foreground="Black" Padding="20,0,0,0"></TextBlock>
+                    <TextBlock  x:Name="CommentPivotItemHeader" Text="评论" FontSize="20" Foreground="Black" Padding="20,0,0,0"></TextBlock>
                 </PivotItem.Header>
                 <ScrollViewer  Background="White">
                     <Grid>

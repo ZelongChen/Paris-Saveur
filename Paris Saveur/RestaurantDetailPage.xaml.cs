@@ -8,6 +8,8 @@ using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -185,9 +187,21 @@ namespace Paris_Saveur
                 {
                     DownloadRestaurantCommentsAtPage(1);
                 }
+                this.CommentPivotItemHeader.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.CommentPivotItemHeader.FontWeight = FontWeights.Bold;
+                this.CommentPivotItemHeader.FontSize = 22;
+                this.DetailPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);
+                this.DetailPivotItemHeader.FontWeight = FontWeights.Normal;
+                this.DetailPivotItemHeader.FontSize = 20;
             }
             else
             {
+                this.DetailPivotItemHeader.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.DetailPivotItemHeader.FontWeight = FontWeights.Bold;
+                this.DetailPivotItemHeader.FontSize = 22;
+                this.CommentPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);
+                this.CommentPivotItemHeader.FontWeight = FontWeights.Normal;
+                this.CommentPivotItemHeader.FontSize = 20;
                 SetupRestaurantDetail(restaurant);
             }
         }

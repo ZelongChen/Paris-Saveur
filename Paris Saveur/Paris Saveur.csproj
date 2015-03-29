@@ -118,6 +118,7 @@
     <Compile Include="RestaurantSortByStylePage.xaml.cs">
       <DependentUpon>RestaurantSortByStylePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\ConnectionContext.cs" />
     <Compile Include="Tools\ImageDownloader.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\app_logo_wide_1.png" />
+    <Content Include="Assets\refresh.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-240.png" />
     <Content Include="Assets\restaurant_thumbnail_placeholder.jpg" />

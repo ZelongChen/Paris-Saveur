@@ -9,6 +9,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -37,22 +38,33 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            var parameterReceived = e.Parameter;
-            if (parameterReceived == null)
+            if (ConnectionContext.checkNetworkConnection())
             {
-                DownloadRecommendedRestaurant(sortBy, currentPage++);
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+                this.hotRestaurantList.Visibility = Visibility.Visible;
+
+                var parameterReceived = e.Parameter;
+                if (parameterReceived == null)
+                {
+                    DownloadRecommendedRestaurant(sortBy, currentPage++);
+                }
+                else if (parameterReceived is string)
+                {
+                    restaurantStyle = parameterReceived as string;
+                    DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage++);
+                }
+                else
+                {
+                    restaurantTag = new Tag();
+                    restaurantTag = parameterReceived as Tag;
+                    DownloadRestaurantWithTag(restaurantTag.name, sortBy, currentPage++);
+                }
             }
-            else if (parameterReceived is string)
-            {
-                restaurantStyle = parameterReceived as string;
-                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage++);
-            } 
             else
             {
-                restaurantTag = new Tag();
-                restaurantTag = parameterReceived as Tag;
-                DownloadRestaurantWithTag(restaurantTag.name, sortBy, currentPage++);
-
+                this.NoConnectionText.Visibility = Visibility.Visible;
+                this.hotRestaurantList.Visibility = Visibility.Collapsed;
+                this.loadMoreButoon.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -160,17 +172,29 @@ namespace Paris_Saveur
 
         private void RefreshPage(string sortBy, int page)
         {
-            if (restaurantStyle == null && restaurantTag == null)
+            if (ConnectionContext.checkNetworkConnection())
             {
-                DownloadRecommendedRestaurant(sortBy, page);
-            }
-            else if (restaurantStyle == null && restaurantTag != null)
-            {
-                DownloadRestaurantWithTag(restaurantTag.name, sortBy, page);
+                this.hotRestaurantList.Visibility = Visibility.Visible;
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+
+                if (restaurantStyle == null && restaurantTag == null)
+                {
+                    DownloadRecommendedRestaurant(sortBy, page);
+                }
+                else if (restaurantStyle == null && restaurantTag != null)
+                {
+                    DownloadRestaurantWithTag(restaurantTag.name, sortBy, page);
+                }
+                else
+                {
+                    DownloadRestaurantWithStyle(restaurantStyle, sortBy, page);
+                }
             }
             else
             {
-                DownloadRestaurantWithStyle(restaurantStyle, sortBy, page);
+                currentPage--;
+                this.hotRestaurantList.Visibility = Visibility.Collapsed;
+                this.NoConnectionText.Visibility = Visibility.Visible;
             }
         }
 
@@ -179,9 +203,7 @@ namespace Paris_Saveur
             currentPage = 1;
             sortBy = "popularity";
             restaurantList = new RestaurantList();
-            RefreshPage(sortBy, currentPage++);
-
-            
+            RefreshPage(sortBy, currentPage++);            
         }
 
         private void SortByRatingScore_Click(object sender, RoutedEventArgs e)
@@ -202,7 +224,17 @@ namespace Paris_Saveur
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-            RefreshPage(sortBy, currentPage++);
+            if (ConnectionContext.checkNetworkConnection())
+            {
+                RefreshPage(sortBy, currentPage++);
+                this.loadMoreButoon.Content = "加载更多";
+                this.loadMoreButoon.Foreground = new SolidColorBrush(Colors.Black);
+            }
+            else
+            {
+                this.loadMoreButoon.Content = "请检查您的网络连接";
+                this.loadMoreButoon.Foreground = new SolidColorBrush(Colors.Gray);
+            }
         }
     }
 }

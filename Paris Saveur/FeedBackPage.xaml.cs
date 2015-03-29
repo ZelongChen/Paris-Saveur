@@ -58,15 +58,6 @@ namespace Paris_Saveur
                 ToastNotification toast = new ToastNotification(toastXml);
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
             }
-            else
-            {
-                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText01);
-                XmlNodeList elements = toastXml.GetElementsByTagName("text");
-                elements[0].AppendChild(toastXml.CreateTextNode("请检查您的网络连接，稍后再试"));
-                ToastNotification toast = new ToastNotification(toastXml);
-                ToastNotificationManager.CreateToastNotifier().Show(toast);
-            }
-
             this.LoadingRing.IsActive = false;
             this.LoadingRing.Visibility = Visibility.Collapsed;
         }

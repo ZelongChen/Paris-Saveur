@@ -29,7 +29,17 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DownloadRecommendedRestaurant();          
+            if (ConnectionContext.checkNetworkConnection())
+            {
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+                this.recommendedRestaurantList.Visibility = Visibility.Visible;
+                DownloadRecommendedRestaurant();
+            }
+            else
+            {
+                this.NoConnectionText.Visibility = Visibility.Visible;
+                this.recommendedRestaurantList.Visibility = Visibility.Collapsed;
+            }
         }
 
         private async void DownloadRecommendedRestaurant()
@@ -58,7 +68,17 @@ namespace Paris_Saveur
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            DownloadRecommendedRestaurant();
+            if (ConnectionContext.checkNetworkConnection()) {
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+                this.recommendedRestaurantList.Visibility = Visibility.Visible;
+                DownloadRecommendedRestaurant();
+            }
+            else
+            {
+                this.NoConnectionText.Visibility = Visibility.Visible;
+                this.recommendedRestaurantList.Visibility = Visibility.Collapsed;
+            }
+
         }
 
         private void recommendedRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)

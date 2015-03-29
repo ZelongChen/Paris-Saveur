@@ -18,7 +18,13 @@
             <TextBlock Text="热门餐馆" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
         </StackPanel>
         <ScrollViewer Grid.Row="1" Background="White">
-                <Grid>
+            <Grid>
+                <TextBlock x:Name="NoConnectionText"
+                           Text="请检查您的网络连接"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="Gray"
+                           FontSize="22"/>
                     <ListView x:Name="hotRestaurantList" 
                             Margin="0,0,0,40"
                             ItemsSource="{Binding Restaurant_list}"

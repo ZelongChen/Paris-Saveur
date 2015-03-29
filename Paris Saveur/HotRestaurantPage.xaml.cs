@@ -78,10 +78,6 @@ namespace Paris_Saveur
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-tag/?tag_name=" + tag + "&order=-" + sortBy + "&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
-            loadMoreButoon.Visibility = Visibility.Visible;
-            LoadingRing.IsActive = false;
-            LoadingRing.Visibility = Visibility.Collapsed;
-
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             if (list.Restaurant_list.Count < 12)
             {
@@ -98,6 +94,10 @@ namespace Paris_Saveur
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
+
+            loadMoreButoon.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private async void DownloadRestaurantWithStyle(string style, string sortby, int page)
@@ -110,10 +110,6 @@ namespace Paris_Saveur
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-style/" + restaurantStyle + "/?order=-" + sortBy + "&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
-            loadMoreButoon.Visibility = Visibility.Visible;
-            LoadingRing.IsActive = false;
-            LoadingRing.Visibility = Visibility.Collapsed;
-
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             if (list.Restaurant_list.Count < 12)
             {
@@ -130,6 +126,10 @@ namespace Paris_Saveur
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
+
+            loadMoreButoon.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private async void DownloadRecommendedRestaurant(string sortby, int page)
@@ -142,10 +142,6 @@ namespace Paris_Saveur
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list/?order=-" + sortBy +"&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
-            loadMoreButoon.Visibility = Visibility.Visible;
-            LoadingRing.IsActive = false;
-            LoadingRing.Visibility = Visibility.Collapsed;
-
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             if (list.Restaurant_list.Count < 12)
             {
@@ -162,6 +158,10 @@ namespace Paris_Saveur
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
+
+            loadMoreButoon.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private void hotRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)

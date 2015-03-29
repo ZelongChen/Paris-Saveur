@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Data.Xml.Dom;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -48,7 +50,26 @@ namespace Paris_Saveur
             HttpClient client = new HttpClient();
             Uri uri = new Uri("http://www.vivelevendredi.com/feedbacks/submit/mobile/");
             HttpResponseMessage response = await client.PostAsync(uri, formContent);
-            string responseBody = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+            {
+                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
+                XmlNodeList elements = toastXml.GetElementsByTagName("text");
+                //XmlNodeList toastImageAttributes = toastXml.GetElementsByTagName("image");
+                elements[0].AppendChild(toastXml.CreateTextNode("感谢您的反馈"));
+                //((XmlElement)toastImageAttributes[0]).SetAttribute("src", "ms-appx:///assets/Assets/logo.png");
+                ToastNotification toast = new ToastNotification(toastXml);
+                ToastNotificationManager.CreateToastNotifier().Show(toast);
+            }
+            else
+            {
+                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
+                XmlNodeList elements = toastXml.GetElementsByTagName("text");
+                XmlNodeList toastImageAttributes = toastXml.GetElementsByTagName("image");
+                elements[0].AppendChild(toastXml.CreateTextNode("请检查您的网络连接，稍后再试"));
+                ((XmlElement)toastImageAttributes[0]).SetAttribute("src", "ms-appx:///local/Assets/logo.png");
+                ToastNotification toast = new ToastNotification(toastXml);
+                ToastNotificationManager.CreateToastNotifier().Show(toast);
+            }
 
             this.LoadingRing.IsActive = false;
             this.LoadingRing.Visibility = Visibility.Collapsed;

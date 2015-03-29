@@ -52,21 +52,17 @@ namespace Paris_Saveur
             HttpResponseMessage response = await client.PostAsync(uri, formContent);
             if (response.IsSuccessStatusCode)
             {
-                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
+                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText01);
                 XmlNodeList elements = toastXml.GetElementsByTagName("text");
-                //XmlNodeList toastImageAttributes = toastXml.GetElementsByTagName("image");
                 elements[0].AppendChild(toastXml.CreateTextNode("感谢您的反馈"));
-                //((XmlElement)toastImageAttributes[0]).SetAttribute("src", "ms-appx:///assets/Assets/logo.png");
                 ToastNotification toast = new ToastNotification(toastXml);
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
             }
             else
             {
-                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastImageAndText01);
+                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText01);
                 XmlNodeList elements = toastXml.GetElementsByTagName("text");
-                XmlNodeList toastImageAttributes = toastXml.GetElementsByTagName("image");
                 elements[0].AppendChild(toastXml.CreateTextNode("请检查您的网络连接，稍后再试"));
-                ((XmlElement)toastImageAttributes[0]).SetAttribute("src", "ms-appx:///local/Assets/logo.png");
                 ToastNotification toast = new ToastNotification(toastXml);
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
             }

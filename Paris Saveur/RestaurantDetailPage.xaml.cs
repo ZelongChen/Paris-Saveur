@@ -6,8 +6,10 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Streams;
 using Windows.UI;
 using Windows.UI.Text;
 using Windows.UI.Xaml;
@@ -42,10 +44,17 @@ namespace Paris_Saveur
         private List<String> SocialNetworks { get; set; }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
             restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = restaurant.name;
             this.CommentPivotItemHeader.Text = "评论" + " (" + restaurant.rating_num + ")";
             SetupRestaurantDetail(restaurant);
+        }
+
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
         }
 
         private void SetupRestaurantDetail(Restaurant restaurant)
@@ -75,8 +84,6 @@ namespace Paris_Saveur
             {
                 this.restaurantPhoneNumber2.Visibility = Visibility.Collapsed;
             }
-
-            this.sharePage.ItemsSource = SocialNetworks;
         }
 
         private void SetupRestaurantReview(Restaurant restaurant)
@@ -257,6 +264,22 @@ namespace Paris_Saveur
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
             DownloadRestaurantCommentsAtPage(++currentPage);
+        }
+
+        void RestaurantDetailPage_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
+        {
+            var request = args.Request;
+            var deferral = request.GetDeferral();
+
+            request.Data.Properties.Title = "我发现了一家好吃的餐馆";
+            request.Data.SetText("\n" + restaurant.name + "\n" + restaurant.address);
+
+            deferral.Complete();
+        }
+
+        private void Share_Click(object sender, RoutedEventArgs e)
+        {
+            DataTransferManager.ShowShareUI();
         }
     }
 }

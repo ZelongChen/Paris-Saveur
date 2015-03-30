@@ -167,11 +167,7 @@
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
-            <AppBarButton Label="分享" Icon="ReShare">
-                <AppBarButton.Flyout>
-                    <ListPickerFlyout x:Name="sharePage" ItemsSource="{Binding SocialNetworks}">
-                    </ListPickerFlyout>
-                </AppBarButton.Flyout>
+            <AppBarButton Label="分享" Icon="ReShare" Click="Share_Click">
             </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>

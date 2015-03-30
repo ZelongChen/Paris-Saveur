@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Calls;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -280,6 +281,16 @@ namespace Paris_Saveur
         private void Share_Click(object sender, RoutedEventArgs e)
         {
             DataTransferManager.ShowShareUI();
+        }
+
+        private void restaurantPhoneNumber1_Click(object sender, RoutedEventArgs e)
+        {
+            PhoneCallManager.ShowPhoneCallUI(restaurant.phone_number_1, restaurant.name);
+        }
+
+        private void restaurantPhoneNumber2_Click(object sender, RoutedEventArgs e)
+        {
+            PhoneCallManager.ShowPhoneCallUI(restaurant.phone_number_2, restaurant.name);
         }
     }
 }

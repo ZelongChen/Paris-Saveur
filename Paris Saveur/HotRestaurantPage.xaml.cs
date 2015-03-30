@@ -83,6 +83,10 @@ namespace Paris_Saveur
             {
                 loadMoreButoon.Visibility = Visibility.Collapsed;
             }
+            else
+            {
+                loadMoreButoon.Visibility = Visibility.Visible;
+            }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
@@ -113,6 +117,10 @@ namespace Paris_Saveur
             if (list.Restaurant_list.Count < 12)
             {
                 loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                loadMoreButoon.Visibility = Visibility.Visible;
             }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
@@ -145,6 +153,10 @@ namespace Paris_Saveur
             {
                 loadMoreButoon.Visibility = Visibility.Collapsed;
             }
+            else
+            {
+                loadMoreButoon.Visibility = Visibility.Visible;
+            }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
@@ -156,7 +168,7 @@ namespace Paris_Saveur
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
-
+    
             LoadingRing.IsActive = false;
             LoadingRing.Visibility = Visibility.Collapsed;
         }

@@ -95,7 +95,6 @@ namespace Paris_Saveur
             }
             this.hotRestaurantList.DataContext = restaurantList;
 
-            loadMoreButoon.Visibility = Visibility.Visible;
             LoadingRing.IsActive = false;
             LoadingRing.Visibility = Visibility.Collapsed;
         }
@@ -127,7 +126,6 @@ namespace Paris_Saveur
             }
             this.hotRestaurantList.DataContext = restaurantList;
 
-            loadMoreButoon.Visibility = Visibility.Visible;
             LoadingRing.IsActive = false;
             LoadingRing.Visibility = Visibility.Collapsed;
         }
@@ -159,7 +157,6 @@ namespace Paris_Saveur
             }
             this.hotRestaurantList.DataContext = restaurantList;
 
-            loadMoreButoon.Visibility = Visibility.Visible;
             LoadingRing.IsActive = false;
             LoadingRing.Visibility = Visibility.Collapsed;
         }

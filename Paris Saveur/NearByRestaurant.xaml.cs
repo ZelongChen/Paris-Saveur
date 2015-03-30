@@ -63,6 +63,10 @@ namespace Paris_Saveur
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             if (list.Restaurant_list.Count == 0)
             {
+                LoadingRing.IsActive = false;
+                LoadingRing.Visibility = Visibility.Collapsed;
+                this.RefreshButton.IsEnabled = true;
+                this.LaunchMapButton.IsEnabled = true;
                 return;
             }
             foreach (Restaurant restaurant in list.Restaurant_list)

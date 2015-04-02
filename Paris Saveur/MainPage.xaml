@@ -180,7 +180,7 @@
 
     <Page.BottomAppBar>
         <CommandBar x:Name="MainPageAppBar" ClosedDisplayMode="Compact" Opacity="0.5">
-            <AppBarButton Label="您的反馈" Icon="Page" Click="Send_Feedback_Click">
+            <AppBarButton Label="您的反馈" Icon="Mail" Click="Send_Feedback_Click">
             </AppBarButton>
             <AppBarButton Label="我们的网站" Icon="Globe" Click="Launch_Web_Click">
             </AppBarButton>

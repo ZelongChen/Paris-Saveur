@@ -41,9 +41,11 @@ namespace Paris_Saveur
 
             String feedbackContent = this.FeedBackTextBox.Text;
             Dictionary<string, string> fullHttpContentDictionary = new Dictionary<string,string>();
-            fullHttpContentDictionary.Add("device_name", "Android");
-            fullHttpContentDictionary.Add("device_info", "3.0.8-02825-g9e39b8c+%28REL%2C+API+level+15%29+device%3AD01E%2C+model%3AKFTT%2C+product%3AKindle+Fire");
-            fullHttpContentDictionary.Add("app_name", "v5.android");
+            fullHttpContentDictionary.Add("device_name", "WindowsPhone");
+            Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation deviceInfo = new Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation();
+            string firmwareVersion = deviceInfo.SystemFirmwareVersion.ToString();
+            fullHttpContentDictionary.Add("device_info", firmwareVersion);
+            fullHttpContentDictionary.Add("app_name", "v0.8WP");
             fullHttpContentDictionary.Add("app_version", "1.0");
             fullHttpContentDictionary.Add("comment", feedbackContent);
             HttpFormUrlEncodedContent formContent = new HttpFormUrlEncodedContent(fullHttpContentDictionary);
@@ -56,6 +58,7 @@ namespace Paris_Saveur
                 XmlNodeList elements = toastXml.GetElementsByTagName("text");
                 elements[0].AppendChild(toastXml.CreateTextNode("感谢您的反馈"));
                 ToastNotification toast = new ToastNotification(toastXml);
+                toast.ExpirationTime = DateTime.Now.AddSeconds(5);
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
             }
             this.LoadingRing.IsActive = false;

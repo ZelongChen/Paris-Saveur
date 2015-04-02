@@ -22,7 +22,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
-            <Image Source="Assets/star.png"></Image>
+            <Image Source="Assets/logo_white.png"></Image>
             <TextBlock Text="菜系分类" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
         </StackPanel>
         <ListViewItem x:Name="sichuan_hunan" Content="川菜 湘菜" Grid.Row="1" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="sichuan_hunan_Tapped"></ListViewItem>

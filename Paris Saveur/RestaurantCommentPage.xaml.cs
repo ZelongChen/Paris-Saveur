@@ -10,6 +10,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -36,14 +37,25 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            restaurantPk = (int) e.Parameter;
-            DownloadRestaurantCommentsAtPage(currentPage++);
+            if (ConnectionContext.checkNetworkConnection())
+            {
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+                this.restaurantCommentList.Visibility = Visibility.Visible;
+                restaurantPk = (int)e.Parameter;
+                DownloadRestaurantCommentsAtPage(currentPage++);
+            }
+            else
+            {
+                this.NoConnectionText.Visibility = Visibility.Visible;
+                this.restaurantCommentList.Visibility = Visibility.Collapsed;
+                this.loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
         }
 
         private async void DownloadRestaurantCommentsAtPage(int page)
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
             loadMoreButoon.Visibility = Visibility.Collapsed;
 
             var client = new HttpClient();
@@ -51,8 +63,8 @@ namespace Paris_Saveur
             var response = await client.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
 
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
             loadMoreButoon.Visibility = Visibility.Visible;
             if (response.StatusCode.Equals(System.Net.HttpStatusCode.NotFound))
             {
@@ -60,6 +72,10 @@ namespace Paris_Saveur
             }
 
             RestaurantComment restaurantComment = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantComment>(result);
+            if (restaurantComment.rating_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
             foreach (LatestRating comment in restaurantComment.rating_list)
             {
                 comment.convertDateToChinese();
@@ -78,7 +94,18 @@ namespace Paris_Saveur
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-            DownloadRestaurantCommentsAtPage(currentPage++);
+            if (ConnectionContext.checkNetworkConnection())
+            {
+                DownloadRestaurantCommentsAtPage(currentPage++);
+                this.loadMoreButoon.Content = "加载更多";
+                this.loadMoreButoon.Foreground = new SolidColorBrush(Colors.Black);
+            }
+            else
+            {
+                this.loadMoreButoon.Content = "请检查您的网络连接";
+                this.loadMoreButoon.Foreground = new SolidColorBrush(Colors.Gray);
+            }
+           
         }
     }
 }

@@ -29,20 +29,28 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DownloadRecommendedRestaurant();          
+            if (ConnectionContext.checkNetworkConnection())
+            {
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+                this.recommendedRestaurantList.Visibility = Visibility.Visible;
+                DownloadRecommendedRestaurant();
+            }
+            else
+            {
+                this.NoConnectionText.Visibility = Visibility.Visible;
+                this.recommendedRestaurantList.Visibility = Visibility.Collapsed;
+            }
         }
 
         private async void DownloadRecommendedRestaurant()
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
+            
 
             var client = new HttpClient();
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/recommended/?order=-popularity&page=1");
             var result = await response.Content.ReadAsStringAsync();
-
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
 
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             foreach (Restaurant restaurant in list.Restaurant_list)
@@ -53,11 +61,24 @@ namespace Paris_Saveur
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.recommendedRestaurantList.DataContext = list;
+
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            DownloadRecommendedRestaurant();
+            if (ConnectionContext.checkNetworkConnection()) {
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+                this.recommendedRestaurantList.Visibility = Visibility.Visible;
+                DownloadRecommendedRestaurant();
+            }
+            else
+            {
+                this.NoConnectionText.Visibility = Visibility.Visible;
+                this.recommendedRestaurantList.Visibility = Visibility.Collapsed;
+            }
+
         }
 
         private void recommendedRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)

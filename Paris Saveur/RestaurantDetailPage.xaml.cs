@@ -1,17 +1,25 @@
-﻿using Paris_Saveur.Tools;
+﻿using Paris_Saveur.Model;
+using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Calls;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Streams;
+using Windows.UI;
+using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -23,21 +31,39 @@ namespace Paris_Saveur
         public RestaurantDetailPage()
         {
             this.InitializeComponent();
+            SocialNetworks = new List<string>
+            {
+                "Facebook",
+                "Twitter",
+                "微博",
+                "微信",
+                "人人网"
+            };
         }
 
         Restaurant restaurant;
+        private List<String> SocialNetworks { get; set; }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
             restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = restaurant.name;
-            this.restaurantName.Text = restaurant.name;
+            this.CommentPivotItemHeader.Text = "评论" + " (" + restaurant.rating_num + ")";
+            SetupRestaurantDetail(restaurant);
+        }
+
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
+        }
+
+        private void SetupRestaurantDetail(Restaurant restaurant)
+        {
             this.restaurantThumbnail.Source = restaurant.ThumbnailBitmap;
-            restaurant.ConvertRestaurantStyleToChinese();
-            restaurant.ShowReviewScoreAndNumber();
-            restaurant.ShowPrice();
             this.restaurantStyle.Text = restaurant.style;
             this.restaurantPrice.Text = restaurant.consumption_per_capita;
-            this.restaurantReview.Text = restaurant.rating_score;
+            SetupRestaurantReview(restaurant);
             if (restaurant.description != "")
             {
                 this.restaurantDescription.Text = restaurant.description;
@@ -49,23 +75,222 @@ namespace Paris_Saveur
             this.restaurantAddress.Text = restaurant.address;
             this.restaurantMetro.Text = restaurant.public_transit;
             this.restaurantTime.Text = restaurant.opening_hours;
-            this.restaurantCommentNumber.Text = "" + restaurant.rating_num + "个点评";
             this.restaurantPhoneNumber1.Text = restaurant.phone_number_1;
-            this.restaurantPhoneNumber2.Text = restaurant.phone_number_2;
-            if (restaurant.latest_rating != null)
+            if (restaurant.phone_number_2 != "")
             {
-                this.userName.Text = restaurant.latest_rating.user.username;
-                this.userCommentDate.Text = restaurant.latest_rating.rate_date.Substring(0, 4) + "年" + restaurant.latest_rating.rate_date.Substring(5, 2) + "月" + restaurant.latest_rating.rate_date.Substring(8, 2) + "日";
-                this.userComment.Text = restaurant.latest_rating.comment;
-                this.userCommentScore.Text = "" + restaurant.latest_rating.score;
-                ImageDownloader.DownloadImageIntoImage(this.userThumbnail, restaurant.latest_rating.user.avatar_url);
+                this.restaurantPhoneNumber2.Text = restaurant.phone_number_2;
+                this.restaurantPhoneNumber2.Visibility = Visibility.Visible;
             }
-
+            else
+            {
+                this.restaurantPhoneNumber2.Visibility = Visibility.Collapsed;
+            }
         }
 
-        private void Comment_Tapped(object sender, TappedRoutedEventArgs e)
+        private void SetupRestaurantReview(Restaurant restaurant)
         {
-            Frame.Navigate(typeof(RestaurantCommentPage), restaurant.pk);
+            BitmapImage halfStar = new BitmapImage();
+            halfStar.UriSource = new Uri(this.star1.BaseUri, "Assets/star_half.png");
+            BitmapImage emptyStar = new BitmapImage();
+            emptyStar.UriSource = new Uri(this.star1.BaseUri, "Assets/star_empty.png");
+            BitmapImage star = new BitmapImage();
+            star.UriSource = new Uri(this.star1.BaseUri, "Assets/star_full.png");
+            double ratingScore = Double.Parse(restaurant.rating_score);
+            
+            if (ratingScore == 0)
+            {
+                this.star1.Source = emptyStar;
+                this.star2.Source = emptyStar;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore > 0 && ratingScore <1)
+            {
+                this.star1.Source = halfStar;
+                this.star2.Source = emptyStar;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore == 1)
+            {
+                this.star1.Source = star;
+                this.star2.Source = emptyStar;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore >1 && ratingScore < 2)
+            {
+                this.star1.Source = star;
+                this.star2.Source = halfStar;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore == 2)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = emptyStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore > 2 && ratingScore < 3)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = halfStar;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore == 3)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = emptyStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore > 3 && ratingScore < 4)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = halfStar;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore == 4)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = star;
+                this.star5.Source = emptyStar;
+            }
+            if (ratingScore > 4 && ratingScore < 5)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = star;
+                this.star5.Source = halfStar;
+            }
+            if (ratingScore == 5)
+            {
+                this.star1.Source = star;
+                this.star2.Source = star;
+                this.star3.Source = star;
+                this.star4.Source = star;
+                this.star5.Source = star;
+            }
+        }
+
+        private void Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.RestaurantDetailPivot.SelectedIndex == 1)
+            {
+                if (comments.Comments.Count == 0)
+                {
+                    DownloadRestaurantCommentsAtPage(1);
+                }
+                this.CommentPivotItemHeader.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.CommentPivotItemHeader.FontWeight = FontWeights.Bold;
+                this.CommentPivotItemHeader.FontSize = 22;
+                this.DetailPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);
+                this.DetailPivotItemHeader.FontWeight = FontWeights.Normal;
+                this.DetailPivotItemHeader.FontSize = 20;
+            }
+            else
+            {
+                this.DetailPivotItemHeader.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.DetailPivotItemHeader.FontWeight = FontWeights.Bold;
+                this.DetailPivotItemHeader.FontSize = 22;
+                this.CommentPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);
+                this.CommentPivotItemHeader.FontWeight = FontWeights.Normal;
+                this.CommentPivotItemHeader.FontSize = 20;
+                SetupRestaurantDetail(restaurant);
+            }
+        }
+
+        int currentPage = 1;
+        CommentList comments = new CommentList();
+
+        private async void DownloadRestaurantCommentsAtPage(int page)
+        {
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
+            loadMoreButoon.Visibility = Visibility.Collapsed;
+
+            var client = new HttpClient();
+            string url = "http://www.vivelevendredi.com/restaurants/json/rating-list/" + restaurant.pk + "/?page=" + page;
+            var response = await client.GetAsync(url);
+            var result = await response.Content.ReadAsStringAsync();
+
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
+            loadMoreButoon.Visibility = Visibility.Visible;
+            if (response.StatusCode.Equals(System.Net.HttpStatusCode.NotFound))
+            {
+                return;
+            }
+
+            RestaurantComment restaurantComment = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantComment>(result);
+            if (restaurantComment.rating_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
+            if (restaurantComment.rating_list.Count == 0 && currentPage == 1)
+            {
+                this.NoCommentText.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.NoCommentText.Visibility = Visibility.Collapsed;
+            }
+            foreach (LatestRating comment in restaurantComment.rating_list)
+            {
+                comment.convertDateToChinese();
+                comment.username = comment.user.username;
+            }
+
+            foreach (LatestRating comment in restaurantComment.rating_list)
+            {
+                comments.Comments.Add(comment);
+                ImageDownloader.DownloadImageIntoImage(comment.user);
+            }
+            restaurantCommentList.DataContext = comments;
+        }
+        private void loadMoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            DownloadRestaurantCommentsAtPage(++currentPage);
+        }
+
+        void RestaurantDetailPage_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
+        {
+            var request = args.Request;
+            var deferral = request.GetDeferral();
+
+            request.Data.Properties.Title = "我发现了一家好吃的餐馆";
+            request.Data.SetText("\n" + restaurant.name + "\n" + restaurant.address);
+
+            deferral.Complete();
+        }
+
+        private void Share_Click(object sender, RoutedEventArgs e)
+        {
+            DataTransferManager.ShowShareUI();
+        }
+
+        private void restaurantPhoneNumber1_Click(object sender, RoutedEventArgs e)
+        {
+            PhoneCallManager.ShowPhoneCallUI(restaurant.phone_number_1, restaurant.name);
+        }
+
+        private void restaurantPhoneNumber2_Click(object sender, RoutedEventArgs e)
+        {
+            PhoneCallManager.ShowPhoneCallUI(restaurant.phone_number_2, restaurant.name);
         }
     }
 }

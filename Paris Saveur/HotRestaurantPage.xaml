@@ -14,38 +14,50 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
-            <Image Source="Assets/star.png"></Image>
+            <Image Source="Assets/logo_white.png"></Image>
             <TextBlock Text="热门餐馆" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
         </StackPanel>
         <ScrollViewer Grid.Row="1" Background="White">
-            <StackPanel Orientation="Vertical">
-                <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,300,0,0"/>
-                <ListView x:Name="hotRestaurantList" 
-                  Grid.Row="0" 
-                  Grid.Column="0"
-                  ItemsSource="{Binding Restaurant_list}"
-                  ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
-                  HorizontalContentAlignment="Stretch"
-                  SelectionChanged="hotRestaurantList_SelectionChanged">
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                </ListView>
+            <Grid>
+                <TextBlock x:Name="NoConnectionText"
+                           Text="请检查您的网络连接"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="Gray"
+                           FontSize="22"/>
+                    <ListView x:Name="hotRestaurantList" 
+                            Margin="0,0,0,40"
+                            ItemsSource="{Binding Restaurant_list}"
+                            ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
+                            HorizontalContentAlignment="Stretch"
+                            SelectionChanged="hotRestaurantList_SelectionChanged">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                    </ListView>
+                    <ProgressRing x:Name="LoadingRing"
+                              Visibility="Collapsed"
+                              IsActive="True"
+                              Background="Transparent"
+                              Foreground="#FFE05C52"
+                              Margin="0,0,0,250"
+                              VerticalAlignment="Bottom"/>
                 <Button x:Name="loadMoreButoon"
 				    Background="White"
                     HorizontalContentAlignment="Stretch"
                     Content="加载更多"
                     Foreground="Black"
                     HorizontalAlignment="Center"
-				    Click="loadMoreButton_Click" VerticalAlignment="Bottom"/>
-            </StackPanel>
+				    Click="loadMoreButton_Click" 
+                    VerticalAlignment="Bottom"/>
+            </Grid>
         </ScrollViewer>
     </Grid>
     
     <Page.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
+        <CommandBar ClosedDisplayMode="Minimal" Opacity="0.5">
             <AppBarButton Label="排序" Icon="Sort">
                 <AppBarButton.Flyout>
                     <MenuFlyout>

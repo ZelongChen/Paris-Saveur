@@ -30,7 +30,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
-            <Image Source="Assets/star.png"></Image>
+            <Image Source="Assets/logo_white.png"></Image>
             <TextBlock Text="热门标签" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
         </StackPanel>
         <ProgressBar x:Name="LoadingBar" Grid.Row="1" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,300,0,0"/>

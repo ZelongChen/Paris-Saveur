@@ -9,12 +9,14 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -36,95 +38,139 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            var parameterReceived = e.Parameter;
-            if (parameterReceived == null)
+            if (ConnectionContext.checkNetworkConnection())
             {
-                DownloadRecommendedRestaurant(sortBy, currentPage++);
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+                this.hotRestaurantList.Visibility = Visibility.Visible;
+
+                var parameterReceived = e.Parameter;
+                if (parameterReceived == null)
+                {
+                    DownloadRecommendedRestaurant(sortBy, currentPage++);
+                }
+                else if (parameterReceived is string)
+                {
+                    restaurantStyle = parameterReceived as string;
+                    DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage++);
+                }
+                else
+                {
+                    restaurantTag = new Tag();
+                    restaurantTag = parameterReceived as Tag;
+                    DownloadRestaurantWithTag(restaurantTag.name, sortBy, currentPage++);
+                }
             }
-            else if (parameterReceived is string)
-            {
-                restaurantStyle = parameterReceived as string;
-                DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage++);
-            } 
             else
             {
-                restaurantTag = new Tag();
-                restaurantTag = parameterReceived as Tag;
-                DownloadRestaurantWithTag(restaurantTag.name, sortBy, currentPage++);
-
+                this.NoConnectionText.Visibility = Visibility.Visible;
+                this.hotRestaurantList.Visibility = Visibility.Collapsed;
+                this.loadMoreButoon.Visibility = Visibility.Collapsed;
             }
         }
 
         private async void DownloadRestaurantWithTag(string tag, string sortby, int page)
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            loadMoreButoon.Visibility = Visibility.Collapsed;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-tag/?tag_name=" + tag + "&order=-" + sortBy + "&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
-
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            if (list.Restaurant_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                loadMoreButoon.Visibility = Visibility.Visible;
+            }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 restaurantList.Restaurant_list.Add(restaurant);
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+                restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
+
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private async void DownloadRestaurantWithStyle(string style, string sortby, int page)
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            loadMoreButoon.Visibility = Visibility.Collapsed;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-style/" + restaurantStyle + "/?order=-" + sortBy + "&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
-
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            if (list.Restaurant_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                loadMoreButoon.Visibility = Visibility.Visible;
+            }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 restaurantList.Restaurant_list.Add(restaurant);
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+                restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
+
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private async void DownloadRecommendedRestaurant(string sortby, int page)
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            loadMoreButoon.Visibility = Visibility.Collapsed;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list/?order=-" + sortBy +"&page=" + page);
             var result = await response.Content.ReadAsStringAsync();
 
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
-
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            if (list.Restaurant_list.Count < 12)
+            {
+                loadMoreButoon.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                loadMoreButoon.Visibility = Visibility.Visible;
+            }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 restaurantList.Restaurant_list.Add(restaurant);
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+                restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.hotRestaurantList.DataContext = restaurantList;
+    
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private void hotRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -135,17 +181,29 @@ namespace Paris_Saveur
 
         private void RefreshPage(string sortBy, int page)
         {
-            if (restaurantStyle == null && restaurantTag == null)
+            if (ConnectionContext.checkNetworkConnection())
             {
-                DownloadRecommendedRestaurant(sortBy, page);
-            }
-            else if (restaurantStyle == null && restaurantTag != null)
-            {
-                DownloadRestaurantWithTag(restaurantTag.name, sortBy, page);
+                this.hotRestaurantList.Visibility = Visibility.Visible;
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+
+                if (restaurantStyle == null && restaurantTag == null)
+                {
+                    DownloadRecommendedRestaurant(sortBy, page);
+                }
+                else if (restaurantStyle == null && restaurantTag != null)
+                {
+                    DownloadRestaurantWithTag(restaurantTag.name, sortBy, page);
+                }
+                else
+                {
+                    DownloadRestaurantWithStyle(restaurantStyle, sortBy, page);
+                }
             }
             else
             {
-                DownloadRestaurantWithStyle(restaurantStyle, sortBy, page);
+                currentPage--;
+                this.hotRestaurantList.Visibility = Visibility.Collapsed;
+                this.NoConnectionText.Visibility = Visibility.Visible;
             }
         }
 
@@ -154,9 +212,7 @@ namespace Paris_Saveur
             currentPage = 1;
             sortBy = "popularity";
             restaurantList = new RestaurantList();
-            RefreshPage(sortBy, currentPage++);
-
-            
+            RefreshPage(sortBy, currentPage++);            
         }
 
         private void SortByRatingScore_Click(object sender, RoutedEventArgs e)
@@ -177,7 +233,17 @@ namespace Paris_Saveur
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-            RefreshPage(sortBy, currentPage++);
+            if (ConnectionContext.checkNetworkConnection())
+            {
+                RefreshPage(sortBy, currentPage++);
+                this.loadMoreButoon.Content = "加载更多";
+                this.loadMoreButoon.Foreground = new SolidColorBrush(Colors.Black);
+            }
+            else
+            {
+                this.loadMoreButoon.Content = "请检查您的网络连接";
+                this.loadMoreButoon.Foreground = new SolidColorBrush(Colors.Gray);
+            }
         }
     }
 }

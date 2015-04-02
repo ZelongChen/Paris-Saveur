@@ -14,16 +14,21 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
-            <Image Source="Assets/star.png"></Image>
+            <Image Source="Assets/logo_white.png"></Image>
             <TextBlock Text="附近餐馆" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
         </StackPanel>
-        <ScrollViewer Grid.Row="1" Background="White">
-            <StackPanel Orientation="Vertical">
-                <ProgressBar x:Name="LoadingBar" Visibility="Collapsed" IsEnabled="False" IsIndeterminate="true" Height="4" HorizontalAlignment="Stretch" Margin="0,300,0,0"/>
+        <ScrollViewer x:Name="ScrollViewer" Grid.Row="1" Background="White">
+            <Grid>
+                <TextBlock x:Name="NoConnectionText"
+                           Text="请检查您的网络连接"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="Gray"
+                           FontSize="22"/>
                 <ListView x:Name="nearbyRestaurantList" 
                   Grid.Row="0" 
                   Grid.Column="0"
-                  ItemsSource="{Binding}"
+                  ItemsSource="{Binding Restaurant_list}"
                   ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
                   HorizontalContentAlignment="Stretch"
                   SelectionChanged="nearbyRestaurantList_SelectionChanged">
@@ -33,20 +38,20 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
-                <Button x:Name="loadMoreButoon"
-				    Background="White"
-                    HorizontalContentAlignment="Stretch"
-                    Content="加载更多"
-                    Foreground="Black"
-                    HorizontalAlignment="Center"
-				    Click="loadMoreButton_Click" VerticalAlignment="Bottom"/>
-            </StackPanel>
+                <ProgressRing x:Name="LoadingRing"
+                              Visibility="Collapsed"
+                              IsActive="True"
+                              Background="Transparent"
+                              Foreground="#FFE05C52"
+                              Margin="0,250,0,0"
+                              VerticalAlignment="Top"/>
+            </Grid>
         </ScrollViewer>
     </Grid>
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Compact" Opacity="0.5">
-            <AppBarButton Label="地图" Icon="Map" Click="OpenMap_Click"></AppBarButton>
-            <AppBarButton Label="刷新" Icon="Refresh" Click="Refresh_Click"></AppBarButton>
+            <AppBarButton x:Name="LaunchMapButton" Label="地图" Icon="Map" Click="OpenMap_Click"></AppBarButton>
+            <AppBarButton x:Name="RefreshButton" Label="刷新" Icon="Refresh" Click="Refresh_Click"></AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

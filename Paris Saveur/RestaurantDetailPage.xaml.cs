@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Calls;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.Data.Xml.Dom;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
@@ -16,6 +17,7 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.UI;
+using Windows.UI.Notifications;
 using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -40,6 +42,7 @@ namespace Paris_Saveur
         Restaurant restaurant;
         private List<String> SocialNetworks { get; set; }
         RestaurantDB restaurantDB;
+        DatabaseHelper helper;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -47,15 +50,19 @@ namespace Paris_Saveur
             restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = restaurant.name;
             this.CommentPivotItemHeader.Text = "评论" + " (" + restaurant.rating_num + ")";
+
+            helper = new DatabaseHelper();
+            restaurantDB = helper.ReadRestaurant(restaurant.pk);
+            if (restaurantDB == null)
+            {
+                restaurantDB = new RestaurantDB();
+                restaurantDB.SetupRestaurantDB(restaurant);
+                restaurantDB.Bookmarked = false;
+            }
+            restaurantDB.ViewTime = DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
+            helper.Insert(restaurantDB);
+
             SetupRestaurantDetail(restaurant);
-
-            restaurantDB = new RestaurantDB();
-            restaurantDB.SetupRestaurantDB(restaurant);
-            restaurantDB.Bookmarked = false;
-            restaurantDB.ViewTime = new DateTime().ToString();
-
-            DatabaseHelper DbHelper = new DatabaseHelper();
-            DbHelper.Insert(restaurantDB);
         }
 
         /*private async void SaveThumbnail()
@@ -84,6 +91,7 @@ namespace Paris_Saveur
 
         private void SetupRestaurantDetail(Restaurant restaurant)
         {
+            CheckBookmark();
             this.restaurantThumbnail.Source = restaurant.ThumbnailBitmap;
             this.restaurantStyle.Text = restaurant.style;
             this.restaurantPrice.Text = restaurant.consumption_per_capita;
@@ -315,6 +323,49 @@ namespace Paris_Saveur
         private void restaurantPhoneNumber2_Click(object sender, RoutedEventArgs e)
         {
             PhoneCallManager.ShowPhoneCallUI(restaurant.phone_number_2, restaurant.name);
+        }
+
+        private void AddToFavorite_Click(object sender, RoutedEventArgs e)
+        {
+            if (restaurantDB.Bookmarked == false)
+            {
+                restaurantDB.Bookmarked = true;
+                helper.UpdateRestaurant(restaurantDB);
+                CheckBookmark();
+                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText01);
+                XmlNodeList elements = toastXml.GetElementsByTagName("text");
+                elements[0].AppendChild(toastXml.CreateTextNode(restaurantDB.name + " 已添加到收藏"));
+                ToastNotification toast = new ToastNotification(toastXml);
+                toast.ExpirationTime = DateTime.Now.AddSeconds(5);
+                ToastNotificationManager.CreateToastNotifier().Show(toast);
+            }
+            else
+            {
+                restaurantDB.Bookmarked = false;
+                helper.UpdateRestaurant(restaurantDB);
+                CheckBookmark();
+                XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText01);
+                XmlNodeList elements = toastXml.GetElementsByTagName("text");
+                elements[0].AppendChild(toastXml.CreateTextNode("已从收藏删除 " + restaurantDB.name));
+                ToastNotification toast = new ToastNotification(toastXml);
+                toast.ExpirationTime = DateTime.Now.AddSeconds(5);
+                ToastNotificationManager.CreateToastNotifier().Show(toast);
+            }
+
+        }
+
+        private void CheckBookmark()
+        {
+            if (restaurantDB.Bookmarked == true)
+            {
+                this.FavoriteButton.Icon = new SymbolIcon(Symbol.Accept);
+                this.FavoriteButton.Label = "已收藏";
+            }
+            else
+            {
+                this.FavoriteButton.Icon = new SymbolIcon(Symbol.Add);
+                this.FavoriteButton.Label = "收藏";
+            }
         }
     }
 }

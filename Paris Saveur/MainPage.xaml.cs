@@ -127,12 +127,12 @@ namespace Paris_Saveur
 
         private void History_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SimpleDisplayPage));
+            Frame.Navigate(typeof(SimpleDisplayPage), "history");
         }
 
         private void Bookmark_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(SimpleDisplayPage), "favorite");
         }
     }
 }

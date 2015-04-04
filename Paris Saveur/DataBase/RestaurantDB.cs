@@ -9,9 +9,8 @@ namespace Paris_Saveur.DataBase
     class RestaurantDB
     {
 
-        [SQLite.PrimaryKey, SQLite.AutoIncrement]
+        [SQLite.PrimaryKey, SQLite.NotNull]
         public int Id { get; set; }
-        public int pk { get; set; }
         public string name { get; set; }
         public string description { get; set; }
         public string thumbnail { get; set; }
@@ -32,13 +31,13 @@ namespace Paris_Saveur.DataBase
         public string RatingScoreAndReviewNum { get; set; }
         public int consumption_num { get; set; }
         public string consumption_per_capita { get; set; }
-        public string ViewTime { get; set; }
+        public double ViewTime { get; set; }
         public bool Bookmarked { get; set; }
 
         public RestaurantDB() { }
 
         public void SetupRestaurantDB(Restaurant restaurant) {
-            this.pk = restaurant.pk;
+            this.Id = restaurant.pk;
             this.name = restaurant.name;
             this.description = restaurant.description;
             this.style = restaurant.style;

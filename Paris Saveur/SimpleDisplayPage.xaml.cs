@@ -33,9 +33,20 @@ namespace Paris_Saveur
         ObservableCollection<Restaurant> restaurants;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            string displayType = e.Parameter.ToString();
+
             ObservableCollection<RestaurantDB> restaurantsDB = new ObservableCollection<RestaurantDB>();
             helper = new DatabaseHelper();
-            restaurantsDB = helper.ReadAllRestaurant();
+            if (displayType.Equals("history"))
+            {
+                restaurantsDB = helper.ReadAllRestaurant();
+                this.PageTitle.Text = "历史";
+            }
+            else
+            {
+                restaurantsDB = helper.ReadFavoriteRestaurant() ;
+                this.PageTitle.Text = "收藏";
+            }
             restaurants = new ObservableCollection<Restaurant>();
             foreach (RestaurantDB restaurantDB in restaurantsDB)
             {

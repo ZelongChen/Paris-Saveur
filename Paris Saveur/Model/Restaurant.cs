@@ -61,7 +61,7 @@ namespace Paris_Saveur
 
         public void SetupRestaurantFromDB(RestaurantDB restaurant)
         {
-            this.pk = restaurant.pk;
+            this.pk = restaurant.Id;
             this.name = restaurant.name;
             this.description = restaurant.description;
             this.thumbnail = restaurant.thumbnail;

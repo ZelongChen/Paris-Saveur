@@ -169,6 +169,8 @@
             </AppBarButton>
             <AppBarButton Label="分享" Icon="ReShare" Click="Share_Click">
             </AppBarButton>
+            <AppBarButton x:Name="FavoriteButton" Label="收藏" Icon="Favorite" Click="AddToFavorite_Click">
+            </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

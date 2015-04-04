@@ -15,7 +15,7 @@
     </Grid.RowDefinitions>
     <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
         <Image Source="Assets/logo_white.png"></Image>
-        <TextBlock Text="历史" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
+        <TextBlock x:Name="PageTitle" Text="历史" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
     </StackPanel>
     <ScrollViewer Grid.Row="1" Background="White">
             <Grid >

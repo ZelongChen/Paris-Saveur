@@ -75,7 +75,12 @@ namespace Paris_Saveur
         {
             if (this.MainPagePivot.SelectedIndex == 0)
             {
-                this.MainPageAppBar.Visibility = Visibility.Collapsed;
+                this.HistoryButton.Visibility = Visibility.Visible;
+                this.FavoriteButton.Visibility = Visibility.Visible;
+                this.FeedbackButton.Visibility = Visibility.Collapsed;
+                this.WebButton.Visibility = Visibility.Collapsed;
+                this.NoteButton.Visibility = Visibility.Collapsed;
+
                 this.PivotItem0_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
                 this.PivotItem0_Title.FontWeight = FontWeights.Bold;
                 this.PivotItem0_Title.FontSize = 22;
@@ -85,7 +90,12 @@ namespace Paris_Saveur
             }
             else
             {
-                this.MainPageAppBar.Visibility = Visibility.Visible;
+                this.HistoryButton.Visibility = Visibility.Collapsed;
+                this.FavoriteButton.Visibility = Visibility.Collapsed;
+                this.FeedbackButton.Visibility = Visibility.Visible;
+                this.WebButton.Visibility = Visibility.Visible;
+                this.NoteButton.Visibility = Visibility.Visible;
+
                 this.PivotItem0_Title.Foreground = new SolidColorBrush(Colors.Black);
                 this.PivotItem0_Title.FontWeight = FontWeights.Normal;
                 this.PivotItem0_Title.FontSize = 20;
@@ -112,7 +122,17 @@ namespace Paris_Saveur
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
+            
+        }
+
+        private void History_Click(object sender, RoutedEventArgs e)
+        {
             Frame.Navigate(typeof(SimpleDisplayPage));
+        }
+
+        private void Bookmark_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

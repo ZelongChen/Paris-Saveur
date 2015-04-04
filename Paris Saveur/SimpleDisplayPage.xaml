@@ -40,7 +40,7 @@
     </ScrollViewer>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Compact" Opacity="0.8">
+        <CommandBar ClosedDisplayMode="Minimal" Opacity="0.8">
             <AppBarButton Label="清除记录" Icon="Clear" Click="AppBarButton_Click"></AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>

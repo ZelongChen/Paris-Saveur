@@ -12,6 +12,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage.Streams;
 using Windows.UI;
+using Windows.UI.StartScreen;
 using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -31,25 +32,78 @@ namespace Paris_Saveur
         public RestaurantDetailPage()
         {
             this.InitializeComponent();
-            SocialNetworks = new List<string>
-            {
-                "Facebook",
-                "Twitter",
-                "微博",
-                "微信",
-                "人人网"
-            };
         }
 
         Restaurant restaurant;
         private List<String> SocialNetworks { get; set; }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+
             DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
             restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = restaurant.name;
             this.CommentPivotItemHeader.Text = "评论" + " (" + restaurant.rating_num + ")";
             SetupRestaurantDetail(restaurant);
+            InitAppBar();
+        }
+
+        private void InitAppBar()
+        {
+            ToggleAppBarButton(!SecondaryTile.Exists(MainPage.appbarTileId + "-" + restaurant.pk));
+            this.PinUnPinCommandButton.Click += this.pinToAppBar_Click;
+        }
+
+        // This toggles the Pin and unpin button in the app bar
+        private void ToggleAppBarButton(bool showPinButton)
+        {
+            if (showPinButton)
+            {
+                this.PinUnPinCommandButton.Label = "Pin";
+                this.PinUnPinCommandButton.Icon = new SymbolIcon(Symbol.Pin);
+            }
+            else
+            {
+                this.PinUnPinCommandButton.Label = "Unpin";
+                this.PinUnPinCommandButton.Icon = new SymbolIcon(Symbol.UnPin);
+            }
+
+            this.PinUnPinCommandButton.UpdateLayout();
+        }
+
+        async void pinToAppBar_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (SecondaryTile.Exists(MainPage.appbarTileId + "-" + restaurant.pk))
+            {
+
+                SecondaryTile secondaryTile = new SecondaryTile(MainPage.appbarTileId + "-" + restaurant.pk);
+
+                await secondaryTile.RequestDeleteForSelectionAsync(MainPage.GetElementRect((FrameworkElement)sender), Windows.UI.Popups.Placement.Above);
+                ToggleAppBarButton(true);
+            }
+            else
+            {
+                Uri square150x150Logo = new Uri("ms-appx:///Assets/logo_transparent.png");
+
+                string tileActivationArguments = MainPage.appbarTileId + " WasPinnedAt=" + DateTime.Now.ToLocalTime().ToString();
+
+                SecondaryTile secondaryTile = new SecondaryTile(MainPage.appbarTileId + "-" + restaurant.pk,
+                                                                restaurant.name,
+                                                                tileActivationArguments,
+                                                                square150x150Logo,
+                                                                TileSize.Square150x150);
+                secondaryTile.VisualElements.ForegroundText = ForegroundText.Dark;
+
+                secondaryTile.VisualElements.ShowNameOnSquare150x150Logo = true;
+
+                await secondaryTile.RequestCreateAsync();
+                ToggleAppBarButton(false);
+            }
+        }
+
+        void BottomAppBar_Opened(object sender, object e)
+        {
+            ToggleAppBarButton(!SecondaryTile.Exists(MainPage.appbarTileId));
         }
 
 

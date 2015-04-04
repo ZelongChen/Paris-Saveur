@@ -29,6 +29,8 @@ namespace Paris_Saveur
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public const string appbarTileId = "ParisSaveurSecondaryTile.AppBar";
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -108,6 +110,13 @@ namespace Paris_Saveur
         async private void Follow_Weibo_Tapped(object sender, TappedRoutedEventArgs e)
         {
             await Launcher.LaunchUriAsync(new Uri("http://www.weibo.com/vivelevendredi"));
+        }
+
+        public static Rect GetElementRect(FrameworkElement element)
+        {
+            GeneralTransform buttonTransform = element.TransformToVisual(null);
+            Point point = buttonTransform.TransformPoint(new Point());
+            return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
         }
     }
 }

@@ -109,5 +109,10 @@ namespace Paris_Saveur
         {
             await Launcher.LaunchUriAsync(new Uri("http://www.weibo.com/vivelevendredi"));
         }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SimpleDisplayPage));
+        }
     }
 }

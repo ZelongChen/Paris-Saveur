@@ -184,7 +184,7 @@
             </AppBarButton>
             <AppBarButton Label="我们的网站" Icon="Globe" Click="Launch_Web_Click">
             </AppBarButton>
-            <AppBarButton Label="给应用打分" Icon="Accept">
+            <AppBarButton Label="给应用打分" Icon="Accept" Click="AppBarButton_Click">
             </AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>

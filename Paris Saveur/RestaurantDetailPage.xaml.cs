@@ -54,27 +54,27 @@ namespace Paris_Saveur
             restaurantDB.Bookmarked = false;
             restaurantDB.ViewTime = new DateTime().ToString();
 
-            SaveThumbnail();
             DatabaseHelper DbHelper = new DatabaseHelper();
             DbHelper.Insert(restaurantDB);
         }
 
-        private async void SaveThumbnail()
+        /*private async void SaveThumbnail()
         {
             StorageFolder appFolder = await KnownFolders.PicturesLibrary.CreateFolderAsync("ParisSaveurImageFolder", CreationCollisionOption.OpenIfExists);
             StorageFile file = await appFolder.CreateFileAsync(restaurant.name + ".jpg", CreationCollisionOption.ReplaceExisting);
             restaurantDB.thumbnail = file.Path.ToString();
-            WriteableBitmap image = new WriteableBitmap(restaurant.ThumbnailBitmap.PixelWidth, restaurant.ThumbnailBitmap.PixelHeight);
+
             IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite);
             BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream);
+            WriteableBitmap image = restaurant.ThumbnailWriteableBitmap;
             Stream pixelStream = image.PixelBuffer.AsStream();
-            byte[] pixels = new byte[pixelStream.Length];
+            byte[] pixels = new byte[image.PixelBuffer.Length];
             await pixelStream.ReadAsync(pixels, 0, pixels.Length);
 
             encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Ignore, (uint)image.PixelWidth, (uint)image.PixelHeight, 96.0, 96.0, pixels);
             await encoder.FlushAsync();
 
-        }
+        }*/
 
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

@@ -1,10 +1,12 @@
-﻿using Paris_Saveur.Model;
+﻿using Paris_Saveur.DataBase;
+using Paris_Saveur.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace Paris_Saveur
@@ -56,6 +58,48 @@ namespace Paris_Saveur
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        public void SetupRestaurantFromDB(RestaurantDB restaurant)
+        {
+            this.pk = restaurant.pk;
+            this.name = restaurant.name;
+            this.description = restaurant.description;
+            this.thumbnail = restaurant.thumbnail;
+            this.style = restaurant.style;
+            this.address = restaurant.address;
+            this.geo_lat = restaurant.geo_lat;
+            this.geo_lon = restaurant.geo_lon;
+            this.public_transit = restaurant.public_transit;
+            this.phone_number_1 = restaurant.phone_number_1;
+            this.phone_number_2 = restaurant.phone_number_2;
+            this.opening_hours = restaurant.opening_hours;
+            this.website = restaurant.website;
+            this.url_path = restaurant.url_path;
+            this.rating_num = restaurant.rating_num;
+            this.rating_score = restaurant.rating_score;
+            this.RatingScoreAndReviewNum = restaurant.RatingScoreAndReviewNum;
+            this.consumption_num = restaurant.consumption_num;
+            this.consumption_per_capita = restaurant.consumption_per_capita;
+        }
+
+        /*private async void GetImageFromFile(RestaurantDB restaurantDB)
+        {
+            //open the picture library
+            StorageFolder libfolder = KnownFolders.PicturesLibrary;
+            //get all folders first
+            IReadOnlyList<StorageFolder> folderList = await libfolder.GetFoldersAsync();
+            //select our app's folder
+            var appfolder = folderList.FirstOrDefault(f => f.Name.Contains("ParisSaveurImageFolder"));
+            //get the desired file (assuming you know the file name)
+            StorageFile picfile = await appfolder.GetFileAsync(restaurantDB.name + ".jpg");
+            //generate a stream from the StorageFile
+            var stream = await picfile.OpenAsync(FileAccessMode.Read);
+            //generate a new image and set the source to our stream
+            BitmapImage img = new BitmapImage();
+            img.SetSource(stream);
+            this.ThumbnailBitmap = img;
+            //todo: work with the image
+        }*/
 
         public void ConvertRestaurantStyleToChinese()
         {

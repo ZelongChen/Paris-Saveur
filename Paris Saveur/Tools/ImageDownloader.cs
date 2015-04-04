@@ -30,11 +30,39 @@ namespace Paris_Saveur.Tools
         public static async void DownloadImageIntoImage(Restaurant restaurant)
         {
 
+            if (ConnectionContext.checkNetworkConnection())
+            {
+                if (restaurant.thumbnail != null)
+                {
+                    HttpClient client = new HttpClient();
+                    HttpResponseMessage response = await client.GetAsync("http://www.vivelevendredi.com" + restaurant.thumbnail);
+                    byte[] img = await response.Content.ReadAsByteArrayAsync();
+                    InMemoryRandomAccessStream randomAccessStream = new InMemoryRandomAccessStream();
+                    DataWriter writer = new DataWriter(randomAccessStream.GetOutputStreamAt(0));
+                    writer.WriteBytes(img);
+                    await writer.StoreAsync();
+                    BitmapImage b = new BitmapImage();
+                    b.SetSource(randomAccessStream);
+                    restaurant.ThumbnailBitmap = b;
+                }
+            }
 
-            if (restaurant.thumbnail != null)
+        }
+
+        public static async void DownloadImageIntoImage(User user)
+        {
+            if (ConnectionContext.checkNetworkConnection())
             {
                 HttpClient client = new HttpClient();
-                HttpResponseMessage response = await client.GetAsync("http://www.vivelevendredi.com" + restaurant.thumbnail);
+                HttpResponseMessage response;
+                if (user.avatar_url.Contains("http://www.gravatar.com"))
+                {
+                    response = await client.GetAsync(user.avatar_url);
+                }
+                else
+                {
+                    response = await client.GetAsync("http://www.vivelevendredi.com" + user.avatar_url);
+                }
                 byte[] img = await response.Content.ReadAsByteArrayAsync();
                 InMemoryRandomAccessStream randomAccessStream = new InMemoryRandomAccessStream();
                 DataWriter writer = new DataWriter(randomAccessStream.GetOutputStreamAt(0));
@@ -42,31 +70,8 @@ namespace Paris_Saveur.Tools
                 await writer.StoreAsync();
                 BitmapImage b = new BitmapImage();
                 b.SetSource(randomAccessStream);
-                restaurant.ThumbnailBitmap = b;
+                user.AvatarThumbnailBitmap = b;
             }
-        }
-
-        public static async void DownloadImageIntoImage(User user)
-        {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response;
-            if (user.avatar_url.Contains("http://www.gravatar.com"))
-            {
-                response = await client.GetAsync(user.avatar_url);
-
-            }
-            else
-            {
-                response = await client.GetAsync("http://www.vivelevendredi.com" + user.avatar_url);
-            }
-            byte[] img = await response.Content.ReadAsByteArrayAsync();
-            InMemoryRandomAccessStream randomAccessStream = new InMemoryRandomAccessStream();
-            DataWriter writer = new DataWriter(randomAccessStream.GetOutputStreamAt(0));
-            writer.WriteBytes(img);
-            await writer.StoreAsync();
-            BitmapImage b = new BitmapImage();
-            b.SetSource(randomAccessStream);
-            user.AvatarThumbnailBitmap = b;
         }
     }
 }

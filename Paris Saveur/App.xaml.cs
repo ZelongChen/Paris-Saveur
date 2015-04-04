@@ -41,7 +41,7 @@ namespace Paris_Saveur
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
-            if (!CheckFileExists("RestaurantDB.sqlite").Result)
+            if (!CheckFileExists("Restaurant.sqlite").Result)
             {
                 using (var db = new SQLiteConnection(DB_PATH))
                 {

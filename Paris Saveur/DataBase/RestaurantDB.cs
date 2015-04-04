@@ -10,6 +10,7 @@ namespace Paris_Saveur.DataBase
     {
 
         [SQLite.PrimaryKey, SQLite.AutoIncrement]
+        public int Id { get; set; }
         public int pk { get; set; }
         public string name { get; set; }
         public string description { get; set; }
@@ -41,12 +42,14 @@ namespace Paris_Saveur.DataBase
             this.name = restaurant.name;
             this.description = restaurant.description;
             this.style = restaurant.style;
+            this.thumbnail = restaurant.thumbnail;
             this.address = restaurant.address;
             this.geo_lat = restaurant.geo_lat;
             this.geo_lon = restaurant.geo_lon;
             this.public_transit = restaurant.public_transit;
             this.phone_number_1 = restaurant.phone_number_1;
             this.phone_number_2 = restaurant.phone_number_2;
+            this.opening_hours = restaurant.opening_hours;
             this.website = restaurant.website;
             this.url_path = restaurant.url_path;
             this.rating_num = restaurant.rating_num;

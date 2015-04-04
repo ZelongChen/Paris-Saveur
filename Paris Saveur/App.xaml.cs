@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Paris_Saveur.DataBase;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -40,11 +41,11 @@ namespace Paris_Saveur
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
-            if (!CheckFileExists("Restaurant.sqlite").Result)
+            if (!CheckFileExists("RestaurantDB.sqlite").Result)
             {
                 using (var db = new SQLiteConnection(DB_PATH))
                 {
-                    db.CreateTable<Restaurant>();
+                    db.CreateTable<RestaurantDB>();
                 }
             }  
         }

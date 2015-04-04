@@ -11,7 +11,7 @@ namespace Paris_Saveur
 {
     class Restaurant : INotifyPropertyChanged
     {
-        [SQLite.PrimaryKey, SQLite.AutoIncrement]
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
         public int pk { get; set; }
@@ -38,6 +38,7 @@ namespace Paris_Saveur
         public List<String> tag_list { get; set; }
         public LatestRating latest_rating { get; set; }
         private BitmapImage thumbnailBitmap;
+       
         public BitmapImage ThumbnailBitmap 
         {
             get { return thumbnailBitmap; }
@@ -47,10 +48,6 @@ namespace Paris_Saveur
                 NotifyPropertyChanged("ThumbnailBitmap");
             }
         }
-        public string ViewTime { get; set; }
-        public bool Bookmarked { get; set; }
-
-        public Restaurant() { }
 
         public void NotifyPropertyChanged(string propertyName)
         {

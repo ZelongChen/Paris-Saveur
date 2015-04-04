@@ -1,4 +1,5 @@
-﻿using Paris_Saveur.Model;
+﻿using Paris_Saveur.DataBase;
+using Paris_Saveur.Model;
 using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,9 @@ using Windows.ApplicationModel.Calls;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Imaging;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.UI;
 using Windows.UI.Text;
@@ -31,18 +35,12 @@ namespace Paris_Saveur
         public RestaurantDetailPage()
         {
             this.InitializeComponent();
-            SocialNetworks = new List<string>
-            {
-                "Facebook",
-                "Twitter",
-                "微博",
-                "微信",
-                "人人网"
-            };
         }
 
         Restaurant restaurant;
         private List<String> SocialNetworks { get; set; }
+        RestaurantDB restaurantDB;
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
@@ -50,6 +48,32 @@ namespace Paris_Saveur
             this.PageTitle.Text = restaurant.name;
             this.CommentPivotItemHeader.Text = "评论" + " (" + restaurant.rating_num + ")";
             SetupRestaurantDetail(restaurant);
+
+            restaurantDB = new RestaurantDB();
+            restaurantDB.SetupRestaurantDB(restaurant);
+            restaurantDB.Bookmarked = false;
+            restaurantDB.ViewTime = new DateTime().ToString();
+
+            SaveThumbnail();
+            DatabaseHelper DbHelper = new DatabaseHelper();
+            DbHelper.Insert(restaurantDB);
+        }
+
+        private async void SaveThumbnail()
+        {
+            StorageFolder appFolder = await KnownFolders.PicturesLibrary.CreateFolderAsync("ParisSaveurImageFolder", CreationCollisionOption.OpenIfExists);
+            StorageFile file = await appFolder.CreateFileAsync(restaurant.name + ".jpg", CreationCollisionOption.ReplaceExisting);
+            restaurantDB.thumbnail = file.Path.ToString();
+            WriteableBitmap image = new WriteableBitmap(restaurant.ThumbnailBitmap.PixelWidth, restaurant.ThumbnailBitmap.PixelHeight);
+            IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite);
+            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream);
+            Stream pixelStream = image.PixelBuffer.AsStream();
+            byte[] pixels = new byte[pixelStream.Length];
+            await pixelStream.ReadAsync(pixels, 0, pixels.Length);
+
+            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Ignore, (uint)image.PixelWidth, (uint)image.PixelHeight, 96.0, 96.0, pixels);
+            await encoder.FlushAsync();
+
         }
 
 

@@ -22,7 +22,7 @@ namespace Paris_Saveur.DataBase
                 {
                     using (dbConn = new SQLiteConnection(DB_PATH))
                     {
-                        dbConn.CreateTable<Restaurant>();
+                        dbConn.CreateTable<RestaurantDB>();
                     }
                 }
                 return true;
@@ -46,31 +46,31 @@ namespace Paris_Saveur.DataBase
         }
 
         // Retrieve the specific contact from the database. 
-        public Restaurant ReadRestaurant(int contactid)
+        public RestaurantDB ReadRestaurant(int contactid)
         {
             using (var dbConn = new SQLiteConnection(App.DB_PATH))
             {
-                var restaurant = dbConn.Query<Restaurant>("select * from Restaurant where Id =" + contactid).FirstOrDefault();
+                var restaurant = dbConn.Query<RestaurantDB>("select * from Restaurant where Id =" + contactid).FirstOrDefault();
                 return restaurant;
             }
         }
         // Retrieve the all contact list from the database. 
-        public ObservableCollection<Restaurant> ReadAllRestaurant()
+        public ObservableCollection<RestaurantDB> ReadAllRestaurant()
         {
             using (var dbConn = new SQLiteConnection(App.DB_PATH))
             {
-                List<Restaurant> myCollection = dbConn.Table<Restaurant>().ToList<Restaurant>();
-                ObservableCollection<Restaurant> RestaurantList = new ObservableCollection<Restaurant>(myCollection);
+                List<RestaurantDB> myCollection = dbConn.Table<RestaurantDB>().ToList<RestaurantDB>();
+                ObservableCollection<RestaurantDB> RestaurantList = new ObservableCollection<RestaurantDB>(myCollection);
                 return RestaurantList;
             }
         }
 
         //Update existing conatct 
-        public void UpdateRestaurant(Restaurant restaurant)
+        public void UpdateRestaurant(RestaurantDB restaurant)
         {
             using (var dbConn = new SQLiteConnection(App.DB_PATH))
             {
-                var existingRestaurant = dbConn.Query<Restaurant>("select * from Contacts where Id =" + restaurant.pk).FirstOrDefault();
+                var existingRestaurant = dbConn.Query<RestaurantDB>("select * from Contacts where Id =" + restaurant.pk).FirstOrDefault();
                 if (existingRestaurant != null)
                 {
                     existingRestaurant.ViewTime = existingRestaurant.ViewTime;
@@ -83,7 +83,7 @@ namespace Paris_Saveur.DataBase
             }
         }
         // Insert the new contact in the Contacts table. 
-        public void Insert(Restaurant newRestaurant)
+        public void Insert(RestaurantDB newRestaurant)
         {
             using (var dbConn = new SQLiteConnection(App.DB_PATH))
             {
@@ -99,7 +99,7 @@ namespace Paris_Saveur.DataBase
         {
             using (var dbConn = new SQLiteConnection(App.DB_PATH))
             {
-                var existingRestaurant = dbConn.Query<Restaurant>("select * from Restaurant where Id =" + Id).FirstOrDefault();
+                var existingRestaurant = dbConn.Query<RestaurantDB>("select * from Restaurant where Id =" + Id).FirstOrDefault();
                 if (existingRestaurant != null)
                 {
                     dbConn.RunInTransaction(() =>
@@ -114,13 +114,10 @@ namespace Paris_Saveur.DataBase
         {
             using (var dbConn = new SQLiteConnection(App.DB_PATH))
             {
-                //dbConn.RunInTransaction(() => 
-                //   { 
-                dbConn.DropTable<Restaurant>();
-                dbConn.CreateTable<Restaurant>();
+                dbConn.DropTable<RestaurantDB>();
+                dbConn.CreateTable<RestaurantDB>();
                 dbConn.Dispose();
                 dbConn.Close();
-                //}); 
             }
         } 
     }

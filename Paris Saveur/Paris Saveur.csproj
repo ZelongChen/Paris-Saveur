@@ -82,6 +82,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\DatabaseHelper.cs" />
+    <Compile Include="DataBase\RestaurantDB.cs" />
     <Compile Include="FeedBackPage.xaml.cs">
       <DependentUpon>FeedBackPage.xaml</DependentUpon>
     </Compile>
@@ -118,6 +120,11 @@
     <Compile Include="RestaurantSortByStylePage.xaml.cs">
       <DependentUpon>RestaurantSortByStylePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SimpleDisplayPage.xaml.cs">
+      <DependentUpon>SimpleDisplayPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
     <Compile Include="Tools\ConnectionContext.cs" />
     <Compile Include="Tools\ImageDownloader.cs" />
   </ItemGroup>
@@ -211,6 +218,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SimpleDisplayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -220,6 +231,15 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WP81, Version=3.8.8.3">
+      <Name>SQLite for Windows Phone 8.1</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

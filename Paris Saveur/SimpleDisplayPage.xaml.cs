@@ -31,9 +31,10 @@ namespace Paris_Saveur
         }
         DatabaseHelper helper;
         ObservableCollection<Restaurant> restaurants;
+        string displayType;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            string displayType = e.Parameter.ToString();
+            displayType = e.Parameter.ToString();
 
             ObservableCollection<RestaurantDB> restaurantsDB = new ObservableCollection<RestaurantDB>();
             helper = new DatabaseHelper();
@@ -68,7 +69,14 @@ namespace Paris_Saveur
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            helper.DeleteAlRestaurant();
+            if (displayType == "history")
+            {
+                helper.DeleteAllRestaurants();
+            }
+            else
+            {
+                helper.DeleteAllBookmarks();
+            }
             restaurants.Clear();
         }
     }

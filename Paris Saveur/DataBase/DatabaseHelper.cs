@@ -129,8 +129,8 @@ namespace Paris_Saveur.DataBase
                 }
             }
         }
-        //Delete all contactlist or delete Contacts table 
-        public void DeleteAlRestaurant()
+
+        public void DeleteAllRestaurants()
         {
             using (var dbConn = new SQLiteConnection(App.DB_PATH))
             {
@@ -138,6 +138,22 @@ namespace Paris_Saveur.DataBase
                 dbConn.CreateTable<RestaurantDB>();
                 dbConn.Dispose();
                 dbConn.Close();
+            }
+        }
+
+        public void DeleteAllBookmarks()
+        {
+            using (var dbConn = new SQLiteConnection(App.DB_PATH))
+            {
+                List<RestaurantDB> FavoriteRestaurants = dbConn.Query<RestaurantDB>("select * from RestaurantDB where Bookmarked = 1" ).ToList<RestaurantDB>();
+                if (FavoriteRestaurants.Count != 0)
+                {
+                    foreach (RestaurantDB restaurantDB in FavoriteRestaurants)
+                    {
+                        restaurantDB.Bookmarked = false;
+                        UpdateRestaurant(restaurantDB);
+                    }
+                }
             }
         } 
     }

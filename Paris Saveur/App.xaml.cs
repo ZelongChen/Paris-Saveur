@@ -1,13 +1,17 @@
-﻿using System;
+﻿using Paris_Saveur.DataBase;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Phone.UI.Input;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,7 +31,7 @@ namespace Paris_Saveur
     public sealed partial class App : Application
     {
         private TransitionCollection transitions;
-
+        public static string DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "Restaurant.sqlite"));
         /// <summary>
         /// 初始化单一实例应用程序对象。    这是执行的创作代码的第一行，
         /// 逻辑上等同于 main() 或 WinMain()。
@@ -37,8 +41,27 @@ namespace Paris_Saveur
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+            if (!CheckFileExists("Restaurant.sqlite").Result)
+            {
+                using (var db = new SQLiteConnection(DB_PATH))
+                {
+                    db.CreateTable<RestaurantDB>();
+                }
+            }  
         }
 
+        private async Task<bool> CheckFileExists(string fileName)
+        {
+            try
+            {
+                var store = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
+                return true;
+            }
+            catch
+            {
+            }
+            return false;
+        }
         /// <summary>
         /// 在应用程序由最终用户正常启动时进行调用。
         /// 当启动应用程序以打开特定的文件或显示搜索结果等操作时，

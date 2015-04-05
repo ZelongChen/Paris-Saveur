@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -58,6 +59,8 @@ namespace Paris_Saveur
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+                restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.recommendedRestaurantList.DataContext = list;

@@ -65,12 +65,11 @@ namespace Paris_Saveur
             helper.Insert(restaurantDB);
 
             SetupRestaurantDetail(restaurant);
-            InitAppBar();
         }
 
         private void InitAppBar()
         {
-            ToggleAppBarButton(!SecondaryTile.Exists(MainPage.appbarTileId + "-" + restaurant.pk));
+            ToggleAppBarButton(!SecondaryTile.Exists("" + restaurant.pk));
             this.PinUnPinCommandButton.Click += this.pinToAppBar_Click;
         }
 
@@ -153,21 +152,27 @@ namespace Paris_Saveur
         private void SetupRestaurantDetail(Restaurant restaurant)
         {
             CheckBookmark();
-            this.restaurantThumbnail.Source = restaurant.ThumbnailBitmap;
-            this.restaurantStyle.Text = restaurant.style;
-            this.restaurantPrice.Text = restaurant.consumption_per_capita;
-            SetupRestaurantReview(restaurant);
-            if (restaurant.description != "")
+            InitAppBar();
+            if (restaurant.ThumbnailBitmap != null)
             {
-                this.restaurantDescription.Text = restaurant.description;
+                this.restaurantThumbnail.Source = restaurant.ThumbnailBitmap;
             }
             else
             {
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+                restaurant.ThumbnailBitmap = placeholder;
+                if (ConnectionContext.checkNetworkConnection())
+                {
+                    ImageDownloader.DownloadImageIntoImage(this.restaurantThumbnail, restaurant);
+                }
+            }
+            SetupRestaurantReview(restaurant);
+            if (restaurant.description == "")
+            {
                 this.restaurantDescription.Visibility = Visibility.Collapsed;
             }
-            this.restaurantAddress.Text = restaurant.address;
-            this.restaurantMetro.Text = restaurant.public_transit;
-            this.restaurantTime.Text = restaurant.opening_hours;
+            this.RestaurantInfoPivot.DataContext = restaurant;
+
             this.restaurantPhoneNumber1.Text = restaurant.phone_number_1;
             if (restaurant.phone_number_2 != "")
             {

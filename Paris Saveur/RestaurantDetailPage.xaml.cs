@@ -402,7 +402,6 @@ namespace Paris_Saveur
                 XmlNodeList elements = toastXml.GetElementsByTagName("text");
                 elements[0].AppendChild(toastXml.CreateTextNode(restaurantDB.name + " 已添加到收藏"));
                 ToastNotification toast = new ToastNotification(toastXml);
-                toast.ExpirationTime = DateTime.Now.AddSeconds(5);
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
             }
             else
@@ -414,7 +413,6 @@ namespace Paris_Saveur
                 XmlNodeList elements = toastXml.GetElementsByTagName("text");
                 elements[0].AppendChild(toastXml.CreateTextNode("已从收藏删除 " + restaurantDB.name));
                 ToastNotification toast = new ToastNotification(toastXml);
-                toast.ExpirationTime = DateTime.Now.AddSeconds(5);
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
             }
 
@@ -432,6 +430,13 @@ namespace Paris_Saveur
                 this.FavoriteButton.Icon = new SymbolIcon(Symbol.Add);
                 this.FavoriteButton.Label = "收藏";
             }
+        }
+
+        private async void OpenMapButton_Click(object sender, RoutedEventArgs e)
+        {
+            string uriToLaunch = @"bingmaps:?collection=point." + restaurant.geo_lat +"_" + restaurant.geo_lon + "_" + restaurant.name +"&lvl=16";
+            var uri = new Uri(uriToLaunch);
+            await Windows.System.Launcher.LaunchUriAsync(uri);
         }
     }
 }

@@ -58,8 +58,8 @@ namespace Paris_Saveur
                 XmlNodeList elements = toastXml.GetElementsByTagName("text");
                 elements[0].AppendChild(toastXml.CreateTextNode("感谢您的反馈"));
                 ToastNotification toast = new ToastNotification(toastXml);
-                toast.ExpirationTime = DateTime.Now.AddSeconds(5);
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
+                this.FeedBackTextBox.Text = "";
             }
             this.LoadingRing.IsActive = false;
             this.LoadingRing.Visibility = Visibility.Collapsed;

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
   <Identity Name="41247zchen.ParisSaveur" Publisher="CN=DB5AAED3-D112-49A4-8B68-2ED68A16D202" Version="0.7.0.1" />
-  <mp:PhoneIdentity PhoneProductId="7a07bc05-9031-4e5d-b57a-a327289f48ae" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <mp:PhoneIdentity PhoneProductId="c59700e8-429d-4c97-a442-624dd6a127c9" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Paris Saveur</DisplayName>
     <PublisherDisplayName>zchen</PublisherDisplayName>

@@ -1,4 +1,5 @@
 ﻿using Paris_Saveur.Model;
+using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,20 +29,28 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DownloadHotTag();
+            if (ConnectionContext.checkNetworkConnection())
+            {
+                this.tag_list.Visibility = Visibility.Visible;
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+                DownloadHotTag();
+            }
+            else
+            {
+                this.tag_list.Visibility = Visibility.Collapsed;
+                this.NoConnectionText.Visibility = Visibility.Visible;
+            }
+            
         }
 
         private async void DownloadHotTag()
         {
-            LoadingBar.IsEnabled = true;
-            LoadingBar.Visibility = Visibility.Visible;
+            LoadingRing.IsActive = true;
+            LoadingRing.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
             var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/tag-cloud/");
             var result = await response.Content.ReadAsStringAsync();
-
-            LoadingBar.IsEnabled = false;
-            LoadingBar.Visibility = Visibility.Collapsed;
 
             TagList list = Newtonsoft.Json.JsonConvert.DeserializeObject<TagList>(result);
             foreach (Tag tag in list.tag_cloud)
@@ -49,6 +58,9 @@ namespace Paris_Saveur
                 tag.tagToString = tag.name + " (" + tag.num_tagged + ")";
             }
             this.tag_list.ItemsSource = list.tag_cloud;
+
+            LoadingRing.IsActive = false;
+            LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private void tag_list_SelectionChanged(object sender, SelectionChangedEventArgs e)

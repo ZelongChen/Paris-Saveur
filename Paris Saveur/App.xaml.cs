@@ -176,10 +176,6 @@ namespace Paris_Saveur
                 e.Handled = true;
                 frame.GoBack();
             }
-            else
-            {
-                Application.Current.Exit();
-            }
         }
     }
 }

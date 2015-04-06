@@ -14,6 +14,8 @@
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>arm</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -135,10 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\app_logo_wide_1.png" />
-    <Content Include="Assets\logo_transparent.png" />
-    <Content Include="Assets\refresh.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-240.png" />
+    <Content Include="Assets\logo_transparent.png" />
+    <Content Include="Assets\refresh.png" />
     <Content Include="Assets\restaurant_thumbnail_placeholder.jpg" />
     <Content Include="Assets\logo.png" />
     <Content Include="Assets\logo_white.png" />
@@ -176,6 +178,7 @@
     <Content Include="Assets\star_empty.png" />
     <Content Include="Assets\weibo.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

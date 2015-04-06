@@ -402,7 +402,6 @@ namespace Paris_Saveur
                 XmlNodeList elements = toastXml.GetElementsByTagName("text");
                 elements[0].AppendChild(toastXml.CreateTextNode(restaurantDB.name + " 已添加到收藏"));
                 ToastNotification toast = new ToastNotification(toastXml);
-                toast.ExpirationTime = DateTime.Now.AddSeconds(5);
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
             }
             else
@@ -414,7 +413,6 @@ namespace Paris_Saveur
                 XmlNodeList elements = toastXml.GetElementsByTagName("text");
                 elements[0].AppendChild(toastXml.CreateTextNode("已从收藏删除 " + restaurantDB.name));
                 ToastNotification toast = new ToastNotification(toastXml);
-                toast.ExpirationTime = DateTime.Now.AddSeconds(5);
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
             }
 

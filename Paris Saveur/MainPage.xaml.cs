@@ -132,9 +132,11 @@ namespace Paris_Saveur
             return new Rect(point, new Size(element.ActualWidth, element.ActualHeight));
         }
 
-        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        private async void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            string uriToLaunch = @"ms-windows-store:reviewapp?appid=c59700e8-429d-4c97-a442-624dd6a127c9";
+            var uri = new Uri(uriToLaunch);
+            await Windows.System.Launcher.LaunchUriAsync(uri);
         }
 
         private void History_Click(object sender, RoutedEventArgs e)

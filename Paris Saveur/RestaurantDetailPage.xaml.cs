@@ -92,10 +92,10 @@ namespace Paris_Saveur
         async void pinToAppBar_Click(object sender, RoutedEventArgs e)
         {
 
-            if (SecondaryTile.Exists(MainPage.appbarTileId + "-" + restaurant.pk))
+            if (SecondaryTile.Exists("" + restaurant.pk))
             {
 
-                SecondaryTile secondaryTile = new SecondaryTile(MainPage.appbarTileId + "-" + restaurant.pk);
+                SecondaryTile secondaryTile = new SecondaryTile("" + restaurant.pk);
 
                 await secondaryTile.RequestDeleteForSelectionAsync(MainPage.GetElementRect((FrameworkElement)sender), Windows.UI.Popups.Placement.Above);
                 ToggleAppBarButton(true);

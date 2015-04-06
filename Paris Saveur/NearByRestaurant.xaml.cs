@@ -53,6 +53,7 @@ namespace Paris_Saveur
             Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
         }
 
+        RestaurantList list = new RestaurantList();
         private async void DownloadNearByRestaurant(Geoposition currentPosition)
         {
             var client = new HttpClient();
@@ -60,7 +61,7 @@ namespace Paris_Saveur
             var response = await client.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
 
-            RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             if (list.Restaurant_list.Count == 0)
             {
                 LoadingRing.IsActive = false;
@@ -131,9 +132,11 @@ namespace Paris_Saveur
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () => await dialog.ShowAsync());
         }
 
-        private void OpenMap_Click(object sender, RoutedEventArgs e)
+        private async void OpenMap_Click(object sender, RoutedEventArgs e)
         {
-
+            string uriToLaunch = @"bingmaps:?cp=" + geoposition.Coordinate.Point.Position.Latitude + "~" + geoposition.Coordinate.Point.Position.Longitude + "&lvl=16";
+            var uri = new Uri(uriToLaunch);
+            await Windows.System.Launcher.LaunchUriAsync(uri);
         }
 
         private void Refresh_Click(object sender, RoutedEventArgs e)

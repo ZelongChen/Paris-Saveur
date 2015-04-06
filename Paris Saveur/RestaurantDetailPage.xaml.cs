@@ -433,5 +433,12 @@ namespace Paris_Saveur
                 this.FavoriteButton.Label = "收藏";
             }
         }
+
+        private async void OpenMapButton_Click(object sender, RoutedEventArgs e)
+        {
+            string uriToLaunch = @"bingmaps:?collection=point." + restaurant.geo_lat +"_" + restaurant.geo_lon + "_" + restaurant.name +"&lvl=16";
+            var uri = new Uri(uriToLaunch);
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
     }
 }

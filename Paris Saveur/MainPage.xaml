@@ -184,6 +184,8 @@
             </AppBarButton>
             <AppBarButton x:Name="FavoriteButton" Label="收藏" Icon="Favorite" Click="Bookmark_Click">
             </AppBarButton>
+            <AppBarButton x:Name="SearchButton" Label="搜索" Icon="Find" Click="SearchButton_Click">
+            </AppBarButton>
             <AppBarButton x:Name="FeedbackButton" Label="您的反馈" Icon="Mail" Click="Send_Feedback_Click">
             </AppBarButton>
             <AppBarButton x:Name="WebButton" Label="我们的网站" Icon="Globe" Click="Launch_Web_Click">

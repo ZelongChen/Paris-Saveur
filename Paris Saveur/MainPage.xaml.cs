@@ -79,6 +79,7 @@ namespace Paris_Saveur
             {
                 this.HistoryButton.Visibility = Visibility.Visible;
                 this.FavoriteButton.Visibility = Visibility.Visible;
+                this.SearchButton.Visibility = Visibility.Visible;
                 this.FeedbackButton.Visibility = Visibility.Collapsed;
                 this.WebButton.Visibility = Visibility.Collapsed;
                 this.NoteButton.Visibility = Visibility.Collapsed;
@@ -94,6 +95,7 @@ namespace Paris_Saveur
             {
                 this.HistoryButton.Visibility = Visibility.Collapsed;
                 this.FavoriteButton.Visibility = Visibility.Collapsed;
+                this.SearchButton.Visibility = Visibility.Collapsed;
                 this.FeedbackButton.Visibility = Visibility.Visible;
                 this.WebButton.Visibility = Visibility.Visible;
                 this.NoteButton.Visibility = Visibility.Visible;
@@ -143,6 +145,11 @@ namespace Paris_Saveur
         private void Bookmark_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SimpleDisplayPage), "favorite");
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SearchPage));
         }
     }
 }

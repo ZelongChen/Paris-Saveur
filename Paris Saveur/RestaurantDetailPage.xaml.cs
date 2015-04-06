@@ -17,6 +17,7 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.UI;
+using Windows.UI.StartScreen;
 using Windows.UI.Notifications;
 using Windows.UI.Text;
 using Windows.UI.Xaml;
@@ -46,6 +47,7 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+
             DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
             restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = restaurant.name;
@@ -63,6 +65,64 @@ namespace Paris_Saveur
             helper.Insert(restaurantDB);
 
             SetupRestaurantDetail(restaurant);
+        }
+
+        private void InitAppBar()
+        {
+            ToggleAppBarButton(!SecondaryTile.Exists("" + restaurant.pk));
+            this.PinUnPinCommandButton.Click += this.pinToAppBar_Click;
+        }
+
+        private void ToggleAppBarButton(bool showPinButton)
+        {
+            if (showPinButton)
+            {
+                this.PinUnPinCommandButton.Label = "Pin";
+                this.PinUnPinCommandButton.Icon = new SymbolIcon(Symbol.Pin);
+            }
+            else
+            {
+                this.PinUnPinCommandButton.Label = "Unpin";
+                this.PinUnPinCommandButton.Icon = new SymbolIcon(Symbol.UnPin);
+            }
+
+            this.PinUnPinCommandButton.UpdateLayout();
+        }
+
+        async void pinToAppBar_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (SecondaryTile.Exists(MainPage.appbarTileId + "-" + restaurant.pk))
+            {
+
+                SecondaryTile secondaryTile = new SecondaryTile(MainPage.appbarTileId + "-" + restaurant.pk);
+
+                await secondaryTile.RequestDeleteForSelectionAsync(MainPage.GetElementRect((FrameworkElement)sender), Windows.UI.Popups.Placement.Above);
+                ToggleAppBarButton(true);
+            }
+            else
+            {
+                Uri square150x150Logo = new Uri("ms-appx:///Assets/logo_transparent.png");
+
+                string tileActivationArguments = MainPage.appbarTileId + " WasPinnedAt=" + DateTime.Now.ToLocalTime().ToString();
+
+                SecondaryTile secondaryTile = new SecondaryTile("" + restaurant.pk,
+                                                                restaurant.name,
+                                                                tileActivationArguments,
+                                                                square150x150Logo,
+                                                                TileSize.Square150x150);
+                secondaryTile.VisualElements.ForegroundText = ForegroundText.Dark;
+
+                secondaryTile.VisualElements.ShowNameOnSquare150x150Logo = true;
+
+                await secondaryTile.RequestCreateAsync();
+                ToggleAppBarButton(false);
+            }
+        }
+
+        void BottomAppBar_Opened(object sender, object e)
+        {
+            ToggleAppBarButton(!SecondaryTile.Exists(MainPage.appbarTileId));
         }
 
         /*private async void SaveThumbnail()
@@ -92,21 +152,27 @@ namespace Paris_Saveur
         private void SetupRestaurantDetail(Restaurant restaurant)
         {
             CheckBookmark();
-            this.restaurantThumbnail.Source = restaurant.ThumbnailBitmap;
-            this.restaurantStyle.Text = restaurant.style;
-            this.restaurantPrice.Text = restaurant.consumption_per_capita;
-            SetupRestaurantReview(restaurant);
-            if (restaurant.description != "")
+            InitAppBar();
+            if (restaurant.ThumbnailBitmap != null)
             {
-                this.restaurantDescription.Text = restaurant.description;
+                this.restaurantThumbnail.Source = restaurant.ThumbnailBitmap;
             }
             else
             {
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+                restaurant.ThumbnailBitmap = placeholder;
+                if (ConnectionContext.checkNetworkConnection())
+                {
+                    ImageDownloader.DownloadImageIntoImage(this.restaurantThumbnail, restaurant);
+                }
+            }
+            SetupRestaurantReview(restaurant);
+            if (restaurant.description == "")
+            {
                 this.restaurantDescription.Visibility = Visibility.Collapsed;
             }
-            this.restaurantAddress.Text = restaurant.address;
-            this.restaurantMetro.Text = restaurant.public_transit;
-            this.restaurantTime.Text = restaurant.opening_hours;
+            this.RestaurantInfoPivot.DataContext = restaurant;
+
             this.restaurantPhoneNumber1.Text = restaurant.phone_number_1;
             if (restaurant.phone_number_2 != "")
             {

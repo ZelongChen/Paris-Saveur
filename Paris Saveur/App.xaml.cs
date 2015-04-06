@@ -116,9 +116,19 @@ namespace Paris_Saveur
                 // 当导航堆栈尚未还原时，导航到第一页，
                 // 并通过将所需信息作为导航参数传入来配置
                 // 新页面
+
                 if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
+                }
+
+                if (e.TileId.ToString() != "App")
+                {
+                    DatabaseHelper helper = new DatabaseHelper();
+                    RestaurantDB restaurantDB = helper.ReadRestaurant(Int16.Parse(e.TileId.ToString()));
+                    Restaurant restaurant = new Restaurant();
+                    restaurant.SetupRestaurantFromDB(restaurantDB);
+                    rootFrame.Navigate(typeof(RestaurantDetailPage), restaurant);
                 }
             }
 

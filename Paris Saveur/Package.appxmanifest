@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="28af3467-4d10-49e1-9552-488fa98a3296" Publisher="CN=Zelong" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="28af3467-4d10-49e1-9552-488fa98a3296" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="41247zchen.ParisSaveur" Publisher="CN=DB5AAED3-D112-49A4-8B68-2ED68A16D202" Version="0.7.0.1" />
+  <mp:PhoneIdentity PhoneProductId="7a07bc05-9031-4e5d-b57a-a327289f48ae" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Paris Saveur</DisplayName>
-    <PublisherDisplayName>Zelong</PublisherDisplayName>
+    <PublisherDisplayName>zchen</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -16,7 +16,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Paris_Saveur.App">
-      <m3:VisualElements DisplayName="Paris Saveur" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Paris Saveur" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
+      <m3:VisualElements DisplayName="巴黎寻味" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Paris Saveur" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
         <m3:LockScreen Notification="badge" BadgeLogo="Assets\BadgeLogo.png" />
         <m3:DefaultTile Square71x71Logo="Assets\Square71x71Logo.png">
         </m3:DefaultTile>

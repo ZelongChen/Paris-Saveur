@@ -13,10 +13,10 @@ namespace Paris_Saveur.Tools
 {
     class ImageDownloader
     {
-        public static async void DownloadImageIntoImage(Image image, String url)
+        public static async void DownloadImageIntoImage(Image image, Restaurant restaurant)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync(url);
+            HttpResponseMessage response = await client.GetAsync("http://www.vivelevendredi.com" + restaurant.thumbnail);
             byte[] img = await response.Content.ReadAsByteArrayAsync();
             InMemoryRandomAccessStream randomAccessStream = new InMemoryRandomAccessStream();
             DataWriter writer = new DataWriter(randomAccessStream.GetOutputStreamAt(0));
@@ -25,6 +25,7 @@ namespace Paris_Saveur.Tools
             BitmapImage b = new BitmapImage();
             b.SetSource(randomAccessStream);
             image.Source = b;
+            restaurant.ThumbnailBitmap = b;
         }
 
         public static async void DownloadImageIntoImage(Restaurant restaurant)

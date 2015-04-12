@@ -159,7 +159,7 @@
                 </PivotItem.Header>
                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                     <Image Source="Assets/app_logo_wide_1.png" Margin="0,20,0,0" Width="240" ></Image>
-                    <TextBlock x:Name="AppVersion" Text="version 0.2" HorizontalAlignment="Center" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="AppVersion" Text="version 0.9" HorizontalAlignment="Center" Foreground="Black"></TextBlock>
                     <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Center"
                                 Margin="0,20,0,0"

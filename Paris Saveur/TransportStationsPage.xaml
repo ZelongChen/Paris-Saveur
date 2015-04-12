@@ -1,0 +1,99 @@
+﻿<Page
+    x:Class="Paris_Saveur.TransportStationsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Paris_Saveur"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prim="using:Windows.UI.Xaml.Controls.Primitives"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <CollectionViewSource 
+            x:Key="ItemsGroupedByGroup" 
+            IsSourceGrouped="True" 
+            ItemsPath="InternalList" 
+            Source="{Binding AlphaGrouped, Source={Binding}}"/>
+
+        <DataTemplate x:Key="SampleDataTemplate">
+            <TextBlock HorizontalAlignment="Left"
+                       Foreground="Black"
+                       Text="{Binding Name}" 
+                       VerticalAlignment="Top"
+                       Style="{StaticResource ListViewItemTextBlockStyle}"
+                       FontSize="20"
+                       TextTrimming="CharacterEllipsis"/>
+        </DataTemplate>
+
+        <prim:JumpListItemBackgroundConverter x:Key="BackgroundConverter"/>
+        <prim:JumpListItemForegroundConverter x:Key="ForegroundConverter"/>
+    </Page.Resources>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+            <Image Source="Assets/logo_white.png"></Image>
+            <TextBlock Text="地铁周边" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Background="White">
+            <Grid >
+                <SemanticZoom>
+                    <SemanticZoom.ZoomedInView>
+                        <ListView x:Name="TransportStationListView" 
+                                  ItemsSource="{Binding Source={StaticResource ItemsGroupedByGroup}}"
+                                  ItemTemplate="{StaticResource SampleDataTemplate}"
+                                  HorizontalContentAlignment="Stretch">
+                            <ListView.GroupStyle>
+                                <GroupStyle HidesIfEmpty="True">
+                                    <GroupStyle.HeaderTemplate>
+                                        <DataTemplate>
+                                            <Border Background="{StaticResource PhoneAccentBrush}" 
+                                                    BorderBrush="{StaticResource PhoneAccentBrush}" 
+                                                    BorderThickness="2"	
+                                                    Width="62" Height="62" Margin="0,0,18,0"
+                                                    HorizontalAlignment="Stretch">
+                                                <TextBlock Text="{Binding Key}"
+                                                           Foreground="{StaticResource PhoneForegroundBrush}" 
+                                                           FontSize="48"
+                                                           Padding="6"
+                                                           FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+                                                           HorizontalAlignment="Left"
+                                                           VerticalAlignment="Center"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </GroupStyle.HeaderTemplate>
+                                </GroupStyle>
+                            </ListView.GroupStyle>
+                        </ListView>
+                    </SemanticZoom.ZoomedInView>
+                    <SemanticZoom.ZoomedOutView>
+                        <GridView
+                            ItemsSource="{Binding Source={StaticResource ItemsGroupedByGroup}, Path=CollectionGroups}"
+                            Background="#AA000000">
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Padding="5">
+                                        <Border Background="{Binding Converter={StaticResource BackgroundConverter}}" 
+                                                Width="82" Height="82"  				 
+                                                HorizontalAlignment="Left">
+                                            <TextBlock Text="{Binding Group.Key}"
+                                                       Foreground="{Binding Converter={StaticResource ForegroundConverter}}" 
+                                                       FontSize="48"
+                                                       Padding="6"
+                                                       HorizontalAlignment="Left"
+                                                       VerticalAlignment="Center"/>
+                                        </Border>
+                                    </Border>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                    </SemanticZoom.ZoomedOutView>
+                </SemanticZoom>
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

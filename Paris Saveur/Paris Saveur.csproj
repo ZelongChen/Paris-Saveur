@@ -98,12 +98,15 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\AlphaKeyGroup.cs" />
     <Compile Include="Model\CommentList.cs" />
     <Compile Include="Model\LatestRating.cs" />
     <Compile Include="Model\RestaurantComment.cs" />
     <Compile Include="Model\RestaurantList.cs" />
     <Compile Include="Model\Tag.cs" />
     <Compile Include="Model\TagList.cs" />
+    <Compile Include="Model\TransportStation.cs" />
+    <Compile Include="Model\TransportStationList.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="NearByRestaurant.xaml.cs">
       <DependentUpon>NearByRestaurant.xaml</DependentUpon>
@@ -132,6 +135,9 @@
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="Tools\ConnectionContext.cs" />
     <Compile Include="Tools\ImageDownloader.cs" />
+    <Compile Include="TransportStationsPage.xaml.cs">
+      <DependentUpon>TransportStationsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -229,6 +235,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SimpleDisplayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TransportStationsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

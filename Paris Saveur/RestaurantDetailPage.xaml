@@ -174,9 +174,9 @@
                 </AppBarButton.Flyout>
             </AppBarButton>
             <AppBarButton Label="分享" Icon="ReShare" Click="Share_Click"></AppBarButton>
-            <AppBarButton x:Name="PinUnPinCommandButton" Label="添加" Icon="Pin"></AppBarButton>
             <AppBarButton x:Name="FavoriteButton" Label="收藏" Icon="Favorite" Click="AddToFavorite_Click"></AppBarButton>
             <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="PinUnPinCommandButton" Label="添加到桌面" Click="pinToAppBar_Click"></AppBarButton>
                 <AppBarButton x:Name="OpenMapButton" Label="在地图中打开" Click="OpenMapButton_Click"></AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>

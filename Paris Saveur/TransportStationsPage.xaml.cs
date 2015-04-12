@@ -24,12 +24,20 @@ namespace Paris_Saveur
         {
             this.InitializeComponent();
             TransportStationList list = new TransportStationList();
-
             this.DataContext = list;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+        }
+
+        private void TransportStationListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var station = e.AddedItems[0] as TransportStation;
+            if (Frame != null)
+            {
+                Frame.Navigate(typeof(NearByRestaurant), station);
+            }
         }
     }
 }

@@ -52,6 +52,8 @@
                 <ListView x:Name="TransportStationListView" 
                                   ItemsSource="{Binding Source={StaticResource ItemsGroupedByGroup}}"
                                   ItemTemplate="{StaticResource SampleDataTemplate}"
+                                  ScrollViewer.IsHorizontalScrollChainingEnabled="False"
+                                  SelectionChanged="TransportStationListView_SelectionChanged"
                                   HorizontalContentAlignment="Stretch">
                     <ListView.GroupStyle>
                         <GroupStyle HidesIfEmpty="True">

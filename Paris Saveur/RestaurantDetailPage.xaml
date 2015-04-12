@@ -23,12 +23,12 @@
                     </Grid.ColumnDefinitions>
                     <Image x:Name="userThumbnail" Source="{Binding user.AvatarThumbnailBitmap}" Grid.Column="0" Margin="5,5,5,5"></Image>
                     <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,15,0,0">
-                        <TextBlock x:Name="userName" Text="{Binding user.username}"  Foreground="Black"></TextBlock>
-                        <TextBlock x:Name="userCommentScore" Text="{Binding score}" Foreground="Black"></TextBlock>
+                        <TextBlock x:Name="userName" Text="{Binding user.username}" FontSize="15" Foreground="Black"></TextBlock>
+                        <TextBlock x:Name="userCommentScore" Text="{Binding score}" FontSize="15" Foreground="Black"></TextBlock>
                     </StackPanel>
-                    <TextBlock x:Name="userCommentDate" Text="{Binding rate_date}" HorizontalAlignment="Right" Foreground="Black" Grid.Column="2" Margin="0,15,20,0"></TextBlock>
+                    <TextBlock x:Name="userCommentDate" Text="{Binding rate_date}" HorizontalAlignment="Right" FontSize="15" Foreground="Black" Grid.Column="2" Margin="0,15,20,0"></TextBlock>
                 </Grid>
-                <TextBlock x:Name="userComment" Text="{Binding comment}" Grid.Row="1" Foreground="Black" TextWrapping="Wrap" Padding="10"></TextBlock>
+                <TextBlock x:Name="userComment" Text="{Binding comment}" Grid.Row="1" Foreground="Black" FontSize="15" TextWrapping="Wrap" Padding="10"></TextBlock>
             </Grid>
         </DataTemplate>
     </UserControl.Resources>
@@ -67,6 +67,7 @@
                                Text="{Binding description}"
                                HorizontalAlignment="Stretch" 
                                TextWrapping="Wrap"
+                               FontSize="15"
                                Grid.Row="1" 
                                Foreground="Black"
                                Padding="10"></TextBlock>
@@ -75,6 +76,7 @@
                         <TextBlock x:Name="restaurantStyle" 
                                Text="{Binding style}"    
                                Foreground="Black" 
+                               FontSize="15"
                                VerticalAlignment="Center"
                                Margin="10,0,0,0"></TextBlock>
                     </StackPanel>
@@ -82,7 +84,8 @@
                         <Image Source="Assets/restaurant_detail_price.png" Margin="5"></Image>
                         <TextBlock x:Name="restaurantPrice" 
                                Text="{Binding consumption_per_capita}"   
-                               Foreground="Black" 
+                               Foreground="Black"
+                               FontSize="15"
                                VerticalAlignment="Center"
                                Margin="10,0,0,0"></TextBlock>
                     </StackPanel>
@@ -98,7 +101,8 @@
                         <Image Source="Assets/restaurant_detail_location.png" Margin="5"></Image>
                         <TextBlock x:Name="restaurantAddress" 
                                 Text="{Binding address}"
-                               Foreground="Black" 
+                               Foreground="Black"
+                               FontSize="15"
                                VerticalAlignment="Center"
                                Margin="10,0,0,0"></TextBlock>
                     </StackPanel>
@@ -106,7 +110,8 @@
                         <Image Source="Assets/restaurant_detail_metro.png" Margin="5"></Image>
                         <TextBlock x:Name="restaurantMetro"
                                Text="{Binding public_transit}"
-                               Foreground="Black" 
+                               Foreground="Black"
+                               FontSize="15"
                                VerticalAlignment="Center"
                                Margin="10,0,0,0"></TextBlock>
                     </StackPanel>
@@ -114,7 +119,8 @@
                         <Image Source="Assets/restaurant_detail_clock.png" Margin="5"></Image>
                         <TextBlock x:Name="restaurantTime" 
                                Text="{Binding opening_hours}"
-                               Foreground="Black" 
+                               Foreground="Black"
+                               FontSize="15"
                                VerticalAlignment="Center"
                                Margin="10,0,0,0"></TextBlock>
                     </StackPanel>
@@ -174,9 +180,9 @@
                 </AppBarButton.Flyout>
             </AppBarButton>
             <AppBarButton Label="分享" Icon="ReShare" Click="Share_Click"></AppBarButton>
-            <AppBarButton x:Name="PinUnPinCommandButton" Label="添加" Icon="Pin"></AppBarButton>
             <AppBarButton x:Name="FavoriteButton" Label="收藏" Icon="Favorite" Click="AddToFavorite_Click"></AppBarButton>
             <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="PinUnPinCommandButton" Label="添加到桌面" Click="pinToAppBar_Click"></AppBarButton>
                 <AppBarButton x:Name="OpenMapButton" Label="在地图中打开" Click="OpenMapButton_Click"></AppBarButton>
             </CommandBar.SecondaryCommands>
         </CommandBar>

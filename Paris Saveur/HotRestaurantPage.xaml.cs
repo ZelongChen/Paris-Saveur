@@ -46,17 +46,20 @@ namespace Paris_Saveur
                 var parameterReceived = e.Parameter;
                 if (parameterReceived == null)
                 {
+                    this.Title.Text = "热门餐馆";
                     DownloadRecommendedRestaurant(sortBy, currentPage++);
                 }
                 else if (parameterReceived is string)
                 {
                     restaurantStyle = parameterReceived as string;
+                    this.Title.Text = StyleToChinese(restaurantStyle);
                     DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage++);
                 }
                 else
                 {
                     restaurantTag = new Tag();
                     restaurantTag = parameterReceived as Tag;
+                    this.Title.Text = restaurantTag.name;
                     DownloadRestaurantWithTag(restaurantTag.name, sortBy, currentPage++);
                 }
             }
@@ -243,6 +246,31 @@ namespace Paris_Saveur
             {
                 this.loadMoreButoon.Content = "请检查您的网络连接";
                 this.loadMoreButoon.Foreground = new SolidColorBrush(Colors.Gray);
+            }
+        }
+
+        public string StyleToChinese(string style)
+        {
+            switch (style)
+            {
+                case "Sichuan_Hunan":
+                    return "川菜 湘菜";
+                case "Shandong_Anhui":
+                    return "鲁菜 徽菜";
+                case "Jiangsu_Zhejiang":
+                    return "苏菜 浙菜";
+                case "Cantonese_Fujian":
+                    return "粤菜 闽菜";
+                case "Yunnan":
+                    return "云南菜";
+                case "Northern_Chinese":
+                    return "北方菜系";
+                case "Japanese_Korean":
+                    return "日餐 韩餐";
+                case "South_Asian":
+                    return "东南亚菜";
+                default:
+                    return "未归类";
             }
         }
     }

@@ -159,7 +159,7 @@
                 </PivotItem.Header>
                 <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
                     <Image Source="Assets/app_logo_wide_1.png" Margin="0,20,0,0" Width="240" ></Image>
-                    <TextBlock x:Name="AppVersion" Text="version 0.2" HorizontalAlignment="Center" Foreground="Black"></TextBlock>
+                    <TextBlock x:Name="AppVersion" Text="version 0.9" HorizontalAlignment="Center" Foreground="Black"></TextBlock>
                     <StackPanel Orientation="Horizontal"
                                 HorizontalAlignment="Center"
                                 Margin="0,20,0,0"
@@ -179,7 +179,7 @@
     </Grid>
 
     <Page.BottomAppBar>
-        <CommandBar x:Name="MainPageAppBar" ClosedDisplayMode="Compact" Opacity="0.8">
+        <CommandBar x:Name="MainPageAppBar" ClosedDisplayMode="Minimal" Opacity="0.8">
             <AppBarButton x:Name="HistoryButton" Label="历史" Icon="Clock" Click="History_Click">
             </AppBarButton>
             <AppBarButton x:Name="FavoriteButton" Label="收藏" Icon="Favorite" Click="Bookmark_Click">

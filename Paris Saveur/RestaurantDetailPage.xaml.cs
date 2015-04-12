@@ -70,20 +70,17 @@ namespace Paris_Saveur
         private void InitAppBar()
         {
             ToggleAppBarButton(!SecondaryTile.Exists("" + restaurant.pk));
-            this.PinUnPinCommandButton.Click += this.pinToAppBar_Click;
         }
 
         private void ToggleAppBarButton(bool showPinButton)
         {
             if (showPinButton)
             {
-                this.PinUnPinCommandButton.Label = "Pin";
-                this.PinUnPinCommandButton.Icon = new SymbolIcon(Symbol.Pin);
+                this.PinUnPinCommandButton.Label = "添加到桌面";
             }
             else
             {
-                this.PinUnPinCommandButton.Label = "Unpin";
-                this.PinUnPinCommandButton.Icon = new SymbolIcon(Symbol.UnPin);
+                this.PinUnPinCommandButton.Label = "从桌面删除";
             }
 
             this.PinUnPinCommandButton.UpdateLayout();

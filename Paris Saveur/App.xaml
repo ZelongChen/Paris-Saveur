@@ -15,11 +15,11 @@
                     </Grid.ColumnDefinitions>
                     <Image x:Name="restaurantThumbnail" Grid.Column="0" Source="{Binding ThumbnailBitmap}" Margin="5,5,5,5"></Image>
                     <StackPanel x:Name="restaurantSimpleInfoStack" Grid.Column="1" Orientation="Vertical">
-                        <TextBlock x:Name="restaurantSimpleInfoTitle" Foreground="Black" Text="{Binding name}" FontWeight="Bold"></TextBlock>
-                        <TextBlock x:Name="restaurantSimpleInfoType" Foreground="Black" Text="{Binding style}"></TextBlock>
-                        <TextBlock x:Name="restaurantSimpleInfoReview" Foreground="Black" Text="{Binding RatingScoreAndReviewNum}"></TextBlock>
+                        <TextBlock x:Name="restaurantSimpleInfoTitle" FontSize="15" Foreground="Black" Text="{Binding name}" FontWeight="Bold"></TextBlock>
+                        <TextBlock x:Name="restaurantSimpleInfoType" FontSize="15" Foreground="Black" Text="{Binding style}"></TextBlock>
+                        <TextBlock x:Name="restaurantSimpleInfoReview" FontSize="15" Foreground="Black" Text="{Binding RatingScoreAndReviewNum}"></TextBlock>
                     </StackPanel>
-                    <TextBlock x:Name="restaurantSimpleInfoPrice" Foreground="Black" Text="{Binding consumption_per_capita}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                    <TextBlock x:Name="restaurantSimpleInfoPrice" Foreground="Black" FontSize="15" Text="{Binding consumption_per_capita}" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
                 </Grid>
             </DataTemplate>
         </ResourceDictionary>

@@ -16,6 +16,11 @@
             ItemsPath="InternalList" 
             Source="{Binding AlphaGrouped, Source={Binding}}"/>
 
+        <CollectionViewSource 
+            x:Key="Items" 
+            ItemsPath="Items" 
+            Source="{Binding Ungrouped, Source={Binding}}"/>
+
         <DataTemplate x:Key="SampleDataTemplate">
             <TextBlock HorizontalAlignment="Left"
                        Foreground="Black"
@@ -30,6 +35,8 @@
         <prim:JumpListItemBackgroundConverter x:Key="BackgroundConverter"/>
         <prim:JumpListItemForegroundConverter x:Key="ForegroundConverter"/>
     </Page.Resources>
+    
+    
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
@@ -39,63 +46,59 @@
             <Image Source="Assets/logo_white.png"></Image>
             <TextBlock Text="地铁周边" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
         </StackPanel>
-        <ScrollViewer Grid.Row="1" Background="White">
-            <Grid >
-                <SemanticZoom>
-                    <SemanticZoom.ZoomedInView>
-                        <ListView x:Name="TransportStationListView" 
+        <SemanticZoom
+            Grid.Row="1">
+            <SemanticZoom.ZoomedInView>
+                <ListView x:Name="TransportStationListView" 
                                   ItemsSource="{Binding Source={StaticResource ItemsGroupedByGroup}}"
                                   ItemTemplate="{StaticResource SampleDataTemplate}"
                                   HorizontalContentAlignment="Stretch">
-                            <ListView.GroupStyle>
-                                <GroupStyle HidesIfEmpty="True">
-                                    <GroupStyle.HeaderTemplate>
-                                        <DataTemplate>
-                                            <Border Background="#FFE05C52" 
+                    <ListView.GroupStyle>
+                        <GroupStyle HidesIfEmpty="True">
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <Border Background="#FFE05C52" 
                                                     BorderBrush="#FFE05C52" 
                                                     BorderThickness="2"	
                                                     Width="50" Height="50"
                                                     Margin="5"
                                                     HorizontalAlignment="Stretch">
-                                                <TextBlock Text="{Binding Key}"
+                                        <TextBlock Text="{Binding Key}"
                                                            Foreground="{StaticResource PhoneForegroundBrush}" 
                                                            FontSize="30"
                                                            Padding="6"
                                                            FontFamily="{StaticResource PhoneFontFamilySemiLight}"
                                                            HorizontalAlignment="Center"
                                                            VerticalAlignment="Center"/>
-                                            </Border>
-                                        </DataTemplate>
-                                    </GroupStyle.HeaderTemplate>
-                                </GroupStyle>
-                            </ListView.GroupStyle>
-                        </ListView>
-                    </SemanticZoom.ZoomedInView>
-                    <SemanticZoom.ZoomedOutView>
-                        <GridView
+                                    </Border>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListView.GroupStyle>
+                </ListView>
+            </SemanticZoom.ZoomedInView>
+            <SemanticZoom.ZoomedOutView>
+                <GridView
                             ItemsSource="{Binding Source={StaticResource ItemsGroupedByGroup}, Path=CollectionGroups}"
                             Background="#AA000000">
-                            <GridView.ItemTemplate>
-                                <DataTemplate>
-                                    <Border Padding="5">
-                                        <Border Background="{Binding Converter={StaticResource BackgroundConverter}}" 
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Padding="5">
+                                <Border Background="{Binding Converter={StaticResource BackgroundConverter}}" 
                                                 Width="82" Height="82"  				 
                                                 HorizontalAlignment="Left">
-                                            <TextBlock Text="{Binding Group.Key}"
+                                    <TextBlock Text="{Binding Group.Key}"
                                                        Foreground="{Binding Converter={StaticResource ForegroundConverter}}" 
                                                        FontSize="48"
                                                        Padding="6"
                                                        HorizontalAlignment="Left"
                                                        VerticalAlignment="Center"/>
-                                        </Border>
-                                    </Border>
-                                </DataTemplate>
-                            </GridView.ItemTemplate>
-                        </GridView>
-                    </SemanticZoom.ZoomedOutView>
-                </SemanticZoom>
-
-            </Grid>
-        </ScrollViewer>
+                                </Border>
+                            </Border>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </SemanticZoom.ZoomedOutView>
+        </SemanticZoom>
     </Grid>
 </Page>

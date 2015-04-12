@@ -23,6 +23,7 @@
                        VerticalAlignment="Top"
                        Style="{StaticResource ListViewItemTextBlockStyle}"
                        FontSize="20"
+                       Margin="5,0,0,0"
                        TextTrimming="CharacterEllipsis"/>
         </DataTemplate>
 
@@ -50,17 +51,18 @@
                                 <GroupStyle HidesIfEmpty="True">
                                     <GroupStyle.HeaderTemplate>
                                         <DataTemplate>
-                                            <Border Background="{StaticResource PhoneAccentBrush}" 
-                                                    BorderBrush="{StaticResource PhoneAccentBrush}" 
+                                            <Border Background="#FFE05C52" 
+                                                    BorderBrush="#FFE05C52" 
                                                     BorderThickness="2"	
-                                                    Width="62" Height="62" Margin="0,0,18,0"
+                                                    Width="50" Height="50"
+                                                    Margin="5"
                                                     HorizontalAlignment="Stretch">
                                                 <TextBlock Text="{Binding Key}"
                                                            Foreground="{StaticResource PhoneForegroundBrush}" 
-                                                           FontSize="48"
+                                                           FontSize="30"
                                                            Padding="6"
                                                            FontFamily="{StaticResource PhoneFontFamilySemiLight}"
-                                                           HorizontalAlignment="Left"
+                                                           HorizontalAlignment="Center"
                                                            VerticalAlignment="Center"/>
                                             </Border>
                                         </DataTemplate>

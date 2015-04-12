@@ -40,10 +40,12 @@ namespace Paris_Saveur
                 this.nearbyRestaurantList.Visibility = Visibility.Visible;
                 if (e.Parameter == null)
                 {
+                    this.AppBar.Visibility = Visibility.Visible;
                     FindCurrentLocationAnRestaurantsNearby();
                 }
                 else
                 {
+                    this.AppBar.Visibility = Visibility.Collapsed;
                     var station = e.Parameter as TransportStation;
                     FindRestauransAroundStation(station);
                 }
@@ -96,10 +98,9 @@ namespace Paris_Saveur
             this.LaunchMapButton.IsEnabled = true;
         }
 
-        private async void FindRestauransAroundStation(TransportStation station)
+        private void FindRestauransAroundStation(TransportStation station)
         {
             DownloadNearByRestaurant(station.Latitude, station.Longitude);
-
         }
         private async void FindCurrentLocationAnRestaurantsNearby()
         {

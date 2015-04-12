@@ -29,7 +29,7 @@
                         <RowDefinition Height="1.5*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
                     </Grid.RowDefinitions>
-    				<Image Grid.Row="0" Source="Assets/homepage.png" Stretch="Fill" Margin="0,0,0,0"/>
+    				<Image Grid.Row="0" Source="Assets/homepage2.png" Stretch="UniformToFill" Margin="10"/>
                     <Grid Grid.Row="1" Margin="0,0,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"></RowDefinition>

@@ -49,7 +49,7 @@
         </ScrollViewer>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Compact" Opacity="0.8">
+        <CommandBar x:Name="AppBar" ClosedDisplayMode="Compact" Opacity="0.8">
             <AppBarButton x:Name="LaunchMapButton" Label="地图" Icon="Map" Click="OpenMap_Click"></AppBarButton>
             <AppBarButton x:Name="RefreshButton" Label="刷新" Icon="Refresh" Click="Refresh_Click"></AppBarButton>
         </CommandBar>

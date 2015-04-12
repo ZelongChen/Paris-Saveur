@@ -70,7 +70,7 @@ namespace Paris_Saveur
 
         private void metroText_Tapped(object sender, TappedRoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(TransportStationsPage));
         }
 
         private void Mainpage_Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)

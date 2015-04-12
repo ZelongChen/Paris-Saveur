@@ -38,7 +38,18 @@ namespace Paris_Saveur
             {
                 this.NoConnectionText.Visibility = Visibility.Collapsed;
                 this.nearbyRestaurantList.Visibility = Visibility.Visible;
-                FindCurrentLocationAnRestaurantsNearby();
+                if (e.Parameter == null)
+                {
+                    this.AppBar.Visibility = Visibility.Visible;
+                    FindCurrentLocationAnRestaurantsNearby();
+                }
+                else
+                {
+                    this.AppBar.Visibility = Visibility.Collapsed;
+                    var station = e.Parameter as TransportStation;
+                    FindRestauransAroundStation(station);
+                }
+                
             }
             else
             {
@@ -54,10 +65,10 @@ namespace Paris_Saveur
         }
 
         RestaurantList list = new RestaurantList();
-        private async void DownloadNearByRestaurant(Geoposition currentPosition)
+        private async void DownloadNearByRestaurant(string latitude, string longitude)
         {
             var client = new HttpClient();
-            string url = "http://www.vivelevendredi.com/restaurants/json/list-by-location/?geo_lat=" + currentPosition.Coordinate.Point.Position.Latitude + "&geo_lon=" + currentPosition.Coordinate.Point.Position.Longitude + "&criterion=geopoint&order=-popularity&page=1";
+            string url = "http://www.vivelevendredi.com/restaurants/json/list-by-location/?geo_lat=" + latitude + "&geo_lon=" + longitude + "&criterion=geopoint&order=-popularity&page=1";
             var response = await client.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
 
@@ -87,6 +98,10 @@ namespace Paris_Saveur
             this.LaunchMapButton.IsEnabled = true;
         }
 
+        private void FindRestauransAroundStation(TransportStation station)
+        {
+            DownloadNearByRestaurant(station.Latitude, station.Longitude);
+        }
         private async void FindCurrentLocationAnRestaurantsNearby()
         {
             LoadingRing.IsActive = true;
@@ -112,7 +127,7 @@ namespace Paris_Saveur
                     geoposition = await geolocator.GetGeopositionAsync(
                         maximumAge: TimeSpan.FromMinutes(5),
                         timeout: TimeSpan.FromSeconds(10));
-                    DownloadNearByRestaurant(geoposition);
+                    DownloadNearByRestaurant("" + geoposition.Coordinate.Point.Position.Latitude, "" + geoposition.Coordinate.Point.Position.Longitude);
                 }
                 catch (UnauthorizedAccessException)
                 {

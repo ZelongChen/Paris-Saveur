@@ -25,6 +25,13 @@
                            HorizontalAlignment="Center"
                            Foreground="Gray"
                            FontSize="22"/>
+                <TextBlock x:Name="NoRestaurantText"
+                           Text="在这附近没有找到餐馆"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Visibility="Collapsed"
+                           Foreground="Gray"
+                           FontSize="22"/>
                 <ListView x:Name="nearbyRestaurantList" 
                   Grid.Row="0" 
                   Grid.Column="0"

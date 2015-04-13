@@ -1,3 +1,3 @@
-MainPackage=C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\ARM\Release\Paris Saveur_0.7.0.1_Bundle\Paris Saveur_0.7.0.1_ARM.appx
-SymbolPackage=C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\AppPackages\Paris Saveur_0.7.0.1_Test\Paris Saveur_0.7.0.1_ARM.appxsym
-ResourcePack=C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\ARM\Release\Paris Saveur_0.7.0.1_Bundle\Paris Saveur_0.7.0.1_scale-100.appx
+MainPackage=C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\ARM\Release\Paris Saveur_0.9.0.0_Bundle\Paris Saveur_0.9.0.0_ARM.appx
+SymbolPackage=C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\AppPackages\Paris Saveur_0.9.0.0_Test\Paris Saveur_0.9.0.0_ARM.appxsym
+ResourcePack=C:\Users\Zelong\Documents\Code\Windows Phone\Paris Saveur\Paris Saveur\bin\ARM\Release\Paris Saveur_0.9.0.0_Bundle\Paris Saveur_0.9.0.0_scale-100.appx

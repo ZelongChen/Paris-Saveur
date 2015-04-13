@@ -79,7 +79,12 @@ namespace Paris_Saveur
                 LoadingRing.Visibility = Visibility.Collapsed;
                 this.RefreshButton.IsEnabled = true;
                 this.LaunchMapButton.IsEnabled = true;
+                this.NoRestaurantText.Visibility = Visibility.Visible;
                 return;
+            }
+            else
+            {
+                this.NoRestaurantText.Visibility = Visibility.Collapsed;
             }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {

@@ -1,11 +1,12 @@
 ﻿<Page
-    x:Class="Paris_Saveur.TransportStationsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Paris_Saveur"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prim="using:Windows.UI.Xaml.Controls.Primitives"
+    xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+    x:Class="Paris_Saveur.TransportStationsPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -22,85 +23,92 @@
             Source="{Binding Ungrouped, Source={Binding}}"/>
 
         <DataTemplate x:Key="SampleDataTemplate">
-            <TextBlock HorizontalAlignment="Left"
-                       Foreground="Black"
-                       Text="{Binding Name}" 
-                       VerticalAlignment="Top"
-                       Style="{StaticResource ListViewItemTextBlockStyle}"
-                       FontSize="20"
-                       Margin="5,0,0,0"
-                       TextTrimming="CharacterEllipsis"/>
+        	<TextBlock HorizontalAlignment="Left"
+        		Foreground="Black"
+        		Text="{Binding Name}" 
+        		VerticalAlignment="Top"
+        		Style="{StaticResource ListViewItemTextBlockStyle}"
+        		FontSize="20"
+        		Margin="5,0,0,0"
+        		TextTrimming="CharacterEllipsis"/>
         </DataTemplate>
 
-        <prim:JumpListItemBackgroundConverter x:Key="BackgroundConverter"/>
-        <prim:JumpListItemForegroundConverter x:Key="ForegroundConverter"/>
+        <JumpListItemBackgroundConverter x:Key="BackgroundConverter"/>
+        <JumpListItemForegroundConverter x:Key="ForegroundConverter"/>
     </Page.Resources>
     
     
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
-            <Image Source="Assets/logo_white.png"></Image>
-            <TextBlock Text="地铁周边" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
-        </StackPanel>
-        <SemanticZoom
-            Grid.Row="1">
-            <SemanticZoom.ZoomedInView>
-                <ListView x:Name="TransportStationListView" 
-                                  ItemsSource="{Binding Source={StaticResource ItemsGroupedByGroup}}"
-                                  ItemTemplate="{StaticResource SampleDataTemplate}"
-                                  ScrollViewer.IsHorizontalScrollChainingEnabled="False"
-                                  SelectionChanged="TransportStationListView_SelectionChanged"
-                                  HorizontalContentAlignment="Stretch">
-                    <ListView.GroupStyle>
-                        <GroupStyle HidesIfEmpty="True">
-                            <GroupStyle.HeaderTemplate>
-                                <DataTemplate>
-                                    <Border Background="#FFE05C52" 
-                                                    BorderBrush="#FFE05C52" 
-                                                    BorderThickness="2"	
-                                                    Width="50" Height="50"
-                                                    Margin="5"
-                                                    HorizontalAlignment="Stretch">
-                                        <TextBlock Text="{Binding Key}"
-                                                           Foreground="{StaticResource PhoneForegroundBrush}" 
-                                                           FontSize="30"
-                                                           Padding="6"
-                                                           FontFamily="{StaticResource PhoneFontFamilySemiLight}"
-                                                           HorizontalAlignment="Center"
-                                                           VerticalAlignment="Center"/>
-                                    </Border>
-                                </DataTemplate>
-                            </GroupStyle.HeaderTemplate>
-                        </GroupStyle>
-                    </ListView.GroupStyle>
-                </ListView>
-            </SemanticZoom.ZoomedInView>
-            <SemanticZoom.ZoomedOutView>
-                <GridView
-                            ItemsSource="{Binding Source={StaticResource ItemsGroupedByGroup}, Path=CollectionGroups}"
-                            Background="#AA000000">
-                    <GridView.ItemTemplate>
-                        <DataTemplate>
-                            <Border Padding="5">
-                                <Border Background="{Binding Converter={StaticResource BackgroundConverter}}" 
-                                                Width="82" Height="82"  				 
-                                                HorizontalAlignment="Left">
-                                    <TextBlock Text="{Binding Group.Key}"
-                                                       Foreground="{Binding Converter={StaticResource ForegroundConverter}}" 
-                                                       FontSize="48"
-                                                       Padding="6"
-                                                       HorizontalAlignment="Left"
-                                                       VerticalAlignment="Center"/>
-                                </Border>
-                            </Border>
-                        </DataTemplate>
-                    </GridView.ItemTemplate>
-                </GridView>
-            </SemanticZoom.ZoomedOutView>
-        </SemanticZoom>
-    </Grid>
+	<Grid Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40"/>
+			<RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+			<Image Source="Assets/logo_white.png"/>
+			<TextBlock Text="地铁周边" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+		</StackPanel>
+		<SemanticZoom
+			Grid.Row="1">
+			<SemanticZoom.ZoomedInView>
+				<ListView x:Name="TransportStationListView" 
+					ItemsSource="{Binding Source={StaticResource ItemsGroupedByGroup}}"
+					ItemTemplate="{StaticResource SampleDataTemplate}"
+					ScrollViewer.IsHorizontalScrollChainingEnabled="False"
+					SelectionChanged="TransportStationListView_SelectionChanged"
+					HorizontalContentAlignment="Stretch">
+					<ListView.GroupStyle>
+						<GroupStyle HidesIfEmpty="True">
+							<GroupStyle.HeaderTemplate>
+								<DataTemplate>
+									<Border Background="#FFE05C52" 
+										BorderBrush="#FFE05C52" 
+										BorderThickness="2"	
+										Width="50" Height="50"
+										Margin="5"
+										HorizontalAlignment="Stretch">
+										<TextBlock Text="{Binding Key}"
+											Foreground="{StaticResource PhoneForegroundBrush}" 
+											FontSize="30"
+											Padding="6"
+											FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"/>
+									</Border>
+								</DataTemplate>
+							</GroupStyle.HeaderTemplate>
+						</GroupStyle>
+					</ListView.GroupStyle>
+				</ListView>
+			</SemanticZoom.ZoomedInView>
+			<SemanticZoom.ZoomedOutView>
+				<GridView
+					ItemsSource="{Binding CollectionGroups, Source={StaticResource ItemsGroupedByGroup}}"
+					Background="#AA000000">
+					<GridView.ItemTemplate>
+						<DataTemplate>
+							<Border Padding="5">
+								<Border Background="{Binding Converter={StaticResource BackgroundConverter}}" 
+									Width="82" Height="82"  				 
+									HorizontalAlignment="Left">
+									<TextBlock Text="{Binding Group.Key}"
+										Foreground="{Binding Converter={StaticResource ForegroundConverter}}" 
+										FontSize="48"
+										Padding="6"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Center"/>
+								</Border>
+							</Border>
+						</DataTemplate>
+					</GridView.ItemTemplate>
+				</GridView>
+			</SemanticZoom.ZoomedOutView>
+		</SemanticZoom>
+		<WindowsPhone81:AdMediatorControl x:Name="AdMediator_7D4B5D" 
+                                          HorizontalAlignment="Center"
+                                          Height="50" 
+                                          Id="AdMediator-Id-B712D8C6-09A9-4F1B-8040-FC7B9963FE7E" 
+                                          Grid.Row="2" 
+                                          VerticalAlignment="Top"/>
+	</Grid>
 </Page>

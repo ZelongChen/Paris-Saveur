@@ -1,51 +1,56 @@
 ﻿<Page
-    x:Class="Paris_Saveur.FeedBackPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Paris_Saveur"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+    x:Class="Paris_Saveur.FeedBackPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
-            <Image Source="Assets/logo_white.png"></Image>
-            <TextBlock Text="反馈" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="1">
-            <TextBlock Text="欢迎给我们您的反馈意见：" 
-                       HorizontalAlignment="Left"
-                       Foreground="Black"
-                       Margin="10">
-            </TextBlock>
-            <TextBox x:Name="FeedBackTextBox" 
-                     PlaceholderText="您的反馈"
-                     Foreground="Black"
-                     BorderBrush="#FFE05C52"
-                     Margin="10"
-                     MaxLength="140"
-                     Height="100">
-            </TextBox>
-            <Button x:Name="SendFeedBackButton"
-                    Background="#FFE05C52"
-                    Content="提交"
-                    FontSize="16"
-                    Margin="10"
-                    HorizontalAlignment="Stretch"
-                    Click="SendFeedBackButton_Click">
-            </Button>
-            <ProgressRing x:Name="LoadingRing"
-                          IsActive="False"
-                          Visibility="Collapsed"
-                          Background="Transparent"
-                          VerticalAlignment="Center"
-                          HorizontalAlignment="Center"
-                          Foreground="#FFE05C52"/>
-        </StackPanel>
+	<Grid Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40"/>
+			<RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+			<Image Source="Assets/logo_white.png"/>
+			<TextBlock Text="反馈" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+		</StackPanel>
+		<StackPanel Orientation="Vertical" Grid.Row="1">
+			<TextBlock Text="欢迎给我们您的反馈意见：" 
+				HorizontalAlignment="Left"
+				Foreground="Black"
+				Margin="10"/>
+			<TextBox x:Name="FeedBackTextBox" 
+				PlaceholderText="您的反馈"
+				Foreground="Black"
+				BorderBrush="#FFE05C52"
+				Margin="10"
+				MaxLength="140"
+				Height="100"/>
+			<Button x:Name="SendFeedBackButton"
+				Background="#FFE05C52"
+				Content="提交"
+				FontSize="16"
+				Margin="10"
+				HorizontalAlignment="Stretch"
+				Click="SendFeedBackButton_Click"/>
+			<ProgressRing x:Name="LoadingRing"
+				IsActive="False"
+				Visibility="Collapsed"
+				Background="Transparent"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Foreground="#FFE05C52"/>
+		</StackPanel>
+        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_0BD59E" 
+                                          HorizontalAlignment="Center" 
+                                          Height="50" 
+                                          Id="AdMediator-Id-C9860746-C045-4779-B634-619A1B3F3615" 
+                                          Grid.Row="2" 
+                                          VerticalAlignment="Top" />
     </Grid>
 </Page>

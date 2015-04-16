@@ -189,7 +189,9 @@
     <Content Include="Assets\star_empty.png" />
     <Content Include="Assets\weibo.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
-    <Content Include="AdMediator.config" />
+    <Content Include="AdMediator.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>

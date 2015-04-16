@@ -77,6 +77,8 @@ namespace Paris_Saveur
             }
 #endif
 
+            AdDuplex.Universal.Controls.WinPhone.XAML.Tracking.AdDuplexTrackingSDK.StartTracking("24d580ad-b6ec-4a4a-a4fb-466e423e1bb3");
+
             Frame rootFrame = Window.Current.Content as Frame;
 
             // 不要在窗口已包含内容时重复应用程序初始化，

@@ -171,7 +171,7 @@
                 <Grid HorizontalAlignment="Center">
                     <StackPanel Margin="0,20,0,0" Width="240" VerticalAlignment="Top" Orientation="Vertical">
                         <Image Source="Assets/app_logo_wide_1.png" />
-                        <TextBlock x:Name="AppVersion" Text="version 0.9" HorizontalAlignment="Center" Foreground="Black"/>
+                        <TextBlock x:Name="AppVersion" Text="version 1.0.0" HorizontalAlignment="Center" Foreground="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"
 						        HorizontalAlignment="Center"

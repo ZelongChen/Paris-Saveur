@@ -184,24 +184,13 @@
     <Language Code="vi-vn" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>41247zchen.ParisSaveur</MainPackageIdentityName>
+    <MainPackageIdentityName>41247zchen.644482C3C969E</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>Paris Saveur</ReservedName>
+      <ReservedName>巴黎寻味</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
-  <AccountPackageIdentityNames />
-  <PackageInfoList LandingUrl="https://dev.windowsphone.com/AppSubmission/AssociationLanding?windowsProductId=b3d1f4fb-8534-46b0-b023-d6114f005325">
-    <BundleInfo>
-      <PackageInfo>
-        <OsMinVersion>6.3.0.0</OsMinVersion>
-        <PackageArchitecture></PackageArchitecture>
-        <PackageMaxArchitectureVersion>0.8.6.0</PackageMaxArchitectureVersion>
-      </PackageInfo>
-      <PackageInfo>
-        <OsMinVersion>6.3.0.0</OsMinVersion>
-        <PackageArchitecture>arm</PackageArchitecture>
-        <PackageMaxArchitectureVersion>0.8.6.0</PackageMaxArchitectureVersion>
-      </PackageInfo>
-    </BundleInfo>
-  </PackageInfoList>
+  <AccountPackageIdentityNames>
+    <MainPackageIdentityName>41247zchen.ParisSaveur</MainPackageIdentityName>
+  </AccountPackageIdentityNames>
+  <PackageInfoList LandingUrl="https://dev.windowsphone.com/AppSubmission/AssociationLanding?windowsProductId=e15fd7b8-f563-414d-b708-382db6e21d6b" />
 </StoreAssociation>

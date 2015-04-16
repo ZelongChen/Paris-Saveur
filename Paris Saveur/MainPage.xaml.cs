@@ -134,7 +134,7 @@ namespace Paris_Saveur
 
         private async void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            string uriToLaunch = @"ms-windows-store:reviewapp?appid=c59700e8-429d-4c97-a442-624dd6a127c9";
+            string uriToLaunch = @"ms-windows-store:reviewapp?appid=03a26f4a-b9b9-4ed0-8bd6-e28979de5884";
             var uri = new Uri(uriToLaunch);
             await Windows.System.Launcher.LaunchUriAsync(uri);
         }

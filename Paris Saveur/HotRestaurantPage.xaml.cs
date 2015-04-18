@@ -30,11 +30,17 @@ namespace Paris_Saveur
             this.InitializeComponent();
         }
 
-        int currentPage = 1;
-        string sortBy = "popularity";
-        string restaurantStyle;
-        Tag restaurantTag;
-        RestaurantList restaurantList = new RestaurantList();
+        private int currentPage = 1;
+        private string sortBy = "popularity";
+        private string restaurantStyle;
+        private Tag restaurantTag;
+        private RestaurantList restaurantList = new RestaurantList();
+        private enum ListType
+        {
+            Recommended,
+            Tag,
+            Style
+        }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -47,20 +53,20 @@ namespace Paris_Saveur
                 if (parameterReceived == null)
                 {
                     this.Title.Text = "热门餐馆";
-                    DownloadRecommendedRestaurant(sortBy, currentPage++);
+                    DownloadRestaurants((int)ListType.Recommended, "", sortBy, currentPage++);
                 }
                 else if (parameterReceived is string)
                 {
                     restaurantStyle = parameterReceived as string;
-                    this.Title.Text = StyleToChinese(restaurantStyle);
-                    DownloadRestaurantWithStyle(restaurantStyle, sortBy, currentPage++);
+                    this.Title.Text = Restaurant.StyleToChinese(restaurantStyle);
+                    DownloadRestaurants((int)ListType.Recommended, restaurantStyle, sortBy, currentPage++);
                 }
                 else
                 {
                     restaurantTag = new Tag();
                     restaurantTag = parameterReceived as Tag;
                     this.Title.Text = restaurantTag.name;
-                    DownloadRestaurantWithTag(restaurantTag.name, sortBy, currentPage++);
+                    DownloadRestaurants((int)ListType.Recommended, restaurantTag.name, sortBy, currentPage++);
                 }
             }
             else
@@ -71,17 +77,34 @@ namespace Paris_Saveur
             }
         }
 
-        private async void DownloadRestaurantWithTag(string tag, string sortby, int page)
+        private async void DownloadRestaurants(int type, string keyword, string sortby, int page)
         {
             loadMoreButoon.Visibility = Visibility.Collapsed;
             LoadingRing.IsActive = true;
             LoadingRing.Visibility = Visibility.Visible;
 
             var client = new HttpClient();
-            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-tag/?tag_name=" + tag + "&order=-" + sortBy + "&page=" + page);
-            var result = await response.Content.ReadAsStringAsync();
+            RestaurantList list = new RestaurantList();
 
-            RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            switch (type)
+            {
+                case (int)ListType.Recommended:
+                    var responseRecommended = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list/?order=-" + sortBy + "&page=" + page);
+                    var resultRecommended = await responseRecommended.Content.ReadAsStringAsync();
+                    list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(resultRecommended);
+                    break;
+                case (int)ListType.Style:
+                    var responseStyle = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-style/" + keyword + "/?order=-" + sortBy + "&page=" + page);
+                    var resultStyle = await responseStyle.Content.ReadAsStringAsync();
+                    list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(resultStyle);
+                    break;                    
+                default:
+                    var responseTag = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-tag/?tag_name=" + keyword + "&order=-" + sortBy + "&page=" + page);
+                    var resultTag = await responseTag.Content.ReadAsStringAsync();
+                    list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(resultTag);
+                    break;
+            }     
+
             if (list.Restaurant_list.Count < 12)
             {
                 loadMoreButoon.Visibility = Visibility.Collapsed;
@@ -102,76 +125,6 @@ namespace Paris_Saveur
             }
             this.hotRestaurantList.DataContext = restaurantList;
 
-            LoadingRing.IsActive = false;
-            LoadingRing.Visibility = Visibility.Collapsed;
-        }
-
-        private async void DownloadRestaurantWithStyle(string style, string sortby, int page)
-        {
-            loadMoreButoon.Visibility = Visibility.Collapsed;
-            LoadingRing.IsActive = true;
-            LoadingRing.Visibility = Visibility.Visible;
-
-            var client = new HttpClient();
-            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list-by-style/" + restaurantStyle + "/?order=-" + sortBy + "&page=" + page);
-            var result = await response.Content.ReadAsStringAsync();
-
-            RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
-            if (list.Restaurant_list.Count < 12)
-            {
-                loadMoreButoon.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                loadMoreButoon.Visibility = Visibility.Visible;
-            }
-            foreach (Restaurant restaurant in list.Restaurant_list)
-            {
-                restaurant.ConvertRestaurantStyleToChinese();
-                restaurant.ShowReviewScoreAndNumber();
-                restaurant.ShowPrice();
-                restaurantList.Restaurant_list.Add(restaurant);
-                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
-                restaurant.ThumbnailBitmap = placeholder;
-                ImageDownloader.DownloadImageIntoImage(restaurant);
-            }
-            this.hotRestaurantList.DataContext = restaurantList;
-
-            LoadingRing.IsActive = false;
-            LoadingRing.Visibility = Visibility.Collapsed;
-        }
-
-        private async void DownloadRecommendedRestaurant(string sortby, int page)
-        {
-            loadMoreButoon.Visibility = Visibility.Collapsed;
-            LoadingRing.IsActive = true;
-            LoadingRing.Visibility = Visibility.Visible;
-
-            var client = new HttpClient();
-            var response = await client.GetAsync("http://www.vivelevendredi.com/restaurants/json/list/?order=-" + sortBy +"&page=" + page);
-            var result = await response.Content.ReadAsStringAsync();
-
-            RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
-            if (list.Restaurant_list.Count < 12)
-            {
-                loadMoreButoon.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                loadMoreButoon.Visibility = Visibility.Visible;
-            }
-            foreach (Restaurant restaurant in list.Restaurant_list)
-            {
-                restaurant.ConvertRestaurantStyleToChinese();
-                restaurant.ShowReviewScoreAndNumber();
-                restaurant.ShowPrice();
-                restaurantList.Restaurant_list.Add(restaurant);
-                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
-                restaurant.ThumbnailBitmap = placeholder;
-                ImageDownloader.DownloadImageIntoImage(restaurant);
-            }
-            this.hotRestaurantList.DataContext = restaurantList;
-    
             LoadingRing.IsActive = false;
             LoadingRing.Visibility = Visibility.Collapsed;
         }
@@ -191,15 +144,15 @@ namespace Paris_Saveur
 
                 if (restaurantStyle == null && restaurantTag == null)
                 {
-                    DownloadRecommendedRestaurant(sortBy, page);
+                    DownloadRestaurants((int)ListType.Recommended, "", sortBy, page);
                 }
                 else if (restaurantStyle == null && restaurantTag != null)
                 {
-                    DownloadRestaurantWithTag(restaurantTag.name, sortBy, page);
+                    DownloadRestaurants((int)ListType.Recommended, restaurantTag.name, sortBy, page);
                 }
                 else
                 {
-                    DownloadRestaurantWithStyle(restaurantStyle, sortBy, page);
+                    DownloadRestaurants((int)ListType.Recommended, restaurantStyle, sortBy, page);
                 }
             }
             else
@@ -246,31 +199,6 @@ namespace Paris_Saveur
             {
                 this.loadMoreButoon.Content = "请检查您的网络连接";
                 this.loadMoreButoon.Foreground = new SolidColorBrush(Colors.Gray);
-            }
-        }
-
-        public string StyleToChinese(string style)
-        {
-            switch (style)
-            {
-                case "Sichuan_Hunan":
-                    return "川菜 湘菜";
-                case "Shandong_Anhui":
-                    return "鲁菜 徽菜";
-                case "Jiangsu_Zhejiang":
-                    return "苏菜 浙菜";
-                case "Cantonese_Fujian":
-                    return "粤菜 闽菜";
-                case "Yunnan":
-                    return "云南菜";
-                case "Northern_Chinese":
-                    return "北方菜系";
-                case "Japanese_Korean":
-                    return "日餐 韩餐";
-                case "South_Asian":
-                    return "东南亚菜";
-                default:
-                    return "未归类";
             }
         }
     }

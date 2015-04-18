@@ -127,7 +127,31 @@ namespace Paris_Saveur
             {
                 this.style = "未归类";
             }
+        }
 
+        public static string StyleToChinese(string style)
+        {
+            switch (style)
+            {
+                case "Sichuan_Hunan":
+                    return "川菜 湘菜";
+                case "Shandong_Anhui":
+                    return "鲁菜 徽菜";
+                case "Jiangsu_Zhejiang":
+                    return "苏菜 浙菜";
+                case "Cantonese_Fujian":
+                    return "粤菜 闽菜";
+                case "Yunnan":
+                    return "云南菜";
+                case "Northern_Chinese":
+                    return "北方菜系";
+                case "Japanese_Korean":
+                    return "日餐 韩餐";
+                case "South_Asian":
+                    return "东南亚菜";
+                default:
+                    return "未归类";
+            }
         }
 
         public void ShowReviewScoreAndNumber()

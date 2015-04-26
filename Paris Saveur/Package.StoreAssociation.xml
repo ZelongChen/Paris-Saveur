@@ -187,10 +187,15 @@
     <MainPackageIdentityName>41247zchen.644482C3C969E</MainPackageIdentityName>
     <ReservedNames>
       <ReservedName>巴黎寻味</ReservedName>
+      <ReservedName>巴黎吃什么</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
-  <AccountPackageIdentityNames>
-    <MainPackageIdentityName>41247zchen.ParisSaveur</MainPackageIdentityName>
-  </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://dev.windowsphone.com/AppSubmission/AssociationLanding?windowsProductId=e15fd7b8-f563-414d-b708-382db6e21d6b" />
+  <AccountPackageIdentityNames />
+  <PackageInfoList LandingUrl="https://dev.windowsphone.com/AppSubmission/AssociationLanding?windowsProductId=e15fd7b8-f563-414d-b708-382db6e21d6b">
+    <PackageInfo>
+      <OsMinVersion>6.3.0.0</OsMinVersion>
+      <PackageArchitecture>arm</PackageArchitecture>
+      <PackageMaxArchitectureVersion>1.1.1.4</PackageMaxArchitectureVersion>
+    </PackageInfo>
+  </PackageInfoList>
 </StoreAssociation>

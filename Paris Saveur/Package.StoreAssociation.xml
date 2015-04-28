@@ -188,6 +188,7 @@
     <ReservedNames>
       <ReservedName>巴黎寻味</ReservedName>
       <ReservedName>巴黎吃什么</ReservedName>
+      <ReservedName>Paris Saveur</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames />
@@ -195,7 +196,7 @@
     <PackageInfo>
       <OsMinVersion>6.3.0.0</OsMinVersion>
       <PackageArchitecture>arm</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.1.4</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.1.9</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>

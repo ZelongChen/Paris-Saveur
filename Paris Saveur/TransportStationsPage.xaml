@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prim="using:Windows.UI.Xaml.Controls.Primitives"
-    xmlns:WindowsPhone81="using:Microsoft.AdMediator.WindowsPhone81"
+ 
     x:Class="Paris_Saveur.TransportStationsPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

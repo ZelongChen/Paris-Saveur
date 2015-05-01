@@ -32,7 +32,7 @@ namespace Paris_Saveur
         public MainPage()
         {
             this.InitializeComponent();
-            AdMediator_ErrorHandler();
+            //AdMediator_ErrorHandler();
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
@@ -150,7 +150,7 @@ namespace Paris_Saveur
         {
             Frame.Navigate(typeof(SearchPage));
         }
-
+/*
         private void AdMediator_ErrorHandler()
         {
             AdMediator_C43C32.AdSdkError += AdMediator_Bottom_AdError;
@@ -182,6 +182,7 @@ namespace Paris_Saveur
         {
             Debug.WriteLine("AdSdkError by {0} ErrorCode: {1} ErrorDescription: {2} Error: {3}", e.Name, e.ErrorCode, e.ErrorDescription, e.Error);
         }
+ **/
 
     }
 }

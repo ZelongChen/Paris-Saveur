@@ -187,9 +187,7 @@
     <Content Include="Assets\star_empty.png" />
     <Content Include="Assets\weibo.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
-    <Content Include="AdMediator.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="AdMediator.config" />
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -243,8 +241,24 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="AdDuplex.Universal.Controls.WinPhone.XAML">
+      <HintPath>..\packages\AdDuplexWinPhone81.8.5.0.5\lib\portable-win81+wpa81\AdDuplex.Universal.Controls.WinPhone.XAML.winmd</HintPath>
+    </Reference>
+    <Reference Include="AdDuplex.Universal.WinPhone.WinRT">
+      <HintPath>..\packages\AdDuplexWinPhone81.8.5.0.5\lib\portable-win81+wpa81\AdDuplex.Universal.WinPhone.WinRT.winmd</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AdMediator.WindowsPhone81.AdDuplex">
+      <HintPath>..\packages\Microsoft.AdMediator.WindowsPhone81.AdDuplex.1.0.12\lib\wpa\Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising">
+      <HintPath>..\packages\Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.1.0.13\lib\wpa\Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AdMediator.WindowsPhone81.Smaato">
+      <HintPath>..\packages\Microsoft.AdMediator.WindowsPhone81.Smaato.1.0.6\lib\wpa\Microsoft.AdMediator.WindowsPhone81.Smaato.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SOMAWP81">
       <HintPath>..\packages\SOMAW81_Package.1.1.6\lib\wpa81\SOMAWP81.dll</HintPath>
@@ -254,6 +268,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <SDKReference Include="Microsoft.AdMediator81, Version=1.0">
+      <Name>Ad Mediator SDK for Windows Phone 8.1 XAML</Name>
+    </SDKReference>
+    <SDKReference Include="Microsoft.Advertising.Mobile.Display, Version=8.1">
+      <Name>Microsoft Advertising SDK for Windows Phone 8.1 %28XAML%29</Name>
+    </SDKReference>
     <SDKReference Include="Microsoft.VCLibs, version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
     </SDKReference>

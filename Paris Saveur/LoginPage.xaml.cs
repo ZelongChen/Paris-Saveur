@@ -54,7 +54,7 @@ namespace Paris_Saveur
         private HttpFormUrlEncodedContent SetupHttpFormUrlEncodedContent()
         {
             String username = this.UserNameTextBox.Text;
-            String password = this.PasswordTextBox.Text;
+            String password = this.PasswordTextBox.Password;
             Dictionary<string, string> fullHttpContentDictionary = new Dictionary<string, string>();
             Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation deviceInfo = new Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation();
             string firmwareVersion = deviceInfo.SystemFirmwareVersion.ToString();
@@ -71,6 +71,8 @@ namespace Paris_Saveur
             JsonObject responseJson =  JsonObject.Parse(responseString);
             string token = responseJson.GetNamedObject("mobile_access").GetNamedString("token");
             localSettings.Values["AuthToken"] = token;
+            string thumbnailUrl = responseJson.GetNamedObject("mobile_access").GetNamedObject("user").GetNamedString("avatar_url");
+            localSettings.Values["ThumbnailUrl"] = thumbnailUrl;
         }
     }
 }

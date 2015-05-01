@@ -30,12 +30,11 @@
                      PlaceholderText="用户名"
                      Margin="10"
                      ></TextBox>
-            <TextBox x:Name="PasswordTextBox"
+            <PasswordBox x:Name="PasswordTextBox"
                      BorderBrush="#FFE05C52"
                      Foreground="Black"
                      PlaceholderText="密码"
-                     Margin="10"
-                     ></TextBox>
+                     Margin="10"></PasswordBox>
             <Button x:Name="LoginButton"
                     HorizontalAlignment="Stretch"
                     BorderThickness="0"

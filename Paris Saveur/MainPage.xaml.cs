@@ -38,6 +38,7 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            UpdateLoginPage();
         }
 
         private void recommendedText_Tapped(object sender, TappedRoutedEventArgs e)
@@ -128,12 +129,7 @@ namespace Paris_Saveur
                 this.PivotItem2_Title.FontWeight = FontWeights.Bold;
                 this.PivotItem2_Title.FontSize = 22;
 
-                var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-                if (localSettings.Values["AuthToken"] != null)
-                {
-                    this.LoginButton.Background = new SolidColorBrush(Colors.Red);
-                    this.LoginButton.Content = "退出登陆";
-                }
+                UpdateLoginPage();
 
             }
         }
@@ -185,8 +181,7 @@ namespace Paris_Saveur
 
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            if (localSettings.Values["AuthToken"] != null)
+            if (ConnectionContext.isUserSignedIn())
             {
                 var dialogBuilder = new MessageDialog("您确定要退出吗");
                 dialogBuilder.Title = "退出登录";
@@ -196,15 +191,36 @@ namespace Paris_Saveur
 
                 if ((int)dialog.Id == 0)
                 {
+                    var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
                     localSettings.Values.Remove("AuthToken");
                     localSettings.Values.Remove("UserName");
-                    this.LoginButton.Background = new SolidColorBrush(Colors.Green);
-                    this.LoginButton.Content = "登陆";
+                    UpdateLoginPage();
                 }
             }
             else
             {
                 Frame.Navigate(typeof(LoginPage));
+            }
+        }
+
+        private void UpdateLoginPage()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            if (ConnectionContext.isUserSignedIn())
+            {
+                this.LoginButton.Background = new SolidColorBrush(Colors.Red);
+                this.LoginButton.Content = "退出登陆";
+                this.UserNameText.Text = (String)localSettings.Values["UserName"];
+                string thumbnailUrl = (String)localSettings.Values["ThumbnailUrl"];
+                ImageDownloader.DownloadImageIntoImage(this.UserThumbnailImageView, thumbnailUrl);
+            }
+            else
+            {
+                this.LoginButton.Background = new SolidColorBrush(Colors.Green);
+                this.LoginButton.Content = "登陆";
+                this.UserNameText.Text = "";
+                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/annonymous.jpg"));
+                this.UserThumbnailImageView.Source = placeholder;
             }
         }
     }

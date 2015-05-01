@@ -13,5 +13,18 @@ namespace Paris_Saveur.Tools
         {
             return NetworkInterface.GetIsNetworkAvailable();
         }
+
+        public static bool isUserSignedIn()
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            if (localSettings.Values["AuthToken"] != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

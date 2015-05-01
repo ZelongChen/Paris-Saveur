@@ -43,6 +43,7 @@ namespace Paris_Saveur
             if (response.IsSuccessStatusCode)
             {
                 SaveUserInformation(response);
+                Frame.Navigate(typeof(MainPage));
             }
         }
 

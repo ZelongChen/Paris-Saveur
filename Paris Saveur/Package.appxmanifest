@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="41247zchen.644482C3C969E" Publisher="CN=DB5AAED3-D112-49A4-8B68-2ED68A16D202" Version="1.1.1.17" />
+  <Identity Name="41247zchen.644482C3C969E" Publisher="CN=DB5AAED3-D112-49A4-8B68-2ED68A16D202" Version="1.1.1.10" />
   <mp:PhoneIdentity PhoneProductId="73cc5415-c4f1-4772-bd3b-d6f4ded9d85c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>巴黎吃什么</DisplayName>

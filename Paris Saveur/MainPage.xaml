@@ -187,11 +187,11 @@
 							        Margin="0,0,10,0"
 							        Foreground="White" />
                     </StackPanel>
-                    <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
-                                  Height="70"
-                                  HorizontalAlignment="Stretch"
-                                  VerticalAlignment="Bottom" >
-                    </ListViewItem>
+                    <WindowsPhone81:AdMediatorControl x:Name="AdMediator_C43C32" 
+                                                      Id="AdMediator-Id-E6B4F4E5-E9F3-44D8-A105-9597A3D58A5C"
+                                                      Height="70"
+                                                      HorizontalAlignment="Stretch"
+                                                      VerticalAlignment="Bottom"/>
                 </Grid>
 			</PivotItem>
 		</Pivot>

@@ -13,7 +13,7 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="40"/>
 			<RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
 		</Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
 			<Image Source="Assets/logo_white.png"/>
@@ -48,7 +48,7 @@
 		</StackPanel>
         <WindowsPhone81:AdMediatorControl x:Name="AdMediator_0BD59E" 
                                           HorizontalAlignment="Center" 
-                                          Height="50" 
+                                          Height="70" 
                                           Id="AdMediator-Id-C9860746-C045-4779-B634-619A1B3F3615" 
                                           Grid.Row="2" 
                                           VerticalAlignment="Top" />

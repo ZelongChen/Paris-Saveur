@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar Background="#FFE05C52" x:Name="MainPageAppBar" ClosedDisplayMode="Compact" Opacity="0.8">
+        <CommandBar x:Name="MainPageAppBar" Background="#FFE05C52" ClosedDisplayMode="Compact" Opacity="0.8">
         	<AppBarButton x:Name="HistoryButton" Label="历史" Icon="Clock" Click="History_Click"/>
         	<AppBarButton x:Name="FavoriteButton" Label="收藏" Icon="Favorite" Click="Bookmark_Click"/>
         	<AppBarButton x:Name="SearchButton" Label="搜索" Icon="Find" Click="SearchButton_Click"/>
@@ -192,6 +192,38 @@
                                   VerticalAlignment="Bottom"/>
                 </Grid>
 			</PivotItem>
+            <PivotItem Margin="0" Background="White">
+                <PivotItem.Header>
+                    <TextBlock x:Name="PivotItem2_Title" Text="我" FontSize="20" Foreground="Black" Padding="50,0,0,0" />
+                </PivotItem.Header>
+                <StackPanel Orientation="Vertical">
+                    <Image x:Name="UserThumbnailImageView"
+                           HorizontalAlignment="Center"
+                           Width="150"
+                           Height="150"
+                           Margin="0,20,0,0">
+                    </Image>
+                    <TextBlock x:Name="UserNameText"
+                               Height="60"
+                               HorizontalAlignment="Stretch"
+                               TextAlignment="Center"
+                               Foreground="Black"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               VerticalAlignment="Center">
+                    </TextBlock>
+                    <Button x:Name="LoginButton"
+                        Height="50"
+                        BorderThickness="0"
+                        Margin="20"
+                        Background="Green"
+                        Content="登陆"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Stretch"
+                        Click="LoginButton_Click">
+                    </Button>
+                </StackPanel>
+            </PivotItem>
 		</Pivot>
 	</Grid>
 

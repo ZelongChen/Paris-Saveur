@@ -12,6 +12,7 @@ using Windows.Foundation.Collections;
 using Windows.Storage.Streams;
 using Windows.System;
 using Windows.UI;
+using Windows.UI.Popups;
 using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -73,12 +74,7 @@ namespace Paris_Saveur
         {
             if (this.MainPagePivot.SelectedIndex == 0)
             {
-                this.HistoryButton.Visibility = Visibility.Visible;
-                this.FavoriteButton.Visibility = Visibility.Visible;
-                this.SearchButton.Visibility = Visibility.Visible;
-                this.FeedbackButton.Visibility = Visibility.Collapsed;
-                this.WebButton.Visibility = Visibility.Collapsed;
-                this.NoteButton.Visibility = Visibility.Collapsed;
+                this.MainPageAppBar.Visibility = Visibility.Collapsed;
 
                 this.PivotItem0_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
                 this.PivotItem0_Title.FontWeight = FontWeights.Bold;
@@ -86,9 +82,14 @@ namespace Paris_Saveur
                 this.PivotItem1_Title.Foreground = new SolidColorBrush(Colors.Black);
                 this.PivotItem1_Title.FontWeight = FontWeights.Normal;
                 this.PivotItem1_Title.FontSize = 20;
+                this.PivotItem2_Title.Foreground = new SolidColorBrush(Colors.Black);
+                this.PivotItem2_Title.FontWeight = FontWeights.Normal;
+                this.PivotItem2_Title.FontSize = 20;
             }
-            else
+            else if (this.MainPagePivot.SelectedIndex == 1)
             {
+                this.MainPageAppBar.Visibility = Visibility.Visible;
+
                 this.HistoryButton.Visibility = Visibility.Collapsed;
                 this.FavoriteButton.Visibility = Visibility.Collapsed;
                 this.SearchButton.Visibility = Visibility.Collapsed;
@@ -102,6 +103,38 @@ namespace Paris_Saveur
                 this.PivotItem1_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
                 this.PivotItem1_Title.FontWeight = FontWeights.Bold;
                 this.PivotItem1_Title.FontSize = 22;
+                this.PivotItem2_Title.Foreground = new SolidColorBrush(Colors.Black);
+                this.PivotItem2_Title.FontWeight = FontWeights.Normal;
+                this.PivotItem2_Title.FontSize = 20;
+            }
+            else
+            {
+                this.MainPageAppBar.Visibility = Visibility.Visible;
+
+                this.HistoryButton.Visibility = Visibility.Visible;
+                this.FavoriteButton.Visibility = Visibility.Visible;
+                this.SearchButton.Visibility = Visibility.Visible;
+                this.FeedbackButton.Visibility = Visibility.Collapsed;
+                this.WebButton.Visibility = Visibility.Collapsed;
+                this.NoteButton.Visibility = Visibility.Collapsed;
+
+                this.PivotItem0_Title.Foreground = new SolidColorBrush(Colors.Black);
+                this.PivotItem0_Title.FontWeight = FontWeights.Normal;
+                this.PivotItem0_Title.FontSize = 20;
+                this.PivotItem1_Title.Foreground = new SolidColorBrush(Colors.Black);
+                this.PivotItem1_Title.FontWeight = FontWeights.Normal;
+                this.PivotItem1_Title.FontSize = 20;
+                this.PivotItem2_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.PivotItem2_Title.FontWeight = FontWeights.Bold;
+                this.PivotItem2_Title.FontSize = 22;
+
+                var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                if (localSettings.Values["AuthToken"] != null)
+                {
+                    this.LoginButton.Background = new SolidColorBrush(Colors.Red);
+                    this.LoginButton.Content = "退出登陆";
+                }
+
             }
         }
 
@@ -148,6 +181,31 @@ namespace Paris_Saveur
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SearchPage));
+        }
+
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            if (localSettings.Values["AuthToken"] != null)
+            {
+                var dialogBuilder = new MessageDialog("您确定要退出吗");
+                dialogBuilder.Title = "退出登录";
+                dialogBuilder.Commands.Add(new UICommand { Label = "确定", Id = 0 });
+                dialogBuilder.Commands.Add(new UICommand { Label = "取消", Id = 1 });
+                var dialog = await dialogBuilder.ShowAsync();
+
+                if ((int)dialog.Id == 0)
+                {
+                    localSettings.Values.Remove("AuthToken");
+                    localSettings.Values.Remove("UserName");
+                    this.LoginButton.Background = new SolidColorBrush(Colors.Green);
+                    this.LoginButton.Content = "登陆";
+                }
+            }
+            else
+            {
+                Frame.Navigate(typeof(LoginPage));
+            }
         }
     }
 }

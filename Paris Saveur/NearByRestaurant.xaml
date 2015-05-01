@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar x:Name="AppBar" ClosedDisplayMode="Compact" Opacity="0.8">
+        <CommandBar Background="#FFE05C52" x:Name="AppBar" ClosedDisplayMode="Compact" Opacity="0.8">
         	<AppBarButton x:Name="LaunchMapButton" Label="地图" Icon="Map" Click="OpenMap_Click"/>
         	<AppBarButton x:Name="RefreshButton" Label="刷新" Icon="Refresh" Click="Refresh_Click"/>
         </CommandBar>

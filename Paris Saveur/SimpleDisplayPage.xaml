@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Minimal" Opacity="0.8">
+        <CommandBar Background="#FFE05C52" ClosedDisplayMode="Minimal" Opacity="0.8">
             <AppBarButton Label="清除记录" Icon="Clear" Click="AppBarButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>

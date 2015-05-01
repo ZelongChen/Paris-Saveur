@@ -189,11 +189,11 @@
 				</ScrollViewer>
 			</PivotItem>
 		</Pivot>
-		<WindowsPhone81:AdMediatorControl x:Name="AdMediator_AB33DD" 
-                                          HorizontalAlignment="Center" 
-                                          Height="70" 
-                                          Id="AdMediator-Id-F810D5C5-6197-42E7-9CA2-9C9E70CC5EFB"
-                                          Grid.Row="2" 
-                                          VerticalAlignment="Top" />
-	</Grid>
+        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
+                      Grid.Row="2" 
+                      HorizontalAlignment="Stretch" 
+                      Height="70"
+                      VerticalAlignment="Top" >
+        </ListViewItem>
+    </Grid>
 </Page>

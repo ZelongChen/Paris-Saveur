@@ -36,12 +36,12 @@
 		<ListViewItem x:Name="beifang" Content="北方菜系" Grid.Row="6" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="beifang_Tapped"/>
 		<ListViewItem x:Name="japan_korea" Content="日餐 韩餐" Grid.Row="7" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="japan_korea_Tapped"/>
 		<ListViewItem x:Name="southest_asia" Content="东南亚菜" Grid.Row="8" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="southest_asia_Tapped"/>
-		<ListViewItem x:Name="unclassified" Content="未归类" Grid.Row="9" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="unclassified_Tapped"/>
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_86A432" 
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Bottom"
-                                          Height="70" 
-                                          Id="AdMediator-Id-93219471-817E-49A9-AB0C-C53F571C35B5" 
-                                          Grid.Row="11"  />
+        <ListViewItem x:Name="unclassified" Content="未归类" Grid.Row="9" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="unclassified_Tapped"/>
+        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
+                      Grid.Row="11" 
+                      HorizontalAlignment="Stretch" 
+                      Height="70"
+                      VerticalAlignment="Bottom" >
+        </ListViewItem>
     </Grid>
 </Page>

@@ -19,38 +19,38 @@
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock Text="反馈" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
-		<StackPanel Orientation="Vertical" Grid.Row="1">
-			<TextBlock Text="欢迎给我们您的反馈意见：" 
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <TextBlock Text="欢迎给我们您的反馈意见：" 
 				HorizontalAlignment="Left"
 				Foreground="Black"
 				Margin="10"/>
-			<TextBox x:Name="FeedBackTextBox" 
+            <TextBox x:Name="FeedBackTextBox" 
 				PlaceholderText="您的反馈"
 				Foreground="Black"
 				BorderBrush="#FFE05C52"
 				Margin="10"
 				MaxLength="140"
 				Height="100"/>
-			<Button x:Name="SendFeedBackButton"
+            <Button x:Name="SendFeedBackButton"
 				Background="#FFE05C52"
 				Content="提交"
 				FontSize="16"
 				Margin="10"
 				HorizontalAlignment="Stretch"
 				Click="SendFeedBackButton_Click"/>
-			<ProgressRing x:Name="LoadingRing"
+            <ProgressRing x:Name="LoadingRing"
 				IsActive="False"
 				Visibility="Collapsed"
 				Background="Transparent"
 				VerticalAlignment="Center"
 				HorizontalAlignment="Center"
 				Foreground="#FFE05C52"/>
-		</StackPanel>
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_0BD59E" 
-                                          HorizontalAlignment="Center" 
-                                          Height="70" 
-                                          Id="AdMediator-Id-C9860746-C045-4779-B634-619A1B3F3615" 
-                                          Grid.Row="2" 
-                                          VerticalAlignment="Top" />
+        </StackPanel>
+        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
+                      Grid.Row="2" 
+                      HorizontalAlignment="Stretch" 
+                      Height="70"
+                      VerticalAlignment="Top" >
+        </ListViewItem>
     </Grid>
 </Page>

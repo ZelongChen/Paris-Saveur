@@ -104,11 +104,11 @@
 				</GridView>
 			</SemanticZoom.ZoomedOutView>
 		</SemanticZoom>
-		<WindowsPhone81:AdMediatorControl x:Name="AdMediator_7D4B5D" 
-                                          HorizontalAlignment="Center"
-                                          Height="70" 
-                                          Id="AdMediator-Id-B712D8C6-09A9-4F1B-8040-FC7B9963FE7E" 
-                                          Grid.Row="2" 
-                                          VerticalAlignment="Top"/>
+        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
+                      Grid.Row="2" 
+                      HorizontalAlignment="Stretch" 
+                      Height="70"
+                      VerticalAlignment="Top" >
+        </ListViewItem>
 	</Grid>
 </Page>

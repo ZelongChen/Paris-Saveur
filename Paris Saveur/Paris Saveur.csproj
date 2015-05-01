@@ -117,9 +117,6 @@
       <DependentUpon>RecommendedPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Restaurant.cs" />
-    <Compile Include="RestaurantCommentPage.xaml.cs">
-      <DependentUpon>RestaurantCommentPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="RestaurantDetailPage.xaml.cs">
       <DependentUpon>RestaurantDetailPage.xaml</DependentUpon>
     </Compile>
@@ -221,10 +218,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RecommendedPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RestaurantCommentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

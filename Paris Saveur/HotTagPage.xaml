@@ -55,11 +55,11 @@
 					VerticalAlignment="Top"/>
 			</Grid>
 		</ScrollViewer>
-        <WindowsPhone81:AdMediatorControl x:Name="AdMediator_0E9158" 
-                                          HorizontalAlignment="Stretch" 
-                                          Height="70" 
-                                          Id="AdMediator-Id-690473B9-38E2-42C6-AFF4-F378B4C0953D" 
-                                          Grid.Row="2" 
-                                          VerticalAlignment="Top" />
+        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
+                      Grid.Row="2" 
+                      HorizontalAlignment="Stretch" 
+                      Height="70"
+                      VerticalAlignment="Top" >
+        </ListViewItem>
     </Grid>
 </Page>

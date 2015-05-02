@@ -28,10 +28,10 @@
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock Text="巴黎吃什么" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
-		<Pivot x:Name="MainPagePivot" 
+        <Pivot x:Name="MainPagePivot" 
 			Grid.Row="1"
 			SelectionChanged="Mainpage_Pivot_SelectionChanged">
-			<PivotItem Margin="0" Background="White">
+            <PivotItem Margin="0" Background="White">
 				<PivotItem.Header>
 					<TextBlock x:Name="PivotItem0_Title" Text="首页" FontSize="20" Foreground="Black" Padding="50,0,0,0"/>
 				</PivotItem.Header>
@@ -167,12 +167,12 @@
 				<PivotItem.Header>
 					<TextBlock x:Name="PivotItem1_Title" Text="关于" FontSize="20" Foreground="Black" Padding="50,0,0,0" />
 				</PivotItem.Header>
-				<Grid HorizontalAlignment="Stretch">
-					<StackPanel Margin="0,20,0,0" Width="240" VerticalAlignment="Top" Orientation="Vertical">
-						<Image Source="Assets/logo_transparent.png" />
-						<TextBlock x:Name="AppVersion" Text="version 1.1.1" HorizontalAlignment="Center" Foreground="Gray" />
-						<TextBlock Text="Contact Email: zelong.chen@live.com" HorizontalAlignment="Center" Foreground="Gray" />
-					</StackPanel>
+                <Grid HorizontalAlignment="Stretch">
+                    <Image 
+                            Margin="0,20,0,0" 
+                            Width="240"
+                            VerticalAlignment="Top"
+                            Source="Assets/logo_transparent.png" />
                     <StackPanel Orientation="Horizontal"
 						HorizontalAlignment="Center"
 						Margin="0,150,0,0"
@@ -185,6 +185,13 @@
 							FontSize="14"
 							Margin="0,0,10,0"
 							Foreground="White" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical"
+                                VerticalAlignment="Bottom"
+                                Margin="0,0,0,80">
+                        <TextBlock x:Name="AppVersion" Text="version 1.1.3" HorizontalAlignment="Center" Foreground="Gray" />
+                        <TextBlock Text="Contact Email: zelong.chen@live.com" HorizontalAlignment="Center" Foreground="Gray" />
+                        <TextBlock Text="Copyright © 2015 CHEN Zelong" HorizontalAlignment="Center" Foreground="Gray" ></TextBlock>
                     </StackPanel>
                     <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
                                   Height="70"

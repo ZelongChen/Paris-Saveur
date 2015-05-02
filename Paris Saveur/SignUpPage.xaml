@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
             <Image Source="Assets/logo_white.png"/>
@@ -56,5 +57,10 @@
                     Background="YellowGreen"
                     Click="SignUpButton_Click"></Button>
         </StackPanel>
+        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
+                      Grid.Row="2"
+                      Height="70"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Bottom"/>
     </Grid>
 </Page>

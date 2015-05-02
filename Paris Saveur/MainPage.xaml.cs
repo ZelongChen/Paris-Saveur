@@ -75,7 +75,12 @@ namespace Paris_Saveur
         {
             if (this.MainPagePivot.SelectedIndex == 0)
             {
-                this.MainPageAppBar.Visibility = Visibility.Collapsed;
+                this.HistoryButton.Visibility = Visibility.Collapsed;
+                this.FavoriteButton.Visibility = Visibility.Collapsed;
+                this.SearchButton.Visibility = Visibility.Visible;
+                this.FeedbackButton.Visibility = Visibility.Collapsed;
+                this.WebButton.Visibility = Visibility.Collapsed;
+                this.NoteButton.Visibility = Visibility.Collapsed;
 
                 this.PivotItem0_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
                 this.PivotItem0_Title.FontWeight = FontWeights.Bold;
@@ -89,8 +94,6 @@ namespace Paris_Saveur
             }
             else if (this.MainPagePivot.SelectedIndex == 1)
             {
-                this.MainPageAppBar.Visibility = Visibility.Visible;
-
                 this.HistoryButton.Visibility = Visibility.Collapsed;
                 this.FavoriteButton.Visibility = Visibility.Collapsed;
                 this.SearchButton.Visibility = Visibility.Collapsed;
@@ -110,11 +113,9 @@ namespace Paris_Saveur
             }
             else
             {
-                this.MainPageAppBar.Visibility = Visibility.Visible;
-
                 this.HistoryButton.Visibility = Visibility.Visible;
                 this.FavoriteButton.Visibility = Visibility.Visible;
-                this.SearchButton.Visibility = Visibility.Visible;
+                this.SearchButton.Visibility = Visibility.Collapsed;
                 this.FeedbackButton.Visibility = Visibility.Collapsed;
                 this.WebButton.Visibility = Visibility.Collapsed;
                 this.NoteButton.Visibility = Visibility.Collapsed;

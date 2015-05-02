@@ -196,33 +196,45 @@
                 <PivotItem.Header>
                     <TextBlock x:Name="PivotItem2_Title" Text="我" FontSize="20" Foreground="Black" Padding="50,0,0,0" />
                 </PivotItem.Header>
-                <StackPanel Orientation="Vertical">
-                    <Image x:Name="UserThumbnailImageView"
-                           HorizontalAlignment="Center"
-                           Width="150"
-                           Height="150"
-                           Margin="0,20,0,0">
-                    </Image>
-                    <TextBlock x:Name="UserNameText"
-                               Height="60"
-                               HorizontalAlignment="Stretch"
-                               TextAlignment="Center"
-                               Foreground="Black"
-                               FontSize="24"
-                               FontWeight="Bold"
-                               VerticalAlignment="Center">
-                    </TextBlock>
-                    <Button x:Name="LoginButton"
-                        Height="50"
-                        BorderThickness="0"
-                        Margin="20"
-                        Background="Green"
-                        Content="登录"
-                        VerticalAlignment="Bottom"
-                        HorizontalAlignment="Stretch"
-                        Click="LoginButton_Click">
-                    </Button>
-                </StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Vertical">
+                        <Image x:Name="UserThumbnailImageView"
+                               HorizontalAlignment="Center"
+                               Width="150"
+                               Height="150"
+                               Margin="0,20,0,0">
+                        </Image>
+                        <TextBlock x:Name="UserNameText"
+                                   Height="60"
+                                   HorizontalAlignment="Stretch"
+                                   TextAlignment="Center"
+                                   Foreground="Black"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   Margin="0,20,0,0"
+                                   VerticalAlignment="Center">
+                        </TextBlock>
+                        <Button x:Name="LoginButton"
+                            Height="50"
+                            BorderThickness="0"
+                            Margin="20"
+                            Background="Green"
+                            Content="登录"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Stretch"
+                            Click="LoginButton_Click">
+                        </Button>
+                    </StackPanel>
+                    <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
+                                  Grid.Row="1"
+                                  Height="70"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Bottom"/>
+                </Grid>
             </PivotItem>
 		</Pivot>
 	</Grid>

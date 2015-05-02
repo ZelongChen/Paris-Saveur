@@ -82,6 +82,9 @@ namespace Paris_Saveur
 
         private async void SendLoginInformation()
         {
+            this.LoadingRing.IsActive = true;
+            this.LoadingRing.Visibility = Visibility.Visible;
+
             HttpFormUrlEncodedContent formContent = SetupHttpFormUrlEncodedContent();
             HttpClient client = new HttpClient();
             Uri uri = new Uri("http://www.vivelevendredi.com/accounts/login/mobile/");
@@ -95,6 +98,9 @@ namespace Paris_Saveur
             {
                 HandleLoginError(response);
             }
+
+            this.LoadingRing.IsActive = false;
+            this.LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private HttpFormUrlEncodedContent SetupHttpFormUrlEncodedContent()

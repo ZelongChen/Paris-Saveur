@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Paris_Saveur.Tools;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -34,7 +35,14 @@ namespace Paris_Saveur
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
-            ValidationCheck();
+            if (ConnectionContext.CheckNetworkConnection())
+            {
+                ValidationCheck();
+            }
+            else
+            {
+                ConnectionContext.ShowNoConnectionWarning();
+            }
         }
 
         private async void ValidationCheck()
@@ -99,6 +107,9 @@ namespace Paris_Saveur
 
         private async void SendSignUpInformation()
         {
+            this.LoadingRing.IsActive = true;
+            this.LoadingRing.Visibility = Visibility.Visible;
+
             HttpFormUrlEncodedContent formContent = SetupHttpFormUrlEncodedContent();
             HttpClient client = new HttpClient();
             Uri uri = new Uri("http://www.vivelevendredi.com/accounts/signup/mobile/");
@@ -112,6 +123,9 @@ namespace Paris_Saveur
             {
                 HandleSignUpError(response);
             }
+
+            this.LoadingRing.IsActive = false;
+            this.LoadingRing.Visibility = Visibility.Collapsed;
         }
 
         private HttpFormUrlEncodedContent SetupHttpFormUrlEncodedContent()

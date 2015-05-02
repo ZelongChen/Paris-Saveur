@@ -18,29 +18,36 @@
             <Image Source="Assets/logo_white.png"/>
             <TextBlock x:Name="PageTitle" Text="登录" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Grid.Row="1">
+        <Grid Grid.Row="1">
             <Image
                 Height="150"
                 Width="150"
                 HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Margin="20"
                 Source="Assets/Square150x150Logo.scale-100.png"></Image>
             <TextBox x:Name="UserNameTextBox"
                      BorderBrush="#FFE05C52"
                      Foreground="Black"
                      PlaceholderText="用户名"
-                     Margin="10"
+                     Margin="10,200,10,0"
                      ></TextBox>
             <PasswordBox x:Name="PasswordTextBox"
                      BorderBrush="#FFE05C52"
                      Foreground="Black"
                      PlaceholderText="密码"
-                     Margin="10"></PasswordBox>
+                     Margin="10,260,10,0"></PasswordBox>
+            <ProgressRing x:Name="LoadingRing"
+					Visibility="Collapsed"
+					IsActive="True"
+					Background="Transparent"
+					Foreground="#FFE05C52"
+					VerticalAlignment="Center"/>
             <Button x:Name="LoginButton"
                     HorizontalAlignment="Stretch"
                     BorderThickness="0"
                     Height="30"
-                    Margin="10,0,10,0"
+                    Margin="10,200,10,0"
                     Content="登录"
                     Background="YellowGreen"
                     Click="LoginButton_Click"></Button>
@@ -48,11 +55,11 @@
                     HorizontalAlignment="Stretch"
                     BorderThickness="0"
                     Height="30"
-                    Margin="10,0,10,0"
+                    Margin="10,300,10,0"
                     Content="注册新用户"
                     Background="Blue"
                     Click="SignUpButton_Click"></Button>
-        </StackPanel>
+        </Grid>
         <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
                       Grid.Row="2"
                       Height="70"

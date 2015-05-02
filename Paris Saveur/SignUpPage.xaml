@@ -18,45 +18,53 @@
             <Image Source="Assets/logo_white.png"/>
             <TextBlock x:Name="PageTitle" Text="注册新用户" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Grid.Row="1">
+        <Grid Grid.Row="1">
             <Image
                 Height="150"
                 Width="150"
                 HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Margin="20"
                 Source="Assets/Square150x150Logo.scale-100.png"></Image>
             <TextBox x:Name="UserNameTextBox"
                      BorderBrush="#FFE05C52"
                      Foreground="Black"
                      PlaceholderText="用户名"
-                     Margin="10"
+                     Margin="10, 200, 10, 10"
                      ></TextBox>
             <TextBox x:Name="UserEmailTextBox"
                      BorderBrush="#FFE05C52"
                      Foreground="Black"
                      PlaceholderText="电子邮箱"
                      InputScope="EmailSmtpAddress"
-                     Margin="10"
+                     Margin="10, 260, 10, 10"
                      ></TextBox>
+            <ProgressRing x:Name="LoadingRing"
+				    IsActive="False"
+				    Visibility="Collapsed"
+				    Background="Transparent"
+				    VerticalAlignment="Center"
+				    HorizontalAlignment="Center"
+				    Foreground="#FFE05C52"/>
             <PasswordBox x:Name="Password1TextBox"
                      BorderBrush="#FFE05C52"
                      Foreground="Black"
                      PlaceholderText="密码"
-                     Margin="10"></PasswordBox>
+                     Margin="10, 320, 10, 10"></PasswordBox>
             <PasswordBox x:Name="Password2TextBox"
                      BorderBrush="#FFE05C52"
                      Foreground="Black"
                      PlaceholderText="确认密码"
-                     Margin="10"></PasswordBox>
+                     Margin="10, 380, 10, 10"></PasswordBox>
             <Button x:Name="SignUpButton"
                     HorizontalAlignment="Stretch"
                     BorderThickness="0"
                     Height="30"
-                    Margin="10,0,10,0"
+                    Margin="10,400,10,0"
                     Content="注册新用户"
                     Background="YellowGreen"
                     Click="SignUpButton_Click"></Button>
-        </StackPanel>
+        </Grid>
         <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
                       Grid.Row="2"
                       Height="70"

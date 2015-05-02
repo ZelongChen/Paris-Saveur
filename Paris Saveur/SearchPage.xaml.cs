@@ -45,7 +45,7 @@ namespace Paris_Saveur
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
             {
-                if (ConnectionContext.checkNetworkConnection())
+                if (ConnectionContext.CheckNetworkConnection())
                 {
                     this.NoConnectionText.Visibility = Visibility.Collapsed;
                     this.SearchResultList.Visibility = Visibility.Visible;

@@ -29,7 +29,7 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (ConnectionContext.checkNetworkConnection())
+            if (ConnectionContext.CheckNetworkConnection())
             {
                 this.tag_list.Visibility = Visibility.Visible;
                 this.NoConnectionText.Visibility = Visibility.Collapsed;

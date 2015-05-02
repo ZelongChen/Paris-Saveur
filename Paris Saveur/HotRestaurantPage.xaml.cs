@@ -44,7 +44,7 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (ConnectionContext.checkNetworkConnection())
+            if (ConnectionContext.CheckNetworkConnection())
             {
                 this.NoConnectionText.Visibility = Visibility.Collapsed;
                 this.hotRestaurantList.Visibility = Visibility.Visible;
@@ -137,7 +137,7 @@ namespace Paris_Saveur
 
         private void RefreshPage(string sortBy, int page)
         {
-            if (ConnectionContext.checkNetworkConnection())
+            if (ConnectionContext.CheckNetworkConnection())
             {
                 this.hotRestaurantList.Visibility = Visibility.Visible;
                 this.NoConnectionText.Visibility = Visibility.Collapsed;
@@ -189,7 +189,7 @@ namespace Paris_Saveur
 
         private void loadMoreButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ConnectionContext.checkNetworkConnection())
+            if (ConnectionContext.CheckNetworkConnection())
             {
                 RefreshPage(sortBy, currentPage++);
                 this.loadMoreButoon.Content = "加载更多";

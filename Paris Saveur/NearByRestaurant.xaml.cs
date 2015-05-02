@@ -34,7 +34,7 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (ConnectionContext.checkNetworkConnection())
+            if (ConnectionContext.CheckNetworkConnection())
             {
                 this.NoConnectionText.Visibility = Visibility.Collapsed;
                 this.nearbyRestaurantList.Visibility = Visibility.Visible;
@@ -161,7 +161,7 @@ namespace Paris_Saveur
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
-            if (ConnectionContext.checkNetworkConnection())
+            if (ConnectionContext.CheckNetworkConnection())
             {
                 this.NoConnectionText.Visibility = Visibility.Collapsed;
                 this.nearbyRestaurantList.Visibility = Visibility.Visible;

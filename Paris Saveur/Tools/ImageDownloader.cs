@@ -46,7 +46,7 @@ namespace Paris_Saveur.Tools
         public static async void DownloadImageIntoImage(Restaurant restaurant)
         {
 
-            if (ConnectionContext.checkNetworkConnection())
+            if (ConnectionContext.CheckNetworkConnection())
             {
                 if (restaurant.thumbnail != null)
                 {
@@ -67,7 +67,7 @@ namespace Paris_Saveur.Tools
 
         public static async void DownloadImageIntoImage(User user)
         {
-            if (ConnectionContext.checkNetworkConnection())
+            if (ConnectionContext.CheckNetworkConnection())
             {
                 HttpClient client = new HttpClient();
                 HttpResponseMessage response;

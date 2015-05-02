@@ -182,7 +182,7 @@ namespace Paris_Saveur
 
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ConnectionContext.isUserSignedIn())
+            if (ConnectionContext.IsUserSignedIn())
             {
                 var dialogBuilder = new MessageDialog("您确定要退出吗");
                 dialogBuilder.Title = "退出登录";
@@ -200,14 +200,22 @@ namespace Paris_Saveur
             }
             else
             {
-                Frame.Navigate(typeof(LoginPage));
+                if (ConnectionContext.CheckNetworkConnection())
+                {
+                    Frame.Navigate(typeof(LoginPage));
+                }
+                else
+                {
+                    ConnectionContext.ShowNoConnectionWarning();
+                }
+                
             }
         }
 
         private void UpdateLoginPage()
         {
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            if (ConnectionContext.isUserSignedIn())
+            if (ConnectionContext.IsUserSignedIn())
             {
                 this.LoginButton.Background = new SolidColorBrush(Colors.Red);
                 this.LoginButton.Content = "退出登陆";

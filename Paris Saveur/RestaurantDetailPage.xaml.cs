@@ -158,7 +158,7 @@ namespace Paris_Saveur
             {
                 BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
                 restaurant.ThumbnailBitmap = placeholder;
-                if (ConnectionContext.checkNetworkConnection())
+                if (ConnectionContext.CheckNetworkConnection())
                 {
                     ImageDownloader.DownloadImageIntoImage(this.restaurantThumbnail, restaurant);
                 }

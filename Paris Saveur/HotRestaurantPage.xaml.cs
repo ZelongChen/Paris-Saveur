@@ -59,14 +59,14 @@ namespace Paris_Saveur
                 {
                     restaurantStyle = parameterReceived as string;
                     this.Title.Text = Restaurant.StyleToChinese(restaurantStyle);
-                    DownloadRestaurants((int)ListType.Recommended, restaurantStyle, sortBy, currentPage++);
+                    DownloadRestaurants((int)ListType.Style, restaurantStyle, sortBy, currentPage++);
                 }
                 else
                 {
                     restaurantTag = new Tag();
                     restaurantTag = parameterReceived as Tag;
                     this.Title.Text = restaurantTag.name;
-                    DownloadRestaurants((int)ListType.Recommended, restaurantTag.name, sortBy, currentPage++);
+                    DownloadRestaurants((int)ListType.Tag, restaurantTag.name, sortBy, currentPage++);
                 }
             }
             else

@@ -62,7 +62,7 @@
                     Height="30"
                     Margin="10,400,10,0"
                     Content="注册新用户"
-                    Background="YellowGreen"
+                    Background="#FF47BB47"
                     Click="SignUpButton_Click"></Button>
         </Grid>
         <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"

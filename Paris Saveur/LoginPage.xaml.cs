@@ -49,13 +49,13 @@ namespace Paris_Saveur
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(SignUpPage));
         }
 
         private HttpFormUrlEncodedContent SetupHttpFormUrlEncodedContent()
         {
-            String username = this.UserNameTextBox.Text;
-            String password = this.PasswordTextBox.Password;
+            string username = this.UserNameTextBox.Text;
+            string password = this.PasswordTextBox.Password;
             Dictionary<string, string> fullHttpContentDictionary = new Dictionary<string, string>();
             Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation deviceInfo = new Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation();
             string firmwareVersion = deviceInfo.SystemFirmwareVersion.ToString();

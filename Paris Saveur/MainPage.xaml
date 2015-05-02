@@ -217,7 +217,7 @@
                         BorderThickness="0"
                         Margin="20"
                         Background="Green"
-                        Content="登陆"
+                        Content="登录"
                         VerticalAlignment="Bottom"
                         HorizontalAlignment="Stretch"
                         Click="LoginButton_Click">

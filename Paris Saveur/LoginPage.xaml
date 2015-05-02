@@ -40,7 +40,7 @@
                     BorderThickness="0"
                     Height="30"
                     Margin="10,0,10,0"
-                    Content="登陆"
+                    Content="登录"
                     Background="YellowGreen"
                     Click="LoginButton_Click"></Button>
             <Button x:Name="SignUpButton"

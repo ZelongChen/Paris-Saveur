@@ -28,8 +28,17 @@ namespace Paris_Saveur
             this.InitializeComponent();
         }
 
+        bool GoBackToDetailPage;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            if (e.Parameter.ToString() == "ComeFromDetailPage")
+            {
+                GoBackToDetailPage = true;
+            }
+            else
+            {
+                GoBackToDetailPage = false;
+            }
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -92,7 +101,14 @@ namespace Paris_Saveur
             if (response.IsSuccessStatusCode)
             {
                 SaveUserInformation(response);
-                Frame.Navigate(typeof(MainPage));
+                if (GoBackToDetailPage)
+                {
+                    Frame.GoBack();
+                }
+                else
+                {
+                    Frame.Navigate(typeof(MainPage));
+                }
             }
             else
             {

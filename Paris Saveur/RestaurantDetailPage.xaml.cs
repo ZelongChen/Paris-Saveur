@@ -296,11 +296,6 @@ namespace Paris_Saveur
                 this.DetailPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);
                 this.DetailPivotItemHeader.FontWeight = FontWeights.Normal;
                 this.DetailPivotItemHeader.FontSize = 20;
-
-                this.ShareButton.Visibility = Visibility.Collapsed;
-                this.PhoneButton.Visibility = Visibility.Collapsed;
-                this.FavoriteButton.Visibility = Visibility.Collapsed;
-                this.CommentButton.Visibility = Visibility.Visible;
             }
             else
             {
@@ -310,12 +305,6 @@ namespace Paris_Saveur
                 this.CommentPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);
                 this.CommentPivotItemHeader.FontWeight = FontWeights.Normal;
                 this.CommentPivotItemHeader.FontSize = 20;
-
-                this.ShareButton.Visibility = Visibility.Visible;
-                this.PhoneButton.Visibility = Visibility.Visible;
-                this.FavoriteButton.Visibility = Visibility.Visible;
-                this.CommentButton.Visibility = Visibility.Collapsed;
-
                 SetupRestaurantDetail(restaurant);
             }
         }
@@ -457,7 +446,7 @@ namespace Paris_Saveur
             }
             else
             {
-                Frame.Navigate(typeof(LoginPage));
+                Frame.Navigate(typeof(LoginPage), "ComeFromDetailPage");
             }
             
         }

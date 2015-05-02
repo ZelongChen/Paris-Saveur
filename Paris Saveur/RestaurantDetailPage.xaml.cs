@@ -296,6 +296,11 @@ namespace Paris_Saveur
                 this.DetailPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);
                 this.DetailPivotItemHeader.FontWeight = FontWeights.Normal;
                 this.DetailPivotItemHeader.FontSize = 20;
+
+                this.ShareButton.Visibility = Visibility.Collapsed;
+                this.PhoneButton.Visibility = Visibility.Collapsed;
+                this.FavoriteButton.Visibility = Visibility.Collapsed;
+                this.CommentButton.Visibility = Visibility.Visible;
             }
             else
             {
@@ -305,6 +310,12 @@ namespace Paris_Saveur
                 this.CommentPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);
                 this.CommentPivotItemHeader.FontWeight = FontWeights.Normal;
                 this.CommentPivotItemHeader.FontSize = 20;
+
+                this.ShareButton.Visibility = Visibility.Visible;
+                this.PhoneButton.Visibility = Visibility.Visible;
+                this.FavoriteButton.Visibility = Visibility.Visible;
+                this.CommentButton.Visibility = Visibility.Collapsed;
+
                 SetupRestaurantDetail(restaurant);
             }
         }
@@ -434,6 +445,21 @@ namespace Paris_Saveur
             string uriToLaunch = @"bingmaps:?collection=point." + restaurant.geo_lat +"_" + restaurant.geo_lon + "_" + restaurant.name +"&lvl=16";
             var uri = new Uri(uriToLaunch);
             await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+
+        private void CommentButton_Click(object sender, RoutedEventArgs e)
+        {
+            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            string authToken = (String)localSettings.Values["AuthToken"];
+            if (authToken != null)
+            {
+                Frame.Navigate(typeof(CommentPage), restaurant.pk);
+            }
+            else
+            {
+                Frame.Navigate(typeof(LoginPage));
+            }
+            
         }
     }
 }

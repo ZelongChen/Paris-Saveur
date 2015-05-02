@@ -40,7 +40,7 @@
                 <AppBarButton x:Name="PinUnPinCommandButton" Label="添加到桌面" Click="pinToAppBar_Click"/>
                 <AppBarButton x:Name="OpenMapButton" Label="在地图中打开" Click="OpenMapButton_Click"/>
             </CommandBar.SecondaryCommands>
-            <AppBarButton Label="呼叫" Icon="Phone">
+            <AppBarButton x:Name="PhoneButton" Label="呼叫" Icon="Phone">
                 <AppBarButton.Flyout>
                     <MenuFlyout>
                         <MenuFlyoutItem x:Name="restaurantPhoneNumber1" Click="restaurantPhoneNumber1_Click"/>
@@ -48,8 +48,9 @@
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
-            <AppBarButton Label="分享" Icon="ReShare" Click="Share_Click"/>
+            <AppBarButton x:Name="ShareButton" Label="分享" Icon="ReShare" Click="Share_Click"/>
             <AppBarButton x:Name="FavoriteButton" Label="收藏" Icon="Favorite" Click="AddToFavorite_Click"/>
+            <AppBarButton x:Name="CommentButton" Label="点评" Icon="Comment" Click="CommentButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 

@@ -1,0 +1,123 @@
+﻿<Page
+    x:Class="Paris_Saveur.CommentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Paris_Saveur"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+            <Image Source="Assets/logo_white.png"/>
+            <TextBlock Text="点评" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        Margin="0,20,0,0" 
+                        Height="50" 
+                        VerticalAlignment="Top">
+                <Image x:Name="StarImage1"
+                       VerticalAlignment="Top"
+                       Source="Assets/star_empty.png"
+                       Width="50"
+                       Height="50"
+                       Tapped="StarImage1_Tapped"></Image>
+                <Image x:Name="StarImage2"
+                       VerticalAlignment="Top"
+                       Source="Assets/star_empty.png"
+                       Width="50"
+                       Height="50"
+                       Tapped="StarImage2_Tapped"></Image>
+                <Image x:Name="StarImage3"
+                       VerticalAlignment="Top"
+                       Source="Assets/star_empty.png"
+                       Width="50"
+                       Height="50"
+                       Tapped="StarImage3_Tapped"></Image>
+                <Image x:Name="StarImage4"
+                       VerticalAlignment="Top"
+                       Source="Assets/star_empty.png"
+                       Width="50"
+                       Height="50"
+                       Tapped="StarImage4_Tapped"></Image>
+                <Image x:Name="StarImage5"
+                       VerticalAlignment="Top"
+                       Source="Assets/star_empty.png"
+                       Width="50"
+                       Height="50"
+                       Tapped="StarImage5_Tapped"></Image>
+            </StackPanel>
+            <TextBlock x:Name="AttitudeText"
+                       Height="25"
+                       Width="100"
+                       Text="轻按星标打分"
+                       Foreground="Gray"
+                       FontSize="20"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Margin="0,80,0,0"/>
+            <TextBox x:Name="CommentTextBox"
+                     Margin="10,110,10,0"
+                     Height="100"
+                     BorderBrush="#FFE05C52"
+                     VerticalAlignment="Top"
+                     TextAlignment="Left"
+                     PlaceholderText="您的评价"
+                     Foreground="Black"
+                     FontSize="30"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Height="60"
+                        Margin="0,10,10,0">
+                <TextBlock
+                    Text="价格"
+                    Foreground="Black"
+                    VerticalAlignment="Center"
+                    Margin="0,0,10,0"
+                    FontSize="25"></TextBlock>
+                <TextBox x:Name="PriceTextBox"
+                         Margin="0"
+                         Width="80"
+                         VerticalAlignment="Center"
+                         PlaceholderText="价格"
+                         BorderBrush="#FFE05C52"
+                         Foreground="Black"
+                         InputScope="Number"></TextBox>
+            </StackPanel>
+            <Button x:Name="SendCommentButton"
+                    HorizontalAlignment="Stretch"
+                    Margin="10,150,10,0"
+                    BorderThickness="0"
+                    Background="#FFE05C52"
+                    Content="点评该餐馆"
+                    Click="SendCommentButton_Click"></Button>
+                       
+            <ProgressRing x:Name="LoadingRing"
+					Visibility="Collapsed"
+					IsActive="True"
+					Background="Transparent"
+					Foreground="#FFE05C52"
+					Margin="0,250,0,0"
+					VerticalAlignment="Top"/>
+        </Grid>
+        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
+                      Grid.Row="2" 
+                      HorizontalAlignment="Stretch" 
+                      Height="70"
+                      VerticalAlignment="Top" >
+        </ListViewItem>
+    </Grid>
+</Page>

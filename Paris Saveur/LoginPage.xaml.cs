@@ -31,7 +31,7 @@ namespace Paris_Saveur
         bool GoBackToDetailPage;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (e.Parameter.ToString() == "ComeFromDetailPage")
+            if (e.Parameter != null && e.Parameter.ToString() == "ComeFromDetailPage")
             {
                 GoBackToDetailPage = true;
             }

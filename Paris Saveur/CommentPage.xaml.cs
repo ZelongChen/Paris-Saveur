@@ -93,7 +93,7 @@ namespace Paris_Saveur
             this.StarImage2.Source = FullStarBitmap;
             this.StarImage3.Source = FullStarBitmap;
             this.StarImage4.Source = FullStarBitmap;
-            this.StarImage5.Source = EmptyStarBitmap;
+            this.StarImage5.Source = FullStarBitmap;
 
             this.AttitudeText.Text = "力荐";
             this.Score = 5;
@@ -119,7 +119,7 @@ namespace Paris_Saveur
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Frame.Navigate(typeof(RestaurantDetailPage));
+                    Frame.GoBack();
                 }
                 else
                 {
@@ -141,8 +141,9 @@ namespace Paris_Saveur
             Dictionary<string, string> fullHttpContentDictionary = new Dictionary<string, string>();
             Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation deviceInfo = new Windows.Security.ExchangeActiveSyncProvisioning.EasClientDeviceInformation();
             string firmwareVersion = deviceInfo.SystemFirmwareVersion.ToString();
-            fullHttpContentDictionary.Add("username", comment);
-            fullHttpContentDictionary.Add("password", price);
+            fullHttpContentDictionary.Add("comment", comment);
+            fullHttpContentDictionary.Add("price", price);
+            fullHttpContentDictionary.Add("score", "" + Score);
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             string authToken = (String)localSettings.Values["AuthToken"];
             string username = (String)localSettings.Values["UserName"];

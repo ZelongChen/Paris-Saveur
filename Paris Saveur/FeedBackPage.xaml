@@ -19,9 +19,10 @@
 			<TextBlock Text="反馈" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="1">
-            <TextBlock Text="欢迎给我们您的反馈意见：" 
+            <TextBlock Text="欢迎给我您的反馈意见：" 
 				HorizontalAlignment="Left"
 				Foreground="Black"
+                FontSize="18"
 				Margin="10"/>
             <TextBox x:Name="FeedBackTextBox" 
 				PlaceholderText="您的反馈"

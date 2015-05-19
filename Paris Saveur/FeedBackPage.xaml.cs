@@ -35,14 +35,20 @@ namespace Paris_Saveur
             this.LoadingRing.IsActive = true;
             this.LoadingRing.Visibility = Visibility.Visible;
 
-            HttpFormUrlEncodedContent formContent = SetupHttpFormUrlEncodedContent();
+            /*HttpFormUrlEncodedContent formContent = SetupHttpFormUrlEncodedContent();
             HttpClient client = new HttpClient();
             Uri uri = new Uri("http://www.vivelevendredi.com/feedbacks/submit/mobile/");
             HttpResponseMessage response = await client.PostAsync(uri, formContent);
             if (response.IsSuccessStatusCode)
             {
                 SetupToastNotification();
-            }
+            }*/
+            Windows.ApplicationModel.Email.EmailMessage mail = new Windows.ApplicationModel.Email.EmailMessage();
+            mail.Subject = "巴黎吃什么：用户反馈";
+            mail.Body = this.FeedBackTextBox.Text;
+            mail.To.Add(new Windows.ApplicationModel.Email.EmailRecipient("zelong.chen@live.com", "zchen"));
+            await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(mail);
+
             this.LoadingRing.IsActive = false;
             this.LoadingRing.Visibility = Visibility.Collapsed;
         }

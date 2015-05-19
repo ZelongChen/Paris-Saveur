@@ -28,7 +28,7 @@
         		Text="{Binding Name}" 
         		VerticalAlignment="Top"
         		Style="{StaticResource ListViewItemTextBlockStyle}"
-        		FontSize="20"
+        		FontSize="22"
         		Margin="5,0,0,0"
         		TextTrimming="CharacterEllipsis"/>
         </DataTemplate>
@@ -87,7 +87,7 @@
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Border Padding="5">
-                                <Border Background="{Binding Converter={StaticResource BackgroundConverter}}" 
+                                <Border Background="#FFE05C52" 
 									Width="82" Height="82"  				 
 									HorizontalAlignment="Left">
                                     <TextBlock Text="{Binding Group.Key}"

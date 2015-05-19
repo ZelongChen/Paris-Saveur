@@ -27,14 +27,14 @@
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock Text="菜系分类" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
-		<ListViewItem x:Name="sichuan_hunan" Content="川菜 湘菜" Grid.Row="1" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="sichuan_hunan_Tapped"/>
-		<ListViewItem x:Name="shandong_anhui" Content="鲁菜 徽菜" Grid.Row="2" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="shandong_anhui_Tapped"/>
-		<ListViewItem x:Name="jiangshu_zhejiang" Content="苏菜 浙菜" Grid.Row="3" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="jiangshu_zhejiang_Tapped"/>
-		<ListViewItem x:Name="guangdong_fujian" Content="粤菜 闽菜" Grid.Row="4" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="guangdong_fujian_Tapped"/>
-		<ListViewItem x:Name="yunnan" Content="云南菜" Grid.Row="5" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="yunnan_Tapped"/>
-		<ListViewItem x:Name="beifang" Content="北方菜系" Grid.Row="6" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="beifang_Tapped"/>
-		<ListViewItem x:Name="japan_korea" Content="日餐 韩餐" Grid.Row="7" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="japan_korea_Tapped"/>
-		<ListViewItem x:Name="southest_asia" Content="东南亚菜" Grid.Row="8" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="southest_asia_Tapped"/>
-        <ListViewItem x:Name="unclassified" Content="未归类" Grid.Row="9" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="unclassified_Tapped"/>
+		<ListViewItem x:Name="sichuan_hunan" Content="川菜 湘菜" Grid.Row="1" FontSize="22" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="sichuan_hunan_Tapped"/>
+		<ListViewItem x:Name="shandong_anhui" Content="鲁菜 徽菜" Grid.Row="2" FontSize="22" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="shandong_anhui_Tapped"/>
+		<ListViewItem x:Name="jiangshu_zhejiang" Content="苏菜 浙菜" Grid.Row="3" FontSize="22" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="jiangshu_zhejiang_Tapped"/>
+		<ListViewItem x:Name="guangdong_fujian" Content="粤菜 闽菜" Grid.Row="4" FontSize="22" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="guangdong_fujian_Tapped"/>
+		<ListViewItem x:Name="yunnan" Content="云南菜" Grid.Row="5" FontSize="22" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="yunnan_Tapped"/>
+		<ListViewItem x:Name="beifang" Content="北方菜系" Grid.Row="6" FontSize="22" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="beifang_Tapped"/>
+		<ListViewItem x:Name="japan_korea" Content="日餐 韩餐" Grid.Row="7" FontSize="22" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="japan_korea_Tapped"/>
+		<ListViewItem x:Name="southest_asia" Content="东南亚菜" Grid.Row="8" FontSize="22" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="southest_asia_Tapped"/>
+        <ListViewItem x:Name="unclassified" Content="未归类" Grid.Row="9" FontSize="22" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="unclassified_Tapped"/>
     </Grid>
 </Page>

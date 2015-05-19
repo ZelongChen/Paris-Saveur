@@ -15,7 +15,7 @@
         		Text="{Binding tagToString}"
         		VerticalAlignment="Center"
         		Padding="10,0,0,0"
-        		FontSize="20"
+        		FontSize="22"
         		Foreground="Black"/>
         </DataTemplate>
     </Page.Resources>

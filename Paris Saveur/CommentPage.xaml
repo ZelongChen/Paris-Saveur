@@ -60,7 +60,6 @@
             </StackPanel>
             <TextBlock x:Name="AttitudeText"
                        Height="25"
-                       Width="100"
                        Text="轻按星标打分"
                        Foreground="Gray"
                        FontSize="20"
@@ -75,8 +74,7 @@
                      VerticalAlignment="Top"
                      TextAlignment="Left"
                      PlaceholderText="您的评价"
-                     Foreground="Black"
-                     FontSize="30"/>
+                     Foreground="Black"/>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         Height="60"

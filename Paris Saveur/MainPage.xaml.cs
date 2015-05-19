@@ -218,7 +218,7 @@ namespace Paris_Saveur
             if (ConnectionContext.IsUserSignedIn())
             {
                 this.LoginButton.Background = new SolidColorBrush(Colors.Red);
-                this.LoginButton.Content = "退出登陆";
+                this.LoginButton.Content = "退出登录";
                 this.UserNameText.Text = (String)localSettings.Values["UserName"];
                 string thumbnailUrl = (String)localSettings.Values["ThumbnailUrl"];
                 ImageDownloader.DownloadImageIntoImage(this.UserThumbnailImageView, thumbnailUrl);
@@ -226,7 +226,7 @@ namespace Paris_Saveur
             else
             {
                 this.LoginButton.Background = new SolidColorBrush(Colors.Green);
-                this.LoginButton.Content = "登陆";
+                this.LoginButton.Content = "登录";
                 this.UserNameText.Text = "";
                 BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/annonymous.jpg"));
                 this.UserThumbnailImageView.Source = placeholder;

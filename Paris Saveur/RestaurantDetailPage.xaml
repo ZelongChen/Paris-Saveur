@@ -118,7 +118,7 @@
                         <Image x:Name="star4" Source="Assets/star_half.png" Margin="10"/>
                         <Image x:Name="star5" Source="Assets/star_half.png" Margin="10"/>
                     </StackPanel>
-                    <Grid x:Name="restaurantAddressStackPanel" Grid.Row="5" Tapped="restaurantAddressStackPanel_Tapped">
+                    <Grid x:Name="restaurantAddressGrid" Grid.Row="5" Tapped="restaurantAddressGrid_Tapped">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
@@ -144,15 +144,22 @@
 							VerticalAlignment="Center"
 							Margin="10,0,0,0"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Grid.Row="7">
-                        <Image Source="Assets/restaurant_detail_clock.png" Margin="5"/>
+                    <Grid x:Name="restaurantTimeGrid" Grid.Row="7" Tapped="restaurantTimeGrid_Tapped">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Assets/restaurant_detail_clock.png" Grid.Column="0" Margin="5"/>
                         <TextBlock x:Name="restaurantTime" 
+                            Grid.Column="1"
 							Text="{Binding opening_hours}"
 							Foreground="Black"
 							FontSize="15"
 							VerticalAlignment="Center"
 							Margin="10,0,0,0"/>
-                    </StackPanel>
+                        <Image Source="Assets/restaurant_detail_indicator.png" Grid.Column="2" HorizontalAlignment="Right" Margin="5"/>
+                    </Grid>
                 </Grid>
             </PivotItem>
             <PivotItem Margin="0" Background="White">

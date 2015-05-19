@@ -451,11 +451,23 @@ namespace Paris_Saveur
             
         }
 
-        private async void restaurantAddressStackPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void restaurantAddressGrid_Tapped(object sender, TappedRoutedEventArgs e)
         {
             string uriToLaunch = @"bingmaps:?collection=point." + restaurant.geo_lat + "_" + restaurant.geo_lon + "_" + restaurant.name + "&lvl=16";
             var uri = new Uri(uriToLaunch);
             await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+
+        private async void restaurantTimeGrid_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            var appointment = new Windows.ApplicationModel.Appointments.Appointment();
+            appointment.Subject = "去 " + restaurant.name + " 吃饭";
+            appointment.Location = restaurant.name;
+            appointment.Reminder = TimeSpan.FromHours(1);
+            var rect = MainPage.GetElementRect(sender as FrameworkElement);
+
+            String appointmentId = await Windows.ApplicationModel.Appointments.AppointmentManager.ShowAddAppointmentAsync(
+                                   appointment, rect, Windows.UI.Popups.Placement.Default);
         }
     }
 }

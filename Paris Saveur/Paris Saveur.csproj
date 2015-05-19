@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\annonymous.jpg" />
+    <Content Include="Assets\restaurant_detail_indicator.png" />
     <Content Include="Assets\homepage3.png" />
     <Content Include="Assets\app_logo_wide_1.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />

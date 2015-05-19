@@ -118,15 +118,23 @@
                         <Image x:Name="star4" Source="Assets/star_half.png" Margin="10"/>
                         <Image x:Name="star5" Source="Assets/star_half.png" Margin="10"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Grid.Row="5">
-                        <Image Source="Assets/restaurant_detail_location.png" Margin="5"/>
+                    <Grid x:Name="restaurantAddressStackPanel" Grid.Row="5" Tapped="restaurantAddressStackPanel_Tapped">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="Assets/restaurant_detail_location.png" Grid.Column="0" HorizontalAlignment="Left" Margin="5"/>
                         <TextBlock x:Name="restaurantAddress" 
+                            Grid.Column="1"
 							Text="{Binding address}"
 							Foreground="Black"
 							FontSize="15"
 							VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
 							Margin="10,0,0,0"/>
-                    </StackPanel>
+                        <Image Source="Assets/restaurant_detail_indicator.png" Grid.Column="2" HorizontalAlignment="Right" Margin="5"/>
+                    </Grid>
                     <StackPanel Orientation="Horizontal" Grid.Row="6">
                         <Image Source="Assets/restaurant_detail_metro.png" Margin="5"/>
                         <TextBlock x:Name="restaurantMetro"

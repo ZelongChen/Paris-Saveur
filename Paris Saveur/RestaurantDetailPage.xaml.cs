@@ -469,5 +469,12 @@ namespace Paris_Saveur
             String appointmentId = await Windows.ApplicationModel.Appointments.AppointmentManager.ShowAddAppointmentAsync(
                                    appointment, rect, Windows.UI.Popups.Placement.Default);
         }
+
+        private async void ShareLocationButton_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.ApplicationModel.Chat.ChatMessage msg = new Windows.ApplicationModel.Chat.ChatMessage();
+            msg.Body = restaurant.name + "\n" + restaurant.address + "\n" + restaurant.public_transit;
+            await Windows.ApplicationModel.Chat.ChatMessageManager.ShowComposeSmsMessageAsync(msg);
+        }
     }
 }

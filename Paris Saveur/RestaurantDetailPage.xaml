@@ -37,6 +37,7 @@
     <Page.BottomAppBar>
         <CommandBar Background="#FFE05C52" ClosedDisplayMode="Compact" Opacity="0.8">
             <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="ShareLocationButton" Label="分享地址" Click="ShareLocationButton_Click"/>
                 <AppBarButton x:Name="PinUnPinCommandButton" Label="添加到桌面" Click="pinToAppBar_Click"/>
                 <AppBarButton x:Name="OpenMapButton" Label="在地图中打开" Click="OpenMapButton_Click"/>
             </CommandBar.SecondaryCommands>

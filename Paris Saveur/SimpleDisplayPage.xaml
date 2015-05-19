@@ -18,39 +18,32 @@
 	<Grid Background="White">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="40"/>
-			<RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
-		</Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock x:Name="PageTitle" Text="历史" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
-		<ScrollViewer Grid.Row="1" Background="White">
-			<Grid >
-				<ListView x:Name="SimpleDisplayRestaurantList" 
+        <ScrollViewer Grid.Row="1" Background="White">
+            <Grid >
+                <ListView x:Name="SimpleDisplayRestaurantList" 
 					ItemsSource="{Binding}"
 					ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
 					HorizontalContentAlignment="Stretch"
 					SelectionChanged="SimpleDisplayRestaurantList_SelectionChanged">
-					<ListView.ItemContainerStyle>
-						<Style TargetType="ListViewItem">
-							<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-						</Style>
-					</ListView.ItemContainerStyle>
-				</ListView>
-				<ProgressRing x:Name="LoadingRing"
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+                <ProgressRing x:Name="LoadingRing"
 					Visibility="Collapsed"
 					IsActive="True"
 					Background="Transparent"
 					Foreground="#FFE05C52"
 					VerticalAlignment="Center"/>
-			</Grid>
-		</ScrollViewer>
-        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
-                      Grid.Row="2" 
-                      HorizontalAlignment="Stretch" 
-                      Height="70"
-                      VerticalAlignment="Top" >
-        </ListViewItem>
-	</Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
 </Page>

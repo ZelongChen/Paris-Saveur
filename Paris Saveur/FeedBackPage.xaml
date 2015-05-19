@@ -12,9 +12,8 @@
 	<Grid Background="White">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="40"/>
-			<RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
-		</Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock Text="反馈" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
@@ -46,11 +45,5 @@
 				HorizontalAlignment="Center"
 				Foreground="#FFE05C52"/>
         </StackPanel>
-        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
-                      Grid.Row="2" 
-                      HorizontalAlignment="Stretch" 
-                      Height="70"
-                      VerticalAlignment="Top" >
-        </ListViewItem>
     </Grid>
 </Page>

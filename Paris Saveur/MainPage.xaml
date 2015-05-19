@@ -193,10 +193,6 @@
                         <TextBlock Text="Contact Email: zelong.chen@live.com" HorizontalAlignment="Center" Foreground="Gray" />
                         <TextBlock Text="Copyright © 2015 CHEN Zelong" HorizontalAlignment="Center" Foreground="Gray" ></TextBlock>
                     </StackPanel>
-                    <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
-                                  Height="70"
-                                  HorizontalAlignment="Stretch"
-                                  VerticalAlignment="Bottom"/>
                 </Grid>
 			</PivotItem>
             <PivotItem Margin="0" Background="White">
@@ -236,11 +232,6 @@
                             Click="LoginButton_Click">
                         </Button>
                     </StackPanel>
-                    <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
-                                  Grid.Row="1"
-                                  Height="70"
-                                  HorizontalAlignment="Stretch"
-                                  VerticalAlignment="Bottom"/>
                 </Grid>
             </PivotItem>
 		</Pivot>

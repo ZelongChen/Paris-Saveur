@@ -26,41 +26,40 @@
 	<Grid Background="White">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="40"/>
-			<RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
-		</Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock x:Name="Title" Text="热门餐馆" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
-		<ScrollViewer Grid.Row="1" Background="White">
-			<Grid>
-				<TextBlock x:Name="NoConnectionText"
+        <ScrollViewer Grid.Row="1" Background="White">
+            <Grid>
+                <TextBlock x:Name="NoConnectionText"
 					Text="请检查您的网络连接"
 					VerticalAlignment="Center"
 					HorizontalAlignment="Center"
 					Foreground="Gray"
 					FontSize="22"/>
-				<ListView x:Name="hotRestaurantList" 
+                <ListView x:Name="hotRestaurantList" 
 					Margin="0,0,0,40"
 					ItemsSource="{Binding Restaurant_list}"
 					ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
 					HorizontalContentAlignment="Stretch"
 					SelectionChanged="hotRestaurantList_SelectionChanged">
-					<ListView.ItemContainerStyle>
-						<Style TargetType="ListViewItem">
-							<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-						</Style>
-					</ListView.ItemContainerStyle>
-				</ListView>
-				<ProgressRing x:Name="LoadingRing"
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+                <ProgressRing x:Name="LoadingRing"
 					Visibility="Collapsed"
 					IsActive="True"
 					Background="Transparent"
 					Foreground="#FFE05C52"
 					Margin="0,0,0,250"
 					VerticalAlignment="Bottom"/>
-				<Button x:Name="loadMoreButoon"
+                <Button x:Name="loadMoreButoon"
 					Background="White"
 					HorizontalContentAlignment="Stretch"
 					Content="加载更多"
@@ -68,14 +67,8 @@
 					HorizontalAlignment="Center"
 					Click="loadMoreButton_Click" 
 					VerticalAlignment="Bottom"/>
-			</Grid>
-		</ScrollViewer>
-        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
-                      Grid.Row="2" 
-                      HorizontalAlignment="Center" 
-                      Height="70"
-                      VerticalAlignment="Top" >
-        </ListViewItem>
+            </Grid>
+        </ScrollViewer>
     </Grid>
     
 </Page>

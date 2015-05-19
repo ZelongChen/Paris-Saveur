@@ -22,7 +22,6 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="70"/>
 		</Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
 			<Image Source="Assets/logo_white.png"/>
@@ -37,11 +36,5 @@
 		<ListViewItem x:Name="japan_korea" Content="日餐 韩餐" Grid.Row="7" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="japan_korea_Tapped"/>
 		<ListViewItem x:Name="southest_asia" Content="东南亚菜" Grid.Row="8" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="southest_asia_Tapped"/>
         <ListViewItem x:Name="unclassified" Content="未归类" Grid.Row="9" FontSize="20" Foreground="Black" VerticalContentAlignment="Center" Padding="10,0,0,0" Tapped="unclassified_Tapped"/>
-        <ListViewItem Template="{StaticResource AdMediatorItemTemplate}"
-                      Grid.Row="11" 
-                      HorizontalAlignment="Stretch" 
-                      Height="70"
-                      VerticalAlignment="Bottom" >
-        </ListViewItem>
     </Grid>
 </Page>

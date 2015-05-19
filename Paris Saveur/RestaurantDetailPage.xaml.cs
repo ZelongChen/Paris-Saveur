@@ -367,8 +367,8 @@ namespace Paris_Saveur
             var request = args.Request;
             var deferral = request.GetDeferral();
 
-            request.Data.Properties.Title = "我发现了一家好吃的餐馆";
-            request.Data.SetText("\n" + restaurant.name + "\n" + restaurant.address);
+            request.Data.Properties.Title = "";
+            request.Data.SetText("\n" + restaurant.name + "\n" + restaurant.address + "\n" + restaurant.public_transit + "\n" + restaurant.phone_number_1 + "\n" + ("来自 @巴黎吃什么"));
 
             deferral.Complete();
         }

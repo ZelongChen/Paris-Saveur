@@ -65,7 +65,7 @@
 							<TextBlock x:Name="recommendedText" 
 								Grid.Row="1"
 								Text="随便看看" 
-								Foreground="Black" 
+								Foreground="#FFE05C52" 
 								FontSize="21.333" 
 								VerticalAlignment="Center"
 								HorizontalAlignment="Center"/>
@@ -83,7 +83,7 @@
 							<TextBlock x:Name="nearbyText" 
 								Grid.Row="1"
 								Text="附近餐馆"  
-								Foreground="Black" 
+								Foreground="#FFE05C52" 
 								FontSize="21.333" 
 								VerticalAlignment="Center"
 								HorizontalAlignment="Center"/>
@@ -101,7 +101,7 @@
 							<TextBlock x:Name="hotText"
 								Grid.Row="1"
 								Text="热门餐馆"  
-								Foreground="Black" 
+								Foreground="#FFE05C52" 
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
@@ -119,7 +119,7 @@
 							<TextBlock x:Name="sortbyText" 
 								Grid.Row="1"
 								Text="菜系分类"  
-								Foreground="Black" 
+								Foreground="#FFE05C52" 
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
@@ -137,7 +137,7 @@
 							<TextBlock x:Name="hottagText" 
 								Grid.Row="1"
 								Text="热门标签"  
-								Foreground="Black" 
+								Foreground="#FFE05C52" 
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
@@ -155,7 +155,7 @@
 							<TextBlock x:Name="metroText" 
 								Grid.Row="1"
 								Text="地铁周边"  
-								Foreground="Black" 
+								Foreground="#FFE05C52" 
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>

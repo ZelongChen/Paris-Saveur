@@ -290,7 +290,7 @@ namespace Paris_Saveur
                 {
                     DownloadRestaurantCommentsAtPage(1);
                 }
-                this.CommentPivotItemHeader.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.CommentPivotItemHeader.Foreground = new SolidColorBrush(Color.FromArgb(255, 224, 92, 82));
                 this.CommentPivotItemHeader.FontWeight = FontWeights.Bold;
                 this.CommentPivotItemHeader.FontSize = 22;
                 this.DetailPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);
@@ -299,7 +299,7 @@ namespace Paris_Saveur
             }
             else
             {
-                this.DetailPivotItemHeader.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.DetailPivotItemHeader.Foreground = new SolidColorBrush(Color.FromArgb(255, 224, 92, 82));
                 this.DetailPivotItemHeader.FontWeight = FontWeights.Bold;
                 this.DetailPivotItemHeader.FontSize = 22;
                 this.CommentPivotItemHeader.Foreground = new SolidColorBrush(Colors.Black);

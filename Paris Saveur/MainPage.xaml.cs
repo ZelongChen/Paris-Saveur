@@ -82,7 +82,7 @@ namespace Paris_Saveur
                 this.WebButton.Visibility = Visibility.Collapsed;
                 this.NoteButton.Visibility = Visibility.Collapsed;
 
-                this.PivotItem0_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.PivotItem0_Title.Foreground = new SolidColorBrush(Color.FromArgb(255, 224, 92, 82));
                 this.PivotItem0_Title.FontWeight = FontWeights.Bold;
                 this.PivotItem0_Title.FontSize = 22;
                 this.PivotItem1_Title.Foreground = new SolidColorBrush(Colors.Black);
@@ -104,7 +104,7 @@ namespace Paris_Saveur
                 this.PivotItem0_Title.Foreground = new SolidColorBrush(Colors.Black);
                 this.PivotItem0_Title.FontWeight = FontWeights.Normal;
                 this.PivotItem0_Title.FontSize = 20;
-                this.PivotItem1_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.PivotItem1_Title.Foreground = new SolidColorBrush(Color.FromArgb(255, 224, 92, 82));
                 this.PivotItem1_Title.FontWeight = FontWeights.Bold;
                 this.PivotItem1_Title.FontSize = 22;
                 this.PivotItem2_Title.Foreground = new SolidColorBrush(Colors.Black);
@@ -126,7 +126,7 @@ namespace Paris_Saveur
                 this.PivotItem1_Title.Foreground = new SolidColorBrush(Colors.Black);
                 this.PivotItem1_Title.FontWeight = FontWeights.Normal;
                 this.PivotItem1_Title.FontSize = 20;
-                this.PivotItem2_Title.Foreground = new SolidColorBrush(Color.FromArgb(100, 224, 92, 82));
+                this.PivotItem2_Title.Foreground = new SolidColorBrush(Color.FromArgb(255, 224, 92, 82));
                 this.PivotItem2_Title.FontWeight = FontWeights.Bold;
                 this.PivotItem2_Title.FontSize = 22;
 

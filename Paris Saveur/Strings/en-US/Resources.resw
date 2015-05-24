@@ -138,6 +138,18 @@
   <data name="CommentPageYourComment.PlaceholderText" xml:space="preserve">
     <value>Your Comment</value>
   </data>
+  <data name="FeedbackPageComment.PlaceholderText" xml:space="preserve">
+    <value>Your feedback</value>
+  </data>
+  <data name="FeedbackPageCommentTitle.Text" xml:space="preserve">
+    <value>Give me your feedback: </value>
+  </data>
+  <data name="FeedbackPageSendButton.Content" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="FeedbackPageTitle.Text" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
   <data name="MainPageAppBarButtonFavorite.Label" xml:space="preserve">
     <value>Favorite</value>
   </data>

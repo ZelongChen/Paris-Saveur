@@ -16,24 +16,27 @@
         </Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
 			<Image Source="Assets/logo_white.png"/>
-			<TextBlock Text="反馈" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+            <TextBlock x:Uid="FeedbackPageTitle" Text="" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="1">
-            <TextBlock Text="欢迎给我您的反馈意见：" 
+            <TextBlock x:Uid="FeedbackPageCommentTitle"
+                Text="" 
 				HorizontalAlignment="Left"
 				Foreground="Black"
                 FontSize="18"
 				Margin="10"/>
             <TextBox x:Name="FeedBackTextBox" 
-				PlaceholderText="您的反馈"
+                x:Uid="FeedbackPageComment"
+				PlaceholderText=""
 				Foreground="Black"
 				BorderBrush="#FFE05C52"
 				Margin="10"
 				MaxLength="140"
 				Height="100"/>
             <Button x:Name="SendFeedBackButton"
+                x:Uid="FeedbackPageSendButton"
 				Background="#FFE05C52"
-				Content="提交"
+				Content=""
 				FontSize="16"
 				Margin="10"
 				HorizontalAlignment="Stretch"

@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock Text="点评" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+            <TextBlock x:Uid="CommentPageTitle" Text="" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
         </StackPanel>
         <Grid Grid.Row="1">
             
@@ -60,7 +60,8 @@
             </StackPanel>
             <TextBlock x:Name="AttitudeText"
                        Height="25"
-                       Text="轻按星标打分"
+                       x:Uid="CommentPageTapToRate"
+                       Text=""
                        Foreground="Gray"
                        FontSize="20"
                        VerticalAlignment="Top"
@@ -68,38 +69,42 @@
                        TextAlignment="Center"
                        Margin="0,80,0,0"/>
             <TextBox x:Name="CommentTextBox"
+                     x:Uid="CommentPageYourComment"
                      Margin="10,110,10,0"
                      Height="100"
                      BorderBrush="#FFE05C52"
                      VerticalAlignment="Top"
                      TextAlignment="Left"
-                     PlaceholderText="您的评价"
+                     PlaceholderText=""
                      Foreground="Black"/>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         Height="60"
                         Margin="0,10,10,0">
                 <TextBlock
-                    Text="价格"
+                    x:Uid="CommentPagePrice"
+                    Text=""
                     Foreground="Black"
                     VerticalAlignment="Center"
                     Margin="0,0,10,0"
                     FontSize="25"></TextBlock>
                 <TextBox x:Name="PriceTextBox"
+                         x:Uid="CommentPagePricePlaceholder"
                          Margin="0"
                          Width="80"
                          VerticalAlignment="Center"
-                         PlaceholderText="价格"
+                         PlaceholderText=""
                          BorderBrush="#FFE05C52"
                          Foreground="Black"
                          InputScope="Number"></TextBox>
             </StackPanel>
             <Button x:Name="SendCommentButton"
+                    x:Uid="CommentPageRateButton"
                     HorizontalAlignment="Stretch"
                     Margin="10,150,10,0"
                     BorderThickness="0"
                     Background="#FFE05C52"
-                    Content="点评该餐馆"
+                    Content=""
                     Click="SendCommentButton_Click"></Button>
                        
             <ProgressRing x:Name="LoadingRing"

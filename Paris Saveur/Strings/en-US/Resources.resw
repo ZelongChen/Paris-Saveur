@@ -120,6 +120,24 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="CommentPagePrice.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="CommentPagePricePlaceholder.PlaceholderText" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="CommentPageRateButton.Content" xml:space="preserve">
+    <value>Rate This Restaurant</value>
+  </data>
+  <data name="CommentPageTapToRate.Text" xml:space="preserve">
+    <value>Tap stars to rate</value>
+  </data>
+  <data name="CommentPageTitle.Text" xml:space="preserve">
+    <value>Rate Restaurant</value>
+  </data>
+  <data name="CommentPageYourComment.PlaceholderText" xml:space="preserve">
+    <value>Your Comment</value>
+  </data>
   <data name="MainPageAppBarButtonFavorite.Label" xml:space="preserve">
     <value>Favorite</value>
   </data>

@@ -120,6 +120,24 @@
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="CommentPagePrice.Text" xml:space="preserve">
+    <value>价格</value>
+  </data>
+  <data name="CommentPagePricePlaceholder.PlaceholderText" xml:space="preserve">
+    <value>价格</value>
+  </data>
+  <data name="CommentPageRateButton.Content" xml:space="preserve">
+    <value>点评该餐馆</value>
+  </data>
+  <data name="CommentPageTapToRate.Text" xml:space="preserve">
+    <value>轻按星标打分</value>
+  </data>
+  <data name="CommentPageTitle.Text" xml:space="preserve">
+    <value>点评</value>
+  </data>
+  <data name="CommentPageYourComment.PlaceholderText" xml:space="preserve">
+    <value>您的评价</value>
+  </data>
   <data name="MainPageAppBarButtonFavorite.Label" xml:space="preserve">
     <value>收藏</value>
   </data>

@@ -10,12 +10,12 @@
 
     <Page.BottomAppBar>
         <CommandBar x:Name="MainPageAppBar" Background="#FFE05C52" ClosedDisplayMode="Compact" Opacity="0.8">
-        	<AppBarButton x:Name="HistoryButton" Label="历史" Icon="Clock" Click="History_Click"/>
-        	<AppBarButton x:Name="FavoriteButton" Label="收藏" Icon="Favorite" Click="Bookmark_Click"/>
-        	<AppBarButton x:Name="SearchButton" Label="搜索" Icon="Find" Click="SearchButton_Click"/>
-        	<AppBarButton x:Name="FeedbackButton" Label="您的反馈" Icon="Mail" Click="Send_Feedback_Click"/>
-        	<AppBarButton x:Name="WebButton" Label="我们的网站" Icon="Globe" Click="Launch_Web_Click"/>
-        	<AppBarButton x:Name="NoteButton" Label="给应用打分" Icon="Comment" Click="AppBarButton_Click"/>
+            <AppBarButton x:Name="HistoryButton" x:Uid="MainPageAppBarButtonHistory" Label="" Icon="Clock" Click="History_Click"/>
+            <AppBarButton x:Name="FavoriteButton" x:Uid="MainPageAppBarButtonFavorite" Label="" Icon="Favorite" Click="Bookmark_Click"/>
+            <AppBarButton x:Name="SearchButton" x:Uid="MainPageAppBarButtonSearch" Label="" Icon="Find" Click="SearchButton_Click"/>
+            <AppBarButton x:Name="FeedbackButton" x:Uid="MainPageAppBarButtonSearch" Label="" Icon="Mail" Click="Send_Feedback_Click"/>
+            <AppBarButton x:Name="WebButton" x:Uid="MainPageAppBarButtonWeb" Label="" Icon="Globe" Click="Launch_Web_Click"/>
+            <AppBarButton x:Name="NoteButton" x:Uid="MainPageAppBarButtonNote" Label="" Icon="Comment" Click="AppBarButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 

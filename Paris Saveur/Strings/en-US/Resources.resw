@@ -120,6 +120,24 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="MainPageAppBarButtonFavorite.Label" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="MainPageAppBarButtonFeedback.Label" xml:space="preserve">
+    <value>Your Feedback</value>
+  </data>
+  <data name="MainPageAppBarButtonHistory.Label" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="MainPageAppBarButtonNote.Label" xml:space="preserve">
+    <value>Rate this App</value>
+  </data>
+  <data name="MainPageAppBarButtonSearch.Label" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="MainPageAppBarButtonWeb.Label" xml:space="preserve">
+    <value>Our Website</value>
+  </data>
   <data name="MainPageLogoutMessageDialogHeader" xml:space="preserve">
     <value>Do you want to logout?</value>
   </data>

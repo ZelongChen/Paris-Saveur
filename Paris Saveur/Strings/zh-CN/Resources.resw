@@ -120,6 +120,24 @@
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="MainPageAppBarButtonFavorite.Label" xml:space="preserve">
+    <value>收藏</value>
+  </data>
+  <data name="MainPageAppBarButtonFeedback.Label" xml:space="preserve">
+    <value>您的反馈</value>
+  </data>
+  <data name="MainPageAppBarButtonHistory.Label" xml:space="preserve">
+    <value>历史</value>
+  </data>
+  <data name="MainPageAppBarButtonNote.Label" xml:space="preserve">
+    <value>给应用打分</value>
+  </data>
+  <data name="MainPageAppBarButtonSearch.Label" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="MainPageAppBarButtonWeb.Label" xml:space="preserve">
+    <value>我们的网站</value>
+  </data>
   <data name="MainPageLogoutMessageDialogHeader" xml:space="preserve">
     <value>您确定要退出吗?</value>
   </data>

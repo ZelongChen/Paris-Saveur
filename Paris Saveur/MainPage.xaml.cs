@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage.Streams;
@@ -182,12 +183,13 @@ namespace Paris_Saveur
 
         private async void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            var loader = new ResourceLoader();
             if (ConnectionContext.IsUserSignedIn())
             {
-                var dialogBuilder = new MessageDialog("您确定要退出吗");
-                dialogBuilder.Title = "退出登录";
-                dialogBuilder.Commands.Add(new UICommand { Label = "确定", Id = 0 });
-                dialogBuilder.Commands.Add(new UICommand { Label = "取消", Id = 1 });
+                var dialogBuilder = new MessageDialog(loader.GetString("MainPageLogoutMessageDialogHeader"));
+                dialogBuilder.Title = loader.GetString("MainPageLogoutMessageDialogTitle");
+                dialogBuilder.Commands.Add(new UICommand { Label = loader.GetString("Yes"), Id = 0 });
+                dialogBuilder.Commands.Add(new UICommand { Label = loader.GetString("Cancel"), Id = 1 });
                 var dialog = await dialogBuilder.ShowAsync();
 
                 if ((int)dialog.Id == 0)
@@ -215,10 +217,11 @@ namespace Paris_Saveur
         private void UpdateLoginPage()
         {
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+            var loader = new ResourceLoader();
             if (ConnectionContext.IsUserSignedIn())
             {
                 this.LoginButton.Background = new SolidColorBrush(Colors.Red);
-                this.LoginButton.Content = "退出登录";
+                this.LoginButton.Content = loader.GetString("MainPagePivotItemMeLogin"); ;
                 this.UserNameText.Text = (String)localSettings.Values["UserName"];
                 string thumbnailUrl = (String)localSettings.Values["ThumbnailUrl"];
                 ImageDownloader.DownloadImageIntoImage(this.UserThumbnailImageView, thumbnailUrl);
@@ -226,7 +229,7 @@ namespace Paris_Saveur
             else
             {
                 this.LoginButton.Background = new SolidColorBrush(Colors.Green);
-                this.LoginButton.Content = "登录";
+                this.LoginButton.Content = loader.GetString("MainPagePivotItemMeLogin");
                 this.UserNameText.Text = "";
                 BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/annonymous.jpg"));
                 this.UserThumbnailImageView.Source = placeholder;

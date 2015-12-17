@@ -15,15 +15,15 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-	<Grid Background="White">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="40"/>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
-			<Image Source="Assets/logo_white.png"/>
-			<TextBlock x:Name="PageTitle" Text="历史" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
-		</StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
+            <Image Source="Assets/logo_white.png"/>
+            <TextBlock x:Name="PageTitle" Text="历史" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+        </StackPanel>
         <ScrollViewer Grid.Row="1" Background="White">
             <Grid >
                 <ListView x:Name="SimpleDisplayRestaurantList" 
@@ -38,11 +38,8 @@
                     </ListView.ItemContainerStyle>
                 </ListView>
                 <ProgressRing x:Name="LoadingRing"
-					Visibility="Collapsed"
-					IsActive="True"
-					Background="Transparent"
-					Foreground="{StaticResource AppThemeColor}"
-					VerticalAlignment="Center"/>
+                              VerticalAlignment="Center"
+                              Style="{StaticResource ProgressRingStyle}"/>
             </Grid>
         </ScrollViewer>
     </Grid>

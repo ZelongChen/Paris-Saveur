@@ -9,15 +9,15 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-	<Grid Background="White">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="40"/>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
-			<Image Source="Assets/logo_white.png"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
+            <Image Source="Assets/logo_white.png"/>
             <TextBlock x:Uid="FeedbackPageTitle" Text="" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
-		</StackPanel>
+        </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="1">
             <TextBlock x:Uid="FeedbackPageCommentTitle"
                 Text="" 
@@ -42,12 +42,9 @@
 				HorizontalAlignment="Stretch"
 				Click="SendFeedBackButton_Click"/>
             <ProgressRing x:Name="LoadingRing"
-				IsActive="False"
-				Visibility="Collapsed"
-				Background="Transparent"
+                Style="{StaticResource ProgressRingStyle}"
 				VerticalAlignment="Center"
-				HorizontalAlignment="Center"
-				Foreground="{StaticResource AppThemeColor}"/>
+				HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Page>

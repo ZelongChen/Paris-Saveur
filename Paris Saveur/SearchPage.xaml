@@ -58,10 +58,7 @@
                     </ListView.ItemContainerStyle>
                 </ListView>
                 <ProgressRing x:Name="LoadingRing"
-					Visibility="Collapsed"
-					IsActive="True"
-					Background="Transparent"
-					Foreground="{StaticResource AppThemeColor}"
+                    Style="{StaticResource ProgressRingStyle}"
 					VerticalAlignment="Center"/>
             </Grid>
         </ScrollViewer>

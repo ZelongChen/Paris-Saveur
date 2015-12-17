@@ -9,7 +9,16 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="White">
+        <Grid.Resources>
+            <Style x:Key="StarStyle" TargetType="Image">
+                <Setter Property="VerticalAlignment" Value="Top"></Setter>
+                <Setter Property="Width" Value="50"></Setter>
+                <Setter Property="Height" Value="50"></Setter>
+                <Setter Property="Source" Value="Assets/star_empty.png"></Setter>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
+
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -29,33 +38,23 @@
                         VerticalAlignment="Top">
                 <Image x:Name="StarImage1"
                        VerticalAlignment="Top"
-                       Source="Assets/star_empty.png"
-                       Width="50"
-                       Height="50"
+                       Style="{StaticResource StarStyle}"
                        Tapped="StarImage1_Tapped"></Image>
                 <Image x:Name="StarImage2"
                        VerticalAlignment="Top"
-                       Source="Assets/star_empty.png"
-                       Width="50"
-                       Height="50"
+                       Style="{StaticResource StarStyle}"
                        Tapped="StarImage2_Tapped"></Image>
                 <Image x:Name="StarImage3"
                        VerticalAlignment="Top"
-                       Source="Assets/star_empty.png"
-                       Width="50"
-                       Height="50"
+                       Style="{StaticResource StarStyle}"
                        Tapped="StarImage3_Tapped"></Image>
                 <Image x:Name="StarImage4"
                        VerticalAlignment="Top"
-                       Source="Assets/star_empty.png"
-                       Width="50"
-                       Height="50"
+                       Style="{StaticResource StarStyle}"
                        Tapped="StarImage4_Tapped"></Image>
                 <Image x:Name="StarImage5"
                        VerticalAlignment="Top"
-                       Source="Assets/star_empty.png"
-                       Width="50"
-                       Height="50"
+                       Style="{StaticResource StarStyle}"
                        Tapped="StarImage5_Tapped"></Image>
             </StackPanel>
             <TextBlock x:Name="AttitudeText"
@@ -108,10 +107,7 @@
                     Click="SendCommentButton_Click"></Button>
 
             <ProgressRing x:Name="LoadingRing"
-					Visibility="Collapsed"
-					IsActive="True"
-					Background="Transparent"
-					Foreground="{StaticResource AppThemeColor}"
+                    Style="{StaticResource ProgressRingStyle}"
 					Margin="0,250,0,0"
 					VerticalAlignment="Top"/>
         </Grid>

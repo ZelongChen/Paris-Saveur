@@ -39,12 +39,9 @@
                      Margin="10, 260, 10, 10"
                      ></TextBox>
             <ProgressRing x:Name="LoadingRing"
-				    IsActive="False"
-				    Visibility="Collapsed"
-				    Background="Transparent"
+                    Style="{StaticResource ProgressRingStyle}"
 				    VerticalAlignment="Center"
-				    HorizontalAlignment="Center"
-				    Foreground="{StaticResource AppThemeColor}"/>
+				    HorizontalAlignment="Center"/>
             <PasswordBox x:Name="Password1TextBox"
                      BorderBrush="{StaticResource AppThemeColor}"
                      Foreground="Black"

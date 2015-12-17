@@ -46,10 +46,7 @@
 					ItemTemplate="{StaticResource HotTagListItemTemplate}"
 					SelectionChanged="tag_list_SelectionChanged"/>
                 <ProgressRing x:Name="LoadingRing"
-					Visibility="Collapsed"
-					IsActive="True"
-					Background="Transparent"
-					Foreground="{StaticResource AppThemeColor}"
+                    Style="{StaticResource ProgressRingStyle}"
 					Margin="0,250,0,0"
 					VerticalAlignment="Top"/>
             </Grid>

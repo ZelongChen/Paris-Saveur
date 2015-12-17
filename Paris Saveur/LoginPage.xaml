@@ -37,10 +37,7 @@
                      PlaceholderText="密码"
                      Margin="10,260,10,0"></PasswordBox>
             <ProgressRing x:Name="LoadingRing"
-					Visibility="Collapsed"
-					IsActive="True"
-					Background="Transparent"
-					Foreground="{StaticResource AppThemeColor}"
+                    Style="{StaticResource ProgressRingStyle}"
 					VerticalAlignment="Center"/>
             <Button x:Name="LoginButton"
                     HorizontalAlignment="Stretch"

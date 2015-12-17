@@ -187,10 +187,7 @@
 							Visibility="Collapsed"
 							FontSize="22"/>
                         <ProgressRing x:Name="LoadingRing"
-							IsActive="True"
-							Visibility="Collapsed"
-							Background="Transparent"
-							Foreground="{StaticResource AppThemeColor}"
+                            Style="{StaticResource ProgressRingStyle}"
 							Margin="0,0,0,250"
 							VerticalAlignment="Bottom"/>
                         <Button x:Name="loadMoreButoon"

@@ -99,11 +99,9 @@
             </StackPanel>
             <Button x:Name="SendCommentButton"
                     x:Uid="CommentPageRateButton"
-                    HorizontalAlignment="Stretch"
                     Margin="10,150,10,0"
-                    BorderThickness="0"
-                    Background="{StaticResource AppThemeColor}"
                     Content=""
+                    Style="{StaticResource ButtonStyle}"
                     Click="SendCommentButton_Click"></Button>
 
             <ProgressRing x:Name="LoadingRing"

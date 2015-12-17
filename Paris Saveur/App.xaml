@@ -42,6 +42,12 @@
                 <Setter Property="Foreground" Value="{StaticResource AppThemeColor}"></Setter>
             </Style>
 
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BorderThickness" Value="0"></Setter>
+                <Setter Property="Background" Value="{StaticResource AppThemeColor}"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

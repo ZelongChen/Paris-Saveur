@@ -19,50 +19,50 @@
         </CommandBar>
     </Page.BottomAppBar>
 
-	<Grid Background="White">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="40"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
-			<Image Source="Assets/logo_white.png"/>
-			<TextBlock x:Uid="MainPageTitle" Text="" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
-		</StackPanel>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
+            <Image Source="Assets/logo_white.png"/>
+            <TextBlock x:Uid="MainPageTitle" Text="" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+        </StackPanel>
         <Pivot x:Name="MainPagePivot" 
 			Grid.Row="1"
 			SelectionChanged="Mainpage_Pivot_SelectionChanged">
             <PivotItem Margin="0" Background="White">
-				<PivotItem.Header>
+                <PivotItem.Header>
                     <TextBlock x:Name="PivotItem0_Title" x:Uid="MainPagePivotItemHomeTitle" Text="" FontSize="20" Foreground="Black" Padding="50,0,0,0"/>
-				</PivotItem.Header>
-				<Grid HorizontalAlignment="Left" Margin="0,0,0,0">
-					<Grid.RowDefinitions>
-						<RowDefinition Height="1.5*"/>
-						<RowDefinition Height="1*"/>
-					</Grid.RowDefinitions>
-					<Image Grid.Row="0" Source="Assets/homepage2.png" Stretch="UniformToFill" Margin="10"/>
-					<Grid Grid.Row="1" Margin="0,0,0,0">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="1*"/>
-							<RowDefinition Height="1*"/>
-							<RowDefinition Height="1*"/>
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="1*"/>
-							<ColumnDefinition Width="1*"/>
-						</Grid.ColumnDefinitions>
-						<Grid x:Name="recommendedGrid" Grid.Row="0" Grid.Column="0" Tapped="recommendedText_Tapped">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="1.3*"/>
-								<RowDefinition Height="1*"/>
-							</Grid.RowDefinitions>
-							<Image x:Name="recommendedImage" 
+                </PivotItem.Header>
+                <Grid HorizontalAlignment="Left" Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="Assets/homepage2.png" Stretch="UniformToFill" Margin="10"/>
+                    <Grid Grid.Row="1" Margin="0,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="recommendedGrid" Grid.Row="0" Grid.Column="0" Tapped="recommendedText_Tapped">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.3*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Image x:Name="recommendedImage" 
 								Grid.Row="0" 
 								HorizontalAlignment="Center"
 								VerticalAlignment="Center"
 								Margin="0,5,0,0"
 								Source="Assets/mainpage_recommend.png"/>
-							<TextBlock x:Name="recommendedText" 
+                            <TextBlock x:Name="recommendedText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeRecommended"
 								Text="" 
@@ -70,18 +70,18 @@
 								FontSize="21.333" 
 								VerticalAlignment="Center"
 								HorizontalAlignment="Center"/>
-						</Grid>
-						<Grid x:Name="nearbyGrid" Grid.Row="0" Grid.Column="1" Tapped="nearbyText_Tapped">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="1.3*"/>
-								<RowDefinition Height="1*"/>
-							</Grid.RowDefinitions>
-							<Image x:Name="nearbyImage" 
+                        </Grid>
+                        <Grid x:Name="nearbyGrid" Grid.Row="0" Grid.Column="1" Tapped="nearbyText_Tapped">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.3*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Image x:Name="nearbyImage" 
 								Grid.Row="0" 
 								HorizontalAlignment="Center" 
 								Margin="0,5,0,0"
 								Source="Assets/mainpage_location.png"/>
-							<TextBlock x:Name="nearbyText" 
+                            <TextBlock x:Name="nearbyText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeNearby"
 								Text=""  
@@ -89,18 +89,18 @@
 								FontSize="21.333" 
 								VerticalAlignment="Center"
 								HorizontalAlignment="Center"/>
-						</Grid>
-						<Grid x:Name="hotGrid" Grid.Row="1" Grid.Column="0" Tapped="hotText_Tapped">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="1.3*"/>
-								<RowDefinition Height="1*"/>
-							</Grid.RowDefinitions>
-							<Image x:Name="hotImage" 
+                        </Grid>
+                        <Grid x:Name="hotGrid" Grid.Row="1" Grid.Column="0" Tapped="hotText_Tapped">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.3*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Image x:Name="hotImage" 
 								Grid.Row="0" 
 								HorizontalAlignment="Center" 
 								Margin="0,5,0,0"
 								Source="Assets/mainpage_hot.png"/>
-							<TextBlock x:Name="hotText"
+                            <TextBlock x:Name="hotText"
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeHot"
 								Text=""  
@@ -108,18 +108,18 @@
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
-						</Grid>
-						<Grid x:Name="sortbyGrid" Grid.Row="1" Grid.Column="1" Tapped="sortbyText_Tapped">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="1.3*"/>
-								<RowDefinition Height="1*"/>
-							</Grid.RowDefinitions>
-							<Image x:Name="sortbyImage" 
+                        </Grid>
+                        <Grid x:Name="sortbyGrid" Grid.Row="1" Grid.Column="1" Tapped="sortbyText_Tapped">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.3*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Image x:Name="sortbyImage" 
 								Grid.Row="0" 
 								HorizontalAlignment="Center" 
 								Margin="0,5,0,0"
 								Source="Assets/mainpage_style.png"/>
-							<TextBlock x:Name="sortbyText" 
+                            <TextBlock x:Name="sortbyText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeSortby"
 								Text=""  
@@ -127,18 +127,18 @@
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
-						</Grid>
-						<Grid x:Name="hottagGrid" Grid.Row="2" Grid.Column="0" Tapped="hottagText_Tapped">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="1.3*"/>
-								<RowDefinition Height="1*"/>
-							</Grid.RowDefinitions>
-							<Image x:Name="hottagImage" 
+                        </Grid>
+                        <Grid x:Name="hottagGrid" Grid.Row="2" Grid.Column="0" Tapped="hottagText_Tapped">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.3*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Image x:Name="hottagImage" 
 								Grid.Row="0" 
 								HorizontalAlignment="Center" 
 								Margin="0,5,0,0"
 								Source="Assets/mainpage_tag.png"/>
-							<TextBlock x:Name="hottagText" 
+                            <TextBlock x:Name="hottagText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeHotTag"
 								Text=""  
@@ -146,18 +146,18 @@
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
-						</Grid>
-						<Grid x:Name="metroGrid" Grid.Row="2" Grid.Column="2" Tapped="metroText_Tapped">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="1.3*"/>
-								<RowDefinition Height="1*"/>
-							</Grid.RowDefinitions>
-							<Image x:Name="metroImage" 
+                        </Grid>
+                        <Grid x:Name="metroGrid" Grid.Row="2" Grid.Column="2" Tapped="metroText_Tapped">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.3*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Image x:Name="metroImage" 
 								Grid.Row="0" 
 								HorizontalAlignment="Center" 
 								Margin="0,5,0,0"
 								Source="Assets/mainpage_metro.png"/>
-							<TextBlock x:Name="metroText" 
+                            <TextBlock x:Name="metroText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeMetro"
 								Text=""  
@@ -165,14 +165,14 @@
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
-						</Grid>
-					</Grid>
-				</Grid>
-			</PivotItem>
-			<PivotItem Margin="0" Background="White">
-				<PivotItem.Header>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </PivotItem>
+            <PivotItem Margin="0" Background="White">
+                <PivotItem.Header>
                     <TextBlock x:Name="PivotItem1_Title" x:Uid="MainPagePivotItemAboutTitle" Text="" FontSize="20" Foreground="Black" Padding="50,0,0,0" />
-				</PivotItem.Header>
+                </PivotItem.Header>
                 <Grid HorizontalAlignment="Stretch">
                     <Image 
                             Margin="0,20,0,0" 
@@ -202,7 +202,7 @@
                         <TextBlock x:Uid="MainPagePivotItemAboutCopyright" Text="" HorizontalAlignment="Center" Foreground="Gray" ></TextBlock>
                     </StackPanel>
                 </Grid>
-			</PivotItem>
+            </PivotItem>
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
                     <TextBlock x:Name="PivotItem2_Title" x:Uid="MainPagePivotItemMeTitle" Text="" FontSize="20" Foreground="Black" Padding="50,0,0,0" />
@@ -230,18 +230,16 @@
                                    VerticalAlignment="Center">
                         </TextBlock>
                         <Button x:Name="LoginButton"
-                            Height="50"
-                            BorderThickness="0"
-                            Margin="20"
-                            Background="#FF47BB47"
-                            VerticalAlignment="Bottom"
-                            HorizontalAlignment="Stretch"
-                            Click="LoginButton_Click">
+                                Margin="20"
+                                VerticalAlignment="Bottom"
+                                Content=""
+                                Style="{StaticResource ButtonStyle}"
+                                Click="LoginButton_Click">
                         </Button>
                     </StackPanel>
                 </Grid>
             </PivotItem>
-		</Pivot>
-	</Grid>
+        </Pivot>
+    </Grid>
 
 </Page>

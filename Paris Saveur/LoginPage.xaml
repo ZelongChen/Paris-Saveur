@@ -40,20 +40,14 @@
                     Style="{StaticResource ProgressRingStyle}"
 					VerticalAlignment="Center"/>
             <Button x:Name="LoginButton"
-                    HorizontalAlignment="Stretch"
-                    BorderThickness="0"
-                    Height="30"
                     Margin="10,200,10,0"
                     Content="登录"
-                    Background="#FF47BB47"
+                    Style="{StaticResource ButtonStyle}"
                     Click="LoginButton_Click"></Button>
             <Button x:Name="SignUpButton"
-                    HorizontalAlignment="Stretch"
-                    BorderThickness="0"
-                    Height="30"
                     Margin="10,300,10,0"
                     Content="注册新用户"
-                    Background="#FF4545F3"
+                    Style="{StaticResource ButtonStyle}"
                     Click="SignUpButton_Click"></Button>
         </Grid>
     </Grid>

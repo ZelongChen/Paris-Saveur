@@ -53,12 +53,9 @@
                      PlaceholderText="确认密码"
                      Margin="10, 380, 10, 10"></PasswordBox>
             <Button x:Name="SignUpButton"
-                    HorizontalAlignment="Stretch"
-                    BorderThickness="0"
-                    Height="30"
                     Margin="10,400,10,0"
                     Content="注册新用户"
-                    Background="#FF47BB47"
+                    Style="{StaticResource ButtonStyle}"
                     Click="SignUpButton_Click"></Button>
         </Grid>
     </Grid>

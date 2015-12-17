@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar Background="#FFE05C52" ClosedDisplayMode="Minimal" Opacity="0.8">
+        <CommandBar Background="{StaticResource AppThemeColor}" ClosedDisplayMode="Minimal" Opacity="0.8">
             <AppBarButton Label="清除记录" Icon="Clear" Click="AppBarButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
@@ -20,7 +20,7 @@
 			<RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock x:Name="PageTitle" Text="历史" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
@@ -41,7 +41,7 @@
 					Visibility="Collapsed"
 					IsActive="True"
 					Background="Transparent"
-					Foreground="#FFE05C52"
+					Foreground="{StaticResource AppThemeColor}"
 					VerticalAlignment="Center"/>
             </Grid>
         </ScrollViewer>

@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar x:Name="MainPageAppBar" Background="#FFE05C52" ClosedDisplayMode="Compact" Opacity="0.8">
+        <CommandBar x:Name="MainPageAppBar" ClosedDisplayMode="Compact" Opacity="0.8" Background="{StaticResource AppThemeColor}">
             <AppBarButton x:Name="HistoryButton" x:Uid="MainPageAppBarButtonHistory" Label="" Icon="Clock" Click="History_Click"/>
             <AppBarButton x:Name="FavoriteButton" x:Uid="MainPageAppBarButtonFavorite" Label="" Icon="Favorite" Click="Bookmark_Click"/>
             <AppBarButton x:Name="SearchButton" x:Uid="MainPageAppBarButtonSearch" Label="" Icon="Find" Click="SearchButton_Click"/>
@@ -24,7 +24,7 @@
 			<RowDefinition Height="40"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock x:Uid="MainPageTitle" Text="" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
@@ -66,7 +66,7 @@
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeRecommended"
 								Text="" 
-								Foreground="#FFE05C52" 
+								Foreground="{StaticResource AppThemeColor}" 
 								FontSize="21.333" 
 								VerticalAlignment="Center"
 								HorizontalAlignment="Center"/>
@@ -85,7 +85,7 @@
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeNearby"
 								Text=""  
-								Foreground="#FFE05C52" 
+								Foreground="{StaticResource AppThemeColor}" 
 								FontSize="21.333" 
 								VerticalAlignment="Center"
 								HorizontalAlignment="Center"/>
@@ -104,7 +104,7 @@
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeHot"
 								Text=""  
-								Foreground="#FFE05C52" 
+								Foreground="{StaticResource AppThemeColor}" 
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
@@ -123,7 +123,7 @@
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeSortby"
 								Text=""  
-								Foreground="#FFE05C52" 
+								Foreground="{StaticResource AppThemeColor}" 
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
@@ -142,7 +142,7 @@
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeHotTag"
 								Text=""  
-								Foreground="#FFE05C52" 
+								Foreground="{StaticResource AppThemeColor}" 
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
@@ -161,7 +161,7 @@
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeMetro"
 								Text=""  
-								Foreground="#FFE05C52" 
+								Foreground="{StaticResource AppThemeColor}" 
 								FontSize="21.333" 
 								VerticalAlignment="Center" 
 								HorizontalAlignment="Center"/>
@@ -183,7 +183,7 @@
 						HorizontalAlignment="Center"
 						Margin="0,150,0,0"
 						Height="50"
-						Background="#FFE05C52"
+						Background="{StaticResource AppThemeColor}"
 						Tapped="Follow_Weibo_Tapped">
                         <Image Source="Assets/weibo.png" Margin="10"/>
                         <TextBlock

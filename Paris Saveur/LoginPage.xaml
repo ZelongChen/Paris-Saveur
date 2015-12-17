@@ -13,7 +13,7 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
             <TextBlock x:Name="PageTitle" Text="登录" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
         </StackPanel>
@@ -26,13 +26,13 @@
                 Margin="20"
                 Source="Assets/Square150x150Logo.scale-100.png"></Image>
             <TextBox x:Name="UserNameTextBox"
-                     BorderBrush="#FFE05C52"
+                     BorderBrush="{StaticResource AppThemeColor}"
                      Foreground="Black"
                      PlaceholderText="用户名"
                      Margin="10,200,10,0"
                      ></TextBox>
             <PasswordBox x:Name="PasswordTextBox"
-                     BorderBrush="#FFE05C52"
+                     BorderBrush="{StaticResource AppThemeColor}"
                      Foreground="Black"
                      PlaceholderText="密码"
                      Margin="10,260,10,0"></PasswordBox>
@@ -40,7 +40,7 @@
 					Visibility="Collapsed"
 					IsActive="True"
 					Background="Transparent"
-					Foreground="#FFE05C52"
+					Foreground="{StaticResource AppThemeColor}"
 					VerticalAlignment="Center"/>
             <Button x:Name="LoginButton"
                     HorizontalAlignment="Stretch"

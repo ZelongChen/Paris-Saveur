@@ -23,7 +23,7 @@
 			<RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock Text="菜系分类" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>

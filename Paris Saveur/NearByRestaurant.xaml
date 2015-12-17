@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar Background="#FFE05C52" x:Name="AppBar" ClosedDisplayMode="Compact" Opacity="0.8">
+        <CommandBar Background="{StaticResource AppThemeColor}" x:Name="AppBar" ClosedDisplayMode="Compact" Opacity="0.8">
         	<AppBarButton x:Name="LaunchMapButton" Label="地图" Icon="Map" Click="OpenMap_Click"/>
         	<AppBarButton x:Name="RefreshButton" Label="刷新" Icon="Refresh" Click="Refresh_Click"/>
         </CommandBar>
@@ -21,7 +21,7 @@
 			<RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock Text="附近餐馆" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
@@ -57,7 +57,7 @@
 					Visibility="Collapsed"
 					IsActive="True"
 					Background="Transparent"
-					Foreground="#FFE05C52"
+					Foreground="{StaticResource AppThemeColor}"
 					Margin="0,250,0,0"
 					VerticalAlignment="Top"/>
             </Grid>

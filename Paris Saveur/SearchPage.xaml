@@ -16,7 +16,7 @@
 			<RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock Text="搜索" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
@@ -24,7 +24,7 @@
 			Grid.Row="1"
 			Height="40" 
 			Margin="5"
-			BorderBrush="#FFE05C52"
+			BorderBrush="{StaticResource AppThemeColor}"
 			VerticalAlignment="Top"
 			VerticalContentAlignment="Center"
 			KeyDown="SearchTextBox_KeyDown"
@@ -61,7 +61,7 @@
 					Visibility="Collapsed"
 					IsActive="True"
 					Background="Transparent"
-					Foreground="#FFE05C52"
+					Foreground="{StaticResource AppThemeColor}"
 					VerticalAlignment="Center"/>
             </Grid>
         </ScrollViewer>

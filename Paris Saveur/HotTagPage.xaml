@@ -28,7 +28,7 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock Text="热门标签" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
@@ -49,7 +49,7 @@
 					Visibility="Collapsed"
 					IsActive="True"
 					Background="Transparent"
-					Foreground="#FFE05C52"
+					Foreground="{StaticResource AppThemeColor}"
 					Margin="0,250,0,0"
 					VerticalAlignment="Top"/>
             </Grid>

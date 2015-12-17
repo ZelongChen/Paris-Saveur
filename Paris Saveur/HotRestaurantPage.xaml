@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     
     <Page.BottomAppBar>
-        <CommandBar  Background="#FFE05C52" ClosedDisplayMode="Compact" Opacity="0.8">
+        <CommandBar  Background="{StaticResource AppThemeColor}" ClosedDisplayMode="Compact" Opacity="0.8">
             <AppBarButton Label="排序" Icon="Sort">
                 <AppBarButton.Flyout>
                     <MenuFlyout>
@@ -28,7 +28,7 @@
 			<RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock x:Name="Title" Text="热门餐馆" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
@@ -56,7 +56,7 @@
 					Visibility="Collapsed"
 					IsActive="True"
 					Background="Transparent"
-					Foreground="#FFE05C52"
+					Foreground="{StaticResource AppThemeColor}"
 					Margin="0,0,0,250"
 					VerticalAlignment="Bottom"/>
                 <Button x:Name="loadMoreButoon"

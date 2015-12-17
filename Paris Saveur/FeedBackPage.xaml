@@ -14,7 +14,7 @@
 			<RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
             <TextBlock x:Uid="FeedbackPageTitle" Text="" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
@@ -29,13 +29,13 @@
                 x:Uid="FeedbackPageComment"
 				PlaceholderText=""
 				Foreground="Black"
-				BorderBrush="#FFE05C52"
+				BorderBrush="{StaticResource AppThemeColor}"
 				Margin="10"
 				MaxLength="140"
 				Height="100"/>
             <Button x:Name="SendFeedBackButton"
                 x:Uid="FeedbackPageSendButton"
-				Background="#FFE05C52"
+				Background="{StaticResource AppThemeColor}"
 				Content=""
 				FontSize="16"
 				Margin="10"
@@ -47,7 +47,7 @@
 				Background="Transparent"
 				VerticalAlignment="Center"
 				HorizontalAlignment="Center"
-				Foreground="#FFE05C52"/>
+				Foreground="{StaticResource AppThemeColor}"/>
         </StackPanel>
     </Grid>
 </Page>

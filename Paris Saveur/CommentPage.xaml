@@ -16,12 +16,12 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
             <TextBlock x:Uid="CommentPageTitle" Text="" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
         </StackPanel>
         <Grid Grid.Row="1">
-            
+
             <StackPanel Orientation="Horizontal" 
                         HorizontalAlignment="Center" 
                         Margin="0,20,0,0" 
@@ -72,7 +72,7 @@
                      x:Uid="CommentPageYourComment"
                      Margin="10,110,10,0"
                      Height="100"
-                     BorderBrush="#FFE05C52"
+                     BorderBrush="{StaticResource AppThemeColor}"
                      VerticalAlignment="Top"
                      TextAlignment="Left"
                      PlaceholderText=""
@@ -94,7 +94,7 @@
                          Width="80"
                          VerticalAlignment="Center"
                          PlaceholderText=""
-                         BorderBrush="#FFE05C52"
+                         BorderBrush="{StaticResource AppThemeColor}"
                          Foreground="Black"
                          InputScope="Number"></TextBox>
             </StackPanel>
@@ -103,15 +103,15 @@
                     HorizontalAlignment="Stretch"
                     Margin="10,150,10,0"
                     BorderThickness="0"
-                    Background="#FFE05C52"
+                    Background="{StaticResource AppThemeColor}"
                     Content=""
                     Click="SendCommentButton_Click"></Button>
-                       
+
             <ProgressRing x:Name="LoadingRing"
 					Visibility="Collapsed"
 					IsActive="True"
 					Background="Transparent"
-					Foreground="#FFE05C52"
+					Foreground="{StaticResource AppThemeColor}"
 					Margin="0,250,0,0"
 					VerticalAlignment="Top"/>
         </Grid>

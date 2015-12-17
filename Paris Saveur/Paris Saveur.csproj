@@ -277,9 +277,6 @@
     <Reference Include="Microsoft.AdMediator.WindowsPhone81.AdDuplex">
       <HintPath>..\packages\Microsoft.AdMediator.WindowsPhone81.AdDuplex.1.0.12\lib\wpa\Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising">
-      <HintPath>..\packages\Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.1.0.13\lib\wpa\Microsoft.AdMediator.WindowsPhone81.MicrosoftAdvertising.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AdMediator.WindowsPhone81.Smaato">
       <HintPath>..\packages\Microsoft.AdMediator.WindowsPhone81.Smaato.1.0.6\lib\wpa\Microsoft.AdMediator.WindowsPhone81.Smaato.dll</HintPath>
     </Reference>
@@ -311,7 +308,7 @@
     <SDKReference Include="Microsoft.VCLibs, version=12.0">
       <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WP81, Version=3.8.8.3">
+    <SDKReference Include="SQLite.WP81, Version=3.9.2">
       <Name>SQLite for Windows Phone 8.1</Name>
     </SDKReference>
   </ItemGroup>

@@ -43,7 +43,7 @@
 			<RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="#FFE05C52">
+		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
 			<TextBlock Text="地铁周边" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
 		</StackPanel>
@@ -60,8 +60,8 @@
                         <GroupStyle HidesIfEmpty="True">
                             <GroupStyle.HeaderTemplate>
                                 <DataTemplate>
-                                    <Border Background="#FFE05C52" 
-										BorderBrush="#FFE05C52" 
+                                    <Border Background="{StaticResource AppThemeColor}" 
+										BorderBrush="{StaticResource AppThemeColor}" 
 										BorderThickness="2"	
 										Width="50" Height="50"
 										Margin="5"
@@ -87,7 +87,7 @@
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Border Padding="5">
-                                <Border Background="#FFE05C52" 
+                                <Border Background="{StaticResource AppThemeColor}" 
 									Width="82" Height="82"  				 
 									HorizontalAlignment="Left">
                                     <TextBlock Text="{Binding Group.Key}"

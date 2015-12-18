@@ -4,14 +4,13 @@
     xmlns:local="using:Paris_Saveur"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- 
     x:Class="Paris_Saveur.RecommendedPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
         <CommandBar Background="{StaticResource AppThemeColor}" ClosedDisplayMode="Minimal" Opacity="0.8">
-            <AppBarButton Label="刷新" Icon="Refresh" Click="AppBarButton_Click"/>
+            <AppBarButton x:Name="RefreshButton" Label="刷新" Icon="Refresh" Click="RefreshButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 
@@ -30,11 +29,11 @@
                 <TextBlock x:Name="NoConnectionText"
 					Text="请检查您的网络连接"
                     Style="{StaticResource NoConnectionTextBlockStyle}"/>
-                <ListView x:Name="recommendedRestaurantList" 
+                <ListView x:Name="RecommendedRestaurantList" 
 					ItemsSource="{Binding Restaurant_list}"
 					ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
 					HorizontalContentAlignment="Stretch"
-					SelectionChanged="recommendedRestaurantList_SelectionChanged">
+					SelectionChanged="RecommendedRestaurantList_SelectionChanged">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>

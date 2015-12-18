@@ -1,20 +1,9 @@
 ﻿using Paris_Saveur.Model;
 using Paris_Saveur.Tools;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -30,17 +19,7 @@ namespace Paris_Saveur
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (ConnectionContext.CheckNetworkConnection())
-            {
-                this.NoConnectionText.Visibility = Visibility.Collapsed;
-                this.recommendedRestaurantList.Visibility = Visibility.Visible;
-                DownloadRecommendedRestaurant();
-            }
-            else
-            {
-                this.NoConnectionText.Visibility = Visibility.Visible;
-                this.recommendedRestaurantList.Visibility = Visibility.Collapsed;
-            }
+            RefreshPage();
         }
 
         private async void DownloadRecommendedRestaurant()
@@ -63,31 +42,36 @@ namespace Paris_Saveur
                 restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
-            this.recommendedRestaurantList.DataContext = list;
+            this.RecommendedRestaurantList.DataContext = list;
 
             LoadingRing.IsActive = false;
             LoadingRing.Visibility = Visibility.Collapsed;
         }
 
-        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ConnectionContext.CheckNetworkConnection()) {
+            RefreshPage();
+        }
+
+        private void RecommendedRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Restaurant restaurant = e.AddedItems[0] as Restaurant;
+            Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
+        }
+
+        private void RefreshPage()
+        {
+            if (ConnectionContext.CheckNetworkConnection())
+            {
                 this.NoConnectionText.Visibility = Visibility.Collapsed;
-                this.recommendedRestaurantList.Visibility = Visibility.Visible;
+                this.RecommendedRestaurantList.Visibility = Visibility.Visible;
                 DownloadRecommendedRestaurant();
             }
             else
             {
                 this.NoConnectionText.Visibility = Visibility.Visible;
-                this.recommendedRestaurantList.Visibility = Visibility.Collapsed;
+                this.RecommendedRestaurantList.Visibility = Visibility.Collapsed;
             }
-
-        }
-
-        private void recommendedRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Restaurant restaurant = e.AddedItems[0] as Restaurant;
-            Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
         }
     }
 }

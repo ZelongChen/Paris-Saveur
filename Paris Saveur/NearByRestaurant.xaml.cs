@@ -1,23 +1,12 @@
 ﻿using Paris_Saveur.Model;
 using Paris_Saveur.Tools;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Devices.Geolocation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -25,19 +14,21 @@ namespace Paris_Saveur
 {
     public sealed partial class NearByRestaurant : Page
     {
+        private Geoposition _geoposition;
+        private RestaurantList _list;
+
         public NearByRestaurant()
         {
             this.InitializeComponent();
+            _list = new RestaurantList();
         }
-
-        Geoposition geoposition;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (ConnectionContext.CheckNetworkConnection())
             {
                 this.NoConnectionText.Visibility = Visibility.Collapsed;
-                this.nearbyRestaurantList.Visibility = Visibility.Visible;
+                this.NearbyRestaurantList.Visibility = Visibility.Visible;
                 if (e.Parameter == null)
                 {
                     this.AppBar.Visibility = Visibility.Visible;
@@ -54,26 +45,48 @@ namespace Paris_Saveur
             else
             {
                 this.NoConnectionText.Visibility = Visibility.Visible;
-                this.nearbyRestaurantList.Visibility = Visibility.Collapsed;
+                this.NearbyRestaurantList.Visibility = Visibility.Collapsed;
             }
         }
 
-        private void nearbyRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void NearbyRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Restaurant restaurant = e.AddedItems[0] as Restaurant;
             Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
         }
 
-        RestaurantList list = new RestaurantList();
+        private async void OpenMap_Click(object sender, RoutedEventArgs e)
+        {
+            string uriToLaunch = @"bingmaps:?cp=" + _geoposition.Coordinate.Point.Position.Latitude + "~" + _geoposition.Coordinate.Point.Position.Longitude + "&lvl=16";
+            var uri = new Uri(uriToLaunch);
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            if (ConnectionContext.CheckNetworkConnection())
+            {
+                this.NoConnectionText.Visibility = Visibility.Collapsed;
+                this.NearbyRestaurantList.Visibility = Visibility.Visible;
+                this.ScrollViewer.ChangeView(null, 0d, null);
+                FindCurrentLocationAnRestaurantsNearby();
+            }
+            else
+            {
+                this.NoConnectionText.Visibility = Visibility.Visible;
+                this.NearbyRestaurantList.Visibility = Visibility.Collapsed;
+            }
+        }
+
         private async void DownloadNearByRestaurant(string latitude, string longitude)
         {
             var client = new HttpClient();
-            string url = "http://www.vivelevendredi.com/restaurants/json/list-by-location/?geo_lat=" + latitude + "&geo_lon=" + longitude + "&criterion=geopoint&order=-popularity&page=1";
+            string url = "http://www.vivelevendredi.com/restaurants/json/_list-by-location/?geo_lat=" + latitude + "&geo_lon=" + longitude + "&criterion=geopoint&order=-popularity&page=1";
             var response = await client.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
 
-            list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
-            if (list.Restaurant_list.Count == 0)
+            _list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
+            if (_list.Restaurant_list.Count == 0)
             {
                 LoadingRing.IsActive = false;
                 LoadingRing.Visibility = Visibility.Collapsed;
@@ -86,7 +99,7 @@ namespace Paris_Saveur
             {
                 this.NoRestaurantText.Visibility = Visibility.Collapsed;
             }
-            foreach (Restaurant restaurant in list.Restaurant_list)
+            foreach (Restaurant restaurant in _list.Restaurant_list)
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
@@ -95,7 +108,7 @@ namespace Paris_Saveur
                 restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
-            this.nearbyRestaurantList.DataContext = list;
+            this.NearbyRestaurantList.DataContext = _list;
 
             LoadingRing.IsActive = false;
             LoadingRing.Visibility = Visibility.Collapsed;
@@ -107,6 +120,7 @@ namespace Paris_Saveur
         {
             DownloadNearByRestaurant(station.Latitude, station.Longitude);
         }
+
         private async void FindCurrentLocationAnRestaurantsNearby()
         {
             LoadingRing.IsActive = true;
@@ -129,10 +143,10 @@ namespace Paris_Saveur
                 try
                 {
                     // Getting Current Location  
-                    geoposition = await geolocator.GetGeopositionAsync(
+                    _geoposition = await geolocator.GetGeopositionAsync(
                         maximumAge: TimeSpan.FromMinutes(5),
                         timeout: TimeSpan.FromSeconds(10));
-                    DownloadNearByRestaurant("" + geoposition.Coordinate.Point.Position.Latitude, "" + geoposition.Coordinate.Point.Position.Longitude);
+                    DownloadNearByRestaurant("" + _geoposition.Coordinate.Point.Position.Latitude, "" + _geoposition.Coordinate.Point.Position.Longitude);
                 }
                 catch (UnauthorizedAccessException)
                 {
@@ -152,27 +166,5 @@ namespace Paris_Saveur
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () => await dialog.ShowAsync());
         }
 
-        private async void OpenMap_Click(object sender, RoutedEventArgs e)
-        {
-            string uriToLaunch = @"bingmaps:?cp=" + geoposition.Coordinate.Point.Position.Latitude + "~" + geoposition.Coordinate.Point.Position.Longitude + "&lvl=16";
-            var uri = new Uri(uriToLaunch);
-            await Windows.System.Launcher.LaunchUriAsync(uri);
-        }
-
-        private void Refresh_Click(object sender, RoutedEventArgs e)
-        {
-            if (ConnectionContext.CheckNetworkConnection())
-            {
-                this.NoConnectionText.Visibility = Visibility.Collapsed;
-                this.nearbyRestaurantList.Visibility = Visibility.Visible;
-                this.ScrollViewer.ChangeView(null, 0d, null);
-                FindCurrentLocationAnRestaurantsNearby();
-            }
-            else
-            {
-                this.NoConnectionText.Visibility = Visibility.Visible;
-                this.nearbyRestaurantList.Visibility = Visibility.Collapsed;
-            }
-        }
     }
 }

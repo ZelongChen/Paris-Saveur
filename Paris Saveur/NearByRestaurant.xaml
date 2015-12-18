@@ -4,7 +4,6 @@
     xmlns:local="using:Paris_Saveur"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- 
     x:Class="Paris_Saveur.NearByRestaurant"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -38,13 +37,13 @@
 					Visibility="Collapsed"
 					Foreground="Gray"
 					FontSize="22"/>
-                <ListView x:Name="nearbyRestaurantList" 
+                <ListView x:Name="NearbyRestaurantList" 
 					Grid.Row="0" 
 					Grid.Column="0"
 					ItemsSource="{Binding Restaurant_list}"
 					ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
 					HorizontalContentAlignment="Stretch"
-					SelectionChanged="nearbyRestaurantList_SelectionChanged">
+					SelectionChanged="NearbyRestaurantList_SelectionChanged">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>

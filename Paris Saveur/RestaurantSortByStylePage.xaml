@@ -28,14 +28,14 @@
             <TextBlock Text="菜系分类"
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
-        <ListViewItem x:Name="sichuan_hunan" Content="川菜 湘菜" Grid.Row="1" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="sichuan_hunan_Tapped"/>
-        <ListViewItem x:Name="shandong_anhui" Content="鲁菜 徽菜" Grid.Row="2" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="shandong_anhui_Tapped"/>
-        <ListViewItem x:Name="jiangshu_zhejiang" Content="苏菜 浙菜" Grid.Row="3" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="jiangshu_zhejiang_Tapped"/>
-        <ListViewItem x:Name="guangdong_fujian" Content="粤菜 闽菜" Grid.Row="4" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="guangdong_fujian_Tapped"/>
-        <ListViewItem x:Name="yunnan" Content="云南菜" Grid.Row="5" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="yunnan_Tapped"/>
-        <ListViewItem x:Name="beifang" Content="北方菜系" Grid.Row="6" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="beifang_Tapped"/>
-        <ListViewItem x:Name="japan_korea" Content="日餐 韩餐" Grid.Row="7" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="japan_korea_Tapped"/>
-        <ListViewItem x:Name="southest_asia" Content="东南亚菜" Grid.Row="8" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="southest_asia_Tapped"/>
-        <ListViewItem x:Name="unclassified" Content="未归类" Grid.Row="9" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="unclassified_Tapped"/>
+        <ListViewItem x:Name="Sichuan_Hunan" Content="川菜 湘菜" Grid.Row="1" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Sichuan_Hunan_Tapped"/>
+        <ListViewItem x:Name="Shandong_Anhui" Content="鲁菜 徽菜" Grid.Row="2" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Shandong_Anhui_Tapped"/>
+        <ListViewItem x:Name="Jiangshu_Zhejiang" Content="苏菜 浙菜" Grid.Row="3" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Jiangshu_Zhejiang_Tapped"/>
+        <ListViewItem x:Name="Guangdong_Fujian" Content="粤菜 闽菜" Grid.Row="4" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Guangdong_Fujian_Tapped"/>
+        <ListViewItem x:Name="Yunnan" Content="云南菜" Grid.Row="5" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Yunnan_Tapped"/>
+        <ListViewItem x:Name="Beifang" Content="北方菜系" Grid.Row="6" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Beifang_Tapped"/>
+        <ListViewItem x:Name="Japan_Korea" Content="日餐 韩餐" Grid.Row="7" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Japan_Korea_Tapped"/>
+        <ListViewItem x:Name="Southest_Asia" Content="东南亚菜" Grid.Row="8" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Southest_Asia_Tapped"/>
+        <ListViewItem x:Name="Unclassified" Content="未归类" Grid.Row="9" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Unclassified_Tapped"/>
     </Grid>
 </Page>

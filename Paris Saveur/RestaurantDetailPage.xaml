@@ -4,13 +4,12 @@
     xmlns:local="using:Paris_Saveur"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- 
     x:Class="Paris_Saveur.RestaurantDetailPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <DataTemplate x:Name="restaurantCommentListItemTemplate1">
+        <DataTemplate x:Name="RestaurantCommentListItemTemplate">
         	<Grid Background="White">
         		<Grid.RowDefinitions>
         			<RowDefinition Height="1.5*"/>
@@ -22,14 +21,14 @@
         				<ColumnDefinition Width="4*"/>
         				<ColumnDefinition Width="2*"/>
         			</Grid.ColumnDefinitions>
-        			<Image x:Name="userThumbnail" Source="{Binding user.AvatarThumbnailBitmap}" Grid.Column="0" Margin="5,5,5,5"/>
+        			<Image x:Name="UserThumbnail" Source="{Binding user.AvatarThumbnailBitmap}" Grid.Column="0" Margin="5,5,5,5"/>
         			<StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,15,0,0">
-        				<TextBlock x:Name="userName" Text="{Binding user.username}" FontSize="15" Foreground="Black"/>
-        				<TextBlock x:Name="userCommentScore" Text="{Binding score}" FontSize="15" Foreground="Black"/>
+        				<TextBlock x:Name="UserName" Text="{Binding user.username}" FontSize="15" Foreground="Black"/>
+        				<TextBlock x:Name="UserCommentScore" Text="{Binding score}" FontSize="15" Foreground="Black"/>
         			</StackPanel>
-        			<TextBlock x:Name="userCommentDate" Text="{Binding rate_date}" HorizontalAlignment="Right" FontSize="15" Foreground="Black" Grid.Column="2" Margin="0,15,20,0"/>
+        			<TextBlock x:Name="UserCommentDate" Text="{Binding rate_date}" HorizontalAlignment="Right" FontSize="15" Foreground="Black" Grid.Column="2" Margin="0,15,20,0"/>
         		</Grid>
-        		<TextBlock x:Name="userComment" Text="{Binding comment}" Grid.Row="1" Foreground="Black" FontSize="15" TextWrapping="Wrap" Padding="10"/>
+        		<TextBlock x:Name="UserComment" Text="{Binding comment}" Grid.Row="1" Foreground="Black" FontSize="15" TextWrapping="Wrap" Padding="10"/>
         	</Grid>
         </DataTemplate>
     </Page.Resources>
@@ -38,14 +37,14 @@
         <CommandBar Background="{StaticResource AppThemeColor}" ClosedDisplayMode="Compact" Opacity="0.8">
             <CommandBar.SecondaryCommands>
                 <AppBarButton x:Name="ShareLocationButton" Label="分享地址" Click="ShareLocationButton_Click"/>
-                <AppBarButton x:Name="PinUnPinCommandButton" Label="添加到桌面" Click="pinToAppBar_Click"/>
+                <AppBarButton x:Name="PinUnPinCommandButton" Label="添加到桌面" Click="PinToAppBar_Click"/>
                 <AppBarButton x:Name="OpenMapButton" Label="在地图中打开" Click="OpenMapButton_Click"/>
             </CommandBar.SecondaryCommands>
             <AppBarButton x:Name="PhoneButton" Label="呼叫" Icon="Phone">
                 <AppBarButton.Flyout>
                     <MenuFlyout>
-                        <MenuFlyoutItem x:Name="restaurantPhoneNumber1" Click="restaurantPhoneNumber1_Click"/>
-                        <MenuFlyoutItem x:Name="restaurantPhoneNumber2" Click="restaurantPhoneNumber2_Click"/>
+                        <MenuFlyoutItem x:Name="RestaurantPhoneNumber1" Click="RestaurantPhoneNumber1_Click"/>
+                        <MenuFlyoutItem x:Name="RestaurantPhoneNumber2" Click="RestaurantPhoneNumber2_Click"/>
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
@@ -84,9 +83,9 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
-                        <Image x:Name="restaurantThumbnail" Stretch="Fill" Source="{Binding ThumbnailBitmap}"/>
+                        <Image x:Name="RestaurantThumbnail" Stretch="Fill" Source="{Binding ThumbnailBitmap}"/>
                     </Grid>
-                    <TextBlock x:Name="restaurantDescription" 
+                    <TextBlock x:Name="RestaurantDescription" 
 						Text="{Binding description}"
 						HorizontalAlignment="Stretch" 
 						TextWrapping="Wrap"
@@ -95,8 +94,8 @@
 						Foreground="Black"
 						Padding="10"/>
                     <StackPanel Orientation="Horizontal" Grid.Row="2">
-                        <Image Source="Assets/restaurant_detail_style.png" Margin="5"/>
-                        <TextBlock x:Name="restaurantStyle" 
+                        <Image Source="Assets/_restaurant_detail_style.png" Margin="5"/>
+                        <TextBlock x:Name="RestaurantStyle" 
 							Text="{Binding style}"    
 							Foreground="Black" 
 							FontSize="15"
@@ -104,8 +103,8 @@
 							Margin="10,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="3">
-                        <Image Source="Assets/restaurant_detail_price.png" Margin="5"/>
-                        <TextBlock x:Name="restaurantPrice" 
+                        <Image Source="Assets/_restaurant_detail_price.png" Margin="5"/>
+                        <TextBlock x:Name="RestaurantPrice" 
 							Text="{Binding consumption_per_capita}"   
 							Foreground="Black"
 							FontSize="15"
@@ -113,21 +112,21 @@
 							Margin="10,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="4">
-                        <Image Source="Assets/restaurant_detail_review.png" Margin="5"/>
-                        <Image x:Name="star1" Source="Assets/star_half.png" Margin="10"/>
-                        <Image x:Name="star2" Source="Assets/star_half.png" Margin="10"/>
-                        <Image x:Name="star3" Source="Assets/star_half.png" Margin="10"/>
-                        <Image x:Name="star4" Source="Assets/star_half.png" Margin="10"/>
-                        <Image x:Name="star5" Source="Assets/star_half.png" Margin="10"/>
+                        <Image Source="Assets/_restaurant_detail_review.png" Margin="5"/>
+                        <Image x:Name="Star1" Source="Assets/star_half.png" Margin="10"/>
+                        <Image x:Name="Star2" Source="Assets/star_half.png" Margin="10"/>
+                        <Image x:Name="Star3" Source="Assets/star_half.png" Margin="10"/>
+                        <Image x:Name="Star4" Source="Assets/star_half.png" Margin="10"/>
+                        <Image x:Name="Star5" Source="Assets/star_half.png" Margin="10"/>
                     </StackPanel>
-                    <Grid x:Name="restaurantAddressGrid" Grid.Row="5" Tapped="restaurantAddressGrid_Tapped">
+                    <Grid x:Name="RestaurantAddressGrid" Grid.Row="5" Tapped="RestaurantAddressGrid_Tapped">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="Assets/restaurant_detail_location.png" Grid.Column="0" HorizontalAlignment="Left" Margin="5"/>
-                        <TextBlock x:Name="restaurantAddress" 
+                        <Image Source="Assets/_restaurant_detail_location.png" Grid.Column="0" HorizontalAlignment="Left" Margin="5"/>
+                        <TextBlock x:Name="RestaurantAddress" 
                             Grid.Column="1"
 							Text="{Binding address}"
 							Foreground="Black"
@@ -135,32 +134,32 @@
 							VerticalAlignment="Center"
                             HorizontalAlignment="Left"
 							Margin="10,0,0,0"/>
-                        <Image Source="Assets/restaurant_detail_indicator.png" Grid.Column="2" HorizontalAlignment="Right" Margin="5"/>
+                        <Image Source="Assets/_restaurant_detail_indicator.png" Grid.Column="2" HorizontalAlignment="Right" Margin="5"/>
                     </Grid>
                     <StackPanel Orientation="Horizontal" Grid.Row="6">
-                        <Image Source="Assets/restaurant_detail_metro.png" Margin="5"/>
-                        <TextBlock x:Name="restaurantMetro"
+                        <Image Source="Assets/_restaurant_detail_metro.png" Margin="5"/>
+                        <TextBlock x:Name="RestaurantMetro"
 							Text="{Binding public_transit}"
 							Foreground="Black"
 							FontSize="15"
 							VerticalAlignment="Center"
 							Margin="10,0,0,0"/>
                     </StackPanel>
-                    <Grid x:Name="restaurantTimeGrid" Grid.Row="7" Tapped="restaurantTimeGrid_Tapped">
+                    <Grid x:Name="RestaurantTimeGrid" Grid.Row="7" Tapped="RestaurantTimeGrid_Tapped">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Image Source="Assets/restaurant_detail_clock.png" Grid.Column="0" Margin="5"/>
-                        <TextBlock x:Name="restaurantTime" 
+                        <Image Source="Assets/_restaurant_detail_clock.png" Grid.Column="0" Margin="5"/>
+                        <TextBlock x:Name="RestaurantTime" 
                             Grid.Column="1"
 							Text="{Binding opening_hours}"
 							Foreground="Black"
 							FontSize="15"
 							VerticalAlignment="Center"
 							Margin="10,0,0,0"/>
-                        <Image Source="Assets/restaurant_detail_indicator.png" Grid.Column="2" HorizontalAlignment="Right" Margin="5"/>
+                        <Image Source="Assets/_restaurant_detail_indicator.png" Grid.Column="2" HorizontalAlignment="Right" Margin="5"/>
                     </Grid>
                 </Grid>
             </PivotItem>
@@ -170,10 +169,10 @@
                 </PivotItem.Header>
                 <ScrollViewer  Background="White">
                     <Grid>
-                        <ListView x:Name="restaurantCommentList" 
+                        <ListView x:Name="RestaurantCommentList" 
 							Margin="0,0,0,40"
 							ItemsSource="{Binding Comments}"
-							ItemTemplate="{Binding Source={StaticResource restaurantCommentListItemTemplate1}}">
+							ItemTemplate="{Binding Source={StaticResource RestaurantCommentListItemTemplate}}">
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="ListViewItem">
                                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -191,7 +190,7 @@
                             Style="{StaticResource ProgressRingStyle}"
 							Margin="0,0,0,250"
 							VerticalAlignment="Bottom"/>
-                        <Button x:Name="loadMoreButoon"
+                        <Button x:Name="LoadMoreButoon"
 							Height="40"
 							Background="White"
 							HorizontalContentAlignment="Stretch"

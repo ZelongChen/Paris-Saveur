@@ -1,20 +1,11 @@
 ﻿using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text.RegularExpressions;
 using Windows.Data.Json;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
 
@@ -27,10 +18,6 @@ namespace Paris_Saveur
         public SignUpPage()
         {
             this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
         }
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
@@ -49,38 +36,31 @@ namespace Paris_Saveur
         {
 
             //*********Null Input Check***********
-            var dialogBuilder = new MessageDialog("");
-            dialogBuilder.Title = "错误";
             if (this.UserNameTextBox.Text == null || this.UserNameTextBox.Text == "")
             {
-                dialogBuilder.Content = "用户名不能为空";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowErrorMessage("用户名不能为空");
                 return;
             }
             else if (this.UserEmailTextBox.Text == null || this.UserEmailTextBox.Text == "")
             {
-                dialogBuilder.Content = "用户邮箱不能为空";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowErrorMessage("用户邮箱不能为空");
                 return;
             }
             else if (this.Password1TextBox.Password == null || this.Password1TextBox.Password == "")
             {
-                dialogBuilder.Content = "密码不能为空";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowErrorMessage("密码不能为空");
                 return;
             }
             else if (this.Password2TextBox.Password == null || this.Password2TextBox.Password == "")
             {
-                dialogBuilder.Content = "密码不能为空";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowErrorMessage("密码不能为空");
                 return;
             }
 
             //*********User Name Length Check***********
             if (this.UserNameTextBox.Text.Length <= 3)
             {
-                dialogBuilder.Content = "用户名不能少于4个字符";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowErrorMessage("用户名不能少于4个字符");
                 return;
             }
 
@@ -88,21 +68,27 @@ namespace Paris_Saveur
 
             if (!IsValidEmail(this.UserEmailTextBox.Text))
             {
-                dialogBuilder.Content = "电子邮箱格式不正确";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowErrorMessage("电子邮箱格式不正确");
                 return;
             }
 
             //*********Two Password Identity Check***********
             if (Password1TextBox.Password != Password2TextBox.Password)
             {
-                dialogBuilder.Content = "两次密码不匹配";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowErrorMessage("两次密码不匹配");
                 return;
             }
 
             SendSignUpInformation();
 
+        }
+
+        private async void ShowErrorMessage(string content)
+        {
+            var dialogBuilder = new MessageDialog("");
+            dialogBuilder.Title = "错误";
+            dialogBuilder.Content = content;
+            var dialog = await dialogBuilder.ShowAsync();
         }
 
         private async void SendSignUpInformation()

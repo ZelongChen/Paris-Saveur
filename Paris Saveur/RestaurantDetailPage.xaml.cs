@@ -101,7 +101,7 @@ namespace Paris_Saveur
             {
                 Uri square150x150Logo = new Uri("ms-appx:///Assets/logo_transparent.png");
 
-                string tileActivationArguments = MainPage.appbarTileId + " WasPinnedAt=" + DateTime.Now.ToLocalTime().ToString();
+                string tileActivationArguments = MainPage.APP_BAR_TILE_ID + " WasPinnedAt=" + DateTime.Now.ToLocalTime().ToString();
 
                 SecondaryTile secondaryTile = new SecondaryTile("" + restaurant.pk,
                                                                 restaurant.name,
@@ -119,7 +119,7 @@ namespace Paris_Saveur
 
         void BottomAppBar_Opened(object sender, object e)
         {
-            ToggleAppBarButton(!SecondaryTile.Exists(MainPage.appbarTileId));
+            ToggleAppBarButton(!SecondaryTile.Exists(MainPage.APP_BAR_TILE_ID));
         }
 
         /*private async void SaveThumbnail()

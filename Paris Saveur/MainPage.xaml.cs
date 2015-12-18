@@ -1,24 +1,13 @@
-﻿using Paris_Saveur.DataBase;
-using Paris_Saveur.Tools;
+﻿using Paris_Saveur.Tools;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Storage.Streams;
 using Windows.System;
 using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
@@ -29,7 +18,10 @@ namespace Paris_Saveur
 
     public sealed partial class MainPage : Page
     {
-        public const string appbarTileId = "ParisSaveurSecondaryTile.AppBar";
+        public const string APP_BAR_TILE_ID = "ParisSaveurSecondaryTile.AppBar";
+        private const string HOME_PAGE_URL = "http://www.newsavour.com/restaurants/";
+        private const string WEIBO_URL = "http://www.weibo.com/vivelevendredi";
+        private const string STORE_URL = @"ms-windows-store:reviewapp?appid=03a26f4a-b9b9-4ed0-8bd6-e28979de5884";
 
         public MainPage()
         {
@@ -42,32 +34,32 @@ namespace Paris_Saveur
             UpdateLoginPage();
         }
 
-        private void recommendedText_Tapped(object sender, TappedRoutedEventArgs e)
+        private void RecommendedText_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(RecommendedPage));
         }
 
-        private void hotText_Tapped(object sender, TappedRoutedEventArgs e)
+        private void HotText_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(HotRestaurantPage));
         }
 
-        private void nearbyText_Tapped(object sender, TappedRoutedEventArgs e)
+        private void NearByText_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(NearByRestaurant));
         }
 
-        private void sortbyText_Tapped(object sender, TappedRoutedEventArgs e)
+        private void SortByText_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(RestaurantSortByStylePage));
         }
 
-        private void hottagText_Tapped(object sender, TappedRoutedEventArgs e)
+        private void HotTagText_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(HotTagPage));
         }
 
-        private void metroText_Tapped(object sender, TappedRoutedEventArgs e)
+        private void MetroText_Tapped(object sender, TappedRoutedEventArgs e)
         {
             Frame.Navigate(typeof(TransportStationsPage));
         }
@@ -76,61 +68,15 @@ namespace Paris_Saveur
         {
             if (this.MainPagePivot.SelectedIndex == 0)
             {
-                this.HistoryButton.Visibility = Visibility.Collapsed;
-                this.FavoriteButton.Visibility = Visibility.Collapsed;
-                this.SearchButton.Visibility = Visibility.Visible;
-                this.FeedbackButton.Visibility = Visibility.Collapsed;
-                this.WebButton.Visibility = Visibility.Collapsed;
-                this.NoteButton.Visibility = Visibility.Collapsed;
-
-                this.PivotItem0_Title.Foreground = new SolidColorBrush(Color.FromArgb(255, 224, 92, 82));
-                this.PivotItem0_Title.FontWeight = FontWeights.Bold;
-                this.PivotItem0_Title.FontSize = 22;
-                this.PivotItem1_Title.Foreground = new SolidColorBrush(Colors.Black);
-                this.PivotItem1_Title.FontWeight = FontWeights.Normal;
-                this.PivotItem1_Title.FontSize = 20;
-                this.PivotItem2_Title.Foreground = new SolidColorBrush(Colors.Black);
-                this.PivotItem2_Title.FontWeight = FontWeights.Normal;
-                this.PivotItem2_Title.FontSize = 20;
+                SwitchBetweenPivotItem(true, false, false);
             }
             else if (this.MainPagePivot.SelectedIndex == 1)
             {
-                this.HistoryButton.Visibility = Visibility.Collapsed;
-                this.FavoriteButton.Visibility = Visibility.Collapsed;
-                this.SearchButton.Visibility = Visibility.Collapsed;
-                this.FeedbackButton.Visibility = Visibility.Visible;
-                this.WebButton.Visibility = Visibility.Visible;
-                this.NoteButton.Visibility = Visibility.Visible;
-
-                this.PivotItem0_Title.Foreground = new SolidColorBrush(Colors.Black);
-                this.PivotItem0_Title.FontWeight = FontWeights.Normal;
-                this.PivotItem0_Title.FontSize = 20;
-                this.PivotItem1_Title.Foreground = new SolidColorBrush(Color.FromArgb(255, 224, 92, 82));
-                this.PivotItem1_Title.FontWeight = FontWeights.Bold;
-                this.PivotItem1_Title.FontSize = 22;
-                this.PivotItem2_Title.Foreground = new SolidColorBrush(Colors.Black);
-                this.PivotItem2_Title.FontWeight = FontWeights.Normal;
-                this.PivotItem2_Title.FontSize = 20;
+                SwitchBetweenPivotItem(false, true, false);
             }
             else
             {
-                this.HistoryButton.Visibility = Visibility.Visible;
-                this.FavoriteButton.Visibility = Visibility.Visible;
-                this.SearchButton.Visibility = Visibility.Collapsed;
-                this.FeedbackButton.Visibility = Visibility.Collapsed;
-                this.WebButton.Visibility = Visibility.Collapsed;
-                this.NoteButton.Visibility = Visibility.Collapsed;
-
-                this.PivotItem0_Title.Foreground = new SolidColorBrush(Colors.Black);
-                this.PivotItem0_Title.FontWeight = FontWeights.Normal;
-                this.PivotItem0_Title.FontSize = 20;
-                this.PivotItem1_Title.Foreground = new SolidColorBrush(Colors.Black);
-                this.PivotItem1_Title.FontWeight = FontWeights.Normal;
-                this.PivotItem1_Title.FontSize = 20;
-                this.PivotItem2_Title.Foreground = new SolidColorBrush(Color.FromArgb(255, 224, 92, 82));
-                this.PivotItem2_Title.FontWeight = FontWeights.Bold;
-                this.PivotItem2_Title.FontSize = 22;
-
+                SwitchBetweenPivotItem(false, false, true);
                 UpdateLoginPage();
 
             }
@@ -138,7 +84,7 @@ namespace Paris_Saveur
 
         async void Launch_Web_Click(object sender, RoutedEventArgs e)
         {
-            await Launcher.LaunchUriAsync(new Uri("http://www.newsavour.com/restaurants/"));
+            await Launcher.LaunchUriAsync(new Uri(HOME_PAGE_URL));
         }
 
         private void Send_Feedback_Click(object sender, RoutedEventArgs e)
@@ -148,7 +94,7 @@ namespace Paris_Saveur
 
         async private void Follow_Weibo_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            await Launcher.LaunchUriAsync(new Uri("http://www.weibo.com/vivelevendredi"));
+            await Launcher.LaunchUriAsync(new Uri(WEIBO_URL));
         }
 
 
@@ -161,7 +107,7 @@ namespace Paris_Saveur
 
         private async void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            string uriToLaunch = @"ms-windows-store:reviewapp?appid=03a26f4a-b9b9-4ed0-8bd6-e28979de5884";
+            string uriToLaunch = STORE_URL;
             var uri = new Uri(uriToLaunch);
             await Windows.System.Launcher.LaunchUriAsync(uri);
         }
@@ -212,6 +158,28 @@ namespace Paris_Saveur
                 }
                 
             }
+        }
+
+        private void SwitchBetweenPivotItem(bool first, bool second, bool third)
+        {
+            this.SearchButton.Visibility = first ? Visibility.Visible : Visibility.Collapsed;
+            this.FeedbackButton.Visibility = second ? Visibility.Visible : Visibility.Collapsed;
+            this.WebButton.Visibility = second ? Visibility.Visible : Visibility.Collapsed;
+            this.NoteButton.Visibility = second ? Visibility.Visible : Visibility.Collapsed;
+            this.HistoryButton.Visibility = third ? Visibility.Visible : Visibility.Collapsed;
+            this.FavoriteButton.Visibility = third ? Visibility.Visible : Visibility.Collapsed;
+
+            this.PivotItem0_Title.Foreground = first ? new SolidColorBrush(Color.FromArgb(255, 224, 92, 82)) : new SolidColorBrush(Colors.Black);
+            this.PivotItem0_Title.FontWeight = first ? FontWeights.Bold : FontWeights.Normal;
+            this.PivotItem0_Title.FontSize = first ? 22 : 20;
+
+            this.PivotItem1_Title.Foreground = second ? new SolidColorBrush(Color.FromArgb(255, 224, 92, 82)) : new SolidColorBrush(Colors.Black);
+            this.PivotItem1_Title.FontWeight = second ? FontWeights.Bold : FontWeights.Normal;
+            this.PivotItem1_Title.FontSize = second ? 22 : 20;
+
+            this.PivotItem2_Title.Foreground = third ? new SolidColorBrush(Color.FromArgb(255, 224, 92, 82)) : new SolidColorBrush(Colors.Black);
+            this.PivotItem2_Title.FontWeight = third ? FontWeights.Bold : FontWeights.Normal;
+            this.PivotItem2_Title.FontSize = third ? 22 : 20;
         }
 
         private void UpdateLoginPage()

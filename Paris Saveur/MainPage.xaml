@@ -19,6 +19,22 @@
         </CommandBar>
     </Page.BottomAppBar>
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style x:Key="MainPageItemsTextStyle" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource AppThemeColor}"></Setter>
+                <Setter Property="FontSize" Value="21"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            </Style>
+            <Style x:Key="MainPageItemsImageStyle" TargetType="Image">
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                <Setter Property="Margin" Value="0,5,0,0"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -52,120 +68,95 @@
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <Grid x:Name="recommendedGrid" Grid.Row="0" Grid.Column="0" Tapped="recommendedText_Tapped">
+                        <Grid x:Name="RecommendedGrid" Grid.Row="0" Grid.Column="0" Tapped="RecommendedText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.3*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <Image x:Name="recommendedImage" 
+                            <Image x:Name="RecommendedImage" 
 								Grid.Row="0" 
-								HorizontalAlignment="Center"
-								VerticalAlignment="Center"
-								Margin="0,5,0,0"
+                                Style="{StaticResource MainPageItemsImageStyle}"
 								Source="Assets/mainpage_recommend.png"/>
-                            <TextBlock x:Name="recommendedText" 
+                            <TextBlock x:Name="RecommendedText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeRecommended"
 								Text="" 
-								Foreground="{StaticResource AppThemeColor}" 
-								FontSize="21.333" 
-								VerticalAlignment="Center"
-								HorizontalAlignment="Center"/>
+								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
-                        <Grid x:Name="nearbyGrid" Grid.Row="0" Grid.Column="1" Tapped="nearbyText_Tapped">
+                        <Grid x:Name="NearByGrid" Grid.Row="0" Grid.Column="1" Tapped="NearByText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.3*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <Image x:Name="nearbyImage" 
+                            <Image x:Name="NearByImage" 
 								Grid.Row="0" 
-								HorizontalAlignment="Center" 
-								Margin="0,5,0,0"
+                                Style="{StaticResource MainPageItemsImageStyle}"
 								Source="Assets/mainpage_location.png"/>
-                            <TextBlock x:Name="nearbyText" 
+                            <TextBlock x:Name="NearByText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeNearby"
 								Text=""  
-								Foreground="{StaticResource AppThemeColor}" 
-								FontSize="21.333" 
-								VerticalAlignment="Center"
-								HorizontalAlignment="Center"/>
+								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
-                        <Grid x:Name="hotGrid" Grid.Row="1" Grid.Column="0" Tapped="hotText_Tapped">
+                        <Grid x:Name="HotGrid" Grid.Row="1" Grid.Column="0" Tapped="HotText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.3*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <Image x:Name="hotImage" 
+                            <Image x:Name="HotImage" 
 								Grid.Row="0" 
-								HorizontalAlignment="Center" 
-								Margin="0,5,0,0"
+                                Style="{StaticResource MainPageItemsImageStyle}"
 								Source="Assets/mainpage_hot.png"/>
-                            <TextBlock x:Name="hotText"
+                            <TextBlock x:Name="HotText"
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeHot"
 								Text=""  
-								Foreground="{StaticResource AppThemeColor}" 
-								FontSize="21.333" 
-								VerticalAlignment="Center" 
-								HorizontalAlignment="Center"/>
+								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
-                        <Grid x:Name="sortbyGrid" Grid.Row="1" Grid.Column="1" Tapped="sortbyText_Tapped">
+                        <Grid x:Name="SortByGrid" Grid.Row="1" Grid.Column="1" Tapped="SortByText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.3*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <Image x:Name="sortbyImage" 
+                            <Image x:Name="SortByImage" 
 								Grid.Row="0" 
-								HorizontalAlignment="Center" 
-								Margin="0,5,0,0"
+                                Style="{StaticResource MainPageItemsImageStyle}"
 								Source="Assets/mainpage_style.png"/>
-                            <TextBlock x:Name="sortbyText" 
+                            <TextBlock x:Name="SortByText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeSortby"
 								Text=""  
-								Foreground="{StaticResource AppThemeColor}" 
-								FontSize="21.333" 
-								VerticalAlignment="Center" 
-								HorizontalAlignment="Center"/>
+								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
-                        <Grid x:Name="hottagGrid" Grid.Row="2" Grid.Column="0" Tapped="hottagText_Tapped">
+                        <Grid x:Name="HotTagGrid" Grid.Row="2" Grid.Column="0" Tapped="HotTagText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.3*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <Image x:Name="hottagImage" 
+                            <Image x:Name="HottagImage" 
 								Grid.Row="0" 
-								HorizontalAlignment="Center" 
-								Margin="0,5,0,0"
+                                Style="{StaticResource MainPageItemsImageStyle}"
 								Source="Assets/mainpage_tag.png"/>
-                            <TextBlock x:Name="hottagText" 
+                            <TextBlock x:Name="HotTagText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeHotTag"
 								Text=""  
-								Foreground="{StaticResource AppThemeColor}" 
-								FontSize="21.333" 
-								VerticalAlignment="Center" 
-								HorizontalAlignment="Center"/>
+								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
-                        <Grid x:Name="metroGrid" Grid.Row="2" Grid.Column="2" Tapped="metroText_Tapped">
+                        <Grid x:Name="MetroGrid" Grid.Row="2" Grid.Column="2" Tapped="MetroText_Tapped">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1.3*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
-                            <Image x:Name="metroImage" 
+                            <Image x:Name="MetroImage" 
 								Grid.Row="0" 
-								HorizontalAlignment="Center" 
-								Margin="0,5,0,0"
+                                Style="{StaticResource MainPageItemsImageStyle}"
 								Source="Assets/mainpage_metro.png"/>
-                            <TextBlock x:Name="metroText" 
+                            <TextBlock x:Name="MetroText" 
 								Grid.Row="1"
                                 x:Uid="MainPagePivotItemHomeMetro"
 								Text=""  
-								Foreground="{StaticResource AppThemeColor}" 
-								FontSize="21.333" 
-								VerticalAlignment="Center" 
-								HorizontalAlignment="Center"/>
+								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
                     </Grid>
                 </Grid>

@@ -62,7 +62,8 @@
         </Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
-			<TextBlock x:Name="PageTitle" Foreground="White" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+			<TextBlock x:Name="PageTitle"
+                       Style="{StaticResource PageTitleTextStyle}"/>
 		</StackPanel>
         <Pivot x:Name="RestaurantDetailPivot"
 			Grid.Row="1"

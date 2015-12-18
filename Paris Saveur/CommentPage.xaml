@@ -27,7 +27,8 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Uid="CommentPageTitle" Text="" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+            <TextBlock x:Uid="CommentPageTitle" Text="" 
+                       Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <Grid Grid.Row="1">
 

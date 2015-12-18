@@ -25,7 +25,8 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock Text="菜系分类" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+            <TextBlock Text="菜系分类"
+                       Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <ListViewItem x:Name="sichuan_hunan" Content="川菜 湘菜" Grid.Row="1" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="sichuan_hunan_Tapped"/>
         <ListViewItem x:Name="shandong_anhui" Content="鲁菜 徽菜" Grid.Row="2" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="shandong_anhui_Tapped"/>

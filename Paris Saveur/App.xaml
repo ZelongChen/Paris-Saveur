@@ -35,6 +35,13 @@
 
             <SolidColorBrush x:Key="AppThemeColor">#FFE05C52</SolidColorBrush>
 
+            <Style x:Key="PageTitleTextStyle" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="White"></Setter>
+                <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                <Setter Property="FontSize" Value="22"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+            </Style>
+
             <Style x:Key="ProgressRingStyle" TargetType="ProgressRing">
                 <Setter Property="Visibility" Value="Collapsed"></Setter>
                 <Setter Property="IsActive" Value="True"></Setter>

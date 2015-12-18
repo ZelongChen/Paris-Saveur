@@ -15,7 +15,8 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Name="PageTitle" Text="登录" Foreground="White" VerticalAlignment="Center" FontSize="22" FontWeight="Bold"/>
+            <TextBlock x:Name="PageTitle" Text="登录" 
+                       Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <Grid Grid.Row="1">
             <Image

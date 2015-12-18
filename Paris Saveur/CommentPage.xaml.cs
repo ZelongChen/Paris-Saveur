@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
@@ -22,86 +14,62 @@ namespace Paris_Saveur
 
     public sealed partial class CommentPage : Page
     {
+        BitmapImage _emptyStarBitmap;
+        BitmapImage _fullStarBitmap;
+        int _score;
+        int _restaurantPK;
+
         public CommentPage()
         {
             this.InitializeComponent();
         }
 
-        BitmapImage EmptyStarBitmap;
-        BitmapImage FullStarBitmap;
-        int Score = 0;
-        int RestaurantPK;
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            EmptyStarBitmap = new BitmapImage(new Uri(this.BaseUri, "Assets/star_empty.png"));
-            FullStarBitmap = new BitmapImage(new Uri(this.BaseUri, "Assets/star_full.png"));
-            RestaurantPK = Int32.Parse(e.Parameter.ToString());
+            _emptyStarBitmap = new BitmapImage(new Uri(this.BaseUri, "Assets/star_empty.png"));
+            _fullStarBitmap = new BitmapImage(new Uri(this.BaseUri, "Assets/star_full.png"));
+            _score = 0;
+            _restaurantPK = Int32.Parse(e.Parameter.ToString());
         }
 
         private void StarImage1_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.StarImage1.Source = FullStarBitmap;
-            this.StarImage2.Source = EmptyStarBitmap;
-            this.StarImage3.Source = EmptyStarBitmap;
-            this.StarImage4.Source = EmptyStarBitmap;
-            this.StarImage5.Source = EmptyStarBitmap;
-
+            ChooseStars(true, false, false, false, false);
             this.AttitudeText.Text = "糟糕";
-            this.Score = 1;
+            _score = 1;
         }
 
         private void StarImage2_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.StarImage1.Source = FullStarBitmap;
-            this.StarImage2.Source = FullStarBitmap;
-            this.StarImage3.Source = EmptyStarBitmap;
-            this.StarImage4.Source = EmptyStarBitmap;
-            this.StarImage5.Source = EmptyStarBitmap;
-
+            ChooseStars(true, true, false, false, false);
             this.AttitudeText.Text = "较差";
-            this.Score = 2;
+            _score = 2;
         }
 
         private void StarImage3_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.StarImage1.Source = FullStarBitmap;
-            this.StarImage2.Source = FullStarBitmap;
-            this.StarImage3.Source = FullStarBitmap;
-            this.StarImage4.Source = EmptyStarBitmap;
-            this.StarImage5.Source = EmptyStarBitmap;
-
+            ChooseStars(true, true, true, false, false);
             this.AttitudeText.Text = "一般";
-            this.Score = 3;
+            _score = 3;
         }
 
         private void StarImage4_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.StarImage1.Source = FullStarBitmap;
-            this.StarImage2.Source = FullStarBitmap;
-            this.StarImage3.Source = FullStarBitmap;
-            this.StarImage4.Source = FullStarBitmap;
-            this.StarImage5.Source = EmptyStarBitmap;
-
+            ChooseStars(true, true, true, true, false);
             this.AttitudeText.Text = "推荐";
-            this.Score = 4;
+            _score = 4;
         }
 
         private void StarImage5_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.StarImage1.Source = FullStarBitmap;
-            this.StarImage2.Source = FullStarBitmap;
-            this.StarImage3.Source = FullStarBitmap;
-            this.StarImage4.Source = FullStarBitmap;
-            this.StarImage5.Source = FullStarBitmap;
-
+            ChooseStars(true, true, true, true, true);
             this.AttitudeText.Text = "力荐";
-            this.Score = 5;
+            _score = 5;
         }
 
         private async void SendCommentButton_Click(object sender, RoutedEventArgs e)
         {
-            if (this.Score == 0)
+            if (_score == 0)
             {
                 var dialogBuilder = new MessageDialog("请轻按星标打分");
                 dialogBuilder.Title = "请注意";
@@ -114,7 +82,7 @@ namespace Paris_Saveur
 
                 HttpFormUrlEncodedContent formContent = SetupHttpFormUrlEncodedContent();
                 HttpClient client = new HttpClient();
-                Uri uri = new Uri("http://www.vivelevendredi.com/restaurants/rate/mobile/" + RestaurantPK + "/");
+                Uri uri = new Uri("http://www.vivelevendredi.com/restaurants/rate/mobile/" + _restaurantPK + "/");
                 HttpResponseMessage response = await client.PostAsync(uri, formContent);
 
                 if (response.IsSuccessStatusCode)
@@ -143,13 +111,22 @@ namespace Paris_Saveur
             string firmwareVersion = deviceInfo.SystemFirmwareVersion.ToString();
             fullHttpContentDictionary.Add("comment", comment);
             fullHttpContentDictionary.Add("price", price);
-            fullHttpContentDictionary.Add("score", "" + Score);
+            fullHttpContentDictionary.Add("score", "" + _score);
             var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
             string authToken = (String)localSettings.Values["AuthToken"];
             string username = (String)localSettings.Values["UserName"];
             fullHttpContentDictionary.Add("mobile_access_token", authToken);
             fullHttpContentDictionary.Add("username", username);
             return new HttpFormUrlEncodedContent(fullHttpContentDictionary);
+        }
+
+        private void ChooseStars(bool first, bool second, bool third, bool fourth, bool fifth)
+        {
+            this.StarImage1.Source = first ? _fullStarBitmap : _emptyStarBitmap;
+            this.StarImage2.Source = second ? _fullStarBitmap : _emptyStarBitmap;
+            this.StarImage3.Source = third ? _fullStarBitmap : _emptyStarBitmap;
+            this.StarImage4.Source = fourth ? _fullStarBitmap : _emptyStarBitmap;
+            this.StarImage5.Source = fifth ? _fullStarBitmap : _emptyStarBitmap;
         }
     }
 }

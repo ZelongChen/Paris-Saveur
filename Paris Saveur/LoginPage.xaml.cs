@@ -1,20 +1,10 @@
-﻿using Newtonsoft.Json;
-using Paris_Saveur.Tools;
+﻿using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Data.Json;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
 
@@ -23,21 +13,22 @@ namespace Paris_Saveur
 {
     public sealed partial class LoginPage : Page
     {
+        private bool _goBackToDetailPage;
+
         public LoginPage()
         {
             this.InitializeComponent();
         }
 
-        bool GoBackToDetailPage;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (e.Parameter != null && e.Parameter.ToString() == "ComeFromDetailPage")
             {
-                GoBackToDetailPage = true;
+                _goBackToDetailPage = true;
             }
             else
             {
-                GoBackToDetailPage = false;
+                _goBackToDetailPage = false;
             }
         }
 
@@ -62,27 +53,22 @@ namespace Paris_Saveur
         private async void ValidationCheck()
         {
             //*********Null Input Check***********
-            var dialogBuilder = new MessageDialog("");
-            dialogBuilder.Title = "错误";
             if (this.UserNameTextBox.Text == null || this.UserNameTextBox.Text == "")
             {
-                dialogBuilder.Content = "用户名不能为空";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowMessageDialog("错误", "用户名不能为空");
                 return;
             }
 
             else if (this.PasswordTextBox.Password == null || this.PasswordTextBox.Password == "")
             {
-                dialogBuilder.Content = "密码不能为空";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowMessageDialog("错误", "密码不能为空");
                 return;
             }
 
             //*********User Name Length Check***********
             if (this.UserNameTextBox.Text.Length <= 3)
             {
-                dialogBuilder.Content = "用户名不能少于4个字符";
-                var dialog = await dialogBuilder.ShowAsync();
+                ShowMessageDialog("错误", "用户名不能少于4个字符");
                 return;
             }
 
@@ -101,7 +87,7 @@ namespace Paris_Saveur
             if (response.IsSuccessStatusCode)
             {
                 SaveUserInformation(response);
-                if (GoBackToDetailPage)
+                if (_goBackToDetailPage)
                 {
                     Frame.GoBack();
                 }
@@ -148,9 +134,13 @@ namespace Paris_Saveur
             string responseString = await response.Content.ReadAsStringAsync();
             JsonObject responseJson = JsonObject.Parse(responseString);
             string errorReason = responseJson.GetNamedArray("errors").GetStringAt(0);
+            ShowMessageDialog("错误", errorReason);
+        }
 
-            var dialogBuilder = new MessageDialog(errorReason);
-            dialogBuilder.Title = "错误";
+        private void ShowMessageDialog(string title, string content)
+        {
+            var dialogBuilder = new MessageDialog(content);
+            dialogBuilder.Title = title;
             var dialog = dialogBuilder.ShowAsync();
         }
     }

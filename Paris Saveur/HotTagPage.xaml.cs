@@ -1,19 +1,8 @@
 ﻿using Paris_Saveur.Model;
 using Paris_Saveur.Tools;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net.Http;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 
@@ -31,13 +20,13 @@ namespace Paris_Saveur
         {
             if (ConnectionContext.CheckNetworkConnection())
             {
-                this.tag_list.Visibility = Visibility.Visible;
+                this.TagList.Visibility = Visibility.Visible;
                 this.NoConnectionText.Visibility = Visibility.Collapsed;
                 DownloadHotTag();
             }
             else
             {
-                this.tag_list.Visibility = Visibility.Collapsed;
+                this.TagList.Visibility = Visibility.Collapsed;
                 this.NoConnectionText.Visibility = Visibility.Visible;
             }
             
@@ -57,13 +46,13 @@ namespace Paris_Saveur
             {
                 tag.tagToString = tag.name + " (" + tag.num_tagged + ")";
             }
-            this.tag_list.ItemsSource = list.tag_cloud;
+            this.TagList.ItemsSource = list.tag_cloud;
 
             LoadingRing.IsActive = false;
             LoadingRing.Visibility = Visibility.Collapsed;
         }
 
-        private void tag_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void TagList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Tag tag = e.AddedItems[0] as Tag;
             Frame.Navigate(typeof(HotRestaurantPage), tag);

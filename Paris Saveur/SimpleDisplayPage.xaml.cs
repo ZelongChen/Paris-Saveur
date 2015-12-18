@@ -1,20 +1,9 @@
 ﻿using Paris_Saveur.DataBase;
 using Paris_Saveur.Tools;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -24,30 +13,32 @@ namespace Paris_Saveur
 
     public sealed partial class SimpleDisplayPage : Page
     {
+        private DatabaseHelper _helper;
+        private ObservableCollection<Restaurant> _restaurants;
+        private string _displayType;
+
         public SimpleDisplayPage()
         {
             this.InitializeComponent();
         }
-        DatabaseHelper helper;
-        ObservableCollection<Restaurant> restaurants;
-        string displayType;
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            displayType = e.Parameter.ToString();
+            _displayType = e.Parameter.ToString();
 
             ObservableCollection<RestaurantDB> restaurantsDB = new ObservableCollection<RestaurantDB>();
-            helper = new DatabaseHelper();
-            if (displayType.Equals("history"))
+            _helper = new DatabaseHelper();
+            if (_displayType.Equals("history"))
             {
-                restaurantsDB = helper.ReadAllRestaurant();
+                restaurantsDB = _helper.ReadAllRestaurant();
                 this.PageTitle.Text = "历史";
             }
             else
             {
-                restaurantsDB = helper.ReadFavoriteRestaurant() ;
+                restaurantsDB = _helper.ReadFavoriteRestaurant() ;
                 this.PageTitle.Text = "收藏";
             }
-            restaurants = new ObservableCollection<Restaurant>();
+            _restaurants = new ObservableCollection<Restaurant>();
             foreach (RestaurantDB restaurantDB in restaurantsDB)
             {
                 Restaurant restaurant = new Restaurant();
@@ -55,9 +46,9 @@ namespace Paris_Saveur
                 BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
                 restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
-                restaurants.Add(restaurant);
+                _restaurants.Add(restaurant);
             }
-            this.SimpleDisplayRestaurantList.ItemsSource = restaurants;
+            this.SimpleDisplayRestaurantList.ItemsSource = _restaurants;
         }
 
         private void SimpleDisplayRestaurantList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,15 +59,15 @@ namespace Paris_Saveur
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (displayType == "history")
+            if (_displayType == "history")
             {
-                helper.DeleteAllRestaurants();
+                _helper.DeleteAllRestaurants();
             }
             else
             {
-                helper.DeleteAllBookmarks();
+                _helper.DeleteAllBookmarks();
             }
-            restaurants.Clear();
+            _restaurants.Clear();
         }
     }
 }

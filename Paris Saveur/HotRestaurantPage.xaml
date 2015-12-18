@@ -4,7 +4,6 @@
     xmlns:local="using:Paris_Saveur"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- 
     x:Class="Paris_Saveur.HotRestaurantPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -38,12 +37,12 @@
                 <TextBlock x:Name="NoConnectionText"
 					Text="请检查您的网络连接"
                     Style="{StaticResource NoConnectionTextBlockStyle}"/>
-                <ListView x:Name="hotRestaurantList" 
+                <ListView x:Name="HotRestaurantList" 
 					Margin="0,0,0,40"
 					ItemsSource="{Binding Restaurant_list}"
 					ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"
 					HorizontalContentAlignment="Stretch"
-					SelectionChanged="hotRestaurantList_SelectionChanged">
+					SelectionChanged="HotRestaurantList_SelectionChanged">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -54,13 +53,13 @@
                     Style="{StaticResource ProgressRingStyle}"
 					Margin="0,0,0,250"
 					VerticalAlignment="Bottom"/>
-                <Button x:Name="loadMoreButoon"
+                <Button x:Name="LoadMoreButoon"
 					Background="White"
 					HorizontalContentAlignment="Stretch"
 					Content="加载更多"
 					Foreground="Black"
 					HorizontalAlignment="Center"
-					Click="loadMoreButton_Click" 
+					Click="LoadMoreButton_Click" 
 					VerticalAlignment="Bottom"/>
             </Grid>
         </ScrollViewer>

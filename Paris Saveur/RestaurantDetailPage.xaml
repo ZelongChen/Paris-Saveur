@@ -197,7 +197,7 @@
 							Content="加载更多"
 							Foreground="Black"
 							HorizontalAlignment="Center"
-							Click="loadMoreButton_Click" VerticalAlignment="Bottom"/>
+							Click="LoadMoreButton_Click" VerticalAlignment="Bottom"/>
                     </Grid>
                 </ScrollViewer>
             </PivotItem>

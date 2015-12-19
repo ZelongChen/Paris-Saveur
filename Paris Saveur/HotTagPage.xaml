@@ -7,10 +7,10 @@
     x:Class="Paris_Saveur.HotTagPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+
     <Page.Resources>
         <DataTemplate x:Name="HotTagListItemTemplate">
-        	<TextBlock x:Name="TagText" 
+            <TextBlock x:Name="TagText" 
         		Text="{Binding tagToString}"
         		VerticalAlignment="Center"
         		Padding="10,0,0,0"
@@ -19,33 +19,35 @@
         </DataTemplate>
     </Page.Resources>
 
-	<Grid Background="White">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="40"/>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*"/>
-		</Grid.ColumnDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
-			<Image Source="Assets/logo_white.png"/>
-			<TextBlock Text="热门标签" 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
+            <Image Source="Assets/logo_white.png"/>
+            <TextBlock x:Uid="HotTagPageTitle"
+                Text="热门标签" 
                        Style="{StaticResource PageTitleTextStyle}"/>
-		</StackPanel>
+        </StackPanel>
         <ScrollViewer Grid.Row="1" Background="White">
             <Grid>
                 <TextBlock x:Name="NoConnectionText"
-					Text="请检查您的网络连接"
-                    Style="{StaticResource NoConnectionTextBlockStyle}"/>
+                           x:Uid="NoConnectionText"
+					        Text=""
+                            Style="{StaticResource NoConnectionTextBlockStyle}"/>
                 <ListView x:Name="TagList"
-					Grid.Column="0"
-					ItemsSource="{Binding}"
-					ItemTemplate="{StaticResource HotTagListItemTemplate}"
-					SelectionChanged="TagList_SelectionChanged"/>
+					        Grid.Column="0"
+					        ItemsSource="{Binding}"
+					        ItemTemplate="{StaticResource HotTagListItemTemplate}"
+					        SelectionChanged="TagList_SelectionChanged"/>
                 <ProgressRing x:Name="LoadingRing"
-                    Style="{StaticResource ProgressRingStyle}"
-					Margin="0,250,0,0"
-					VerticalAlignment="Top"/>
+                                Style="{StaticResource ProgressRingStyle}"
+					            Margin="0,250,0,0"
+					            VerticalAlignment="Top"/>
             </Grid>
         </ScrollViewer>
     </Grid>

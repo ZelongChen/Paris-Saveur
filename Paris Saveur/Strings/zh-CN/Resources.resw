@@ -138,6 +138,9 @@
   <data name="CommentPageYourComment.PlaceholderText" xml:space="preserve">
     <value>您的评价</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
   <data name="FeedbackPageComment.PlaceholderText" xml:space="preserve">
     <value>您的反馈</value>
   </data>
@@ -149,6 +152,39 @@
   </data>
   <data name="FeedbackPageTitle.Text" xml:space="preserve">
     <value>反馈</value>
+  </data>
+  <data name="HotRestaurantPageTitle.Text" xml:space="preserve">
+    <value>热门餐馆</value>
+  </data>
+  <data name="HotTagPageTitle.Text" xml:space="preserve">
+    <value>热门标签</value>
+  </data>
+  <data name="LoadMoreButoon.Content" xml:space="preserve">
+    <value>加载更多</value>
+  </data>
+  <data name="LoginPageLoginButton.Content" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="LoginPagePasswordEmpty" xml:space="preserve">
+    <value>密码不能为空</value>
+  </data>
+  <data name="LoginPagePasswordTextBox.PlaceholderText" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="LoginPageSignUpButton.Content" xml:space="preserve">
+    <value>注册新用户</value>
+  </data>
+  <data name="LoginPageTitle.Text" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="LoginPageUserNameEmpty" xml:space="preserve">
+    <value>用户名不能为空</value>
+  </data>
+  <data name="LoginPageUserNameShort" xml:space="preserve">
+    <value>用户名不能少于4个字符</value>
+  </data>
+  <data name="LoginPageUserNameTextBox.PlaceholderText" xml:space="preserve">
+    <value>用户名</value>
   </data>
   <data name="MainPageAppBarButtonFavorite.Label" xml:space="preserve">
     <value>收藏</value>
@@ -221,6 +257,159 @@
   </data>
   <data name="MainPageTitle.Text" xml:space="preserve">
     <value>巴黎吃什么</value>
+  </data>
+  <data name="NearByRestaurantLocationDisabled" xml:space="preserve">
+    <value>定位功能未打开</value>
+  </data>
+  <data name="NearByRestaurantNoRestaurantText.Text" xml:space="preserve">
+    <value>在这附近没有找到餐馆</value>
+  </data>
+  <data name="NoConnectionText.Text" xml:space="preserve">
+    <value>请检查您的网络连接</value>
+  </data>
+  <data name="RecommendedPageTitle.Text" xml:space="preserve">
+    <value>随便看看</value>
+  </data>
+  <data name="RestaurantDetailPageAddToFavoriteText" xml:space="preserve">
+    <value> 已添加到收藏</value>
+  </data>
+  <data name="RestaurantDetailPageCommentButton.Label" xml:space="preserve">
+    <value>点评</value>
+  </data>
+  <data name="RestaurantDetailPageFavoriteButton.Label" xml:space="preserve">
+    <value>收藏</value>
+  </data>
+  <data name="RestaurantDetailPageFavorited" xml:space="preserve">
+    <value>已收藏</value>
+  </data>
+  <data name="RestaurantDetailPageNoCommentText.Text" xml:space="preserve">
+    <value>暂无评论</value>
+  </data>
+  <data name="RestaurantDetailPageOpenMapButton.Label" xml:space="preserve">
+    <value>在地图中打开</value>
+  </data>
+  <data name="RestaurantDetailPagePhoneButton.Label" xml:space="preserve">
+    <value>呼叫</value>
+  </data>
+  <data name="RestaurantDetailPagePinText" xml:space="preserve">
+    <value>添加到桌面</value>
+  </data>
+  <data name="RestaurantDetailPagePinUnPinCommandButton.Label" xml:space="preserve">
+    <value>添加到桌面</value>
+  </data>
+  <data name="RestaurantDetailPagePivotHeaderComment.Text" xml:space="preserve">
+    <value>评论</value>
+  </data>
+  <data name="RestaurantDetailPagePivotHeaderDetail.Text" xml:space="preserve">
+    <value>餐厅信息</value>
+  </data>
+  <data name="RestaurantDetailPageRemoveFromFavoriteText" xml:space="preserve">
+    <value>已从收藏删除 </value>
+  </data>
+  <data name="RestaurantDetailPageShareButton.Label" xml:space="preserve">
+    <value>分享</value>
+  </data>
+  <data name="RestaurantDetailPageShareLocationButton.Label" xml:space="preserve">
+    <value>分享地址</value>
+  </data>
+  <data name="RestaurantDetailPageToFavorite" xml:space="preserve">
+    <value>收藏</value>
+  </data>
+  <data name="RestaurantDetailPageUnPinText" xml:space="preserve">
+    <value>从桌面删除</value>
+  </data>
+  <data name="RestaurantSortByStylePageBeifang.Content" xml:space="preserve">
+    <value>北方菜系</value>
+  </data>
+  <data name="RestaurantSortByStylePageGuangdong_Fujian.Content" xml:space="preserve">
+    <value>粤菜 闽菜</value>
+  </data>
+  <data name="RestaurantSortByStylePageJapan_Korea.Content" xml:space="preserve">
+    <value>日餐 韩餐</value>
+  </data>
+  <data name="RestaurantSortByStylePageJiangshu_Zhejiang.Content" xml:space="preserve">
+    <value>苏菜 浙菜</value>
+  </data>
+  <data name="RestaurantSortByStylePageShandong_Anhui.Content" xml:space="preserve">
+    <value>鲁菜 徽菜</value>
+  </data>
+  <data name="RestaurantSortByStylePageSichuan_Hunan.Content" xml:space="preserve">
+    <value>川菜 湘菜</value>
+  </data>
+  <data name="RestaurantSortByStylePageSouthest_Asia.Content" xml:space="preserve">
+    <value>东南亚菜</value>
+  </data>
+  <data name="RestaurantSortByStylePageTitle.Text" xml:space="preserve">
+    <value>菜系分类</value>
+  </data>
+  <data name="RestaurantSortByStylePageUnclassified.Content" xml:space="preserve">
+    <value>未归类</value>
+  </data>
+  <data name="RestaurantSortByStylePageYunnan.Content" xml:space="preserve">
+    <value>云南菜</value>
+  </data>
+  <data name="SearchPage_NoResultText.Text" xml:space="preserve">
+    <value>没有找到符合条件的餐馆</value>
+  </data>
+  <data name="SearchPage_SearchTextBox.PlaceholderText" xml:space="preserve">
+    <value>搜索餐馆名...</value>
+  </data>
+  <data name="SearchPage_Title.Text" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="SignUpPage_EmailEmptyText" xml:space="preserve">
+    <value>用户邮箱不能为空</value>
+  </data>
+  <data name="SignUpPage_EmailExistText" xml:space="preserve">
+    <value>该电子邮件已被使用</value>
+  </data>
+  <data name="SignUpPage_EmailFormatText" xml:space="preserve">
+    <value>电子邮箱格式不正确</value>
+  </data>
+  <data name="SignUpPage_Password1TextBox.PlaceholderText" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="SignUpPage_Password2TextBox.PlaceholderText" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="SignUpPage_PasswordEmptyText" xml:space="preserve">
+    <value>密码不能为空</value>
+  </data>
+  <data name="SignUpPage_SignUpButton.Content" xml:space="preserve">
+    <value>注册新用户</value>
+  </data>
+  <data name="SignUpPage_Title.Text" xml:space="preserve">
+    <value>注册新用户</value>
+  </data>
+  <data name="SignUpPage_TwoPwdNotMatchText" xml:space="preserve">
+    <value>两次密码不匹配</value>
+  </data>
+  <data name="SignUpPage_UserEmailTextBox.PlaceholderText" xml:space="preserve">
+    <value>电子邮箱</value>
+  </data>
+  <data name="SignUpPage_UsernameEmptyText" xml:space="preserve">
+    <value>用户名不能为空</value>
+  </data>
+  <data name="SignUpPage_UsernameExistText" xml:space="preserve">
+    <value>已存在一位使用该名字的用户</value>
+  </data>
+  <data name="SignUpPage_UsernameShortText" xml:space="preserve">
+    <value>用户名不能少于4个字符</value>
+  </data>
+  <data name="SignUpPage_UserNameTextBox.PlaceholderText" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="SimpleDisplayPage_ClearRecordButton.Label" xml:space="preserve">
+    <value>清除记录</value>
+  </data>
+  <data name="SimpleDisplayPage_FavoriteTitleText" xml:space="preserve">
+    <value>收藏</value>
+  </data>
+  <data name="SimpleDisplayPage_HistoryTitleText" xml:space="preserve">
+    <value>历史</value>
+  </data>
+  <data name="TransportStationsPage_Title" xml:space="preserve">
+    <value>地铁周边</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>确定</value>

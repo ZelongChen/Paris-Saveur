@@ -44,7 +44,8 @@
         </Grid.RowDefinitions>
 		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
 			<Image Source="Assets/logo_white.png"/>
-			<TextBlock Text="地铁周边" 
+			<TextBlock x:Uid="TransportStationsPage_Title" 
+                       Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
 		</StackPanel>
         <SemanticZoom

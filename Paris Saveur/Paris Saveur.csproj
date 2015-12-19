@@ -142,6 +142,7 @@
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="Tools\ConnectionContext.cs" />
     <Compile Include="Tools\ImageDownloader.cs" />
+    <Compile Include="Tools\LocalizedStrings.cs" />
     <Compile Include="TransportStationsPage.xaml.cs">
       <DependentUpon>TransportStationsPage.xaml</DependentUpon>
     </Compile>
@@ -199,6 +200,7 @@
     <Content Include="Assets\weibo.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
     <Content Include="AdMediator.config" />
+    <None Include="Resources\BBnHSWX[1].jpg" />
     <None Include="Package.StoreAssociation.xml" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
     <PRIResource Include="Strings\zh-CN\Resources.resw" />

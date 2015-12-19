@@ -15,7 +15,9 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Name="PageTitle" Text="注册新用户" 
+            <TextBlock x:Name="PageTitle"
+                       x:Uid="SignUpPage_Title"
+                       Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <Grid Grid.Row="1">
@@ -27,15 +29,17 @@
                 Margin="20"
                 Source="Assets/Square150x150Logo.scale-100.png"></Image>
             <TextBox x:Name="UserNameTextBox"
+                     x:Uid="SignUpPage_UserNameTextBox"
                      BorderBrush="{StaticResource AppThemeColor}"
                      Foreground="Black"
-                     PlaceholderText="用户名"
+                     PlaceholderText=""
                      Margin="10, 200, 10, 10"
                      ></TextBox>
             <TextBox x:Name="UserEmailTextBox"
+                     x:Uid="SignUpPage_UserEmailTextBox"
                      BorderBrush="{StaticResource AppThemeColor}"
                      Foreground="Black"
-                     PlaceholderText="电子邮箱"
+                     PlaceholderText=""
                      InputScope="EmailSmtpAddress"
                      Margin="10, 260, 10, 10"
                      ></TextBox>
@@ -44,18 +48,21 @@
 				    VerticalAlignment="Center"
 				    HorizontalAlignment="Center"/>
             <PasswordBox x:Name="Password1TextBox"
-                     BorderBrush="{StaticResource AppThemeColor}"
-                     Foreground="Black"
-                     PlaceholderText="密码"
-                     Margin="10, 320, 10, 10"></PasswordBox>
+                         x:Uid="SignUpPage_Password1TextBox"
+                         BorderBrush="{StaticResource AppThemeColor}"
+                         Foreground="Black"
+                         PlaceholderText=""
+                         Margin="10, 320, 10, 10"></PasswordBox>
             <PasswordBox x:Name="Password2TextBox"
-                     BorderBrush="{StaticResource AppThemeColor}"
-                     Foreground="Black"
-                     PlaceholderText="确认密码"
-                     Margin="10, 380, 10, 10"></PasswordBox>
+                         x:Uid="SignUpPage_Password2TextBox"
+                         BorderBrush="{StaticResource AppThemeColor}"
+                         Foreground="Black"
+                         PlaceholderText=""
+                         Margin="10, 380, 10, 10"></PasswordBox>
             <Button x:Name="SignUpButton"
+                    x:Uid="SignUpPage_SignUpButton"
                     Margin="10,400,10,0"
-                    Content="注册新用户"
+                    Content=""
                     Style="{StaticResource ButtonStyle}"
                     Click="SignUpButton_Click"></Button>
         </Grid>

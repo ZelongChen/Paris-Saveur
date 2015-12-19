@@ -44,7 +44,7 @@ namespace Paris_Saveur
             DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
             _restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = _restaurant.name;
-            this.CommentPivotItemHeader.Text = "评论" + " (" + _restaurant.rating_num + ")";
+            this.CommentPivotItemHeader.Text = LocalizedStrings.Get("RestaurantDetailPagePivotHeaderComment") + " (" + _restaurant.rating_num + ")";
 
             _helper = new DatabaseHelper();
             _restaurantDB = _helper.ReadRestaurant(_restaurant.pk);
@@ -67,7 +67,7 @@ namespace Paris_Saveur
 
         private void ToggleAppBarButton(bool showPinButton)
         {
-            this.PinUnPinCommandButton.Label = showPinButton ? "添加到桌面" : "从桌面删除";
+            this.PinUnPinCommandButton.Label = showPinButton ? LocalizedStrings.Get("RestaurantDetailPagePinText") : LocalizedStrings.Get("RestaurantDetailPageUnPinText");
             this.PinUnPinCommandButton.UpdateLayout();
         }
 
@@ -167,7 +167,7 @@ namespace Paris_Saveur
             CheckBookmark();
             XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText01);
             XmlNodeList elements = toastXml.GetElementsByTagName("text");
-            string text = _restaurantDB.Bookmarked ? _restaurantDB.name + " 已添加到收藏" : "已从收藏删除 " + _restaurantDB.name;
+            string text = _restaurantDB.Bookmarked ? _restaurantDB.name + LocalizedStrings.Get("RestaurantDetailPageAddToFavoriteText") : LocalizedStrings.Get("RestaurantDetailPageRemoveFromFavoriteText") + _restaurantDB.name;
             elements[0].AppendChild(toastXml.CreateTextNode(text));
             ToastNotification toast = new ToastNotification(toastXml);
             ToastNotificationManager.CreateToastNotifier().Show(toast);
@@ -262,7 +262,7 @@ namespace Paris_Saveur
         private void CheckBookmark()
         {
             this.FavoriteButton.Icon = _restaurantDB.Bookmarked ? new SymbolIcon(Symbol.Accept) : new SymbolIcon(Symbol.Add);
-            this.FavoriteButton.Label = _restaurantDB.Bookmarked ? "已收藏" : "收藏";
+            this.FavoriteButton.Label = _restaurantDB.Bookmarked ? LocalizedStrings.Get("RestaurantDetailPageFavorited") : LocalizedStrings.Get("RestaurantDetailPageToFavorite");
         }
 
         private void SetupPivotItemHeader(bool detail, bool comment)

@@ -55,20 +55,20 @@ namespace Paris_Saveur
             //*********Null Input Check***********
             if (this.UserNameTextBox.Text == null || this.UserNameTextBox.Text == "")
             {
-                ShowMessageDialog("错误", "用户名不能为空");
+                ShowMessageDialog(LocalizedStrings.Get("Error"), LocalizedStrings.Get("LoginPageUserNameEmpty"));
                 return;
             }
 
             else if (this.PasswordTextBox.Password == null || this.PasswordTextBox.Password == "")
             {
-                ShowMessageDialog("错误", "密码不能为空");
+                ShowMessageDialog(LocalizedStrings.Get("Error"), LocalizedStrings.Get("LoginPagePasswordEmpty"));
                 return;
             }
 
             //*********User Name Length Check***********
             if (this.UserNameTextBox.Text.Length <= 3)
             {
-                ShowMessageDialog("错误", "用户名不能少于4个字符");
+                ShowMessageDialog(LocalizedStrings.Get("Error"), LocalizedStrings.Get("LoginPageUserNameShort"));
                 return;
             }
 
@@ -134,7 +134,7 @@ namespace Paris_Saveur
             string responseString = await response.Content.ReadAsStringAsync();
             JsonObject responseJson = JsonObject.Parse(responseString);
             string errorReason = responseJson.GetNamedArray("errors").GetStringAt(0);
-            ShowMessageDialog("错误", errorReason);
+            ShowMessageDialog(LocalizedStrings.Get("Error"), errorReason);
         }
 
         private void ShowMessageDialog(string title, string content)

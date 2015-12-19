@@ -6,7 +6,6 @@ using Windows.Data.Json;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
 
 
@@ -38,29 +37,29 @@ namespace Paris_Saveur
             //*********Null Input Check***********
             if (this.UserNameTextBox.Text == null || this.UserNameTextBox.Text == "")
             {
-                ShowErrorMessage("用户名不能为空");
+                ShowErrorMessage(LocalizedStrings.Get("SignUpPage_UsernameEmptyText"));
                 return;
             }
             else if (this.UserEmailTextBox.Text == null || this.UserEmailTextBox.Text == "")
             {
-                ShowErrorMessage("用户邮箱不能为空");
+                ShowErrorMessage(LocalizedStrings.Get("SignUpPage_EmailEmptyText"));
                 return;
             }
             else if (this.Password1TextBox.Password == null || this.Password1TextBox.Password == "")
             {
-                ShowErrorMessage("密码不能为空");
+                ShowErrorMessage(LocalizedStrings.Get("SignUpPage_PasswordEmptyText"));
                 return;
             }
             else if (this.Password2TextBox.Password == null || this.Password2TextBox.Password == "")
             {
-                ShowErrorMessage("密码不能为空");
+                ShowErrorMessage(LocalizedStrings.Get("SignUpPage_PasswordEmptyText"));
                 return;
             }
 
             //*********User Name Length Check***********
             if (this.UserNameTextBox.Text.Length <= 3)
             {
-                ShowErrorMessage("用户名不能少于4个字符");
+                ShowErrorMessage(LocalizedStrings.Get("SignUpPage_UsernameShortText"));
                 return;
             }
 
@@ -68,14 +67,14 @@ namespace Paris_Saveur
 
             if (!IsValidEmail(this.UserEmailTextBox.Text))
             {
-                ShowErrorMessage("电子邮箱格式不正确");
+                ShowErrorMessage(LocalizedStrings.Get("SignUpPage_EmailFormatText"));
                 return;
             }
 
             //*********Two Password Identity Check***********
             if (Password1TextBox.Password != Password2TextBox.Password)
             {
-                ShowErrorMessage("两次密码不匹配");
+                ShowErrorMessage(LocalizedStrings.Get("SignUpPage_TwoPwdNotMatchText"));
                 return;
             }
 
@@ -86,7 +85,7 @@ namespace Paris_Saveur
         private async void ShowErrorMessage(string content)
         {
             var dialogBuilder = new MessageDialog("");
-            dialogBuilder.Title = "错误";
+            dialogBuilder.Title = LocalizedStrings.Get("Error");
             dialogBuilder.Content = content;
             var dialog = await dialogBuilder.ShowAsync();
         }
@@ -136,14 +135,14 @@ namespace Paris_Saveur
             string errorReason = responseJson.GetNamedArray("errors").GetStringAt(0);
 
             var dialogBuilder = new MessageDialog("");
-            dialogBuilder.Title = "错误";
+            dialogBuilder.Title = LocalizedStrings.Get("Error");
             if (errorReason.Contains("username"))
             {
-                dialogBuilder.Content = "已存在一位使用该名字的用户";
+                dialogBuilder.Content = LocalizedStrings.Get("SignUpPage_UsernameExistText");
             }
             else if (errorReason.Contains("email"))
             {
-                dialogBuilder.Content = "该电子邮件已被使用";
+                dialogBuilder.Content = LocalizedStrings.Get("SignUpPage_EmailExistText");
             }
             var dialog = dialogBuilder.ShowAsync();
         }

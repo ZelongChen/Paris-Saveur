@@ -11,7 +11,7 @@
 
     <Page.BottomAppBar>
         <CommandBar Background="{StaticResource AppThemeColor}" ClosedDisplayMode="Minimal" Opacity="0.8">
-            <AppBarButton Label="清除记录" Icon="Clear" Click="AppBarButton_Click"/>
+            <AppBarButton x:Name="ClearRecord" x:Uid="SimpleDisplayPage_ClearRecordButton" Label="" Icon="Clear" Click="ClearRecord_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 
@@ -22,7 +22,8 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Name="PageTitle" Text="历史" 
+            <TextBlock x:Name="PageTitle"
+                       Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1" Background="White">

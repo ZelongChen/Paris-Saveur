@@ -138,6 +138,9 @@
   <data name="CommentPageYourComment.PlaceholderText" xml:space="preserve">
     <value>Your Comment</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="FeedbackPageComment.PlaceholderText" xml:space="preserve">
     <value>Your feedback</value>
   </data>
@@ -149,6 +152,39 @@
   </data>
   <data name="FeedbackPageTitle.Text" xml:space="preserve">
     <value>Feedback</value>
+  </data>
+  <data name="HotRestaurantPageTitle.Text" xml:space="preserve">
+    <value>Popular</value>
+  </data>
+  <data name="HotTagPageTitle.Text" xml:space="preserve">
+    <value>Hot Tags</value>
+  </data>
+  <data name="LoadMoreButoon.Content" xml:space="preserve">
+    <value>Load more</value>
+  </data>
+  <data name="LoginPageLoginButton.Content" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginPagePasswordEmpty" xml:space="preserve">
+    <value>Password cannot be empty</value>
+  </data>
+  <data name="LoginPagePasswordTextBox.PlaceholderText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LoginPageSignUpButton.Content" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="LoginPageTitle.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginPageUserNameEmpty" xml:space="preserve">
+    <value>User name cannot be empty</value>
+  </data>
+  <data name="LoginPageUserNameShort" xml:space="preserve">
+    <value>User name cannot be shorter than 4 characters</value>
+  </data>
+  <data name="LoginPageUserNameTextBox.PlaceholderText" xml:space="preserve">
+    <value>User Name</value>
   </data>
   <data name="MainPageAppBarButtonFavorite.Label" xml:space="preserve">
     <value>Favorite</value>
@@ -221,6 +257,159 @@
   </data>
   <data name="MainPageTitle.Text" xml:space="preserve">
     <value>Paris Saveur</value>
+  </data>
+  <data name="NearByRestaurantLocationDisabled" xml:space="preserve">
+    <value>GPS is disabled</value>
+  </data>
+  <data name="NearByRestaurantNoRestaurantText.Text" xml:space="preserve">
+    <value>Cannot find restaurant nearby</value>
+  </data>
+  <data name="NoConnectionText.Text" xml:space="preserve">
+    <value>Please check your Internet connection</value>
+  </data>
+  <data name="RecommendedPageTitle.Text" xml:space="preserve">
+    <value>Explore</value>
+  </data>
+  <data name="RestaurantDetailPageAddToFavoriteText" xml:space="preserve">
+    <value>Add to favorite</value>
+  </data>
+  <data name="RestaurantDetailPageCommentButton.Label" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="RestaurantDetailPageFavoriteButton.Label" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="RestaurantDetailPageFavorited" xml:space="preserve">
+    <value>Favorited</value>
+  </data>
+  <data name="RestaurantDetailPageNoCommentText.Text" xml:space="preserve">
+    <value>No comment</value>
+  </data>
+  <data name="RestaurantDetailPageOpenMapButton.Label" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="RestaurantDetailPagePhoneButton.Label" xml:space="preserve">
+    <value>Call</value>
+  </data>
+  <data name="RestaurantDetailPagePinText" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="RestaurantDetailPagePinUnPinCommandButton.Label" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="RestaurantDetailPagePivotHeaderComment.Text" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="RestaurantDetailPagePivotHeaderDetail.Text" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="RestaurantDetailPageRemoveFromFavoriteText" xml:space="preserve">
+    <value>Remove from favorite</value>
+  </data>
+  <data name="RestaurantDetailPageShareButton.Label" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="RestaurantDetailPageShareLocationButton.Label" xml:space="preserve">
+    <value>Share location</value>
+  </data>
+  <data name="RestaurantDetailPageToFavorite" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="RestaurantDetailPageUnPinText" xml:space="preserve">
+    <value>Unpin</value>
+  </data>
+  <data name="RestaurantSortByStylePageBeifang.Content" xml:space="preserve">
+    <value>Northern Chinese</value>
+  </data>
+  <data name="RestaurantSortByStylePageGuangdong_Fujian.Content" xml:space="preserve">
+    <value>Cantonese / Fujian</value>
+  </data>
+  <data name="RestaurantSortByStylePageJapan_Korea.Content" xml:space="preserve">
+    <value>Japanese / Korean</value>
+  </data>
+  <data name="RestaurantSortByStylePageJiangshu_Zhejiang.Content" xml:space="preserve">
+    <value>Jiangsu / Zhejiang</value>
+  </data>
+  <data name="RestaurantSortByStylePageShandong_Anhui.Content" xml:space="preserve">
+    <value>Shandong / Anhui</value>
+  </data>
+  <data name="RestaurantSortByStylePageSichuan_Hunan.Content" xml:space="preserve">
+    <value>Sichuan / Hunan</value>
+  </data>
+  <data name="RestaurantSortByStylePageSouthest_Asia.Content" xml:space="preserve">
+    <value>South Asian</value>
+  </data>
+  <data name="RestaurantSortByStylePageTitle.Text" xml:space="preserve">
+    <value>Cuisine</value>
+  </data>
+  <data name="RestaurantSortByStylePageUnclassified.Content" xml:space="preserve">
+    <value>Unclassified</value>
+  </data>
+  <data name="RestaurantSortByStylePageYunnan.Content" xml:space="preserve">
+    <value>Yunnan</value>
+  </data>
+  <data name="SearchPage_NoResultText.Text" xml:space="preserve">
+    <value>Cannot find restaurant</value>
+  </data>
+  <data name="SearchPage_SearchTextBox.PlaceholderText" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="SearchPage_Title.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SignUpPage_EmailEmptyText" xml:space="preserve">
+    <value>Email cannot be empty</value>
+  </data>
+  <data name="SignUpPage_EmailExistText" xml:space="preserve">
+    <value>Email has been used</value>
+  </data>
+  <data name="SignUpPage_EmailFormatText" xml:space="preserve">
+    <value>Email format error</value>
+  </data>
+  <data name="SignUpPage_Password1TextBox.PlaceholderText" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="SignUpPage_Password2TextBox.PlaceholderText" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="SignUpPage_PasswordEmptyText" xml:space="preserve">
+    <value>Password cannot be empty</value>
+  </data>
+  <data name="SignUpPage_SignUpButton.Content" xml:space="preserve">
+    <value>Sign up new user</value>
+  </data>
+  <data name="SignUpPage_Title.Text" xml:space="preserve">
+    <value>Sign up new user</value>
+  </data>
+  <data name="SignUpPage_TwoPwdNotMatchText" xml:space="preserve">
+    <value>Two passwords not match</value>
+  </data>
+  <data name="SignUpPage_UserEmailTextBox.PlaceholderText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="SignUpPage_UsernameEmptyText" xml:space="preserve">
+    <value>Username cannot be empty</value>
+  </data>
+  <data name="SignUpPage_UsernameExistText" xml:space="preserve">
+    <value>Username has been used</value>
+  </data>
+  <data name="SignUpPage_UsernameShortText" xml:space="preserve">
+    <value>Username cannot be shorter than 4 characters</value>
+  </data>
+  <data name="SignUpPage_UserNameTextBox.PlaceholderText" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="SimpleDisplayPage_ClearRecordButton.Label" xml:space="preserve">
+    <value>Clear record</value>
+  </data>
+  <data name="SimpleDisplayPage_FavoriteTitleText" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="SimpleDisplayPage_HistoryTitleText" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="TransportStationsPage_Title" xml:space="preserve">
+    <value>Metro</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>

@@ -31,12 +31,12 @@ namespace Paris_Saveur
             if (_displayType.Equals("history"))
             {
                 restaurantsDB = _helper.ReadAllRestaurant();
-                this.PageTitle.Text = "历史";
+                this.PageTitle.Text = LocalizedStrings.Get("SimpleDisplayPage_HistoryTitleText");
             }
             else
             {
                 restaurantsDB = _helper.ReadFavoriteRestaurant() ;
-                this.PageTitle.Text = "收藏";
+                this.PageTitle.Text = LocalizedStrings.Get("SimpleDisplayPage_FavoriteTitleText");
             }
             _restaurants = new ObservableCollection<Restaurant>();
             foreach (RestaurantDB restaurantDB in restaurantsDB)
@@ -57,7 +57,7 @@ namespace Paris_Saveur
             Frame.Navigate(typeof(RestaurantDetailPage), restaurant);
         }
 
-        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        private void ClearRecord_Click(object sender, RoutedEventArgs e)
         {
             if (_displayType == "history")
             {

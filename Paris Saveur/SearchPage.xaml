@@ -10,36 +10,40 @@
     Loaded="Page_Loaded"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-	<Grid Background="White">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="40"/>
-			<RowDefinition Height="50"/>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-		<StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
-			<Image Source="Assets/logo_white.png"/>
-			<TextBlock Text="搜索" 
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
+            <Image Source="Assets/logo_white.png"/>
+            <TextBlock x:Uid="SearchPage_Title" 
+                       Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
-		</StackPanel>
-		<TextBox x:Name="SearchTextBox" 
-			Grid.Row="1"
-			Height="40" 
-			Margin="5"
-			BorderBrush="{StaticResource AppThemeColor}"
-			VerticalAlignment="Top"
-			VerticalContentAlignment="Center"
-			KeyDown="SearchTextBox_KeyDown"
-			GotFocus="SearchTextBox_GotFocus"
-			PlaceholderText="搜索餐馆名..."/>
+        </StackPanel>
+        <TextBox x:Name="SearchTextBox" 
+                 x:Uid="SearchPage_SearchTextBox"
+                Grid.Row="1"
+                Height="40" 
+                Margin="5"
+                BorderBrush="{StaticResource AppThemeColor}"
+                VerticalAlignment="Top"
+                VerticalContentAlignment="Center"
+                KeyDown="SearchTextBox_KeyDown"
+                GotFocus="SearchTextBox_GotFocus"
+                PlaceholderText=""/>
         <ScrollViewer Grid.Row="2" Background="White" Margin="0,5,0,0">
             <Grid >
                 <TextBlock x:Name="NoConnectionText"
-					Text="请检查您的网络连接"
-                    Style="{StaticResource NoConnectionTextBlockStyle}"/>
+                           x:Uid="NoConnectionText"
+					        Text=""
+                            Style="{StaticResource NoConnectionTextBlockStyle}"/>
                 <TextBlock x:Name="NoResultText"
-					Text="没有找到符合条件的餐馆"
-					Visibility="Collapsed"
-                    Style="{StaticResource NoConnectionTextBlockStyle}"/>  
+                           x:Uid="SearchPage_NoResultText"
+					        Text=""
+					        Visibility="Collapsed"
+                    Style="{StaticResource NoConnectionTextBlockStyle}"/>
                 <ListView x:Name="SearchResultList" 
 					ItemsSource="{Binding Restaurant_list}"
 					ItemTemplate="{StaticResource RestaurantListViewItemTemplate}"

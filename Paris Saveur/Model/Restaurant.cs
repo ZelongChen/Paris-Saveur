@@ -135,7 +135,10 @@ namespace Paris_Saveur
             this.ShowPrice();
             this.SetupThumbnail(baseUri);
             this.SetupStars(baseUri);
-            ImageDownloader.DownloadImageIntoImage(this);
+            if (ConnectionContext.CheckNetworkConnection())
+            {
+                ImageDownloader.DownloadImageIntoImage(this);
+            }
         }
 
         private void ConvertRestaurantStyleToProperLanguage()

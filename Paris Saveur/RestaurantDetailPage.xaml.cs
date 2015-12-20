@@ -227,20 +227,7 @@ namespace Paris_Saveur
         {
             CheckBookmark();
             InitAppBar();
-            if (_restaurant.ThumbnailBitmap != null)
-            {
-                this.RestaurantThumbnail.Source = _restaurant.ThumbnailBitmap;
-            }
-            else
-            {
-                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/_restaurant_thumbnail_placeholder.jpg"));
-                _restaurant.ThumbnailBitmap = placeholder;
-                if (ConnectionContext.CheckNetworkConnection())
-                {
-                    ImageDownloader.DownloadImageIntoImage(this.RestaurantThumbnail, _restaurant);
-                }
-            }
-            SetupRestaurantReview(_restaurant);
+            _restaurant.SetupRestaurantModelToDisplay(this.BaseUri);
             if (_restaurant.description == "")
             {
                 this.RestaurantDescription.Visibility = Visibility.Collapsed;
@@ -319,107 +306,6 @@ namespace Paris_Saveur
                 ImageDownloader.DownloadImageIntoImage(comment.user);
             }
             RestaurantCommentList.DataContext = _comments;
-        }
-
-
-        private void SetupRestaurantReview(Restaurant _restaurant)
-        {
-            BitmapImage halfStar = new BitmapImage();
-            halfStar.UriSource = new Uri(this.Star1.BaseUri, "Assets/star_half.png");
-            BitmapImage emptyStar = new BitmapImage();
-            emptyStar.UriSource = new Uri(this.Star1.BaseUri, "Assets/star_empty.png");
-            BitmapImage star = new BitmapImage();
-            star.UriSource = new Uri(this.Star1.BaseUri, "Assets/star_full.png");
-            double ratingScore = Double.Parse(_restaurant.rating_score);
-
-            if (ratingScore == 0)
-            {
-                this.Star1.Source = emptyStar;
-                this.Star2.Source = emptyStar;
-                this.Star3.Source = emptyStar;
-                this.Star4.Source = emptyStar;
-                this.Star5.Source = emptyStar;
-            }
-            if (ratingScore > 0 && ratingScore < 1)
-            {
-                this.Star1.Source = halfStar;
-                this.Star2.Source = emptyStar;
-                this.Star3.Source = emptyStar;
-                this.Star4.Source = emptyStar;
-                this.Star5.Source = emptyStar;
-            }
-            if (ratingScore == 1)
-            {
-                this.Star1.Source = star;
-                this.Star2.Source = emptyStar;
-                this.Star3.Source = emptyStar;
-                this.Star4.Source = emptyStar;
-                this.Star5.Source = emptyStar;
-            }
-            if (ratingScore > 1 && ratingScore < 2)
-            {
-                this.Star1.Source = star;
-                this.Star2.Source = halfStar;
-                this.Star3.Source = emptyStar;
-                this.Star4.Source = emptyStar;
-                this.Star5.Source = emptyStar;
-            }
-            if (ratingScore == 2)
-            {
-                this.Star1.Source = star;
-                this.Star2.Source = star;
-                this.Star3.Source = emptyStar;
-                this.Star4.Source = emptyStar;
-                this.Star5.Source = emptyStar;
-            }
-            if (ratingScore > 2 && ratingScore < 3)
-            {
-                this.Star1.Source = star;
-                this.Star2.Source = star;
-                this.Star3.Source = halfStar;
-                this.Star4.Source = emptyStar;
-                this.Star5.Source = emptyStar;
-            }
-            if (ratingScore == 3)
-            {
-                this.Star1.Source = star;
-                this.Star2.Source = star;
-                this.Star3.Source = star;
-                this.Star4.Source = emptyStar;
-                this.Star5.Source = emptyStar;
-            }
-            if (ratingScore > 3 && ratingScore < 4)
-            {
-                this.Star1.Source = star;
-                this.Star2.Source = star;
-                this.Star3.Source = star;
-                this.Star4.Source = halfStar;
-                this.Star5.Source = emptyStar;
-            }
-            if (ratingScore == 4)
-            {
-                this.Star1.Source = star;
-                this.Star2.Source = star;
-                this.Star3.Source = star;
-                this.Star4.Source = star;
-                this.Star5.Source = emptyStar;
-            }
-            if (ratingScore > 4 && ratingScore < 5)
-            {
-                this.Star1.Source = star;
-                this.Star2.Source = star;
-                this.Star3.Source = star;
-                this.Star4.Source = star;
-                this.Star5.Source = halfStar;
-            }
-            if (ratingScore == 5)
-            {
-                this.Star1.Source = star;
-                this.Star2.Source = star;
-                this.Star3.Source = star;
-                this.Star4.Source = star;
-                this.Star5.Source = star;
-            }
         }
     }
 }

@@ -89,7 +89,7 @@
 						Text="{Binding description}"
 						HorizontalAlignment="Stretch" 
 						TextWrapping="Wrap"
-						FontSize="15"
+						FontSize="17"
 						Grid.Row="1" 
 						Foreground="Black"
 						Padding="10"/>
@@ -98,7 +98,7 @@
                         <TextBlock x:Name="RestaurantStyle" 
 							Text="{Binding style}"    
 							Foreground="Black" 
-							FontSize="15"
+							FontSize="17"
 							VerticalAlignment="Center"
 							Margin="10,0,0,0"/>
                     </StackPanel>
@@ -107,7 +107,7 @@
                         <TextBlock x:Name="RestaurantPrice" 
 							Text="{Binding consumption_per_capita}"   
 							Foreground="Black"
-							FontSize="15"
+							FontSize="17"
 							VerticalAlignment="Center"
 							Margin="10,0,0,0"/>
                     </StackPanel>
@@ -130,7 +130,7 @@
                             Grid.Column="1"
 							Text="{Binding address}"
 							Foreground="Black"
-							FontSize="15"
+							FontSize="17"
 							VerticalAlignment="Center"
                             HorizontalAlignment="Left"
 							Margin="10,0,0,0"/>
@@ -141,7 +141,7 @@
                         <TextBlock x:Name="RestaurantMetro"
 							Text="{Binding public_transit}"
 							Foreground="Black"
-							FontSize="15"
+							FontSize="17"
 							VerticalAlignment="Center"
 							Margin="10,0,0,0"/>
                     </StackPanel>
@@ -156,7 +156,7 @@
                             Grid.Column="1"
 							Text="{Binding opening_hours}"
 							Foreground="Black"
-							FontSize="15"
+							FontSize="17"
 							VerticalAlignment="Center"
 							Margin="10,0,0,0"/>
                         <Image Source="Assets/restaurant_detail_indicator.png" Grid.Column="2" HorizontalAlignment="Right" Margin="5"/>

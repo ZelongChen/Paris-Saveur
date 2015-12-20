@@ -8,12 +8,12 @@
     <Application.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="RestaurantListViewItemTemplate">
-                <Grid Background="White">
+                <Grid Background="White" Margin="0,5,0,5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
                         <ColumnDefinition Width="4*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image x:Name="restaurantThumbnail" Grid.Column="0" Source="{Binding ThumbnailBitmap}" Margin="5,5,5,5"></Image>
+                    <Image x:Name="restaurantThumbnail" Grid.Column="0" Source="{Binding ThumbnailBitmap}" Margin="5,5,15,5"></Image>
                     <StackPanel x:Name="restaurantSimpleInfoStack" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Stretch">
                         <TextBlock x:Name="restaurantSimpleInfoTitle" FontSize="18" Foreground="Black" Text="{Binding name}" FontWeight="Bold"></TextBlock>
                         <Grid>
@@ -24,7 +24,14 @@
                             <TextBlock x:Name="restaurantSimpleInfoType" Grid.Column="0" FontSize="16" Foreground="Black" Text="{Binding style}" HorizontalAlignment="Left"></TextBlock>
                             <TextBlock x:Name="restaurantSimpleInfoPrice" Grid.Column="1" Foreground="Black" FontSize="16" Text="{Binding consumption_per_capita}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
                         </Grid>
-                        <TextBlock x:Name="restaurantSimpleInfoReview" FontSize="16" Foreground="Black" Text="{Binding RatingScoreAndReviewNum}"></TextBlock>
+                        <StackPanel Orientation="Horizontal" Height="20">
+                            <Image x:Name="Star1" Source="Assets/star_half.png" />
+                            <Image x:Name="Star2" Source="Assets/star_half.png" />
+                            <Image x:Name="Star3" Source="Assets/star_half.png" />
+                            <Image x:Name="Star4" Source="Assets/star_half.png" />
+                            <Image x:Name="Star5" Source="Assets/star_half.png" />
+                            <TextBlock x:Name="restaurantSimpleInfoReview" FontSize="16" Foreground="Black" Text="{Binding RatingScoreAndReviewNum}" Margin="10,0,0,0"></TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
             </DataTemplate>

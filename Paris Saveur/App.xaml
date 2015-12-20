@@ -64,7 +64,7 @@
             </Style>
 
             <Style x:Key="RestaurantStyleListViewItemStyle" TargetType="ListViewItem">
-                <Setter Property="FontFamily" Value="22"></Setter>
+                <Setter Property="FontSize" Value="22"></Setter>
                 <Setter Property="Foreground" Value="Black"></Setter>
                 <Setter Property="VerticalAlignment" Value="Center"></Setter>
                 <Setter Property="Padding" Value="10,0,0,0"></Setter>

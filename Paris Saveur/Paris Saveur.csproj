@@ -275,6 +275,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AdDuplexWinPhone81.9.0.0.4\lib\portable-win81+wpa81\AdDuplex.Universal.WinPhone.WinRT.winmd</HintPath>
     </Reference>
+    <Reference Include="Google.ProtocolBuffersLite, Version=2.4.1.555, Culture=neutral, PublicKeyToken=55f7125234beb589, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.ProtocolBuffersLite.2.4.1.555\lib\cf35\Google.ProtocolBuffersLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Google.ProtocolBuffersLite.Serialization, Version=2.4.1.555, Culture=neutral, PublicKeyToken=55f7125234beb589, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.ProtocolBuffersLite.2.4.1.555\lib\cf35\Google.ProtocolBuffersLite.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MicroMsg.sdk, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WeChatSDK.2.0.1\lib\wpa81\MicroMsg.sdk.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AdMediator.WindowsPhone81.AdDuplex">
       <HintPath>..\packages\Microsoft.AdMediator.WindowsPhone81.AdDuplex.1.0.12\lib\wpa\Microsoft.AdMediator.WindowsPhone81.AdDuplex.dll</HintPath>
     </Reference>

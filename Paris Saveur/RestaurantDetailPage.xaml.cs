@@ -17,7 +17,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-
+using MicroMsg.sdk;
+using Windows.UI.Popups;
 
 namespace Paris_Saveur
 {
@@ -147,7 +148,31 @@ namespace Paris_Saveur
 
         private void Share_Click(object sender, RoutedEventArgs e)
         {
-            DataTransferManager.ShowShareUI();
+            //DataTransferManager.ShowShareUI();
+
+
+            try
+            {
+                int scene = SendMessageToWX.Req.WXSceneSession; //发给微信朋友
+
+
+
+                WXTextMessage message = new WXTextMessage();
+
+
+                message.Title = "文本";
+                message.Text = "这是一段文本内容";
+                SendMessageToWX.Req req = new SendMessageToWX.Req(message, scene);
+                IWXAPI api = WXAPIFactory.CreateWXAPI("wxa2dbffe7cde7ee06");
+                api.SendReq(req);
+            }
+            catch (WXException ex)
+            {
+                var dialogBuilder = new MessageDialog(ex.Message);
+                dialogBuilder.Title = "error";
+                var dialog = dialogBuilder.ShowAsync();
+            }
+
         }
 
         private void RestaurantPhoneNumber1_Click(object sender, RoutedEventArgs e)

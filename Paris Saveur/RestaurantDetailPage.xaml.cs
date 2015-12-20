@@ -44,7 +44,7 @@ namespace Paris_Saveur
             DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
             _restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = _restaurant.name;
-            this.CommentPivotItemHeader.Text = LocalizedStrings.Get("RestaurantDetailPage_PivotHeaderComment") + " (" + _restaurant.rating_num + ")";
+            this.CommentPivotItemHeader.Text = LocalizedStrings.Get("RestaurantDetailPage_PivotHeaderComment.Text") + " (" + _restaurant.rating_num + ")";
 
             _helper = new DatabaseHelper();
             _restaurantDB = _helper.ReadRestaurant(_restaurant.pk);

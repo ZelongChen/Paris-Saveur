@@ -297,7 +297,7 @@
   <data name="RestaurantDetailPage_PinUnPinCommandButton.Label" xml:space="preserve">
     <value>添加到桌面</value>
   </data>
-  <data name="RestaurantDetailPage_PivotHeaderComment.Text" xml:space="preserve">
+  <data name="RestaurantDetailPage_PivotHeaderComment" xml:space="preserve">
     <value>评论</value>
   </data>
   <data name="RestaurantDetailPage_PivotHeaderDetail.Text" xml:space="preserve">
@@ -413,5 +413,20 @@
   </data>
   <data name="Yes" xml:space="preserve">
     <value>确定</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSort" xml:space="preserve">
+    <value>排序</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSortByPopularity" xml:space="preserve">
+    <value>热门程度</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSortByRatingNum" xml:space="preserve">
+    <value>点评数量</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSortByRatingScore" xml:space="preserve">
+    <value>综合评分</value>
+  </data>
+  <data name="RecommendedPage_RefreshButton.Label" xml:space="preserve">
+    <value>刷新</value>
   </data>
 </root>

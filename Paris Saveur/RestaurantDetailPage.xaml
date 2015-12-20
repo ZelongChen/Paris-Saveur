@@ -165,7 +165,7 @@
             </PivotItem>
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock  x:Name="CommentPivotItemHeader" x:Uid="RestaurantDetailPage_PivotHeaderComment" Text="" FontSize="20" Foreground="Black" Padding="20,0,0,0"/>
+                    <TextBlock  x:Name="CommentPivotItemHeader" Text="" FontSize="20" Foreground="Black" Padding="20,0,0,0"/>
                 </PivotItem.Header>
                 <ScrollViewer  Background="White">
                     <Grid>

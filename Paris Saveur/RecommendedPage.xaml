@@ -10,7 +10,7 @@
 
     <Page.BottomAppBar>
         <CommandBar Background="{StaticResource AppThemeColor}" ClosedDisplayMode="Minimal" Opacity="0.8">
-            <AppBarButton x:Name="RefreshButton" Label="刷新" Icon="Refresh" Click="RefreshButton_Click"/>
+            <AppBarButton x:Name="RefreshButton" x:Uid="RecommendedPage_RefreshButton" Label="" Icon="Refresh" Click="RefreshButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 

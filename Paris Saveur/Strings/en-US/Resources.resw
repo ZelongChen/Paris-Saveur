@@ -120,232 +120,232 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="CommentPagePrice.Text" xml:space="preserve">
+  <data name="CommentPage_Price.Text" xml:space="preserve">
     <value>Price</value>
   </data>
-  <data name="CommentPagePricePlaceholder.PlaceholderText" xml:space="preserve">
+  <data name="CommentPage_PricePlaceholder.PlaceholderText" xml:space="preserve">
     <value>Price</value>
   </data>
-  <data name="CommentPageRateButton.Content" xml:space="preserve">
+  <data name="CommentPage_RateButton.Content" xml:space="preserve">
     <value>Rate This Restaurant</value>
   </data>
-  <data name="CommentPageTapToRate.Text" xml:space="preserve">
+  <data name="CommentPage_TapToRate.Text" xml:space="preserve">
     <value>Tap stars to rate</value>
   </data>
-  <data name="CommentPageTitle.Text" xml:space="preserve">
+  <data name="CommentPage_Title.Text" xml:space="preserve">
     <value>Rate Restaurant</value>
   </data>
-  <data name="CommentPageYourComment.PlaceholderText" xml:space="preserve">
+  <data name="CommentPage_YourComment.PlaceholderText" xml:space="preserve">
     <value>Your Comment</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
-  <data name="FeedbackPageComment.PlaceholderText" xml:space="preserve">
+  <data name="FeedbackPage_Comment.PlaceholderText" xml:space="preserve">
     <value>Your feedback</value>
   </data>
-  <data name="FeedbackPageCommentTitle.Text" xml:space="preserve">
+  <data name="FeedbackPage_CommentTitle.Text" xml:space="preserve">
     <value>Give me your feedback: </value>
   </data>
-  <data name="FeedbackPageSendButton.Content" xml:space="preserve">
+  <data name="FeedbackPage_SendButton.Content" xml:space="preserve">
     <value>Submit</value>
   </data>
-  <data name="FeedbackPageTitle.Text" xml:space="preserve">
+  <data name="FeedbackPage_Title.Text" xml:space="preserve">
     <value>Feedback</value>
   </data>
-  <data name="HotRestaurantPageTitle.Text" xml:space="preserve">
+  <data name="HotRestaurantPage_Title.Text" xml:space="preserve">
     <value>Popular</value>
   </data>
-  <data name="HotTagPageTitle.Text" xml:space="preserve">
+  <data name="HotTagPage_Title.Text" xml:space="preserve">
     <value>Hot Tags</value>
   </data>
   <data name="LoadMoreButoon.Content" xml:space="preserve">
     <value>Load more</value>
   </data>
-  <data name="LoginPageLoginButton.Content" xml:space="preserve">
+  <data name="LoginPage_LoginButton.Content" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="LoginPagePasswordEmpty" xml:space="preserve">
+  <data name="LoginPage_PasswordEmpty" xml:space="preserve">
     <value>Password cannot be empty</value>
   </data>
-  <data name="LoginPagePasswordTextBox.PlaceholderText" xml:space="preserve">
+  <data name="LoginPage_PasswordTextBox.PlaceholderText" xml:space="preserve">
     <value>Password</value>
   </data>
-  <data name="LoginPageSignUpButton.Content" xml:space="preserve">
+  <data name="LoginPage_SignUpButton.Content" xml:space="preserve">
     <value>Sign up</value>
   </data>
-  <data name="LoginPageTitle.Text" xml:space="preserve">
+  <data name="LoginPage_Title.Text" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="LoginPageUserNameEmpty" xml:space="preserve">
+  <data name="LoginPage_UserNameEmpty" xml:space="preserve">
     <value>User name cannot be empty</value>
   </data>
-  <data name="LoginPageUserNameShort" xml:space="preserve">
+  <data name="LoginPage_UserNameShort" xml:space="preserve">
     <value>User name cannot be shorter than 4 characters</value>
   </data>
-  <data name="LoginPageUserNameTextBox.PlaceholderText" xml:space="preserve">
+  <data name="LoginPage_UserNameTextBox.PlaceholderText" xml:space="preserve">
     <value>User Name</value>
   </data>
-  <data name="MainPageAppBarButtonFavorite.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonFavorite.Label" xml:space="preserve">
     <value>Favorite</value>
   </data>
-  <data name="MainPageAppBarButtonFeedback.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonFeedback.Label" xml:space="preserve">
     <value>Your Feedback</value>
   </data>
-  <data name="MainPageAppBarButtonHistory.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonHistory.Label" xml:space="preserve">
     <value>History</value>
   </data>
-  <data name="MainPageAppBarButtonNote.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonNote.Label" xml:space="preserve">
     <value>Rate this App</value>
   </data>
-  <data name="MainPageAppBarButtonSearch.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonSearch.Label" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="MainPageAppBarButtonWeb.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonWeb.Label" xml:space="preserve">
     <value>Our Website</value>
   </data>
-  <data name="MainPageLogoutMessageDialogHeader" xml:space="preserve">
+  <data name="MainPage_LogoutMessageDialogHeader" xml:space="preserve">
     <value>Do you want to logout?</value>
   </data>
-  <data name="MainPageLogoutMessageDialogTitle" xml:space="preserve">
+  <data name="MainPage_LogoutMessageDialogTitle" xml:space="preserve">
     <value>Logout</value>
   </data>
-  <data name="MainPagePivotItemAboutContactEmail.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutContactEmail.Text" xml:space="preserve">
     <value>Contact Email: zelong.chen@live.com</value>
   </data>
-  <data name="MainPagePivotItemAboutCopyright.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutCopyright.Text" xml:space="preserve">
     <value>Copyright © 2015 CHEN Zelong</value>
   </data>
-  <data name="MainPagePivotItemAboutTitle.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutTitle.Text" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="MainPagePivotItemAboutVersion.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutVersion.Text" xml:space="preserve">
     <value>version 1.1.4</value>
   </data>
-  <data name="MainPagePivotItemAboutWeibo.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutWeibo.Text" xml:space="preserve">
     <value>Follow us on Sina Weibo</value>
   </data>
-  <data name="MainPagePivotItemHomeHot.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeHot.Text" xml:space="preserve">
     <value>Popular</value>
   </data>
-  <data name="MainPagePivotItemHomeHotTag.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeHotTag.Text" xml:space="preserve">
     <value>Hot Tags</value>
   </data>
-  <data name="MainPagePivotItemHomeMetro.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeMetro.Text" xml:space="preserve">
     <value>Metro</value>
   </data>
-  <data name="MainPagePivotItemHomeNearby.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeNearby.Text" xml:space="preserve">
     <value>Nearby</value>
   </data>
-  <data name="MainPagePivotItemHomeRecommended.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeRecommended.Text" xml:space="preserve">
     <value>Explore</value>
   </data>
-  <data name="MainPagePivotItemHomeSortby.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeSortby.Text" xml:space="preserve">
     <value>Cuisine</value>
   </data>
-  <data name="MainPagePivotItemHomeTitle.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeTitle.Text" xml:space="preserve">
     <value>Home</value>
   </data>
-  <data name="MainPagePivotItemMeLogin" xml:space="preserve">
+  <data name="MainPage_PivotItemMeLogin" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="MainPagePivotItemMeLogout" xml:space="preserve">
+  <data name="MainPage_PivotItemMeLogout" xml:space="preserve">
     <value>Logout</value>
   </data>
-  <data name="MainPagePivotItemMeTitle.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemMeTitle.Text" xml:space="preserve">
     <value>Me</value>
   </data>
-  <data name="MainPageTitle.Text" xml:space="preserve">
+  <data name="MainPage_Title.Text" xml:space="preserve">
     <value>Paris Saveur</value>
   </data>
-  <data name="NearByRestaurantLocationDisabled" xml:space="preserve">
+  <data name="NearByRestaurant_LocationDisabled" xml:space="preserve">
     <value>GPS is disabled</value>
   </data>
-  <data name="NearByRestaurantNoRestaurantText.Text" xml:space="preserve">
+  <data name="NearByRestaurant_NoRestaurantText.Text" xml:space="preserve">
     <value>Cannot find restaurant nearby</value>
   </data>
   <data name="NoConnectionText.Text" xml:space="preserve">
     <value>Please check your Internet connection</value>
   </data>
-  <data name="RecommendedPageTitle.Text" xml:space="preserve">
+  <data name="RecommendedPage_Title.Text" xml:space="preserve">
     <value>Explore</value>
   </data>
-  <data name="RestaurantDetailPageAddToFavoriteText" xml:space="preserve">
+  <data name="RestaurantDetailPage_AddToFavoriteText" xml:space="preserve">
     <value>Add to favorite</value>
   </data>
-  <data name="RestaurantDetailPageCommentButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_CommentButton.Label" xml:space="preserve">
     <value>Comment</value>
   </data>
-  <data name="RestaurantDetailPageFavoriteButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_FavoriteButton.Label" xml:space="preserve">
     <value>Favorite</value>
   </data>
-  <data name="RestaurantDetailPageFavorited" xml:space="preserve">
+  <data name="RestaurantDetailPage_Favorited" xml:space="preserve">
     <value>Favorited</value>
   </data>
-  <data name="RestaurantDetailPageNoCommentText.Text" xml:space="preserve">
+  <data name="RestaurantDetailPage_NoCommentText.Text" xml:space="preserve">
     <value>No comment</value>
   </data>
-  <data name="RestaurantDetailPageOpenMapButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_OpenMapButton.Label" xml:space="preserve">
     <value>Map</value>
   </data>
-  <data name="RestaurantDetailPagePhoneButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_PhoneButton.Label" xml:space="preserve">
     <value>Call</value>
   </data>
-  <data name="RestaurantDetailPagePinText" xml:space="preserve">
+  <data name="RestaurantDetailPage_PinText" xml:space="preserve">
     <value>Pin</value>
   </data>
-  <data name="RestaurantDetailPagePinUnPinCommandButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_PinUnPinCommandButton.Label" xml:space="preserve">
     <value>Pin</value>
   </data>
-  <data name="RestaurantDetailPagePivotHeaderComment.Text" xml:space="preserve">
+  <data name="RestaurantDetailPage_PivotHeaderComment" xml:space="preserve">
     <value>Comment</value>
   </data>
-  <data name="RestaurantDetailPagePivotHeaderDetail.Text" xml:space="preserve">
+  <data name="RestaurantDetailPage_PivotHeaderDetail.Text" xml:space="preserve">
     <value>Detail</value>
   </data>
-  <data name="RestaurantDetailPageRemoveFromFavoriteText" xml:space="preserve">
+  <data name="RestaurantDetailPage_RemoveFromFavoriteText" xml:space="preserve">
     <value>Remove from favorite</value>
   </data>
-  <data name="RestaurantDetailPageShareButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_ShareButton.Label" xml:space="preserve">
     <value>Share</value>
   </data>
-  <data name="RestaurantDetailPageShareLocationButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_ShareLocationButton.Label" xml:space="preserve">
     <value>Share location</value>
   </data>
-  <data name="RestaurantDetailPageToFavorite" xml:space="preserve">
+  <data name="RestaurantDetailPage_ToFavorite" xml:space="preserve">
     <value>Favorite</value>
   </data>
-  <data name="RestaurantDetailPageUnPinText" xml:space="preserve">
+  <data name="RestaurantDetailPage_UnPinText" xml:space="preserve">
     <value>Unpin</value>
   </data>
-  <data name="RestaurantSortByStylePageBeifang.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Beifang.Content" xml:space="preserve">
     <value>Northern Chinese</value>
   </data>
-  <data name="RestaurantSortByStylePageGuangdong_Fujian.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Guangdong_Fujian.Content" xml:space="preserve">
     <value>Cantonese / Fujian</value>
   </data>
-  <data name="RestaurantSortByStylePageJapan_Korea.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Japan_Korea.Content" xml:space="preserve">
     <value>Japanese / Korean</value>
   </data>
-  <data name="RestaurantSortByStylePageJiangshu_Zhejiang.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Jiangshu_Zhejiang.Content" xml:space="preserve">
     <value>Jiangsu / Zhejiang</value>
   </data>
-  <data name="RestaurantSortByStylePageShandong_Anhui.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Shandong_Anhui.Content" xml:space="preserve">
     <value>Shandong / Anhui</value>
   </data>
-  <data name="RestaurantSortByStylePageSichuan_Hunan.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Sichuan_Hunan.Content" xml:space="preserve">
     <value>Sichuan / Hunan</value>
   </data>
-  <data name="RestaurantSortByStylePageSouthest_Asia.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Southest_Asia.Content" xml:space="preserve">
     <value>South Asian</value>
   </data>
-  <data name="RestaurantSortByStylePageTitle.Text" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Title.Text" xml:space="preserve">
     <value>Cuisine</value>
   </data>
-  <data name="RestaurantSortByStylePageUnclassified.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Unclassified.Content" xml:space="preserve">
     <value>Unclassified</value>
   </data>
-  <data name="RestaurantSortByStylePageYunnan.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Yunnan.Content" xml:space="preserve">
     <value>Yunnan</value>
   </data>
   <data name="SearchPage_NoResultText.Text" xml:space="preserve">
@@ -413,5 +413,20 @@
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSort" xml:space="preserve">
+    <value>Sort by</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSortByPopularity" xml:space="preserve">
+    <value>Popularity</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSortByRatingNum" xml:space="preserve">
+    <value>Rating numbers</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSortByRatingScore" xml:space="preserve">
+    <value>Rating score</value>
+  </data>
+  <data name="RecommendedPage_RefreshButton.Label" xml:space="preserve">
+    <value>Refresh</value>
   </data>
 </root>

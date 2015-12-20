@@ -30,7 +30,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
             <TextBlock x:Uid="HotTagPage_Title"
-                Text="热门标签" 
+                Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1" Background="White">

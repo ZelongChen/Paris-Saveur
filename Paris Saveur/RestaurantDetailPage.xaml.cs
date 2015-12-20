@@ -282,7 +282,7 @@ namespace Paris_Saveur
             LoadMoreButoon.Visibility = Visibility.Collapsed;
 
             var client = new HttpClient();
-            string url = "http://www.vivelevendredi.com/_restaurants/json/rating-list/" + _restaurant.pk + "/?page=" + page;
+            string url = "http://www.vivelevendredi.com/restaurants/json/rating-list/" + _restaurant.pk + "/?page=" + page;
             var response = await client.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
 

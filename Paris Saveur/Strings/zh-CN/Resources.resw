@@ -414,16 +414,16 @@
   <data name="Yes" xml:space="preserve">
     <value>确定</value>
   </data>
-  <data name="HotRestaurantPage_AppBarButtonSort" xml:space="preserve">
+  <data name="HotRestaurantPage_AppBarButtonSort.Label" xml:space="preserve">
     <value>排序</value>
   </data>
-  <data name="HotRestaurantPage_AppBarButtonSortByPopularity" xml:space="preserve">
+  <data name="HotRestaurantPage_AppBarButtonSortByPopularity.Text" xml:space="preserve">
     <value>热门程度</value>
   </data>
-  <data name="HotRestaurantPage_AppBarButtonSortByRatingNum" xml:space="preserve">
+  <data name="HotRestaurantPage_AppBarButtonSortByRatingNum.Text" xml:space="preserve">
     <value>点评数量</value>
   </data>
-  <data name="HotRestaurantPage_AppBarButtonSortByRatingScore" xml:space="preserve">
+  <data name="HotRestaurantPage_AppBarButtonSortByRatingScore.Text" xml:space="preserve">
     <value>综合评分</value>
   </data>
   <data name="RecommendedPage_RefreshButton.Label" xml:space="preserve">

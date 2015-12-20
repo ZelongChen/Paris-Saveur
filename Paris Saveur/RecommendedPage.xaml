@@ -22,14 +22,14 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
             <TextBlock x:Uid="RecommendedPage_Title" 
-                       Text="随便看看" 
+                       Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1" Background="White">
             <Grid Margin="0,0,0,50">
                 <TextBlock x:Name="NoConnectionText"
                            x:Uid="NoConnectionText"
-					Text="请检查您的网络连接"
+					Text=""
                     Style="{StaticResource NoConnectionTextBlockStyle}"/>
                 <ListView x:Name="RecommendedRestaurantList" 
 					ItemsSource="{Binding Restaurant_list}"

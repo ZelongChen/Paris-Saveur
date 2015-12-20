@@ -19,7 +19,6 @@ namespace Paris_Saveur
         private string _sortBy;
         private string _restaurantStyle;
         private Tag _restaurantTag;
-        private RestaurantList _restaurantList;
         private string _baseURL;
         private enum LISTTYPE
         {
@@ -33,7 +32,6 @@ namespace Paris_Saveur
             this.InitializeComponent();
             _currentPage = 1;
             _sortBy = "popularity";
-            _restaurantList = new RestaurantList();
             _baseURL = "http://www.vivelevendredi.com/restaurants/json";
         }
 
@@ -82,7 +80,6 @@ namespace Paris_Saveur
         {
             _currentPage = 1;
             _sortBy = "popularity";
-            _restaurantList = new RestaurantList();
             RefreshPage(_sortBy, _currentPage++);            
         }
 
@@ -90,7 +87,6 @@ namespace Paris_Saveur
         {
             _currentPage = 1;
             _sortBy = "rating_score";
-            _restaurantList = new RestaurantList();
             RefreshPage(_sortBy, _currentPage++);
         }
 
@@ -98,7 +94,6 @@ namespace Paris_Saveur
         {
             _currentPage = 1;
             _sortBy = "rating_num";
-            _restaurantList = new RestaurantList();
             RefreshPage(_sortBy, _currentPage++);
         }
 
@@ -156,9 +151,8 @@ namespace Paris_Saveur
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
                 restaurant.SetupRestaurantModelToDisplay(this.BaseUri);
-                _restaurantList.Restaurant_list.Add(restaurant);
             }
-            this.HotRestaurantList.DataContext = _restaurantList;
+            this.HotRestaurantList.DataContext = list;
 
             LoadingRing.IsActive = false;
             LoadingRing.Visibility = Visibility.Collapsed;

@@ -15,10 +15,9 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using MicroMsg.sdk;
-using Windows.UI.Popups;
+using System.Diagnostics;
 
 namespace Paris_Saveur
 {
@@ -146,31 +145,30 @@ namespace Paris_Saveur
             deferral.Complete();
         }
 
-        private void Share_Click(object sender, RoutedEventArgs e)
+        private async void Share_Click(object sender, RoutedEventArgs e)
         {
             //DataTransferManager.ShowShareUI();
 
 
             try
             {
-                int scene = SendMessageToWX.Req.WXSceneSession; //发给微信朋友
+                int scene = SendMessageToWX.Req.WXSceneChooseByUser; //发给微信朋友
 
+                WXWebpageMessage message = new WXWebpageMessage
+                {
+                    WebpageUrl = "http://www.newsavour.com/restaurants/detail/" + _restaurant.pk,
+                    Title = _restaurant.name,
+                    Description = _restaurant.address + "; " + _restaurant.public_transit + "; " + _restaurant.phone_number_1 + ", " + _restaurant.phone_number_2
 
+                };
 
-                WXTextMessage message = new WXTextMessage();
-
-
-                message.Title = "文本";
-                message.Text = "这是一段文本内容";
                 SendMessageToWX.Req req = new SendMessageToWX.Req(message, scene);
                 IWXAPI api = WXAPIFactory.CreateWXAPI("wxa2dbffe7cde7ee06");
-                api.SendReq(req);
+                var isValid = await api.SendReq(req);
             }
             catch (WXException ex)
             {
-                var dialogBuilder = new MessageDialog(ex.Message);
-                dialogBuilder.Title = "error";
-                var dialog = dialogBuilder.ShowAsync();
+                Debug.WriteLine(ex.Message);
             }
 
         }
@@ -201,7 +199,7 @@ namespace Paris_Saveur
 
         private async void OpenMapButton_Click(object sender, RoutedEventArgs e)
         {
-            string uriToLaunch = @"bingmaps:?collection=point." + _restaurant.geo_lat +"_" + _restaurant.geo_lon + "_" + _restaurant.name +"&lvl=16";
+            string uriToLaunch = @"bingmaps:?collection=point." + _restaurant.geo_lat + "_" + _restaurant.geo_lon + "_" + _restaurant.name + "&lvl=16";
             var uri = new Uri(uriToLaunch);
             await Windows.System.Launcher.LaunchUriAsync(uri);
         }
@@ -218,7 +216,7 @@ namespace Paris_Saveur
             {
                 Frame.Navigate(typeof(LoginPage), "ComeFromDetailPage");
             }
-            
+
         }
 
         private async void RestaurantAddressGrid_Tapped(object sender, TappedRoutedEventArgs e)

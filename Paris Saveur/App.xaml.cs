@@ -1,23 +1,15 @@
 ﻿using Paris_Saveur.DataBase;
+using Paris_Saveur.Tools;
 using SQLite;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Phone.UI.Input;
 using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
@@ -134,6 +126,20 @@ namespace Paris_Saveur
 
             // 确保当前窗口处于活动状态
             Window.Current.Activate();
+        }
+
+        protected override void OnFileActivated(FileActivatedEventArgs args)
+        {
+            base.OnFileActivated(args);
+            try
+            {
+                var wechat = new WechatCallback();
+                wechat.Handle(args);
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
         /// <summary>

@@ -143,6 +143,7 @@
     <Compile Include="Tools\ConnectionContext.cs" />
     <Compile Include="Tools\ImageDownloader.cs" />
     <Compile Include="Tools\LocalizedStrings.cs" />
+    <Compile Include="Tools\WechatCallback.cs" />
     <Compile Include="TransportStationsPage.xaml.cs">
       <DependentUpon>TransportStationsPage.xaml</DependentUpon>
     </Compile>

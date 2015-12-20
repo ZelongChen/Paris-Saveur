@@ -35,7 +35,7 @@ namespace Paris_Saveur
             RestaurantList list = Newtonsoft.Json.JsonConvert.DeserializeObject<RestaurantList>(result);
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
-                restaurant.ConvertRestaurantStyleToChinese();
+                restaurant.ConvertRestaurantStyleToProperLanguage();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));

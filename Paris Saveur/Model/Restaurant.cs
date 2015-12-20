@@ -103,7 +103,7 @@ namespace Paris_Saveur
             //todo: work with the image
         }*/
 
-        public void ConvertRestaurantStyleToChinese()
+        public void ConvertRestaurantStyleToProperLanguage()
         {
             if (this.style.Equals("Shandong_Anhui"))
             {
@@ -143,7 +143,7 @@ namespace Paris_Saveur
             }
         }
 
-        public static string StyleToChinese(string style)
+        public static string StyleToProperLanguage(string style)
         {
             switch (style)
             {

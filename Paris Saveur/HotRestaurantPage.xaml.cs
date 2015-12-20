@@ -53,7 +53,7 @@ namespace Paris_Saveur
                 else if (parameterReceived is string)
                 {
                     _restaurantStyle = parameterReceived as string;
-                    this.Title.Text = Restaurant.StyleToChinese(_restaurantStyle);
+                    this.Title.Text = Restaurant.StyleToProperLanguage(_restaurantStyle);
                     DownloadRestaurants((int)LISTTYPE.Style, _restaurantStyle, _sortBy, _currentPage++);
                 }
                 else
@@ -155,7 +155,7 @@ namespace Paris_Saveur
             }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
-                restaurant.ConvertRestaurantStyleToChinese();
+                restaurant.ConvertRestaurantStyleToProperLanguage();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.SetupStars(this.BaseUri);
                 restaurant.SetupThumbnail(this.BaseUri);

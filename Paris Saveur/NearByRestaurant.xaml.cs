@@ -101,7 +101,7 @@ namespace Paris_Saveur
             }
             foreach (Restaurant restaurant in _list.Restaurant_list)
             {
-                restaurant.ConvertRestaurantStyleToChinese();
+                restaurant.ConvertRestaurantStyleToProperLanguage();
                 restaurant.ShowReviewScoreAndNumber();
                 restaurant.ShowPrice();
                 BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));

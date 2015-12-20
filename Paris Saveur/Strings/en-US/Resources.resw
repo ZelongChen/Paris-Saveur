@@ -408,7 +408,7 @@
   <data name="SimpleDisplayPage_HistoryTitleText" xml:space="preserve">
     <value>History</value>
   </data>
-  <data name="TransportStationsPage_Title" xml:space="preserve">
+  <data name="TransportStationsPage_Title.Text" xml:space="preserve">
     <value>Metro</value>
   </data>
   <data name="Yes" xml:space="preserve">

@@ -25,11 +25,11 @@
                             <TextBlock x:Name="restaurantSimpleInfoPrice" Grid.Column="1" Foreground="Black" FontSize="16" Text="{Binding consumption_per_capita}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
                         </Grid>
                         <StackPanel Orientation="Horizontal" Height="20">
-                            <Image x:Name="Star1" Source="Assets/star_half.png" />
-                            <Image x:Name="Star2" Source="Assets/star_half.png" />
-                            <Image x:Name="Star3" Source="Assets/star_half.png" />
-                            <Image x:Name="Star4" Source="Assets/star_half.png" />
-                            <Image x:Name="Star5" Source="Assets/star_half.png" />
+                            <Image x:Name="Star1" Source="{Binding star1}" />
+                            <Image x:Name="Star2" Source="{Binding star2}" />
+                            <Image x:Name="Star3" Source="{Binding star3}" />
+                            <Image x:Name="Star4" Source="{Binding star4}" />
+                            <Image x:Name="Star5" Source="{Binding star5}" />
                             <TextBlock x:Name="restaurantSimpleInfoReview" FontSize="16" Foreground="Black" Text="{Binding RatingScoreAndReviewNum}" Margin="10,0,0,0"></TextBlock>
                         </StackPanel>
                     </StackPanel>

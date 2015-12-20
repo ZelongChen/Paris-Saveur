@@ -157,10 +157,10 @@ namespace Paris_Saveur
             {
                 restaurant.ConvertRestaurantStyleToChinese();
                 restaurant.ShowReviewScoreAndNumber();
+                restaurant.SetupStars(this.BaseUri);
+                restaurant.SetupThumbnail(this.BaseUri);
                 restaurant.ShowPrice();
                 _restaurantList.Restaurant_list.Add(restaurant);
-                BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
-                restaurant.ThumbnailBitmap = placeholder;
                 ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.HotRestaurantList.DataContext = _restaurantList;

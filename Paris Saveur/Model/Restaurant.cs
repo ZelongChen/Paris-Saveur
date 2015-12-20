@@ -4,10 +4,6 @@ using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.Storage;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace Paris_Saveur
@@ -41,7 +37,12 @@ namespace Paris_Saveur
         public List<String> tag_list { get; set; }
         public LatestRating latest_rating { get; set; }
         private BitmapImage thumbnailBitmap;
-       
+        public BitmapImage star1 { get; set; }
+        public BitmapImage star2 { get; set; }
+        public BitmapImage star3 { get; set; }
+        public BitmapImage star4 { get; set; }
+        public BitmapImage star5 { get; set; }
+
         public BitmapImage ThumbnailBitmap 
         {
             get { return thumbnailBitmap; }
@@ -176,6 +177,112 @@ namespace Paris_Saveur
         public void ShowPrice()
         {
             this.consumption_per_capita = LocalizedStrings.Get("RestaurantModel_Per") + " " + this.consumption_per_capita + "€";
+        }
+
+        public void SetupThumbnail(Uri baseUri)
+        {
+            BitmapImage placeholder = new BitmapImage(new Uri(baseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
+            this.ThumbnailBitmap = placeholder;
+        }
+
+        public void SetupStars(Uri baseUri)
+        {
+            BitmapImage halfStar = new BitmapImage();
+            halfStar.UriSource = new Uri(baseUri, "Assets/star_half.png");
+            BitmapImage emptyStar = new BitmapImage();
+            emptyStar.UriSource = new Uri(baseUri, "Assets/star_empty.png");
+            BitmapImage star = new BitmapImage();
+            star.UriSource = new Uri(baseUri, "Assets/star_full.png");
+            double ratingScore = Double.Parse(this.rating_score);
+
+            if (ratingScore == 0)
+            {
+                this.star1 = emptyStar;
+                this.star2 = emptyStar;
+                this.star3 = emptyStar;
+                this.star4 = emptyStar;
+                this.star5 = emptyStar;
+            }
+            if (ratingScore > 0 && ratingScore < 1)
+            {
+                this.star1 = halfStar;
+                this.star2 = emptyStar;
+                this.star3 = emptyStar;
+                this.star4 = emptyStar;
+                this.star5 = emptyStar;
+            }
+            if (ratingScore == 1)
+            {
+                this.star1 = star;
+                this.star2 = emptyStar;
+                this.star3 = emptyStar;
+                this.star4 = emptyStar;
+                this.star5 = emptyStar;
+            }
+            if (ratingScore > 1 && ratingScore < 2)
+            {
+                this.star1 = star;
+                this.star2 = halfStar;
+                this.star3 = emptyStar;
+                this.star4 = emptyStar;
+                this.star5 = emptyStar;
+            }
+            if (ratingScore == 2)
+            {
+                this.star1 = star;
+                this.star2 = star;
+                this.star3 = emptyStar;
+                this.star4 = emptyStar;
+                this.star5 = emptyStar;
+            }
+            if (ratingScore > 2 && ratingScore < 3)
+            {
+                this.star1 = star;
+                this.star2 = star;
+                this.star3 = halfStar;
+                this.star4 = emptyStar;
+                this.star5 = emptyStar;
+            }
+            if (ratingScore == 3)
+            {
+                this.star1 = star;
+                this.star2 = star;
+                this.star3 = star;
+                this.star4 = emptyStar;
+                this.star5 = emptyStar;
+            }
+            if (ratingScore > 3 && ratingScore < 4)
+            {
+                this.star1 = star;
+                this.star2 = star;
+                this.star3 = star;
+                this.star4 = halfStar;
+                this.star5 = emptyStar;
+            }
+            if (ratingScore == 4)
+            {
+                this.star1 = star;
+                this.star2 = star;
+                this.star3 = star;
+                this.star4 = star;
+                this.star5 = emptyStar;
+            }
+            if (ratingScore > 4 && ratingScore < 5)
+            {
+                this.star1 = star;
+                this.star2 = star;
+                this.star3 = star;
+                this.star4 = star;
+                this.star5 = halfStar;
+            }
+            if (ratingScore == 5)
+            {
+                this.star1 = star;
+                this.star2 = star;
+                this.star3 = star;
+                this.star4 = star;
+                this.star5 = star;
+            }
         }
     }
 }

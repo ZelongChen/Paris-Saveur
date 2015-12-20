@@ -47,7 +47,7 @@ namespace Paris_Saveur
                 var parameterReceived = e.Parameter;
                 if (parameterReceived == null)
                 {
-                    this.Title.Text = LocalizedStrings.Get("HotRestaurantPage_Title.Text");
+                    this.Title.Text = LocalizedStrings.Get("HotRestaurantPage_Title");
                     DownloadRestaurants((int)LISTTYPE.Recommended, "", _sortBy, _currentPage++);
                 }
                 else if (parameterReceived is string)

@@ -106,39 +106,39 @@ namespace Paris_Saveur
         {
             if (this.style.Equals("Shandong_Anhui"))
             {
-                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Shandong_Anhui.Content");
+                this.style = LocalizedStrings.Get("RestaurantModel_Shandong_Anhui");
             }
             else if (this.style.Equals("Sichuan_Hunan"))
             {
-                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Sichuan_Hunan.Content");
+                this.style = LocalizedStrings.Get("RestaurantModel_Sichuan_Hunan");
             }
             else if (this.style.Equals("Japanese_Korean"))
             {
-                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Japan_Korea.Content");
+                this.style = LocalizedStrings.Get("RestaurantModel_Japanese_Korean");
             }
             else if (this.style.Equals("Northern_Chinese"))
             {
-                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Beifang.Content");
+                this.style = LocalizedStrings.Get("RestaurantModel_Nothern_Chinese");
             }
             else if (this.style.Equals("Cantonese_Fujian"))
             {
-                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Guangdong_Fujian.Content");
+                this.style = LocalizedStrings.Get("RestaurantModel_Cantonese_Fujian");
             }
             else if (this.style.Equals("Jiangsu_Zhejiang"))
             {
-                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Jiangshu_Zhejiang.Content");
+                this.style = LocalizedStrings.Get("RestaurantModel_Jiangsu_Zhejiang");
             }
             else if (this.style.Equals("South_Asian"))
             {
-                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Southest_Asia.Content");
+                this.style = LocalizedStrings.Get("RestaurantModel_South_Asian");
             }
             else if (this.style.Equals("Yunnan"))
             {
-                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Yunnan.Content");
+                this.style = LocalizedStrings.Get("RestaurantModel_Yunan");
             }
             else
             {
-                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Unclassified.Content");
+                this.style = LocalizedStrings.Get("RestaurantModel_Unclassified");
             }
         }
 
@@ -147,35 +147,35 @@ namespace Paris_Saveur
             switch (style)
             {
                 case "Sichuan_Hunan":
-                    return LocalizedStrings.Get("RestaurantSortByStylePage_Sichuan_Hunan.Content");
+                    return LocalizedStrings.Get("RestaurantModel_Sichuan_Hunan");
                 case "Shandong_Anhui":
-                    return LocalizedStrings.Get("RestaurantSortByStylePage_Shandong_Anhui.Content");
+                    return LocalizedStrings.Get("RestaurantModel_Shandong_Anhui");
                 case "Jiangsu_Zhejiang":
-                    return LocalizedStrings.Get("RestaurantSortByStylePage_Jiangshu_Zhejiang.Content");
+                    return LocalizedStrings.Get("RestaurantModel_Jiangsu_Zhejiang");
                 case "Cantonese_Fujian":
-                    return LocalizedStrings.Get("RestaurantSortByStylePage_Guangdong_Fujian.Content");
+                    return LocalizedStrings.Get("RestaurantModel_Cantonese_Fujian");
                 case "Yunnan":
-                    return LocalizedStrings.Get("RestaurantSortByStylePage_Yunnan.Content");
+                    return LocalizedStrings.Get("RestaurantModel_Yunan");
                 case "Northern_Chinese":
-                    return LocalizedStrings.Get("RestaurantSortByStylePage_Beifang.Content");
+                    return LocalizedStrings.Get("RestaurantModel_Nothern_Chinese");
                 case "Japanese_Korean":
-                    return LocalizedStrings.Get("RestaurantSortByStylePage_Japan_Korea.Content");
+                    return LocalizedStrings.Get("RestaurantModel_Japanese_Korean");
                 case "South_Asian":
-                    return LocalizedStrings.Get("RestaurantSortByStylePage_Southest_Asia.Content");
+                    return LocalizedStrings.Get("RestaurantModel_South_Asian");
                 default:
-                    return LocalizedStrings.Get("RestaurantSortByStylePage_Unclassified.Content");
+                    return LocalizedStrings.Get("RestaurantModel_Unclassified");
             }
         }
 
         public void ShowReviewScoreAndNumber()
         {
-            this.RatingScoreAndReviewNum = this.rating_score + " (" + rating_num + LocalizedStrings.Get("RestaurantModel_CommentNumbers") +")";
+            this.RatingScoreAndReviewNum = this.rating_score + " (" + rating_num + " " + LocalizedStrings.Get("RestaurantModel_CommentNumbers") +")";
 
         }
 
         public void ShowPrice()
         {
-            this.consumption_per_capita = LocalizedStrings.Get("RestaurantModel_Per") + this.consumption_per_capita + "€";
+            this.consumption_per_capita = LocalizedStrings.Get("RestaurantModel_Per") + " " + this.consumption_per_capita + "€";
         }
     }
 }

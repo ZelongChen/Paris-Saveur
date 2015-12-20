@@ -153,7 +153,7 @@
   <data name="FeedbackPage_Title.Text" xml:space="preserve">
     <value>反馈</value>
   </data>
-  <data name="HotRestaurantPage_Title.Text" xml:space="preserve">
+  <data name="HotRestaurantPage_Title" xml:space="preserve">
     <value>热门餐馆</value>
   </data>
   <data name="HotTagPage_Title.Text" xml:space="preserve">
@@ -429,10 +429,37 @@
   <data name="RecommendedPage_RefreshButton.Label" xml:space="preserve">
     <value>刷新</value>
   </data>
+  <data name="RestaurantModel_Cantonese_Fujian" xml:space="preserve">
+    <value>粤菜  闽菜</value>
+  </data>
   <data name="RestaurantModel_CommentNumbers" xml:space="preserve">
     <value>个点评</value>
   </data>
+  <data name="RestaurantModel_Japanese_Korean" xml:space="preserve">
+    <value>日餐 韩餐</value>
+  </data>
+  <data name="RestaurantModel_Jiangsu_Zhejiang" xml:space="preserve">
+    <value>苏菜 浙菜</value>
+  </data>
+  <data name="RestaurantModel_Nothern_Chinese" xml:space="preserve">
+    <value>北方菜系</value>
+  </data>
   <data name="RestaurantModel_Per" xml:space="preserve">
     <value>人均</value>
+  </data>
+  <data name="RestaurantModel_Shandong_Anhui" xml:space="preserve">
+    <value>鲁菜 徽菜</value>
+  </data>
+  <data name="RestaurantModel_Sichuan_Hunan" xml:space="preserve">
+    <value>川菜 湘菜</value>
+  </data>
+  <data name="RestaurantModel_South_Asian" xml:space="preserve">
+    <value>东南亚菜</value>
+  </data>
+  <data name="RestaurantModel_Unclassified" xml:space="preserve">
+    <value>未归类</value>
+  </data>
+  <data name="RestaurantModel_Yunan" xml:space="preserve">
+    <value>云南菜</value>
   </data>
 </root>

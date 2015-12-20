@@ -30,8 +30,6 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
             <TextBlock x:Name="Title"
-                       x:Uid="HotRestaurantPage_Title"
-                       Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1" Background="White">

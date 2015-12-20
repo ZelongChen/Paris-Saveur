@@ -29,4 +29,13 @@
     <Capability Name="removableStorage" />
     <DeviceCapability Name="location" />
   </Capabilities>
+  <Extensions>
+    <uap:Extension Category="windows.fileTypeAssociation">
+      <uap:FileTypeAssociation Name="wechat">
+        <uap:SupportedFileTypes>
+          <uap:FileType>.wxa2dbffe7cde7ee06</uap:FileType>
+        </uap:SupportedFileTypes>
+      </uap:FileTypeAssociation>
+    </uap:Extension>
+  </Extensions>
 </Package>

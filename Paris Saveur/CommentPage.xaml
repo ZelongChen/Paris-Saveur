@@ -27,7 +27,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Uid="CommentPageTitle" Text="" 
+            <TextBlock x:Uid="CommentPage_Title" Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <Grid Grid.Row="1">
@@ -60,7 +60,7 @@
             </StackPanel>
             <TextBlock x:Name="AttitudeText"
                        Height="25"
-                       x:Uid="CommentPageTapToRate"
+                       x:Uid="CommentPage_TapToRate"
                        Text=""
                        Foreground="Gray"
                        FontSize="20"
@@ -69,7 +69,7 @@
                        TextAlignment="Center"
                        Margin="0,80,0,0"/>
             <TextBox x:Name="CommentTextBox"
-                     x:Uid="CommentPageYourComment"
+                     x:Uid="CommentPage_YourComment"
                      Margin="10,110,10,0"
                      Height="100"
                      BorderBrush="{StaticResource AppThemeColor}"
@@ -82,14 +82,14 @@
                         Height="60"
                         Margin="0,10,10,0">
                 <TextBlock
-                    x:Uid="CommentPagePrice"
+                    x:Uid="CommentPage_Price"
                     Text=""
                     Foreground="Black"
                     VerticalAlignment="Center"
                     Margin="0,0,10,0"
                     FontSize="25"></TextBlock>
                 <TextBox x:Name="PriceTextBox"
-                         x:Uid="CommentPagePricePlaceholder"
+                         x:Uid="CommentPage_PricePlaceholder"
                          Margin="0"
                          Width="80"
                          VerticalAlignment="Center"
@@ -99,7 +99,7 @@
                          InputScope="Number"></TextBox>
             </StackPanel>
             <Button x:Name="SendCommentButton"
-                    x:Uid="CommentPageRateButton"
+                    x:Uid="CommentPage_RateButton"
                     Margin="10,150,10,0"
                     Content=""
                     Style="{StaticResource ButtonStyle}"

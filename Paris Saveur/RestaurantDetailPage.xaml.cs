@@ -44,7 +44,7 @@ namespace Paris_Saveur
             DataTransferManager.GetForCurrentView().DataRequested += RestaurantDetailPage_DataRequested;
             _restaurant = e.Parameter as Restaurant;
             this.PageTitle.Text = _restaurant.name;
-            this.CommentPivotItemHeader.Text = LocalizedStrings.Get("RestaurantDetailPagePivotHeaderComment") + " (" + _restaurant.rating_num + ")";
+            this.CommentPivotItemHeader.Text = LocalizedStrings.Get("RestaurantDetailPage_PivotHeaderComment") + " (" + _restaurant.rating_num + ")";
 
             _helper = new DatabaseHelper();
             _restaurantDB = _helper.ReadRestaurant(_restaurant.pk);
@@ -67,7 +67,7 @@ namespace Paris_Saveur
 
         private void ToggleAppBarButton(bool showPinButton)
         {
-            this.PinUnPinCommandButton.Label = showPinButton ? LocalizedStrings.Get("RestaurantDetailPagePinText") : LocalizedStrings.Get("RestaurantDetailPageUnPinText");
+            this.PinUnPinCommandButton.Label = showPinButton ? LocalizedStrings.Get("RestaurantDetailPage_PinText") : LocalizedStrings.Get("RestaurantDetailPage_UnPinText");
             this.PinUnPinCommandButton.UpdateLayout();
         }
 
@@ -167,7 +167,7 @@ namespace Paris_Saveur
             CheckBookmark();
             XmlDocument toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText01);
             XmlNodeList elements = toastXml.GetElementsByTagName("text");
-            string text = _restaurantDB.Bookmarked ? _restaurantDB.name + LocalizedStrings.Get("RestaurantDetailPageAddToFavoriteText") : LocalizedStrings.Get("RestaurantDetailPageRemoveFromFavoriteText") + _restaurantDB.name;
+            string text = _restaurantDB.Bookmarked ? _restaurantDB.name + LocalizedStrings.Get("RestaurantDetailPage_AddToFavoriteText") : LocalizedStrings.Get("RestaurantDetailPage_RemoveFromFavoriteText") + _restaurantDB.name;
             elements[0].AppendChild(toastXml.CreateTextNode(text));
             ToastNotification toast = new ToastNotification(toastXml);
             ToastNotificationManager.CreateToastNotifier().Show(toast);
@@ -262,7 +262,7 @@ namespace Paris_Saveur
         private void CheckBookmark()
         {
             this.FavoriteButton.Icon = _restaurantDB.Bookmarked ? new SymbolIcon(Symbol.Accept) : new SymbolIcon(Symbol.Add);
-            this.FavoriteButton.Label = _restaurantDB.Bookmarked ? LocalizedStrings.Get("RestaurantDetailPageFavorited") : LocalizedStrings.Get("RestaurantDetailPageToFavorite");
+            this.FavoriteButton.Label = _restaurantDB.Bookmarked ? LocalizedStrings.Get("RestaurantDetailPage_Favorited") : LocalizedStrings.Get("RestaurantDetailPage_ToFavorite");
         }
 
         private void SetupPivotItemHeader(bool detail, bool comment)

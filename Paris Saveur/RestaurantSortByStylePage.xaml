@@ -25,18 +25,18 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Uid="RestaurantSortByStylePageTitle"
+            <TextBlock x:Uid="RestaurantSortByStylePage_Title"
                        Text=""
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
-        <ListViewItem x:Name="Sichuan_Hunan" x:Uid="RestaurantSortByStylePageSichuan_Hunan" Content="" Grid.Row="1" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Sichuan_Hunan_Tapped"/>
-        <ListViewItem x:Name="Shandong_Anhui" x:Uid="RestaurantSortByStylePageShandong_Anhui" Content="" Grid.Row="2" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Shandong_Anhui_Tapped"/>
-        <ListViewItem x:Name="Jiangshu_Zhejiang" x:Uid="RestaurantSortByStylePageJiangshu_Zhejiang" Content="" Grid.Row="3" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Jiangshu_Zhejiang_Tapped"/>
-        <ListViewItem x:Name="Guangdong_Fujian" x:Uid="RestaurantSortByStylePageGuangdong_Fujian" Content="" Grid.Row="4" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Guangdong_Fujian_Tapped"/>
-        <ListViewItem x:Name="Yunnan" x:Uid="RestaurantSortByStylePageYunnan" Content="" Grid.Row="5" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Yunnan_Tapped"/>
-        <ListViewItem x:Name="Beifang" x:Uid="RestaurantSortByStylePageBeifang" Content="" Grid.Row="6" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Beifang_Tapped"/>
-        <ListViewItem x:Name="Japan_Korea" x:Uid="RestaurantSortByStylePageJapan_Korea" Content="" Grid.Row="7" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Japan_Korea_Tapped"/>
-        <ListViewItem x:Name="Southest_Asia" x:Uid="RestaurantSortByStylePageSouthest_Asia" Content="" Grid.Row="8" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Southest_Asia_Tapped"/>
-        <ListViewItem x:Name="Unclassified" x:Uid="RestaurantSortByStylePageUnclassified" Content="" Grid.Row="9" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Unclassified_Tapped"/>
+        <ListViewItem x:Name="Sichuan_Hunan" x:Uid="RestaurantSortByStylePage_Sichuan_Hunan" Content="" Grid.Row="1" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Sichuan_Hunan_Tapped"/>
+        <ListViewItem x:Name="Shandong_Anhui" x:Uid="RestaurantSortByStylePage_Shandong_Anhui" Content="" Grid.Row="2" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Shandong_Anhui_Tapped"/>
+        <ListViewItem x:Name="Jiangshu_Zhejiang" x:Uid="RestaurantSortByStylePage_Jiangshu_Zhejiang" Content="" Grid.Row="3" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Jiangshu_Zhejiang_Tapped"/>
+        <ListViewItem x:Name="Guangdong_Fujian" x:Uid="RestaurantSortByStylePage_Guangdong_Fujian" Content="" Grid.Row="4" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Guangdong_Fujian_Tapped"/>
+        <ListViewItem x:Name="Yunnan" x:Uid="RestaurantSortByStylePage_Yunnan" Content="" Grid.Row="5" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Yunnan_Tapped"/>
+        <ListViewItem x:Name="Beifang" x:Uid="RestaurantSortByStylePage_Beifang" Content="" Grid.Row="6" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Beifang_Tapped"/>
+        <ListViewItem x:Name="Japan_Korea" x:Uid="RestaurantSortByStylePage_Japan_Korea" Content="" Grid.Row="7" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Japan_Korea_Tapped"/>
+        <ListViewItem x:Name="Southest_Asia" x:Uid="RestaurantSortByStylePage_Southest_Asia" Content="" Grid.Row="8" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Southest_Asia_Tapped"/>
+        <ListViewItem x:Name="Unclassified" x:Uid="RestaurantSortByStylePage_Unclassified" Content="" Grid.Row="9" Style="{StaticResource RestaurantStyleListViewItemStyle}" Tapped="Unclassified_Tapped"/>
     </Grid>
 </Page>

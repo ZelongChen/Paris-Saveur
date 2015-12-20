@@ -132,8 +132,8 @@ namespace Paris_Saveur
             var loader = new ResourceLoader();
             if (ConnectionContext.IsUserSignedIn())
             {
-                var dialogBuilder = new MessageDialog(loader.GetString("MainPageLogoutMessageDialogHeader"));
-                dialogBuilder.Title = loader.GetString("MainPageLogoutMessageDialogTitle");
+                var dialogBuilder = new MessageDialog(loader.GetString("MainPage_LogoutMessageDialogHeader"));
+                dialogBuilder.Title = loader.GetString("MainPage_LogoutMessageDialogTitle");
                 dialogBuilder.Commands.Add(new UICommand { Label = loader.GetString("Yes"), Id = 0 });
                 dialogBuilder.Commands.Add(new UICommand { Label = loader.GetString("Cancel"), Id = 1 });
                 var dialog = await dialogBuilder.ShowAsync();
@@ -189,7 +189,7 @@ namespace Paris_Saveur
             if (ConnectionContext.IsUserSignedIn())
             {
                 this.LoginButton.Background = new SolidColorBrush(Colors.Red);
-                this.LoginButton.Content = loader.GetString("MainPagePivotItemMeLogin"); ;
+                this.LoginButton.Content = loader.GetString("MainPage_PivotItemMeLogin"); ;
                 this.UserNameText.Text = (String)localSettings.Values["UserName"];
                 string thumbnailUrl = (String)localSettings.Values["ThumbnailUrl"];
                 ImageDownloader.DownloadImageIntoImage(this.UserThumbnailImageView, thumbnailUrl);
@@ -197,7 +197,7 @@ namespace Paris_Saveur
             else
             {
                 this.LoginButton.Background = new SolidColorBrush(Colors.Green);
-                this.LoginButton.Content = loader.GetString("MainPagePivotItemMeLogin");
+                this.LoginButton.Content = loader.GetString("MainPage_PivotItemMeLogin");
                 this.UserNameText.Text = "";
                 BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/annonymous.jpg"));
                 this.UserThumbnailImageView.Source = placeholder;

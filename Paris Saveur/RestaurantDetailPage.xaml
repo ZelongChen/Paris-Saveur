@@ -36,11 +36,11 @@
     <Page.BottomAppBar>
         <CommandBar Background="{StaticResource AppThemeColor}" ClosedDisplayMode="Compact" Opacity="0.8">
             <CommandBar.SecondaryCommands>
-                <AppBarButton x:Name="ShareLocationButton" x:Uid="RestaurantDetailPageShareLocationButton" Label="" Click="ShareLocationButton_Click"/>
-                <AppBarButton x:Name="PinUnPinCommandButton" x:Uid="RestaurantDetailPagePinUnPinCommandButton" Label="" Click="PinToAppBar_Click"/>
-                <AppBarButton x:Name="OpenMapButton" x:Uid="RestaurantDetailPageOpenMapButton" Label="" Click="OpenMapButton_Click"/>
+                <AppBarButton x:Name="ShareLocationButton" x:Uid="RestaurantDetailPage_ShareLocationButton" Label="" Click="ShareLocationButton_Click"/>
+                <AppBarButton x:Name="PinUnPinCommandButton" x:Uid="RestaurantDetailPage_PinUnPinCommandButton" Label="" Click="PinToAppBar_Click"/>
+                <AppBarButton x:Name="OpenMapButton" x:Uid="RestaurantDetailPage_OpenMapButton" Label="" Click="OpenMapButton_Click"/>
             </CommandBar.SecondaryCommands>
-            <AppBarButton x:Name="PhoneButton" x:Uid="RestaurantDetailPagePhoneButton" Label="" Icon="Phone">
+            <AppBarButton x:Name="PhoneButton" x:Uid="RestaurantDetailPage_PhoneButton" Label="" Icon="Phone">
                 <AppBarButton.Flyout>
                     <MenuFlyout>
                         <MenuFlyoutItem x:Name="RestaurantPhoneNumber1" Click="RestaurantPhoneNumber1_Click"/>
@@ -48,9 +48,9 @@
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
-            <AppBarButton x:Name="ShareButton" x:Uid="RestaurantDetailPageShareButton" Label="" Icon="ReShare" Click="Share_Click"/>
-            <AppBarButton x:Name="FavoriteButton" x:Uid="RestaurantDetailPageFavoriteButton" Label="" Icon="Favorite" Click="AddToFavorite_Click"/>
-            <AppBarButton x:Name="CommentButton" x:Uid="RestaurantDetailPageCommentButton" Label="" Icon="Comment" Click="CommentButton_Click"/>
+            <AppBarButton x:Name="ShareButton" x:Uid="RestaurantDetailPage_ShareButton" Label="" Icon="ReShare" Click="Share_Click"/>
+            <AppBarButton x:Name="FavoriteButton" x:Uid="RestaurantDetailPage_FavoriteButton" Label="" Icon="Favorite" Click="AddToFavorite_Click"/>
+            <AppBarButton x:Name="CommentButton" x:Uid="RestaurantDetailPage_CommentButton" Label="" Icon="Comment" Click="CommentButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 
@@ -69,7 +69,7 @@
 			SelectionChanged="Pivot_SelectionChanged">
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock x:Name="DetailPivotItemHeader" x:Uid="RestaurantDetailPagePivotHeaderDetail" Text="" FontSize="20" Foreground="Black" Padding="20,0,0,0"/>
+                    <TextBlock x:Name="DetailPivotItemHeader" x:Uid="RestaurantDetailPage_PivotHeaderDetail" Text="" FontSize="20" Foreground="Black" Padding="20,0,0,0"/>
                 </PivotItem.Header>
                 <Grid Background="White" x:Name="RestaurantInfoPivot">
                     <Grid.RowDefinitions>
@@ -165,7 +165,7 @@
             </PivotItem>
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock  x:Name="CommentPivotItemHeader" x:Uid="RestaurantDetailPagePivotHeaderComment" Text="" FontSize="20" Foreground="Black" Padding="20,0,0,0"/>
+                    <TextBlock  x:Name="CommentPivotItemHeader" x:Uid="RestaurantDetailPage_PivotHeaderComment" Text="" FontSize="20" Foreground="Black" Padding="20,0,0,0"/>
                 </PivotItem.Header>
                 <ScrollViewer  Background="White">
                     <Grid>
@@ -180,7 +180,7 @@
                             </ListView.ItemContainerStyle>
                         </ListView>
                         <TextBlock x:Name="NoCommentText"
-                                   x:Uid="RestaurantDetailPageNoCommentText"
+                                   x:Uid="RestaurantDetailPage_NoCommentText"
 							Text=""
 							Foreground="Gray"
 							VerticalAlignment="Center"

@@ -10,12 +10,12 @@
 
     <Page.BottomAppBar>
         <CommandBar x:Name="MainPageAppBar" ClosedDisplayMode="Compact" Opacity="0.8" Background="{StaticResource AppThemeColor}">
-            <AppBarButton x:Name="HistoryButton" x:Uid="MainPageAppBarButtonHistory" Label="" Icon="Clock" Click="History_Click"/>
-            <AppBarButton x:Name="FavoriteButton" x:Uid="MainPageAppBarButtonFavorite" Label="" Icon="Favorite" Click="Bookmark_Click"/>
-            <AppBarButton x:Name="SearchButton" x:Uid="MainPageAppBarButtonSearch" Label="" Icon="Find" Click="SearchButton_Click"/>
-            <AppBarButton x:Name="FeedbackButton" x:Uid="MainPageAppBarButtonSearch" Label="" Icon="Mail" Click="Send_Feedback_Click"/>
-            <AppBarButton x:Name="WebButton" x:Uid="MainPageAppBarButtonWeb" Label="" Icon="Globe" Click="Launch_Web_Click"/>
-            <AppBarButton x:Name="NoteButton" x:Uid="MainPageAppBarButtonNote" Label="" Icon="Comment" Click="AppBarButton_Click"/>
+            <AppBarButton x:Name="HistoryButton" x:Uid="MainPage_AppBarButtonHistory" Label="" Icon="Clock" Click="History_Click"/>
+            <AppBarButton x:Name="FavoriteButton" x:Uid="MainPage_AppBarButtonFavorite" Label="" Icon="Favorite" Click="Bookmark_Click"/>
+            <AppBarButton x:Name="SearchButton" x:Uid="MainPage_AppBarButtonSearch" Label="" Icon="Find" Click="SearchButton_Click"/>
+            <AppBarButton x:Name="FeedbackButton" x:Uid="MainPage_AppBarButtonSearch" Label="" Icon="Mail" Click="Send_Feedback_Click"/>
+            <AppBarButton x:Name="WebButton" x:Uid="MainPage_AppBarButtonWeb" Label="" Icon="Globe" Click="Launch_Web_Click"/>
+            <AppBarButton x:Name="NoteButton" x:Uid="MainPage_AppBarButtonNote" Label="" Icon="Comment" Click="AppBarButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 
@@ -42,7 +42,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Uid="MainPageTitle" Text="" 
+            <TextBlock x:Uid="MainPage_Title" Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <Pivot x:Name="MainPagePivot" 
@@ -50,7 +50,7 @@
 			SelectionChanged="Mainpage_Pivot_SelectionChanged">
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock x:Name="PivotItem0_Title" x:Uid="MainPagePivotItemHomeTitle" Text="" FontSize="20" Foreground="Black" Padding="50,0,0,0"/>
+                    <TextBlock x:Name="PivotItem0_Title" x:Uid="MainPage_PivotItemHomeTitle" Text="" FontSize="20" Foreground="Black" Padding="50,0,0,0"/>
                 </PivotItem.Header>
                 <Grid HorizontalAlignment="Left" Margin="0,0,0,0">
                     <Grid.RowDefinitions>
@@ -79,7 +79,7 @@
 								Source="Assets/mainpage_recommend.png"/>
                             <TextBlock x:Name="RecommendedText" 
 								Grid.Row="1"
-                                x:Uid="MainPagePivotItemHomeRecommended"
+                                x:Uid="MainPage_PivotItemHomeRecommended"
 								Text="" 
 								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
@@ -94,7 +94,7 @@
 								Source="Assets/mainpage_location.png"/>
                             <TextBlock x:Name="NearByText" 
 								Grid.Row="1"
-                                x:Uid="MainPagePivotItemHomeNearby"
+                                x:Uid="MainPage_PivotItemHomeNearby"
 								Text=""  
 								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
@@ -109,7 +109,7 @@
 								Source="Assets/mainpage_hot.png"/>
                             <TextBlock x:Name="HotText"
 								Grid.Row="1"
-                                x:Uid="MainPagePivotItemHomeHot"
+                                x:Uid="MainPage_PivotItemHomeHot"
 								Text=""  
 								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
@@ -124,7 +124,7 @@
 								Source="Assets/mainpage_style.png"/>
                             <TextBlock x:Name="SortByText" 
 								Grid.Row="1"
-                                x:Uid="MainPagePivotItemHomeSortby"
+                                x:Uid="MainPage_PivotItemHomeSortby"
 								Text=""  
 								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
@@ -139,7 +139,7 @@
 								Source="Assets/mainpage_tag.png"/>
                             <TextBlock x:Name="HotTagText" 
 								Grid.Row="1"
-                                x:Uid="MainPagePivotItemHomeHotTag"
+                                x:Uid="MainPage_PivotItemHomeHotTag"
 								Text=""  
 								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
@@ -154,7 +154,7 @@
 								Source="Assets/mainpage_metro.png"/>
                             <TextBlock x:Name="MetroText" 
 								Grid.Row="1"
-                                x:Uid="MainPagePivotItemHomeMetro"
+                                x:Uid="MainPage_PivotItemHomeMetro"
 								Text=""  
 								Style="{StaticResource MainPageItemsTextStyle}"/>
                         </Grid>
@@ -163,7 +163,7 @@
             </PivotItem>
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock x:Name="PivotItem1_Title" x:Uid="MainPagePivotItemAboutTitle" Text="" FontSize="20" Foreground="Black" Padding="50,0,0,0" />
+                    <TextBlock x:Name="PivotItem1_Title" x:Uid="MainPage_PivotItemAboutTitle" Text="" FontSize="20" Foreground="Black" Padding="50,0,0,0" />
                 </PivotItem.Header>
                 <Grid HorizontalAlignment="Stretch">
                     <Image 
@@ -179,7 +179,7 @@
 						Tapped="Follow_Weibo_Tapped">
                         <Image Source="Assets/weibo.png" Margin="10"/>
                         <TextBlock
-                            x:Uid="MainPagePivotItemAboutWeibo"
+                            x:Uid="MainPage_PivotItemAboutWeibo"
                             Text=""
 							VerticalAlignment="Center"
 							FontSize="14"
@@ -189,15 +189,15 @@
                     <StackPanel Orientation="Vertical"
                                 VerticalAlignment="Bottom"
                                 Margin="0,0,0,10">
-                        <TextBlock x:Name="AppVersion" x:Uid="MainPagePivotItemAboutVersion" Text="" HorizontalAlignment="Center" Foreground="Gray" />
-                        <TextBlock x:Uid="MainPagePivotItemAboutContactEmail" Text="" HorizontalAlignment="Center" Foreground="Gray" />
-                        <TextBlock x:Uid="MainPagePivotItemAboutCopyright" Text="" HorizontalAlignment="Center" Foreground="Gray" ></TextBlock>
+                        <TextBlock x:Name="AppVersion" x:Uid="MainPage_PivotItemAboutVersion" Text="" HorizontalAlignment="Center" Foreground="Gray" />
+                        <TextBlock x:Uid="MainPage_PivotItemAboutContactEmail" Text="" HorizontalAlignment="Center" Foreground="Gray" />
+                        <TextBlock x:Uid="MainPage_PivotItemAboutCopyright" Text="" HorizontalAlignment="Center" Foreground="Gray" ></TextBlock>
                     </StackPanel>
                 </Grid>
             </PivotItem>
             <PivotItem Margin="0" Background="White">
                 <PivotItem.Header>
-                    <TextBlock x:Name="PivotItem2_Title" x:Uid="MainPagePivotItemMeTitle" Text="" FontSize="20" Foreground="Black" Padding="50,0,0,0" />
+                    <TextBlock x:Name="PivotItem2_Title" x:Uid="MainPage_PivotItemMeTitle" Text="" FontSize="20" Foreground="Black" Padding="50,0,0,0" />
                 </PivotItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>

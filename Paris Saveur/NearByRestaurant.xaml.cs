@@ -136,7 +136,7 @@ namespace Paris_Saveur
                 LoadingRing.Visibility = Visibility.Collapsed;
                 this.RefreshButton.IsEnabled = true;
                 this.LaunchMapButton.IsEnabled = true;
-                MessageBox(LocalizedStrings.Get("NearByRestaurantLocationDisabled"));
+                MessageBox(LocalizedStrings.Get("NearByRestaurant_LocationDisabled"));
             }
             else
             {
@@ -154,7 +154,7 @@ namespace Paris_Saveur
                     LoadingRing.Visibility = Visibility.Collapsed;
                     this.RefreshButton.IsEnabled = true;
                     this.LaunchMapButton.IsEnabled = true;
-                    MessageBox(LocalizedStrings.Get("NearByRestaurantLocationDisabled"));
+                    MessageBox(LocalizedStrings.Get("NearByRestaurant_LocationDisabled"));
                 }
             }
         }

@@ -55,20 +55,20 @@ namespace Paris_Saveur
             //*********Null Input Check***********
             if (this.UserNameTextBox.Text == null || this.UserNameTextBox.Text == "")
             {
-                ShowMessageDialog(LocalizedStrings.Get("Error"), LocalizedStrings.Get("LoginPageUserNameEmpty"));
+                ShowMessageDialog(LocalizedStrings.Get("Error"), LocalizedStrings.Get("LoginPage_UserNameEmpty"));
                 return;
             }
 
             else if (this.PasswordTextBox.Password == null || this.PasswordTextBox.Password == "")
             {
-                ShowMessageDialog(LocalizedStrings.Get("Error"), LocalizedStrings.Get("LoginPagePasswordEmpty"));
+                ShowMessageDialog(LocalizedStrings.Get("Error"), LocalizedStrings.Get("LoginPage_PasswordEmpty"));
                 return;
             }
 
             //*********User Name Length Check***********
             if (this.UserNameTextBox.Text.Length <= 3)
             {
-                ShowMessageDialog(LocalizedStrings.Get("Error"), LocalizedStrings.Get("LoginPageUserNameShort"));
+                ShowMessageDialog(LocalizedStrings.Get("Error"), LocalizedStrings.Get("LoginPage_UserNameShort"));
                 return;
             }
 

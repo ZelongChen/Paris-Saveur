@@ -16,18 +16,18 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Uid="FeedbackPageTitle" Text="" 
+            <TextBlock x:Uid="FeedbackPage_Title" Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="1">
-            <TextBlock x:Uid="FeedbackPageCommentTitle"
+            <TextBlock x:Uid="FeedbackPage_CommentTitle"
                 Text="" 
 				HorizontalAlignment="Left"
 				Foreground="Black"
                 FontSize="18"
 				Margin="10"/>
             <TextBox x:Name="FeedBackTextBox" 
-                x:Uid="FeedbackPageComment"
+                x:Uid="FeedbackPage_Comment"
 				PlaceholderText=""
 				Foreground="Black"
 				BorderBrush="{StaticResource AppThemeColor}"
@@ -35,7 +35,7 @@
 				MaxLength="140"
 				Height="100"/>
             <Button x:Name="SendFeedBackButton"
-                x:Uid="FeedbackPageSendButton"
+                x:Uid="FeedbackPage_SendButton"
 				Background="{StaticResource AppThemeColor}"
 				Content=""
 				FontSize="16"

@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Uid="RecommendedPageTitle" 
+            <TextBlock x:Uid="RecommendedPage_Title" 
                        Text="随便看看" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>

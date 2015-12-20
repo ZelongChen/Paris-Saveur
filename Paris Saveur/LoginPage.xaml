@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource AppThemeColor}">
             <Image Source="Assets/logo_white.png"/>
-            <TextBlock x:Uid="LoginPageTitle" 
+            <TextBlock x:Uid="LoginPage_Title" 
                        Text="" 
                        Style="{StaticResource PageTitleTextStyle}"/>
         </StackPanel>
@@ -28,14 +28,14 @@
                 Margin="20"
                 Source="Assets/Square150x150Logo.scale-100.png"></Image>
             <TextBox x:Name="UserNameTextBox"
-                     x:Uid="LoginPageUserNameTextBox"
+                     x:Uid="LoginPage_UserNameTextBox"
                      BorderBrush="{StaticResource AppThemeColor}"
                      Foreground="Black"
                      PlaceholderText=""
                      Margin="10,200,10,0"
                      ></TextBox>
             <PasswordBox x:Name="PasswordTextBox"
-                         x:Uid="LoginPagePasswordTextBox"
+                         x:Uid="LoginPage_PasswordTextBox"
                          BorderBrush="{StaticResource AppThemeColor}"
                          Foreground="Black"
                          PlaceholderText=""
@@ -44,13 +44,13 @@
                             Style="{StaticResource ProgressRingStyle}"
                             VerticalAlignment="Center"/>
             <Button x:Name="LoginButton"
-                    x:Uid="LoginPageLoginButton"
+                    x:Uid="LoginPage_LoginButton"
                     Margin="10,200,10,0"
                     Content=""
                     Style="{StaticResource ButtonStyle}"
                     Click="LoginButton_Click"></Button>
             <Button x:Name="SignUpButton"
-                    x:Uid="LoginPageSignUpButton"
+                    x:Uid="LoginPage_SignUpButton"
                     Margin="10,300,10,0"
                     Content=""
                     Style="{StaticResource ButtonStyle}"

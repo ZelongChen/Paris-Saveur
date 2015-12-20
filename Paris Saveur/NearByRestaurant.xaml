@@ -32,7 +32,7 @@
 					        Text=""
                             Style="{StaticResource NoConnectionTextBlockStyle}"/>
                 <TextBlock x:Name="NoRestaurantText"
-                           x:Uid="NearByRestaurantNoRestaurantText"
+                           x:Uid="NearByRestaurant_NoRestaurantText"
 					Text=""
 					VerticalAlignment="Center"
 					HorizontalAlignment="Center"

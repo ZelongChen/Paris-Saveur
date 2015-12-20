@@ -155,13 +155,8 @@ namespace Paris_Saveur
             }
             foreach (Restaurant restaurant in list.Restaurant_list)
             {
-                restaurant.ConvertRestaurantStyleToProperLanguage();
-                restaurant.ShowReviewScoreAndNumber();
-                restaurant.SetupStars(this.BaseUri);
-                restaurant.SetupThumbnail(this.BaseUri);
-                restaurant.ShowPrice();
+                restaurant.SetupRestaurantModelToDisplay(this.BaseUri);
                 _restaurantList.Restaurant_list.Add(restaurant);
-                ImageDownloader.DownloadImageIntoImage(restaurant);
             }
             this.HotRestaurantList.DataContext = _restaurantList;
 

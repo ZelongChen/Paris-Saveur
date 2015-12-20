@@ -67,12 +67,7 @@ namespace Paris_Saveur
             {
                 foreach (Restaurant restaurant in list.Restaurant_list)
                 {
-                    restaurant.ConvertRestaurantStyleToProperLanguage();
-                    restaurant.ShowReviewScoreAndNumber();
-                    restaurant.ShowPrice();
-                    BitmapImage placeholder = new BitmapImage(new Uri(this.BaseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
-                    restaurant.ThumbnailBitmap = placeholder;
-                    ImageDownloader.DownloadImageIntoImage(restaurant);
+                    restaurant.SetupRestaurantModelToDisplay(this.BaseUri);
                 }
                 this.SearchResultList.DataContext = list;
             }

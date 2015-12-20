@@ -103,7 +103,42 @@ namespace Paris_Saveur
             //todo: work with the image
         }*/
 
-        public void ConvertRestaurantStyleToProperLanguage()
+        public static string StyleToProperLanguage(string style)
+        {
+            switch (style)
+            {
+                case "Sichuan_Hunan":
+                    return LocalizedStrings.Get("RestaurantModel_Sichuan_Hunan");
+                case "Shandong_Anhui":
+                    return LocalizedStrings.Get("RestaurantModel_Shandong_Anhui");
+                case "Jiangsu_Zhejiang":
+                    return LocalizedStrings.Get("RestaurantModel_Jiangsu_Zhejiang");
+                case "Cantonese_Fujian":
+                    return LocalizedStrings.Get("RestaurantModel_Cantonese_Fujian");
+                case "Yunnan":
+                    return LocalizedStrings.Get("RestaurantModel_Yunan");
+                case "Northern_Chinese":
+                    return LocalizedStrings.Get("RestaurantModel_Nothern_Chinese");
+                case "Japanese_Korean":
+                    return LocalizedStrings.Get("RestaurantModel_Japanese_Korean");
+                case "South_Asian":
+                    return LocalizedStrings.Get("RestaurantModel_South_Asian");
+                default:
+                    return LocalizedStrings.Get("RestaurantModel_Unclassified");
+            }
+        }
+
+        public void SetupRestaurantModelToDisplay(Uri baseUri)
+        {
+            this.ConvertRestaurantStyleToProperLanguage();
+            this.ShowReviewScoreAndNumber();
+            this.ShowPrice();
+            this.SetupThumbnail(baseUri);
+            this.SetupStars(baseUri);
+            ImageDownloader.DownloadImageIntoImage(this);
+        }
+
+        private void ConvertRestaurantStyleToProperLanguage()
         {
             if (this.style.Equals("Shandong_Anhui"))
             {
@@ -143,49 +178,24 @@ namespace Paris_Saveur
             }
         }
 
-        public static string StyleToProperLanguage(string style)
-        {
-            switch (style)
-            {
-                case "Sichuan_Hunan":
-                    return LocalizedStrings.Get("RestaurantModel_Sichuan_Hunan");
-                case "Shandong_Anhui":
-                    return LocalizedStrings.Get("RestaurantModel_Shandong_Anhui");
-                case "Jiangsu_Zhejiang":
-                    return LocalizedStrings.Get("RestaurantModel_Jiangsu_Zhejiang");
-                case "Cantonese_Fujian":
-                    return LocalizedStrings.Get("RestaurantModel_Cantonese_Fujian");
-                case "Yunnan":
-                    return LocalizedStrings.Get("RestaurantModel_Yunan");
-                case "Northern_Chinese":
-                    return LocalizedStrings.Get("RestaurantModel_Nothern_Chinese");
-                case "Japanese_Korean":
-                    return LocalizedStrings.Get("RestaurantModel_Japanese_Korean");
-                case "South_Asian":
-                    return LocalizedStrings.Get("RestaurantModel_South_Asian");
-                default:
-                    return LocalizedStrings.Get("RestaurantModel_Unclassified");
-            }
-        }
-
-        public void ShowReviewScoreAndNumber()
+        private void ShowReviewScoreAndNumber()
         {
             this.RatingScoreAndReviewNum = this.rating_score + " (" + rating_num + " " + LocalizedStrings.Get("RestaurantModel_CommentNumbers") +")";
 
         }
 
-        public void ShowPrice()
+        private void ShowPrice()
         {
             this.consumption_per_capita = LocalizedStrings.Get("RestaurantModel_Per") + " " + this.consumption_per_capita + "€";
         }
 
-        public void SetupThumbnail(Uri baseUri)
+        private void SetupThumbnail(Uri baseUri)
         {
             BitmapImage placeholder = new BitmapImage(new Uri(baseUri, "Assets/restaurant_thumbnail_placeholder.jpg"));
             this.ThumbnailBitmap = placeholder;
         }
 
-        public void SetupStars(Uri baseUri)
+        private void SetupStars(Uri baseUri)
         {
             BitmapImage halfStar = new BitmapImage();
             halfStar.UriSource = new Uri(baseUri, "Assets/star_half.png");

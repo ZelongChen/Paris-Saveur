@@ -120,232 +120,232 @@
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
-  <data name="CommentPagePrice.Text" xml:space="preserve">
+  <data name="CommentPage_Price.Text" xml:space="preserve">
     <value>价格</value>
   </data>
-  <data name="CommentPagePricePlaceholder.PlaceholderText" xml:space="preserve">
+  <data name="CommentPage_PricePlaceholder.PlaceholderText" xml:space="preserve">
     <value>价格</value>
   </data>
-  <data name="CommentPageRateButton.Content" xml:space="preserve">
+  <data name="CommentPage_RateButton.Content" xml:space="preserve">
     <value>点评该餐馆</value>
   </data>
-  <data name="CommentPageTapToRate.Text" xml:space="preserve">
+  <data name="CommentPage_TapToRate.Text" xml:space="preserve">
     <value>轻按星标打分</value>
   </data>
-  <data name="CommentPageTitle.Text" xml:space="preserve">
+  <data name="CommentPage_Title.Text" xml:space="preserve">
     <value>点评</value>
   </data>
-  <data name="CommentPageYourComment.PlaceholderText" xml:space="preserve">
+  <data name="CommentPage_YourComment.PlaceholderText" xml:space="preserve">
     <value>您的评价</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>错误</value>
   </data>
-  <data name="FeedbackPageComment.PlaceholderText" xml:space="preserve">
+  <data name="FeedbackPage_Comment.PlaceholderText" xml:space="preserve">
     <value>您的反馈</value>
   </data>
-  <data name="FeedbackPageCommentTitle.Text" xml:space="preserve">
+  <data name="FeedbackPage_CommentTitle.Text" xml:space="preserve">
     <value>欢迎给我您的反馈意见 : </value>
   </data>
-  <data name="FeedbackPageSendButton.Content" xml:space="preserve">
+  <data name="FeedbackPage_SendButton.Content" xml:space="preserve">
     <value>提交</value>
   </data>
-  <data name="FeedbackPageTitle.Text" xml:space="preserve">
+  <data name="FeedbackPage_Title.Text" xml:space="preserve">
     <value>反馈</value>
   </data>
-  <data name="HotRestaurantPageTitle.Text" xml:space="preserve">
+  <data name="HotRestaurantPage_Title.Text" xml:space="preserve">
     <value>热门餐馆</value>
   </data>
-  <data name="HotTagPageTitle.Text" xml:space="preserve">
+  <data name="HotTagPage_Title.Text" xml:space="preserve">
     <value>热门标签</value>
   </data>
   <data name="LoadMoreButoon.Content" xml:space="preserve">
     <value>加载更多</value>
   </data>
-  <data name="LoginPageLoginButton.Content" xml:space="preserve">
+  <data name="LoginPage_LoginButton.Content" xml:space="preserve">
     <value>登录</value>
   </data>
-  <data name="LoginPagePasswordEmpty" xml:space="preserve">
+  <data name="LoginPage_PasswordEmpty" xml:space="preserve">
     <value>密码不能为空</value>
   </data>
-  <data name="LoginPagePasswordTextBox.PlaceholderText" xml:space="preserve">
+  <data name="LoginPage_PasswordTextBox.PlaceholderText" xml:space="preserve">
     <value>密码</value>
   </data>
-  <data name="LoginPageSignUpButton.Content" xml:space="preserve">
+  <data name="LoginPage_SignUpButton.Content" xml:space="preserve">
     <value>注册新用户</value>
   </data>
-  <data name="LoginPageTitle.Text" xml:space="preserve">
+  <data name="LoginPage_Title.Text" xml:space="preserve">
     <value>登录</value>
   </data>
-  <data name="LoginPageUserNameEmpty" xml:space="preserve">
+  <data name="LoginPage_UserNameEmpty" xml:space="preserve">
     <value>用户名不能为空</value>
   </data>
-  <data name="LoginPageUserNameShort" xml:space="preserve">
+  <data name="LoginPage_UserNameShort" xml:space="preserve">
     <value>用户名不能少于4个字符</value>
   </data>
-  <data name="LoginPageUserNameTextBox.PlaceholderText" xml:space="preserve">
+  <data name="LoginPage_UserNameTextBox.PlaceholderText" xml:space="preserve">
     <value>用户名</value>
   </data>
-  <data name="MainPageAppBarButtonFavorite.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonFavorite.Label" xml:space="preserve">
     <value>收藏</value>
   </data>
-  <data name="MainPageAppBarButtonFeedback.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonFeedback.Label" xml:space="preserve">
     <value>您的反馈</value>
   </data>
-  <data name="MainPageAppBarButtonHistory.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonHistory.Label" xml:space="preserve">
     <value>历史</value>
   </data>
-  <data name="MainPageAppBarButtonNote.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonNote.Label" xml:space="preserve">
     <value>给应用打分</value>
   </data>
-  <data name="MainPageAppBarButtonSearch.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonSearch.Label" xml:space="preserve">
     <value>搜索</value>
   </data>
-  <data name="MainPageAppBarButtonWeb.Label" xml:space="preserve">
+  <data name="MainPage_AppBarButtonWeb.Label" xml:space="preserve">
     <value>我们的网站</value>
   </data>
-  <data name="MainPageLogoutMessageDialogHeader" xml:space="preserve">
+  <data name="MainPage_LogoutMessageDialogHeader" xml:space="preserve">
     <value>您确定要退出吗?</value>
   </data>
-  <data name="MainPageLogoutMessageDialogTitle" xml:space="preserve">
+  <data name="MainPage_LogoutMessageDialogTitle" xml:space="preserve">
     <value>退出登录</value>
   </data>
-  <data name="MainPagePivotItemAboutContactEmail.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutContactEmail.Text" xml:space="preserve">
     <value>Contact Email: zelong.chen@live.com</value>
   </data>
-  <data name="MainPagePivotItemAboutCopyright.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutCopyright.Text" xml:space="preserve">
     <value>Copyright © 2015 CHEN Zelong</value>
   </data>
-  <data name="MainPagePivotItemAboutTitle.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutTitle.Text" xml:space="preserve">
     <value>关于</value>
   </data>
-  <data name="MainPagePivotItemAboutVersion.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutVersion.Text" xml:space="preserve">
     <value>version 1.1.4</value>
   </data>
-  <data name="MainPagePivotItemAboutWeibo.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemAboutWeibo.Text" xml:space="preserve">
     <value>关注新浪微博</value>
   </data>
-  <data name="MainPagePivotItemHomeHot.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeHot.Text" xml:space="preserve">
     <value>热门餐馆</value>
   </data>
-  <data name="MainPagePivotItemHomeHotTag.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeHotTag.Text" xml:space="preserve">
     <value>热门标签</value>
   </data>
-  <data name="MainPagePivotItemHomeMetro.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeMetro.Text" xml:space="preserve">
     <value>地铁周边</value>
   </data>
-  <data name="MainPagePivotItemHomeNearby.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeNearby.Text" xml:space="preserve">
     <value>附近餐馆</value>
   </data>
-  <data name="MainPagePivotItemHomeRecommended.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeRecommended.Text" xml:space="preserve">
     <value>随便看看</value>
   </data>
-  <data name="MainPagePivotItemHomeSortby.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeSortby.Text" xml:space="preserve">
     <value>菜系分类</value>
   </data>
-  <data name="MainPagePivotItemHomeTitle.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemHomeTitle.Text" xml:space="preserve">
     <value>首页</value>
   </data>
-  <data name="MainPagePivotItemMeLogin" xml:space="preserve">
+  <data name="MainPage_PivotItemMeLogin" xml:space="preserve">
     <value>登录</value>
   </data>
-  <data name="MainPagePivotItemMeLogout" xml:space="preserve">
+  <data name="MainPage_PivotItemMeLogout" xml:space="preserve">
     <value>退出</value>
   </data>
-  <data name="MainPagePivotItemMeTitle.Text" xml:space="preserve">
+  <data name="MainPage_PivotItemMeTitle.Text" xml:space="preserve">
     <value>我</value>
   </data>
-  <data name="MainPageTitle.Text" xml:space="preserve">
+  <data name="MainPage_Title.Text" xml:space="preserve">
     <value>巴黎吃什么</value>
   </data>
-  <data name="NearByRestaurantLocationDisabled" xml:space="preserve">
+  <data name="NearByRestaurant_LocationDisabled" xml:space="preserve">
     <value>定位功能未打开</value>
   </data>
-  <data name="NearByRestaurantNoRestaurantText.Text" xml:space="preserve">
+  <data name="NearByRestaurant_NoRestaurantText.Text" xml:space="preserve">
     <value>在这附近没有找到餐馆</value>
   </data>
   <data name="NoConnectionText.Text" xml:space="preserve">
     <value>请检查您的网络连接</value>
   </data>
-  <data name="RecommendedPageTitle.Text" xml:space="preserve">
+  <data name="RecommendedPage_Title.Text" xml:space="preserve">
     <value>随便看看</value>
   </data>
-  <data name="RestaurantDetailPageAddToFavoriteText" xml:space="preserve">
+  <data name="RestaurantDetailPage_AddToFavoriteText" xml:space="preserve">
     <value> 已添加到收藏</value>
   </data>
-  <data name="RestaurantDetailPageCommentButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_CommentButton.Label" xml:space="preserve">
     <value>点评</value>
   </data>
-  <data name="RestaurantDetailPageFavoriteButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_FavoriteButton.Label" xml:space="preserve">
     <value>收藏</value>
   </data>
-  <data name="RestaurantDetailPageFavorited" xml:space="preserve">
+  <data name="RestaurantDetailPage_Favorited" xml:space="preserve">
     <value>已收藏</value>
   </data>
-  <data name="RestaurantDetailPageNoCommentText.Text" xml:space="preserve">
+  <data name="RestaurantDetailPage_NoCommentText.Text" xml:space="preserve">
     <value>暂无评论</value>
   </data>
-  <data name="RestaurantDetailPageOpenMapButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_OpenMapButton.Label" xml:space="preserve">
     <value>在地图中打开</value>
   </data>
-  <data name="RestaurantDetailPagePhoneButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_PhoneButton.Label" xml:space="preserve">
     <value>呼叫</value>
   </data>
-  <data name="RestaurantDetailPagePinText" xml:space="preserve">
+  <data name="RestaurantDetailPage_PinText" xml:space="preserve">
     <value>添加到桌面</value>
   </data>
-  <data name="RestaurantDetailPagePinUnPinCommandButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_PinUnPinCommandButton.Label" xml:space="preserve">
     <value>添加到桌面</value>
   </data>
-  <data name="RestaurantDetailPagePivotHeaderComment.Text" xml:space="preserve">
+  <data name="RestaurantDetailPage_PivotHeaderComment.Text" xml:space="preserve">
     <value>评论</value>
   </data>
-  <data name="RestaurantDetailPagePivotHeaderDetail.Text" xml:space="preserve">
+  <data name="RestaurantDetailPage_PivotHeaderDetail.Text" xml:space="preserve">
     <value>餐厅信息</value>
   </data>
-  <data name="RestaurantDetailPageRemoveFromFavoriteText" xml:space="preserve">
+  <data name="RestaurantDetailPage_RemoveFromFavoriteText" xml:space="preserve">
     <value>已从收藏删除 </value>
   </data>
-  <data name="RestaurantDetailPageShareButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_ShareButton.Label" xml:space="preserve">
     <value>分享</value>
   </data>
-  <data name="RestaurantDetailPageShareLocationButton.Label" xml:space="preserve">
+  <data name="RestaurantDetailPage_ShareLocationButton.Label" xml:space="preserve">
     <value>分享地址</value>
   </data>
-  <data name="RestaurantDetailPageToFavorite" xml:space="preserve">
+  <data name="RestaurantDetailPage_ToFavorite" xml:space="preserve">
     <value>收藏</value>
   </data>
-  <data name="RestaurantDetailPageUnPinText" xml:space="preserve">
+  <data name="RestaurantDetailPage_UnPinText" xml:space="preserve">
     <value>从桌面删除</value>
   </data>
-  <data name="RestaurantSortByStylePageBeifang.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Beifang.Content" xml:space="preserve">
     <value>北方菜系</value>
   </data>
-  <data name="RestaurantSortByStylePageGuangdong_Fujian.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Guangdong_Fujian.Content" xml:space="preserve">
     <value>粤菜 闽菜</value>
   </data>
-  <data name="RestaurantSortByStylePageJapan_Korea.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Japan_Korea.Content" xml:space="preserve">
     <value>日餐 韩餐</value>
   </data>
-  <data name="RestaurantSortByStylePageJiangshu_Zhejiang.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Jiangshu_Zhejiang.Content" xml:space="preserve">
     <value>苏菜 浙菜</value>
   </data>
-  <data name="RestaurantSortByStylePageShandong_Anhui.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Shandong_Anhui.Content" xml:space="preserve">
     <value>鲁菜 徽菜</value>
   </data>
-  <data name="RestaurantSortByStylePageSichuan_Hunan.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Sichuan_Hunan.Content" xml:space="preserve">
     <value>川菜 湘菜</value>
   </data>
-  <data name="RestaurantSortByStylePageSouthest_Asia.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Southest_Asia.Content" xml:space="preserve">
     <value>东南亚菜</value>
   </data>
-  <data name="RestaurantSortByStylePageTitle.Text" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Title.Text" xml:space="preserve">
     <value>菜系分类</value>
   </data>
-  <data name="RestaurantSortByStylePageUnclassified.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Unclassified.Content" xml:space="preserve">
     <value>未归类</value>
   </data>
-  <data name="RestaurantSortByStylePageYunnan.Content" xml:space="preserve">
+  <data name="RestaurantSortByStylePage_Yunnan.Content" xml:space="preserve">
     <value>云南菜</value>
   </data>
   <data name="SearchPage_NoResultText.Text" xml:space="preserve">

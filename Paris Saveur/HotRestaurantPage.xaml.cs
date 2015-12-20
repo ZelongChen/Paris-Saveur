@@ -107,12 +107,12 @@ namespace Paris_Saveur
             if (ConnectionContext.CheckNetworkConnection())
             {
                 RefreshPage(_sortBy, _currentPage++);
-                this.LoadMoreButoon.Content = "加载更多";
+                this.LoadMoreButoon.Content = LocalizedStrings.Get("LoadMoreButoon.Content");
                 this.LoadMoreButoon.Foreground = new SolidColorBrush(Colors.Black);
             }
             else
             {
-                this.LoadMoreButoon.Content = "请检查您的网络连接";
+                this.LoadMoreButoon.Content = LocalizedStrings.Get("NoConnectionText.Text");
                 this.LoadMoreButoon.Foreground = new SolidColorBrush(Colors.Gray);
             }
         }

@@ -429,4 +429,10 @@
   <data name="RecommendedPage_RefreshButton.Label" xml:space="preserve">
     <value>刷新</value>
   </data>
+  <data name="RestaurantModel_CommentNumbers" xml:space="preserve">
+    <value>个点评</value>
+  </data>
+  <data name="RestaurantModel_Per" xml:space="preserve">
+    <value>人均</value>
+  </data>
 </root>

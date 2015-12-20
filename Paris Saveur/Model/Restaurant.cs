@@ -1,5 +1,6 @@
 ﻿using Paris_Saveur.DataBase;
 using Paris_Saveur.Model;
+using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,27 +106,39 @@ namespace Paris_Saveur
         {
             if (this.style.Equals("Shandong_Anhui"))
             {
-                this.style = "鲁菜 徽菜";
+                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Shandong_Anhui.Content");
             }
             else if (this.style.Equals("Sichuan_Hunan"))
             {
-                this.style = "川菜 湘菜";
+                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Sichuan_Hunan.Content");
             }
             else if (this.style.Equals("Japanese_Korean"))
             {
-                this.style = "日餐 韩餐";
+                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Japan_Korea.Content");
             }
             else if (this.style.Equals("Northern_Chinese"))
             {
-                this.style = "北方菜系";
+                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Beifang.Content");
             }
             else if (this.style.Equals("Cantonese_Fujian"))
             {
-                this.style = "粤菜 闽菜";
+                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Guangdong_Fujian.Content");
+            }
+            else if (this.style.Equals("Jiangsu_Zhejiang"))
+            {
+                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Jiangshu_Zhejiang.Content");
+            }
+            else if (this.style.Equals("South_Asian"))
+            {
+                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Southest_Asia.Content");
+            }
+            else if (this.style.Equals("Yunnan"))
+            {
+                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Yunnan.Content");
             }
             else
             {
-                this.style = "未归类";
+                this.style = LocalizedStrings.Get("RestaurantSortByStylePage_Unclassified.Content");
             }
         }
 
@@ -134,35 +147,35 @@ namespace Paris_Saveur
             switch (style)
             {
                 case "Sichuan_Hunan":
-                    return "川菜 湘菜";
+                    return LocalizedStrings.Get("RestaurantSortByStylePage_Sichuan_Hunan.Content");
                 case "Shandong_Anhui":
-                    return "鲁菜 徽菜";
+                    return LocalizedStrings.Get("RestaurantSortByStylePage_Shandong_Anhui.Content");
                 case "Jiangsu_Zhejiang":
-                    return "苏菜 浙菜";
+                    return LocalizedStrings.Get("RestaurantSortByStylePage_Jiangshu_Zhejiang.Content");
                 case "Cantonese_Fujian":
-                    return "粤菜 闽菜";
+                    return LocalizedStrings.Get("RestaurantSortByStylePage_Guangdong_Fujian.Content");
                 case "Yunnan":
-                    return "云南菜";
+                    return LocalizedStrings.Get("RestaurantSortByStylePage_Yunnan.Content");
                 case "Northern_Chinese":
-                    return "北方菜系";
+                    return LocalizedStrings.Get("RestaurantSortByStylePage_Beifang.Content");
                 case "Japanese_Korean":
-                    return "日餐 韩餐";
+                    return LocalizedStrings.Get("RestaurantSortByStylePage_Japan_Korea.Content");
                 case "South_Asian":
-                    return "东南亚菜";
+                    return LocalizedStrings.Get("RestaurantSortByStylePage_Southest_Asia.Content");
                 default:
-                    return "未归类";
+                    return LocalizedStrings.Get("RestaurantSortByStylePage_Unclassified.Content");
             }
         }
 
         public void ShowReviewScoreAndNumber()
         {
-            this.RatingScoreAndReviewNum = this.rating_score + " (" + rating_num + "个点评)";
+            this.RatingScoreAndReviewNum = this.rating_score + " (" + rating_num + LocalizedStrings.Get("RestaurantModel_CommentNumbers") +")";
 
         }
 
         public void ShowPrice()
         {
-            this.consumption_per_capita = "人均" + this.consumption_per_capita + "€";
+            this.consumption_per_capita = LocalizedStrings.Get("RestaurantModel_Per") + this.consumption_per_capita + "€";
         }
     }
 }

@@ -429,4 +429,10 @@
   <data name="RecommendedPage_RefreshButton.Label" xml:space="preserve">
     <value>Refresh</value>
   </data>
+  <data name="RestaurantModel_CommentNumbers" xml:space="preserve">
+    <value>comments</value>
+  </data>
+  <data name="RestaurantModel_Per" xml:space="preserve">
+    <value>per capita</value>
+  </data>
 </root>

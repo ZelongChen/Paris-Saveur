@@ -21,6 +21,16 @@
         <m3:DefaultTile Square71x71Logo="Assets\Square71x71Logo.png">
         </m3:DefaultTile>
       </m3:VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="parissaveur">
+            <SupportedFileTypes>
+              <FileType>.wxa2dbffe7cde7ee06</FileType>
+              <FileType>.wechatapp</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
@@ -29,13 +39,4 @@
     <Capability Name="removableStorage" />
     <DeviceCapability Name="location" />
   </Capabilities>
-  <Extensions>
-    <uap:Extension Category="windows.fileTypeAssociation">
-      <uap:FileTypeAssociation Name="wechat">
-        <uap:SupportedFileTypes>
-          <uap:FileType>.wxa2dbffe7cde7ee06</uap:FileType>
-        </uap:SupportedFileTypes>
-      </uap:FileTypeAssociation>
-    </uap:Extension>
-  </Extensions>
 </Package>

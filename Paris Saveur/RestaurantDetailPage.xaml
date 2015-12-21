@@ -36,6 +36,7 @@
     <Page.BottomAppBar>
         <CommandBar Background="{StaticResource AppThemeColor}" ClosedDisplayMode="Compact" Opacity="0.8">
             <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="ShareToWeChat" x:Uid="RestaurantDetailPage_ShareToWeChat" Label="" Click="ShareToWeChat_Click"></AppBarButton>
                 <AppBarButton x:Name="ShareLocationButton" x:Uid="RestaurantDetailPage_ShareLocationButton" Label="" Click="ShareLocationButton_Click"/>
                 <AppBarButton x:Name="PinUnPinCommandButton" x:Uid="RestaurantDetailPage_PinUnPinCommandButton" Label="" Click="PinToAppBar_Click"/>
                 <AppBarButton x:Name="OpenMapButton" x:Uid="RestaurantDetailPage_OpenMapButton" Label="" Click="OpenMapButton_Click"/>

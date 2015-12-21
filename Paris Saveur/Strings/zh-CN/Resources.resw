@@ -465,4 +465,7 @@
   <data name="AppTitle" xml:space="preserve">
     <value>巴黎吃什么</value>
   </data>
+  <data name="RestaurantDetailPage_ShareToWeChat.Label" xml:space="preserve">
+    <value>分享到微信</value>
+  </data>
 </root>

@@ -145,32 +145,9 @@ namespace Paris_Saveur
             deferral.Complete();
         }
 
-        private async void Share_Click(object sender, RoutedEventArgs e)
+        private void Share_Click(object sender, RoutedEventArgs e)
         {
-            //DataTransferManager.ShowShareUI();
-
-
-            try
-            {
-                int scene = SendMessageToWX.Req.WXSceneChooseByUser; //发给微信朋友
-
-                WXWebpageMessage message = new WXWebpageMessage
-                {
-                    WebpageUrl = "http://www.newsavour.com/restaurants/detail/" + _restaurant.pk,
-                    Title = _restaurant.name,
-                    Description = _restaurant.address + "; " + _restaurant.public_transit + "; " + _restaurant.phone_number_1 + ", " + _restaurant.phone_number_2
-
-                };
-
-                SendMessageToWX.Req req = new SendMessageToWX.Req(message, scene);
-                IWXAPI api = WXAPIFactory.CreateWXAPI("wxa2dbffe7cde7ee06");
-                var isValid = await api.SendReq(req);
-            }
-            catch (WXException ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-
+            DataTransferManager.ShowShareUI();
         }
 
         private void RestaurantPhoneNumber1_Click(object sender, RoutedEventArgs e)
@@ -245,6 +222,29 @@ namespace Paris_Saveur
             await Windows.ApplicationModel.Chat.ChatMessageManager.ShowComposeSmsMessageAsync(msg);
         }
 
+        private async void ShareToWeChat_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int scene = SendMessageToWX.Req.WXSceneChooseByUser; //发给微信朋友
+
+                WXWebpageMessage message = new WXWebpageMessage
+                {
+                    WebpageUrl = "http://www.newsavour.com/restaurants/detail/" + _restaurant.pk,
+                    Title = _restaurant.name,
+                    Description = _restaurant.address + "; " + _restaurant.public_transit + "; " + _restaurant.phone_number_1 + ", " + _restaurant.phone_number_2
+
+                };
+
+                SendMessageToWX.Req req = new SendMessageToWX.Req(message, scene);
+                IWXAPI api = WXAPIFactory.CreateWXAPI("wxa2dbffe7cde7ee06");
+                var isValid = await api.SendReq(req);
+            }
+            catch (WXException ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
 
         private void SetupRestaurantDetail(Restaurant _restaurant)
         {

@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="zh-CN" target-language="qps-ploc" original="Paris Saveur_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="Paris Saveur" product-version="1.0.0.0" build-num="0">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resources">
+        <trans-unit id="Resources\AppTitle" translate="yes" xml:space="preserve">
+          <source>巴黎吃什么</source>
+          <target state="new">巴黎吃什么</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_Yunan" translate="yes" xml:space="preserve">
+          <source>云南菜</source>
+          <target state="new">云南菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_Unclassified" translate="yes" xml:space="preserve">
+          <source>未归类</source>
+          <target state="new">未归类</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_South_Asian" translate="yes" xml:space="preserve">
+          <source>东南亚菜</source>
+          <target state="new">东南亚菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_Sichuan_Hunan" translate="yes" xml:space="preserve">
+          <source>川菜 湘菜</source>
+          <target state="new">川菜 湘菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_Shandong_Anhui" translate="yes" xml:space="preserve">
+          <source>鲁菜 徽菜</source>
+          <target state="new">鲁菜 徽菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_Per" translate="yes" xml:space="preserve">
+          <source>人均</source>
+          <target state="new">人均</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_Nothern_Chinese" translate="yes" xml:space="preserve">
+          <source>北方菜系</source>
+          <target state="new">北方菜系</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_Jiangsu_Zhejiang" translate="yes" xml:space="preserve">
+          <source>苏菜 浙菜</source>
+          <target state="new">苏菜 浙菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_Japanese_Korean" translate="yes" xml:space="preserve">
+          <source>日餐 韩餐</source>
+          <target state="new">日餐 韩餐</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_CommentNumbers" translate="yes" xml:space="preserve">
+          <source>个点评</source>
+          <target state="new">个点评</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantModel_Cantonese_Fujian" translate="yes" xml:space="preserve">
+          <source>粤菜  闽菜</source>
+          <target state="new">粤菜  闽菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RecommendedPage_RefreshButton\Label" translate="yes" xml:space="preserve">
+          <source>刷新</source>
+          <target state="new">刷新</target>
+        </trans-unit>
+        <trans-unit id="Resources\HotRestaurantPage_AppBarButtonSortByRatingScore\Text" translate="yes" xml:space="preserve">
+          <source>综合评分</source>
+          <target state="new">综合评分</target>
+        </trans-unit>
+        <trans-unit id="Resources\HotRestaurantPage_AppBarButtonSortByRatingNum\Text" translate="yes" xml:space="preserve">
+          <source>点评数量</source>
+          <target state="new">点评数量</target>
+        </trans-unit>
+        <trans-unit id="Resources\HotRestaurantPage_AppBarButtonSortByPopularity\Text" translate="yes" xml:space="preserve">
+          <source>热门程度</source>
+          <target state="new">热门程度</target>
+        </trans-unit>
+        <trans-unit id="Resources\HotRestaurantPage_AppBarButtonSort\Label" translate="yes" xml:space="preserve">
+          <source>排序</source>
+          <target state="new">排序</target>
+        </trans-unit>
+        <trans-unit id="Resources\Yes" translate="yes" xml:space="preserve">
+          <source>确定</source>
+          <target state="new">确定</target>
+        </trans-unit>
+        <trans-unit id="Resources\TransportStationsPage_Title\Text" translate="yes" xml:space="preserve">
+          <source>地铁周边</source>
+          <target state="new">地铁周边</target>
+        </trans-unit>
+        <trans-unit id="Resources\SimpleDisplayPage_HistoryTitleText" translate="yes" xml:space="preserve">
+          <source>历史</source>
+          <target state="new">历史</target>
+        </trans-unit>
+        <trans-unit id="Resources\SimpleDisplayPage_FavoriteTitleText" translate="yes" xml:space="preserve">
+          <source>收藏</source>
+          <target state="new">收藏</target>
+        </trans-unit>
+        <trans-unit id="Resources\SimpleDisplayPage_ClearRecordButton\Label" translate="yes" xml:space="preserve">
+          <source>清除记录</source>
+          <target state="new">清除记录</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_UserNameTextBox\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>用户名</source>
+          <target state="new">用户名</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_UsernameShortText" translate="yes" xml:space="preserve">
+          <source>用户名不能少于4个字符</source>
+          <target state="new">用户名不能少于4个字符</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_UsernameExistText" translate="yes" xml:space="preserve">
+          <source>已存在一位使用该名字的用户</source>
+          <target state="new">已存在一位使用该名字的用户</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_UsernameEmptyText" translate="yes" xml:space="preserve">
+          <source>用户名不能为空</source>
+          <target state="new">用户名不能为空</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_UserEmailTextBox\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>电子邮箱</source>
+          <target state="new">电子邮箱</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_TwoPwdNotMatchText" translate="yes" xml:space="preserve">
+          <source>两次密码不匹配</source>
+          <target state="new">两次密码不匹配</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_Title\Text" translate="yes" xml:space="preserve">
+          <source>注册新用户</source>
+          <target state="new">注册新用户</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_SignUpButton\Content" translate="yes" xml:space="preserve">
+          <source>注册新用户</source>
+          <target state="new">注册新用户</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_PasswordEmptyText" translate="yes" xml:space="preserve">
+          <source>密码不能为空</source>
+          <target state="new">密码不能为空</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_Password2TextBox\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>确认密码</source>
+          <target state="new">确认密码</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_Password1TextBox\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>密码</source>
+          <target state="new">密码</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_EmailFormatText" translate="yes" xml:space="preserve">
+          <source>电子邮箱格式不正确</source>
+          <target state="new">电子邮箱格式不正确</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_EmailExistText" translate="yes" xml:space="preserve">
+          <source>该电子邮件已被使用</source>
+          <target state="new">该电子邮件已被使用</target>
+        </trans-unit>
+        <trans-unit id="Resources\SignUpPage_EmailEmptyText" translate="yes" xml:space="preserve">
+          <source>用户邮箱不能为空</source>
+          <target state="new">用户邮箱不能为空</target>
+        </trans-unit>
+        <trans-unit id="Resources\SearchPage_Title\Text" translate="yes" xml:space="preserve">
+          <source>搜索</source>
+          <target state="new">搜索</target>
+        </trans-unit>
+        <trans-unit id="Resources\SearchPage_SearchTextBox\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>搜索餐馆名...</source>
+          <target state="new">搜索餐馆名...</target>
+        </trans-unit>
+        <trans-unit id="Resources\SearchPage_NoResultText\Text" translate="yes" xml:space="preserve">
+          <source>没有找到符合条件的餐馆</source>
+          <target state="new">没有找到符合条件的餐馆</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Yunnan\Content" translate="yes" xml:space="preserve">
+          <source>云南菜</source>
+          <target state="new">云南菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Unclassified\Content" translate="yes" xml:space="preserve">
+          <source>未归类</source>
+          <target state="new">未归类</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Title\Text" translate="yes" xml:space="preserve">
+          <source>菜系分类</source>
+          <target state="new">菜系分类</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Southest_Asia\Content" translate="yes" xml:space="preserve">
+          <source>东南亚菜</source>
+          <target state="new">东南亚菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Sichuan_Hunan\Content" translate="yes" xml:space="preserve">
+          <source>川菜 湘菜</source>
+          <target state="new">川菜 湘菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Shandong_Anhui\Content" translate="yes" xml:space="preserve">
+          <source>鲁菜 徽菜</source>
+          <target state="new">鲁菜 徽菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Jiangshu_Zhejiang\Content" translate="yes" xml:space="preserve">
+          <source>苏菜 浙菜</source>
+          <target state="new">苏菜 浙菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Japan_Korea\Content" translate="yes" xml:space="preserve">
+          <source>日餐 韩餐</source>
+          <target state="new">日餐 韩餐</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Guangdong_Fujian\Content" translate="yes" xml:space="preserve">
+          <source>粤菜 闽菜</source>
+          <target state="new">粤菜 闽菜</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantSortByStylePage_Beifang\Content" translate="yes" xml:space="preserve">
+          <source>北方菜系</source>
+          <target state="new">北方菜系</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_UnPinText" translate="yes" xml:space="preserve">
+          <source>从桌面删除</source>
+          <target state="new">从桌面删除</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_ToFavorite" translate="yes" xml:space="preserve">
+          <source>收藏</source>
+          <target state="new">收藏</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_ShareLocationButton\Label" translate="yes" xml:space="preserve">
+          <source>分享地址</source>
+          <target state="new">分享地址</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_ShareButton\Label" translate="yes" xml:space="preserve">
+          <source>分享</source>
+          <target state="new">分享</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_RemoveFromFavoriteText" translate="yes" xml:space="preserve">
+          <source>已从收藏删除 </source>
+          <target state="new">已从收藏删除 </target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_PivotHeaderDetail\Text" translate="yes" xml:space="preserve">
+          <source>餐厅信息</source>
+          <target state="new">餐厅信息</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_PivotHeaderComment" translate="yes" xml:space="preserve">
+          <source>评论</source>
+          <target state="new">评论</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_PinUnPinCommandButton\Label" translate="yes" xml:space="preserve">
+          <source>添加到桌面</source>
+          <target state="new">添加到桌面</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_PinText" translate="yes" xml:space="preserve">
+          <source>添加到桌面</source>
+          <target state="new">添加到桌面</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_PhoneButton\Label" translate="yes" xml:space="preserve">
+          <source>呼叫</source>
+          <target state="new">呼叫</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_OpenMapButton\Label" translate="yes" xml:space="preserve">
+          <source>在地图中打开</source>
+          <target state="new">在地图中打开</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_NoCommentText\Text" translate="yes" xml:space="preserve">
+          <source>暂无评论</source>
+          <target state="new">暂无评论</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_Favorited" translate="yes" xml:space="preserve">
+          <source>已收藏</source>
+          <target state="new">已收藏</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_FavoriteButton\Label" translate="yes" xml:space="preserve">
+          <source>收藏</source>
+          <target state="new">收藏</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_CommentButton\Label" translate="yes" xml:space="preserve">
+          <source>点评</source>
+          <target state="new">点评</target>
+        </trans-unit>
+        <trans-unit id="Resources\RestaurantDetailPage_AddToFavoriteText" translate="yes" xml:space="preserve">
+          <source> 已添加到收藏</source>
+          <target state="new"> 已添加到收藏</target>
+        </trans-unit>
+        <trans-unit id="Resources\RecommendedPage_Title\Text" translate="yes" xml:space="preserve">
+          <source>随便看看</source>
+          <target state="new">随便看看</target>
+        </trans-unit>
+        <trans-unit id="Resources\NoConnectionText\Text" translate="yes" xml:space="preserve">
+          <source>请检查您的网络连接</source>
+          <target state="new">请检查您的网络连接</target>
+        </trans-unit>
+        <trans-unit id="Resources\NearByRestaurant_NoRestaurantText\Text" translate="yes" xml:space="preserve">
+          <source>在这附近没有找到餐馆</source>
+          <target state="new">在这附近没有找到餐馆</target>
+        </trans-unit>
+        <trans-unit id="Resources\NearByRestaurant_LocationDisabled" translate="yes" xml:space="preserve">
+          <source>定位功能未打开</source>
+          <target state="new">定位功能未打开</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_Title\Text" translate="yes" xml:space="preserve">
+          <source>巴黎吃什么</source>
+          <target state="new">巴黎吃什么</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemMeTitle\Text" translate="yes" xml:space="preserve">
+          <source>我</source>
+          <target state="new">我</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemMeLogout" translate="yes" xml:space="preserve">
+          <source>退出</source>
+          <target state="new">退出</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemMeLogin" translate="yes" xml:space="preserve">
+          <source>登录</source>
+          <target state="new">登录</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemHomeTitle\Text" translate="yes" xml:space="preserve">
+          <source>首页</source>
+          <target state="new">首页</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemHomeSortby\Text" translate="yes" xml:space="preserve">
+          <source>菜系分类</source>
+          <target state="new">菜系分类</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemHomeRecommended\Text" translate="yes" xml:space="preserve">
+          <source>随便看看</source>
+          <target state="new">随便看看</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemHomeNearby\Text" translate="yes" xml:space="preserve">
+          <source>附近餐馆</source>
+          <target state="new">附近餐馆</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemHomeMetro\Text" translate="yes" xml:space="preserve">
+          <source>地铁周边</source>
+          <target state="new">地铁周边</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemHomeHotTag\Text" translate="yes" xml:space="preserve">
+          <source>热门标签</source>
+          <target state="new">热门标签</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemHomeHot\Text" translate="yes" xml:space="preserve">
+          <source>热门餐馆</source>
+          <target state="new">热门餐馆</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemAboutWeibo\Text" translate="yes" xml:space="preserve">
+          <source>关注新浪微博</source>
+          <target state="new">关注新浪微博</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemAboutVersion\Text" translate="yes" xml:space="preserve">
+          <source>version 1.1.4</source>
+          <target state="new">version 1.1.4</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemAboutTitle\Text" translate="yes" xml:space="preserve">
+          <source>关于</source>
+          <target state="new">关于</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemAboutCopyright\Text" translate="yes" xml:space="preserve">
+          <source>Copyright © 2015 CHEN Zelong</source>
+          <target state="new">Copyright © 2015 CHEN Zelong</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_PivotItemAboutContactEmail\Text" translate="yes" xml:space="preserve">
+          <source>Contact Email: zelong.chen@live.com</source>
+          <target state="new">Contact Email: zelong.chen@live.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_LogoutMessageDialogTitle" translate="yes" xml:space="preserve">
+          <source>退出登录</source>
+          <target state="new">退出登录</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_LogoutMessageDialogHeader" translate="yes" xml:space="preserve">
+          <source>您确定要退出吗?</source>
+          <target state="new">您确定要退出吗?</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_AppBarButtonWeb\Label" translate="yes" xml:space="preserve">
+          <source>我们的网站</source>
+          <target state="new">我们的网站</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_AppBarButtonSearch\Label" translate="yes" xml:space="preserve">
+          <source>搜索</source>
+          <target state="new">搜索</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_AppBarButtonNote\Label" translate="yes" xml:space="preserve">
+          <source>给应用打分</source>
+          <target state="new">给应用打分</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_AppBarButtonHistory\Label" translate="yes" xml:space="preserve">
+          <source>历史</source>
+          <target state="new">历史</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_AppBarButtonFeedback\Label" translate="yes" xml:space="preserve">
+          <source>您的反馈</source>
+          <target state="new">您的反馈</target>
+        </trans-unit>
+        <trans-unit id="Resources\MainPage_AppBarButtonFavorite\Label" translate="yes" xml:space="preserve">
+          <source>收藏</source>
+          <target state="new">收藏</target>
+        </trans-unit>
+        <trans-unit id="Resources\LoginPage_UserNameTextBox\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>用户名</source>
+          <target state="new">用户名</target>
+        </trans-unit>
+        <trans-unit id="Resources\LoginPage_UserNameShort" translate="yes" xml:space="preserve">
+          <source>用户名不能少于4个字符</source>
+          <target state="new">用户名不能少于4个字符</target>
+        </trans-unit>
+        <trans-unit id="Resources\LoginPage_UserNameEmpty" translate="yes" xml:space="preserve">
+          <source>用户名不能为空</source>
+          <target state="new">用户名不能为空</target>
+        </trans-unit>
+        <trans-unit id="Resources\LoginPage_Title\Text" translate="yes" xml:space="preserve">
+          <source>登录</source>
+          <target state="new">登录</target>
+        </trans-unit>
+        <trans-unit id="Resources\LoginPage_SignUpButton\Content" translate="yes" xml:space="preserve">
+          <source>注册新用户</source>
+          <target state="new">注册新用户</target>
+        </trans-unit>
+        <trans-unit id="Resources\LoginPage_PasswordTextBox\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>密码</source>
+          <target state="new">密码</target>
+        </trans-unit>
+        <trans-unit id="Resources\LoginPage_PasswordEmpty" translate="yes" xml:space="preserve">
+          <source>密码不能为空</source>
+          <target state="new">密码不能为空</target>
+        </trans-unit>
+        <trans-unit id="Resources\LoginPage_LoginButton\Content" translate="yes" xml:space="preserve">
+          <source>登录</source>
+          <target state="new">登录</target>
+        </trans-unit>
+        <trans-unit id="Resources\LoadMoreButoon\Content" translate="yes" xml:space="preserve">
+          <source>加载更多</source>
+          <target state="new">加载更多</target>
+        </trans-unit>
+        <trans-unit id="Resources\HotTagPage_Title\Text" translate="yes" xml:space="preserve">
+          <source>热门标签</source>
+          <target state="new">热门标签</target>
+        </trans-unit>
+        <trans-unit id="Resources\HotRestaurantPage_Title" translate="yes" xml:space="preserve">
+          <source>热门餐馆</source>
+          <target state="new">热门餐馆</target>
+        </trans-unit>
+        <trans-unit id="Resources\FeedbackPage_Title\Text" translate="yes" xml:space="preserve">
+          <source>反馈</source>
+          <target state="new">反馈</target>
+        </trans-unit>
+        <trans-unit id="Resources\FeedbackPage_SendButton\Content" translate="yes" xml:space="preserve">
+          <source>提交</source>
+          <target state="new">提交</target>
+        </trans-unit>
+        <trans-unit id="Resources\FeedbackPage_CommentTitle\Text" translate="yes" xml:space="preserve">
+          <source>欢迎给我您的反馈意见 : </source>
+          <target state="new">欢迎给我您的反馈意见 : </target>
+        </trans-unit>
+        <trans-unit id="Resources\FeedbackPage_Comment\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>您的反馈</source>
+          <target state="new">您的反馈</target>
+        </trans-unit>
+        <trans-unit id="Resources\Error" translate="yes" xml:space="preserve">
+          <source>错误</source>
+          <target state="new">错误</target>
+        </trans-unit>
+        <trans-unit id="Resources\CommentPage_YourComment\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>您的评价</source>
+          <target state="new">您的评价</target>
+        </trans-unit>
+        <trans-unit id="Resources\CommentPage_Title\Text" translate="yes" xml:space="preserve">
+          <source>点评</source>
+          <target state="new">点评</target>
+        </trans-unit>
+        <trans-unit id="Resources\CommentPage_TapToRate\Text" translate="yes" xml:space="preserve">
+          <source>轻按星标打分</source>
+          <target state="new">轻按星标打分</target>
+        </trans-unit>
+        <trans-unit id="Resources\CommentPage_RateButton\Content" translate="yes" xml:space="preserve">
+          <source>点评该餐馆</source>
+          <target state="new">点评该餐馆</target>
+        </trans-unit>
+        <trans-unit id="Resources\CommentPage_PricePlaceholder\PlaceholderText" translate="yes" xml:space="preserve">
+          <source>价格</source>
+          <target state="new">价格</target>
+        </trans-unit>
+        <trans-unit id="Resources\CommentPage_Price\Text" translate="yes" xml:space="preserve">
+          <source>价格</source>
+          <target state="new">价格</target>
+        </trans-unit>
+        <trans-unit id="Resources\Cancel" translate="yes" xml:space="preserve">
+          <source>取消</source>
+          <target state="new">取消</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

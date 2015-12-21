@@ -462,4 +462,7 @@
   <data name="RestaurantModel_Yunan" xml:space="preserve">
     <value>云南菜</value>
   </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>巴黎吃什么</value>
+  </data>
 </root>

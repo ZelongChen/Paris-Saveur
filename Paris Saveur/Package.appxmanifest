@@ -3,7 +3,7 @@
   <Identity Name="41247zchen.644482C3C969E" Publisher="CN=DB5AAED3-D112-49A4-8B68-2ED68A16D202" Version="1.1.4.2" />
   <mp:PhoneIdentity PhoneProductId="73cc5415-c4f1-4772-bd3b-d6f4ded9d85c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>巴黎吃什么</DisplayName>
+    <DisplayName>ms-resource:AppTitle</DisplayName>
     <PublisherDisplayName>zchen</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -13,13 +13,18 @@
   </Prerequisites>
   <Resources>
     <Resource Language="x-generate" />
+    <Resource Language="zh-cn" />
+    <Resource Language="en-us" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Paris_Saveur.App">
-      <m3:VisualElements DisplayName="巴黎吃什么" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Paris Saveur" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
+      <m3:VisualElements DisplayName="ms-resource:AppTitle" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Paris Saveur" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
         <m3:LockScreen Notification="badge" BadgeLogo="Assets\BadgeLogo.png" />
         <m3:DefaultTile Square71x71Logo="Assets\Square71x71Logo.png">
         </m3:DefaultTile>
+        <m3:InitialRotationPreference>
+          <m3:Rotation Preference="portrait" />
+        </m3:InitialRotationPreference>
       </m3:VisualElements>
       <Extensions>
         <Extension Category="windows.fileTypeAssociation">

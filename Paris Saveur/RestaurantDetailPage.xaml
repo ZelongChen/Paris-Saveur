@@ -113,11 +113,11 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="4">
                         <Image Source="Assets/restaurant_detail_review.png" Margin="5"/>
-                        <Image x:Name="Star1" Source="Assets/star_half.png" Margin="10"/>
-                        <Image x:Name="Star2" Source="Assets/star_half.png" Margin="10"/>
-                        <Image x:Name="Star3" Source="Assets/star_half.png" Margin="10"/>
-                        <Image x:Name="Star4" Source="Assets/star_half.png" Margin="10"/>
-                        <Image x:Name="Star5" Source="Assets/star_half.png" Margin="10"/>
+                        <Image x:Name="Star1" Source="{Binding star1}" Margin="10"/>
+                        <Image x:Name="Star2" Source="{Binding star2}" Margin="10"/>
+                        <Image x:Name="Star3" Source="{Binding star3}" Margin="10"/>
+                        <Image x:Name="Star4" Source="{Binding star4}" Margin="10"/>
+                        <Image x:Name="Star5" Source="{Binding star5}" Margin="10"/>
                     </StackPanel>
                     <Grid x:Name="RestaurantAddressGrid" Grid.Row="5" Tapped="RestaurantAddressGrid_Tapped">
                         <Grid.ColumnDefinitions>

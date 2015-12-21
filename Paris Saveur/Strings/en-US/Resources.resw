@@ -256,7 +256,7 @@
     <value>Me</value>
   </data>
   <data name="MainPage_Title.Text" xml:space="preserve">
-    <value>Paris Saveur</value>
+    <value>Paris Savour</value>
   </data>
   <data name="NearByRestaurant_LocationDisabled" xml:space="preserve">
     <value>GPS is disabled</value>
@@ -461,5 +461,8 @@
   </data>
   <data name="RestaurantModel_Yunan" xml:space="preserve">
     <value>Yunnan</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Paris Savour</value>
   </data>
 </root>

@@ -145,10 +145,10 @@ namespace Paris_Saveur
             deferral.Complete();
         }
 
-        //private void Share_Click(object sender, RoutedEventArgs e)
-        //{
-        //    DataTransferManager.ShowShareUI();
-        //}
+        private void Share_Click(object sender, RoutedEventArgs e)
+        {
+            DataTransferManager.ShowShareUI();
+        }
 
         private void RestaurantPhoneNumber1_Click(object sender, RoutedEventArgs e)
         {

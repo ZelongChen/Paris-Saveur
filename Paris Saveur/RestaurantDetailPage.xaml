@@ -49,7 +49,7 @@
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
-            <!--<AppBarButton x:Name="ShareButton" x:Uid="RestaurantDetailPage_ShareButton" Label="" Icon="ReShare" Click="Share_Click"/>-->
+            <AppBarButton x:Name="ShareButton" x:Uid="RestaurantDetailPage_ShareButton" Label="" Icon="ReShare" Click="Share_Click"/>
             <AppBarButton x:Name="FavoriteButton" x:Uid="RestaurantDetailPage_FavoriteButton" Label="" Icon="Favorite" Click="AddToFavorite_Click"/>
             <AppBarButton x:Name="CommentButton" x:Uid="RestaurantDetailPage_CommentButton" Label="" Icon="Comment" Click="CommentButton_Click"/>
         </CommandBar>

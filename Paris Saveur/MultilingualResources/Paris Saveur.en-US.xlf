@@ -6,6 +6,10 @@
     </header>
     <body>
       <group id="Resources">
+        <trans-unit id="Resources\RestaurantDetailPage_ShareToWeChat\Label" translate="yes" xml:space="preserve">
+          <source>分享到微信</source>
+          <target state="new">分享到微信</target>
+        </trans-unit>
         <trans-unit id="Resources\AppTitle" translate="yes" xml:space="preserve">
           <source>巴黎吃什么</source>
           <target state="translated">Paris Savour</target>

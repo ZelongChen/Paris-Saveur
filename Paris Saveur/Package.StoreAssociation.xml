@@ -366,14 +366,6 @@
       <ReservedName>ParisSavour</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
-  <AccountPackageIdentityNames>
-    <MainPackageIdentityName>41247zchen.ParisSavour</MainPackageIdentityName>
-  </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://dev.windows.com/dashboard/Application?appId=9NBLGGH3FVNQ">
-    <PackageInfo>
-      <OsMinVersion>6.3.0.0</OsMinVersion>
-      <PackageArchitecture>Arm</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.4.2</PackageMaxArchitectureVersion>
-    </PackageInfo>
-  </PackageInfoList>
+  <AccountPackageIdentityNames />
+  <PackageInfoList LandingUrl="https://dev.windows.com/dashboard/Application?appId=9NBLGGH3FVNQ" />
 </StoreAssociation>

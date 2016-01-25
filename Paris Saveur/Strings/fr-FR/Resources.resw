@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="CommentPage_Price.Text" xml:space="preserve">
+    <value>Prix</value>
+  </data>
+  <data name="CommentPage_PricePlaceholder.PlaceholderText" xml:space="preserve">
+    <value>Prix</value>
+  </data>
+  <data name="CommentPage_RateButton.Content" xml:space="preserve">
+    <value>Noter ce restaurant</value>
+  </data>
+  <data name="CommentPage_TapToRate.Text" xml:space="preserve">
+    <value>Tapez étoiles à voter</value>
+  </data>
+  <data name="CommentPage_Title.Text" xml:space="preserve">
+    <value>Noter ce restaurant</value>
+  </data>
+  <data name="CommentPage_YourComment.PlaceholderText" xml:space="preserve">
+    <value>Votre commentaire</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="FeedbackPage_Comment.PlaceholderText" xml:space="preserve">
+    <value>Votre commentaire</value>
+  </data>
+  <data name="FeedbackPage_CommentTitle.Text" xml:space="preserve">
+    <value>Donnez-moi vos commentaires :</value>
+  </data>
+  <data name="FeedbackPage_SendButton.Content" xml:space="preserve">
+    <value>Soumettre</value>
+  </data>
+  <data name="FeedbackPage_Title.Text" xml:space="preserve">
+    <value>Retour</value>
+  </data>
+  <data name="HotRestaurantPage_Title" xml:space="preserve">
+    <value>Populaire</value>
+  </data>
+  <data name="HotTagPage_Title.Text" xml:space="preserve">
+    <value>Hot Tags</value>
+  </data>
+  <data name="LoadMoreButoon.Content" xml:space="preserve">
+    <value>Charger plus</value>
+  </data>
+  <data name="LoginPage_LoginButton.Content" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
+  <data name="LoginPage_PasswordEmpty" xml:space="preserve">
+    <value>Mot de passe ne peut pas être vide</value>
+  </data>
+  <data name="LoginPage_PasswordTextBox.PlaceholderText" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="LoginPage_SignUpButton.Content" xml:space="preserve">
+    <value>S'inscrire</value>
+  </data>
+  <data name="LoginPage_Title.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginPage_UserNameEmpty" xml:space="preserve">
+    <value>Nom d' utilisateur ne peut pas être vide</value>
+  </data>
+  <data name="LoginPage_UserNameShort" xml:space="preserve">
+    <value>Nom d' utilisateur ne peut pas être inférieure à 4 caractères</value>
+  </data>
+  <data name="LoginPage_UserNameTextBox.PlaceholderText" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
+  </data>
+  <data name="MainPage_AppBarButtonFavorite.Label" xml:space="preserve">
+    <value>Favori</value>
+  </data>
+  <data name="MainPage_AppBarButtonFeedback.Label" xml:space="preserve">
+    <value>Votre commentaire</value>
+  </data>
+  <data name="MainPage_AppBarButtonHistory.Label" xml:space="preserve">
+    <value>Histoire</value>
+  </data>
+  <data name="MainPage_AppBarButtonNote.Label" xml:space="preserve">
+    <value>Évaluer l'application</value>
+  </data>
+  <data name="MainPage_AppBarButtonSearch.Label" xml:space="preserve">
+    <value>Recherche</value>
+  </data>
+  <data name="MainPage_AppBarButtonWeb.Label" xml:space="preserve">
+    <value>Notre site web</value>
+  </data>
+  <data name="MainPage_LogoutMessageDialogHeader" xml:space="preserve">
+    <value>Voulez-vous vous déconnecter ?</value>
+  </data>
+  <data name="MainPage_LogoutMessageDialogTitle" xml:space="preserve">
+    <value>Déconnecter</value>
+  </data>
+  <data name="MainPage_PivotItemAboutContactEmail.Text" xml:space="preserve">
+    <value>Contact Email: zelong.chen@live.com</value>
+  </data>
+  <data name="MainPage_PivotItemAboutCopyright.Text" xml:space="preserve">
+    <value>Copyright © 2015 CHEN Zelong</value>
+  </data>
+  <data name="MainPage_PivotItemAboutTitle.Text" xml:space="preserve">
+    <value>A propos</value>
+  </data>
+  <data name="MainPage_PivotItemAboutVersion.Text" xml:space="preserve">
+    <value>version 1.1.4</value>
+  </data>
+  <data name="MainPage_PivotItemAboutWeibo.Text" xml:space="preserve">
+    <value>Suivez-nous sur Sina Weibo</value>
+  </data>
+  <data name="MainPage_PivotItemHomeHot.Text" xml:space="preserve">
+    <value>Populaire</value>
+  </data>
+  <data name="MainPage_PivotItemHomeHotTag.Text" xml:space="preserve">
+    <value>Hot Tags</value>
+  </data>
+  <data name="MainPage_PivotItemHomeMetro.Text" xml:space="preserve">
+    <value>Metro</value>
+  </data>
+  <data name="MainPage_PivotItemHomeNearby.Text" xml:space="preserve">
+    <value>A côté</value>
+  </data>
+  <data name="MainPage_PivotItemHomeRecommended.Text" xml:space="preserve">
+    <value>Explorer</value>
+  </data>
+  <data name="MainPage_PivotItemHomeSortby.Text" xml:space="preserve">
+    <value>Cuisine</value>
+  </data>
+  <data name="MainPage_PivotItemHomeTitle.Text" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="MainPage_PivotItemMeLogin" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
+  <data name="MainPage_PivotItemMeLogout" xml:space="preserve">
+    <value>Déconnecter</value>
+  </data>
+  <data name="MainPage_PivotItemMeTitle.Text" xml:space="preserve">
+    <value>Moi</value>
+  </data>
+  <data name="MainPage_Title.Text" xml:space="preserve">
+    <value>Paris Saveur</value>
+  </data>
+  <data name="NearByRestaurant_LocationDisabled" xml:space="preserve">
+    <value>GPS est désactivé</value>
+  </data>
+  <data name="NearByRestaurant_NoRestaurantText.Text" xml:space="preserve">
+    <value>Ne pas trouver restaurant à proximité</value>
+  </data>
+  <data name="NoConnectionText.Text" xml:space="preserve">
+    <value>Veuillez vérifier votre connexion Internet</value>
+  </data>
+  <data name="RecommendedPage_Title.Text" xml:space="preserve">
+    <value>Explorer</value>
+  </data>
+  <data name="RestaurantDetailPage_AddToFavoriteText" xml:space="preserve">
+    <value>Ajouter aux Favoris</value>
+  </data>
+  <data name="RestaurantDetailPage_CommentButton.Label" xml:space="preserve">
+    <value>Commentaire</value>
+  </data>
+  <data name="RestaurantDetailPage_FavoriteButton.Label" xml:space="preserve">
+    <value>Favori</value>
+  </data>
+  <data name="RestaurantDetailPage_Favorited" xml:space="preserve">
+    <value>En favoris</value>
+  </data>
+  <data name="RestaurantDetailPage_NoCommentText.Text" xml:space="preserve">
+    <value>Sans commentaires</value>
+  </data>
+  <data name="RestaurantDetailPage_OpenMapButton.Label" xml:space="preserve">
+    <value>Carte</value>
+  </data>
+  <data name="RestaurantDetailPage_PhoneButton.Label" xml:space="preserve">
+    <value>Appel</value>
+  </data>
+  <data name="RestaurantDetailPage_PinText" xml:space="preserve">
+    <value>Epingler</value>
+  </data>
+  <data name="RestaurantDetailPage_PinUnPinCommandButton.Label" xml:space="preserve">
+    <value>Epingler</value>
+  </data>
+  <data name="RestaurantDetailPage_PivotHeaderComment" xml:space="preserve">
+    <value>Commentaire</value>
+  </data>
+  <data name="RestaurantDetailPage_PivotHeaderDetail.Text" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="RestaurantDetailPage_RemoveFromFavoriteText" xml:space="preserve">
+    <value>Retirer de favori</value>
+  </data>
+  <data name="RestaurantDetailPage_ShareButton.Label" xml:space="preserve">
+    <value>Partager</value>
+  </data>
+  <data name="RestaurantDetailPage_ShareLocationButton.Label" xml:space="preserve">
+    <value>Partager location</value>
+  </data>
+  <data name="RestaurantDetailPage_ToFavorite" xml:space="preserve">
+    <value>Favori</value>
+  </data>
+  <data name="RestaurantDetailPage_UnPinText" xml:space="preserve">
+    <value>Unpin</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Beifang.Content" xml:space="preserve">
+    <value>Nord de la Chine</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Guangdong_Fujian.Content" xml:space="preserve">
+    <value>Cantonese / Fujian</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Japan_Korea.Content" xml:space="preserve">
+    <value>Japanese / Korean</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Jiangshu_Zhejiang.Content" xml:space="preserve">
+    <value>Jiangsu / Zhejiang</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Shandong_Anhui.Content" xml:space="preserve">
+    <value>Shandong / Anhui</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Sichuan_Hunan.Content" xml:space="preserve">
+    <value>Sichuan / Hunan</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Southest_Asia.Content" xml:space="preserve">
+    <value>Asie du Sud</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Title.Text" xml:space="preserve">
+    <value>Cuisine</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Unclassified.Content" xml:space="preserve">
+    <value>Non classé</value>
+  </data>
+  <data name="RestaurantSortByStylePage_Yunnan.Content" xml:space="preserve">
+    <value>Yunnan</value>
+  </data>
+  <data name="SearchPage_NoResultText.Text" xml:space="preserve">
+    <value>Ne pas trouver un restaurant</value>
+  </data>
+  <data name="SearchPage_SearchTextBox.PlaceholderText" xml:space="preserve">
+    <value>Recherche...</value>
+  </data>
+  <data name="SearchPage_Title.Text" xml:space="preserve">
+    <value>Recherche</value>
+  </data>
+  <data name="SignUpPage_EmailEmptyText" xml:space="preserve">
+    <value>Email peut pas être vide</value>
+  </data>
+  <data name="SignUpPage_EmailExistText" xml:space="preserve">
+    <value>Email a été utilisé</value>
+  </data>
+  <data name="SignUpPage_EmailFormatText" xml:space="preserve">
+    <value>Erreur de format de courriel</value>
+  </data>
+  <data name="SignUpPage_Password1TextBox.PlaceholderText" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="SignUpPage_Password2TextBox.PlaceholderText" xml:space="preserve">
+    <value>Confirmez le mot de passe</value>
+  </data>
+  <data name="SignUpPage_PasswordEmptyText" xml:space="preserve">
+    <value>Mot de passe ne peut pas être vide</value>
+  </data>
+  <data name="SignUpPage_SignUpButton.Content" xml:space="preserve">
+    <value>Inscrivez-vous nouvel utilisateur</value>
+  </data>
+  <data name="SignUpPage_Title.Text" xml:space="preserve">
+    <value>Inscrivez-vous nouvel utilisateur</value>
+  </data>
+  <data name="SignUpPage_TwoPwdNotMatchText" xml:space="preserve">
+    <value>Deux mots de passe ne correspondent</value>
+  </data>
+  <data name="SignUpPage_UserEmailTextBox.PlaceholderText" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="SignUpPage_UsernameEmptyText" xml:space="preserve">
+    <value>Nom d'utilisateur ne peut être vide</value>
+  </data>
+  <data name="SignUpPage_UsernameExistText" xml:space="preserve">
+    <value>Nom d'utilisateur a été utilisé</value>
+  </data>
+  <data name="SignUpPage_UsernameShortText" xml:space="preserve">
+    <value>Nom d'utilisateur ne peut pas être inférieure à 4 caractères</value>
+  </data>
+  <data name="SignUpPage_UserNameTextBox.PlaceholderText" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
+  </data>
+  <data name="SimpleDisplayPage_ClearRecordButton.Label" xml:space="preserve">
+    <value>Effacer record</value>
+  </data>
+  <data name="SimpleDisplayPage_FavoriteTitleText" xml:space="preserve">
+    <value>Favori</value>
+  </data>
+  <data name="SimpleDisplayPage_HistoryTitleText" xml:space="preserve">
+    <value>Histoire</value>
+  </data>
+  <data name="TransportStationsPage_Title.Text" xml:space="preserve">
+    <value>Metro</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSort.Label" xml:space="preserve">
+    <value>Trier par</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSortByPopularity.Text" xml:space="preserve">
+    <value>Popularité</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSortByRatingNum.Text" xml:space="preserve">
+    <value>Numéros de Note</value>
+  </data>
+  <data name="HotRestaurantPage_AppBarButtonSortByRatingScore.Text" xml:space="preserve">
+    <value>Score à la Note</value>
+  </data>
+  <data name="RecommendedPage_RefreshButton.Label" xml:space="preserve">
+    <value>Rafraîchir</value>
+  </data>
+  <data name="RestaurantModel_Cantonese_Fujian" xml:space="preserve">
+    <value>Cantonese / Fujian</value>
+  </data>
+  <data name="RestaurantModel_CommentNumbers" xml:space="preserve">
+    <value>commentaires</value>
+  </data>
+  <data name="RestaurantModel_Japanese_Korean" xml:space="preserve">
+    <value>Japanese / Korean</value>
+  </data>
+  <data name="RestaurantModel_Jiangsu_Zhejiang" xml:space="preserve">
+    <value>Jiangsu / Zhejiang</value>
+  </data>
+  <data name="RestaurantModel_Nothern_Chinese" xml:space="preserve">
+    <value>Nord de la Chine</value>
+  </data>
+  <data name="RestaurantModel_Per" xml:space="preserve">
+    <value>par personne</value>
+  </data>
+  <data name="RestaurantModel_Shandong_Anhui" xml:space="preserve">
+    <value>Shandong / Anhui</value>
+  </data>
+  <data name="RestaurantModel_Sichuan_Hunan" xml:space="preserve">
+    <value>Sichuan / Hunan</value>
+  </data>
+  <data name="RestaurantModel_South_Asian" xml:space="preserve">
+    <value>Asie du Sud</value>
+  </data>
+  <data name="RestaurantModel_Unclassified" xml:space="preserve">
+    <value>Non classé</value>
+  </data>
+  <data name="RestaurantModel_Yunan" xml:space="preserve">
+    <value>Yunnan</value>
+  </data>
+  <data name="AppTitle" xml:space="preserve">
+    <value>ParisSaveur</value>
+  </data>
+  <data name="RestaurantDetailPage_ShareToWeChat.Label" xml:space="preserve">
+    <value>Partager sur WeChat</value>
+  </data>
+</root>

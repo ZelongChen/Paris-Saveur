@@ -202,6 +202,7 @@
     <Content Include="Assets\WideLogo.scale-240.png" />
     <Content Include="AdMediator.config" />
     <None Include="Package.StoreAssociation.xml" />
+    <PRIResource Include="Strings\fr-FR\Resources.resw" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
     <PRIResource Include="Strings\zh-CN\Resources.resw" />
   </ItemGroup>

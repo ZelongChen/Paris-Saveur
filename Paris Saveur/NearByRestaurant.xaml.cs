@@ -81,7 +81,7 @@ namespace Paris_Saveur
         private async void DownloadNearByRestaurant(string latitude, string longitude)
         {
             var client = new HttpClient();
-            string url = "http://www.vivelevendredi.com/restaurants/json/_list-by-location/?geo_lat=" + latitude + "&geo_lon=" + longitude + "&criterion=geopoint&order=-popularity&page=1";
+            string url = "http://www.vivelevendredi.com/restaurants/json/list-by-location/?geo_lat=" + latitude + "&geo_lon=" + longitude + "&criterion=geopoint&order=-popularity&page=1";
             var response = await client.GetAsync(url);
             var result = await response.Content.ReadAsStringAsync();
 
@@ -138,9 +138,7 @@ namespace Paris_Saveur
                 try
                 {
                     // Getting Current Location  
-                    _geoposition = await geolocator.GetGeopositionAsync(
-                        maximumAge: TimeSpan.FromMinutes(5),
-                        timeout: TimeSpan.FromSeconds(10));
+                    _geoposition = await geolocator.GetGeopositionAsync();
                     DownloadNearByRestaurant("" + _geoposition.Coordinate.Point.Position.Latitude, "" + _geoposition.Coordinate.Point.Position.Longitude);
                 }
                 catch (UnauthorizedAccessException)

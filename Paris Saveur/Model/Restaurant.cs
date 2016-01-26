@@ -4,6 +4,7 @@ using Paris_Saveur.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace Paris_Saveur
@@ -206,7 +207,7 @@ namespace Paris_Saveur
             emptyStar.UriSource = new Uri(baseUri, "Assets/star_empty.png");
             BitmapImage star = new BitmapImage();
             star.UriSource = new Uri(baseUri, "Assets/star_full.png");
-            double ratingScore = Double.Parse(this.rating_score);
+            double ratingScore = Double.Parse(this.rating_score, CultureInfo.InvariantCulture);
 
             if (ratingScore == 0)
             {
